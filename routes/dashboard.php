@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\ContactsController;
 use App\Http\Controllers\Dashboard\DashboardIndexController;
 use App\Http\Controllers\Dashboard\Datatables\CategoriesController;
 use App\Http\Controllers\Dashboard\Datatables\PostsController;
@@ -48,5 +49,13 @@ Route::group([
     Route::resource('/messages', MessagesController::class);
 
     Route::post('email', SendEmailController::class)->name('email.send');
+});
+
+
+Route::group([
+    'namespace' => '\App\Http\Controllers\Dashboard',
+    'prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
+
+    Route::get('/contacts', ContactsController::class)->name('contacts');
 
 });

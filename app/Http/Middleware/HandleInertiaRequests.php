@@ -45,6 +45,9 @@ class HandleInertiaRequests extends Middleware
             'categories_all' => Cache::rememberForever('cat-all', function () {
                 return Category::live()->orderBy('title')->tree()->get()->toTree();
             }),
+//            'contacts' => Cache::rememberForever('contacts', function () {
+//                return User::get();
+//            }),
 
             'emails' => function () {
                 return [

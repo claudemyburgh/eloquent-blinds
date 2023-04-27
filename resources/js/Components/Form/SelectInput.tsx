@@ -1,4 +1,4 @@
-import {
+import React, {
     forwardRef,
     SelectHTMLAttributes,
     useEffect,
@@ -6,13 +6,24 @@ import {
     useRef,
 } from "react";
 
+interface Props {
+    isFocused?: boolean;
+    options?: OptionProp[];
+}
+
+type OptionProp = {
+    value: string;
+    label: string;
+};
+
 export default forwardRef(function SelectInput(
     {
         className = "",
         isFocused = false,
         children,
+        options = [],
         ...props
-    }: SelectHTMLAttributes<HTMLSelectElement> & { isFocused?: boolean },
+    }: SelectHTMLAttributes<HTMLSelectElement> & Props,
     ref
 ) {
     const localRef = useRef<HTMLSelectElement>(null);
@@ -36,7 +47,11 @@ export default forwardRef(function SelectInput(
             }
             ref={localRef}
         >
-            {children}
+            {options.map((option: OptionProp) => (
+                <option key={option.value} value={option.value}>
+                    {option.label} - {option.value}
+                </option>
+            ))}
         </select>
     );
 });

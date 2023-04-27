@@ -16,7 +16,7 @@ class Message extends Model
     protected $fillable = ['subject', 'message', 'read_at', 'parent_id', 'user_id'];
 
     protected $casts = [
-        'read_ay' => 'datatime'
+        'read_at' => 'datetime:Y-m-d'
     ];
 
     public function user(): BelongsTo

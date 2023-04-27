@@ -44,7 +44,7 @@ const DatatableBody = () => {
                             className={`w-[40px]  px-3.5 py-4 text-sm text-gray-500 text-center`}
                             scope="col"
                         >
-                            {message.read_at ? (
+                            {message.read_at !== null ? (
                                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/30 text-green-50">
                                     Read
                                 </span>
@@ -58,19 +58,19 @@ const DatatableBody = () => {
                             className={`max-w-[200px] px-3.5 py-4 text-sm text-gray-500`}
                             scope="col"
                         >
-                            {message.user?.name}
+                            {message.name}
+                        </td>
+                        <td
+                            className={`max-w-[200px] px-3.5 py-4 text-sm text-gray-500 `}
+                            scope="col"
+                        >
+                            {message.email}
                         </td>
                         <td
                             className={`max-w-[200px] px-3.5 py-4 text-sm text-gray-500`}
                             scope="col"
                         >
-                            {message.user?.email}
-                        </td>
-                        <td
-                            className={`max-w-[200px] px-3.5 py-4 text-sm text-gray-500`}
-                            scope="col"
-                        >
-                            {message.user?.phone}
+                            {message.phone}
                         </td>
                         <td
                             className={`max-w-[200px] px-3.5 py-4 text-sm text-gray-500`}
@@ -88,9 +88,9 @@ const DatatableBody = () => {
                                     "dashboard.messages.show",
                                     message.id
                                 )}
-                                className={`px-4 py-1.5 rounded bg-gray-900/50 text-white`}
+                                className={`px-4 py-1.5 rounded bg-gray-900/50 text-white text-xs uppercase`}
                             >
-                                Read
+                                View
                             </Link>
                         </td>
                     </tr>

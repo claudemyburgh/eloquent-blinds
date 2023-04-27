@@ -6,45 +6,32 @@ import Card from "@/Components/Dashboard/Stats/Card";
 import ChartLine from "@/Components/Charts/ChartLine";
 import { primary, secondary } from "@/lib/colors";
 
-const data = {
-    labels: ["Red", "Blue", "Yellow", "sd", "hdhjd", "kjs"],
-    datasets: [
-        {
-            label: "My First Dataset",
-            data: [300, 50, 100, 120, 20, 10],
-            borderWidth: 2,
-            tension: 0.6,
-            pointBorderWidth: 10,
-            pointBorderHeight: 10,
-            pointBorderColor: [primary["500"], primary["500"], primary["500"]],
-            borderColor: [primary["400"], primary["400"], primary["400"]],
-            fill: true,
-            backgroundColor: [primary["500"], primary["500"], primary["500"]],
-            hoverOffset: 3,
-        },
-    ],
-};
-
 const d = {
     labels: ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"],
+
     datasets: [
         {
             label: "My First dataset",
-            pointRadius: 5,
+            pointRadius: 4,
+            borderWidth: 3,
             fill: true,
-            tension: 0.3,
-            backgroundColor: primary["500"],
+            borderJoinStyle: "round",
+            tension: 0.4,
+            backgroundColor: "rgba(14,165,233, 0.25)",
             borderColor: primary["500"],
             data: [0, 4, 2, 6.5, 3, 4.7, 0],
+            showLine: true,
         },
         {
             label: "My Second dataset",
-            pointRadius: 5,
+            pointRadius: 4,
+            borderWidth: 3,
             fill: true,
-            tension: 0.3,
-            backgroundColor: secondary["500"],
+            tension: 0.4,
+            backgroundColor: "rgba(245,158,11,.25)",
             borderColor: secondary["500"],
             data: [0, 2, 4.3, 3.8, 5.2, 1.8, 2.2],
+            showLine: true,
         },
     ],
 };
@@ -52,10 +39,10 @@ const d = {
 const opt = {
     plugins: {
         legend: {
-            display: false,
+            display: true,
         },
         tooltip: {
-            enabled: false,
+            enabled: true,
         },
     },
 };
@@ -65,13 +52,39 @@ interface UserCountProps {
     emails: {
         unread: number;
     };
+    messages: {
+        data: number[];
+        labels: string[];
+    };
 }
 
 export default function Dashboard({
     auth,
     users,
     emails,
+    messages,
 }: PageProps & UserCountProps) {
+    const data = {
+        labels: messages.labels,
+        datasets: [
+            {
+                label: "Messages stats",
+                data: messages.data,
+                borderWidth: 2,
+                tension: 0.4,
+                pointBorderWidth: 10,
+                pointBorderHeight: 10,
+                borderColor: ["rgba(14,165,233,1)", "rgba(245,158,11,1)"],
+                fill: true,
+                backgroundColor: [
+                    "rgba(14,165,233, 0.15)",
+                    "rgba(245,158,11,.15)",
+                ],
+                hoverOffset: 3,
+            },
+        ],
+    };
+
     return (
         <AuthenticatedLayout
             user={auth.user}
@@ -82,26 +95,14 @@ export default function Dashboard({
             }
         >
             <Head title={`Dashboard`} />
-
+            {/*{<pre>{JSON.stringify(messages, null, 2)}</pre>}*/}
             <div className="py-12">
                 <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 my-8">
-                    <Link href={route("dashboard.users.index")}>
-                        <Card name="users" count={users} styles={`primary`}>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                className="w-16 h-16"
-                            >
-                                <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z" />
-                            </svg>
-                        </Card>
-                    </Link>
                     <Link href={route("dashboard.messages.index")}>
                         <Card
                             name="Messages"
                             count={emails.unread}
-                            styles={"tri"}
+                            styles={"primary"}
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -117,17 +118,31 @@ export default function Dashboard({
                             </svg>
                         </Card>
                     </Link>
-                    {/*<Card name="Subscribers" count={40} styles={`secondary`}>*/}
-                    {/*    <svg*/}
-                    {/*        xmlns="http://www.w3.org/2000/svg"*/}
-                    {/*        viewBox="0 0 20 20"*/}
-                    {/*        fill="currentColor"*/}
-                    {/*        className="w-16 h-16"*/}
-                    {/*    >*/}
-                    {/*        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />*/}
-                    {/*        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />*/}
-                    {/*    </svg>*/}
-                    {/*</Card>*/}
+
+                    <Link href={route("dashboard.users.index")}>
+                        <Card name="users" count={users} styles={`yellow`}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="w-16 h-16"
+                            >
+                                <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z" />
+                            </svg>
+                        </Card>
+                    </Link>
+
+                    <Card name="Subscribers" count={40} styles={`secondary`}>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="w-16 h-16"
+                        >
+                            <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                            <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                        </svg>
+                    </Card>
                     {/*<Card name="Reviews" count={20} styles={"yellow"}>*/}
                     {/*    <svg*/}
                     {/*        xmlns="http://www.w3.org/2000/svg"*/}
@@ -140,11 +155,28 @@ export default function Dashboard({
                     {/*</Card>*/}
                 </div>
 
-                <div className="wrapper grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 my-8">
-                    <ChartLine type={`bar`} data={data} />
-                    <ChartLine type={`line`} data={d} options={opt} />
+                <div className="wrapper grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 my-8">
+                    <ChartLine
+                        className={`col-span-3`}
+                        type={`bar`}
+                        data={data}
+                    />
+                    <ChartLine
+                        className={`col-span-1`}
+                        type={`doughnut`}
+                        data={data}
+                    />
+                    <ChartLine
+                        type={`line`}
+                        data={data}
+                        className={`col-span-2`}
+                    />
+                    <ChartLine
+                        type={`line`}
+                        data={data}
+                        className={`col-span-2`}
+                    />
                 </div>
-
                 <div className="wrapper">
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100">

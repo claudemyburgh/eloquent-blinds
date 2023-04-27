@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Resources\Messages\MessageCollection;
 use App\Models\Message;
 use Carbon\Carbon;
 use Designbycode\Datatables\DatatablesController;
@@ -16,9 +17,12 @@ class MessagesController extends DatatablesController
 
     public function index(Request $request)
     {
+//        Cache::forget('messages');
         $messages = Message::isRoot()->orderBy('id', 'desc')->with('user')->paginate(20);
 
-        return Inertia::render("Dashboard/Messages/Index", compact('messages'));
+        return Inertia::render("Dashboard/Messages/Index", [
+            'messages' => new MessageCollection($messages)
+        ]);
     }
 
     /**
@@ -42,13 +46,14 @@ class MessagesController extends DatatablesController
      */
     public function show(int $id): Response
     {
-
         $message = Message::with('user', 'children.user')->orderBy('created_at', 'asc')->find($id);
-
         $message->update([
             'read_at' => Carbon::now()
         ]);
+
+
         Cache::forget('messages');
+
         return Inertia::render("Dashboard/Messages/Show", compact('message'));
     }
 
@@ -58,7 +63,6 @@ class MessagesController extends DatatablesController
     public function update(Request $request, Message $message)
     {
         Cache::forget('messages');
-
         $message->update([
             'read_at' => null
         ]);

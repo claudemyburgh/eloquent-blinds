@@ -15,7 +15,8 @@ const UpCount: FC<Props & ChildrenProps> = ({ count }) => {
             refElement.current as HTMLElement,
             count,
             {
-                enableScrollSpy: true,
+                enableScrollSpy: false,
+                scrollSpyOnce: false,
                 startVal: 0,
                 // duration: 50,
             }

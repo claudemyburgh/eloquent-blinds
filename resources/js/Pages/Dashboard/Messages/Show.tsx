@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Head, useForm } from "@inertiajs/react";
+import { Head, Link, useForm } from "@inertiajs/react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Panel } from "@/Components/Panel";
 import { formatDistance, parseISO } from "date-fns";
@@ -52,9 +52,13 @@ const Show = ({ auth, message }: any) => {
                     <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                         Messages
                     </h2>
-                    <SecondaryButton onClick={() => window.history.back()}>
+                    <Link
+                        as={`button`}
+                        className={`text-white border border-gray-500 px-4 uppercase text-xs py-2 rounded-lg`}
+                        href={route("dashboard.messages.index")}
+                    >
                         Back
-                    </SecondaryButton>
+                    </Link>
                 </>
             }
             user={auth.user}
