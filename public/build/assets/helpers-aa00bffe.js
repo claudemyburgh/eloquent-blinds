@@ -1,1 +1,0 @@
-import{s as n}from"./slugify-5e84e291.js";function c(r){return r.replace(/[_-]/g," ")}function s(r){return r.replace(/\?.+/,"")}function o(r){return(r==null?void 0:r.charAt((r==null?void 0:r.length)-1))==" "?r:n(r,{lower:!0})}export{s as c,o as s,c as u};
