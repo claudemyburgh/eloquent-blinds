@@ -42,10 +42,9 @@ const UploadCard: FC<FileProps> = ({ file, ...props }) => {
                     <div>{file.name}</div>
                     <div>Size: {file.size}</div>
                     {/*<div>Size: {file.size.formatBytes()}</div>*/}
-                    <div>
-                        Size:{" "}
-                        {bytes.format(file.size, { thousandsSeparator: " " })}
-                    </div>
+                    <div>{`Size: ${bytes.format(file.size, {
+                        thousandsSeparator: " ",
+                    })} `}</div>
                     <Link
                         as={`button`}
                         method={`delete`}
