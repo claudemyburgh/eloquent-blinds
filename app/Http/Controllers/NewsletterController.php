@@ -16,7 +16,7 @@ class NewsletterController extends Controller
 
     public function show()
     {
-        return Newsletter::getMember('claude@eloquentblinds.co.za');
+        dd(Newsletter::getMember('claude@eloquentblinds.co.za'));
 
     }
 
