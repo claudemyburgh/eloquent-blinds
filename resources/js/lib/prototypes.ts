@@ -22,7 +22,6 @@ Number.prototype.formatBytes = function (this: number): string {
     for (i = 0; bytes >= 1024 && i < 4; i++) {
         bytes /= 1024;
     }
-
     return bytes.toFixed(2) + units[i];
 };
 

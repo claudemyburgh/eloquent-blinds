@@ -16,3 +16,14 @@ export function slugIt(value: string) {
 export function fullUrl(url: string): string {
     return `${import.meta.env.APP_URL}/${url}`;
 }
+
+export function bytesFormat(value: number): string {
+    let units: string[] = ["B", "KB", "MB", "GB", "TB"];
+    let bytes: number = value;
+    let i: number;
+
+    for (i = 0; bytes >= 1024 && i < 4; i++) {
+        bytes /= 1024;
+    }
+    return bytes.toFixed(2) + units[i];
+}
