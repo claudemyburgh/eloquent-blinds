@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import "@/lib/prototypes";
 import { Link } from "@inertiajs/react";
+import bytes from "bytes";
 
 interface FileProps {
     file: {
@@ -41,10 +42,10 @@ const UploadCard: FC<FileProps> = ({ file, ...props }) => {
                     <div>{file.name}</div>
                     <div>Size: {file.size}</div>
                     {/*<div>Size: {file.size.formatBytes()}</div>*/}
-                    {/*<div>*/}
-                    {/*    Size:{" "}*/}
-                    {/*    {bytes.format(file.size, { thousandsSeparator: " " })}*/}
-                    {/*</div>*/}
+                    <div>
+                        Size:{" "}
+                        {bytes.format(file.size, { thousandsSeparator: " " })}
+                    </div>
                     <Link
                         as={`button`}
                         method={`delete`}
