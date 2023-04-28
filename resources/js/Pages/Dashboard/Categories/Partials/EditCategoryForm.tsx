@@ -11,6 +11,8 @@ import {
 import { PageProps } from "@/types";
 import { slugIt } from "@/lib/helpers";
 import CharCounter from "@/Components/Form/CharCounter";
+import toast from "react-hot-toast";
+import { ToastItem } from "@/Components/Notifications";
 
 interface CategoryProps {
     category: {
@@ -60,6 +62,28 @@ const EditCategoryForm = () => {
         put(route("dashboard.categories.update", category), {
             preserveState: true,
             preserveScroll: true,
+            onSuccess: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`success`}
+                        title={`Success`}
+                        message={`Category successfully updated`}
+                        icon={`check`}
+                    />
+                ));
+            },
+            onError: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`error`}
+                        title={`Error`}
+                        message={`Something went wrong`}
+                        icon={`cross`}
+                    />
+                ));
+            },
         });
     };
 

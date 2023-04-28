@@ -58,5 +58,5 @@ Route::group([
     'prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
 
     Route::get('/contacts', ContactsController::class)->name('contacts');
-    Route::post('/contact.replay', ContactFormReplayController::class)->name('contact.replay');
+
 });

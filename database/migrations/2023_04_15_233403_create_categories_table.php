@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title')->nullable();
             $table->uuid('uuid')->unique();
-            $table->foreignId('parent_id')->nullable()->references('id')->on('categories')->cascadeOnDelete();
+            $table->foreignId('parent_id')->nullable()->constrained('categories');
             $table->string('slug')->unique()->index();
             $table->text('description')->nullable();
             $table->text('excerpt')->nullable();

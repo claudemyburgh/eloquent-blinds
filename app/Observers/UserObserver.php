@@ -10,4 +10,9 @@ class UserObserver
     {
         $user->assignRole('client');
     }
+
+    public function deleted(User $user): void
+    {
+
+    }
 }

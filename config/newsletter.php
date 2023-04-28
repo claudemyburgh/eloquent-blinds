@@ -44,5 +44,4 @@ return [
             'id' => env('NEWSLETTER_LIST_ID'),
         ],
     ],
-
 ];

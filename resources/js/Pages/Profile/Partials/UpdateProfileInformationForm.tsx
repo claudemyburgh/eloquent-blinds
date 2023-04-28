@@ -5,9 +5,11 @@ import {
     TextInput,
 } from "@/Components/Form";
 import { Link, useForm, usePage } from "@inertiajs/react";
-import { FormEventHandler } from "react";
+import React, { FormEventHandler } from "react";
 import { PageProps } from "@/types";
 import { Panel } from "@/Components/Panel";
+import toast from "react-hot-toast";
+import { ToastItem } from "@/Components/Notifications";
 
 export default function UpdateProfileInformation({
     mustVerifyEmail,
@@ -29,7 +31,30 @@ export default function UpdateProfileInformation({
 
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
-        patch(route("profile.update"));
+        patch(route("profile.update"), {
+            onSuccess: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`success`}
+                        title={`Success`}
+                        message={`User information successfully updated`}
+                        icon={`check`}
+                    />
+                ));
+            },
+            onError: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`error`}
+                        title={`Error`}
+                        message={`Something went wrong`}
+                        icon={`cross`}
+                    />
+                ));
+            },
+        });
     };
 
     return (

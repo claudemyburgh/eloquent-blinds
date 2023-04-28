@@ -12,6 +12,8 @@ import { PageProps } from "@/types";
 
 import { slugIt } from "@/lib/helpers";
 import CharCounter from "@/Components/Form/CharCounter";
+import toast from "react-hot-toast";
+import { ToastItem } from "@/Components/Notifications";
 
 interface PostProps {
     post: {
@@ -54,6 +56,28 @@ const EditPostsForm = () => {
         put(route("dashboard.posts.update", post), {
             preserveState: true,
             preserveScroll: true,
+            onSuccess: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`success`}
+                        title={`Success`}
+                        message={`Post successfully updated`}
+                        icon={`check`}
+                    />
+                ));
+            },
+            onError: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`error`}
+                        title={`Error`}
+                        message={`Something went wrong`}
+                        icon={`cross`}
+                    />
+                ));
+            },
         });
     };
 

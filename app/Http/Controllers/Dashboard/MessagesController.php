@@ -8,7 +8,6 @@ use Carbon\Carbon;
 use Designbycode\Datatables\DatatablesController;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -17,7 +16,6 @@ class MessagesController extends DatatablesController
 
     public function index(Request $request)
     {
-//        Cache::forget('messages');
         $messages = Message::isRoot()->orderBy('id', 'desc')->with('user')->paginate(20);
 
         return Inertia::render("Dashboard/Messages/Index", [
@@ -50,9 +48,7 @@ class MessagesController extends DatatablesController
         $message->update([
             'read_at' => Carbon::now()
         ]);
-
-        Cache::forget('messages');
-
+        
         return Inertia::render("Dashboard/Messages/Show", compact('message'));
     }
 
@@ -61,7 +57,6 @@ class MessagesController extends DatatablesController
      */
     public function update(Request $request, Message $message)
     {
-        Cache::forget('messages');
         $message->update([
             'read_at' => null
         ]);

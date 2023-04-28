@@ -20,7 +20,9 @@ const Home = () => {
                 }}
             />
             {/*{route("home")}*/}
-            <ContactForm />
+            <div className="w-1/2">
+                <ContactForm />
+            </div>
 
             <Newsletter />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6"></div>

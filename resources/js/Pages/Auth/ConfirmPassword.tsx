@@ -1,8 +1,10 @@
-import { FormEventHandler, useEffect } from "react";
+import React, { FormEventHandler, useEffect } from "react";
 import GuestLayout from "@/Layouts/GuestLayout";
 import { InputError, InputLabel, TextInput } from "@/Components/Form";
 import { PrimaryButton } from "@/Components/Buttons";
 import { Head, useForm } from "@inertiajs/react";
+import toast from "react-hot-toast";
+import { ToastItem } from "@/Components/Notifications";
 
 export default function ConfirmPassword() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -18,7 +20,30 @@ export default function ConfirmPassword() {
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
 
-        post(route("password.confirm"));
+        post(route("password.confirm"), {
+            onSuccess: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`success`}
+                        title={`Success`}
+                        message={`Password successfully updated`}
+                        icon={`check`}
+                    />
+                ));
+            },
+            onError: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`error`}
+                        title={`Error`}
+                        message={`Something went wrong`}
+                        icon={`cross`}
+                    />
+                ));
+            },
+        });
     };
 
     return (

@@ -2,18 +2,19 @@
 
 namespace App\Models;
 
+use App\Traits\Observable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 class Message extends Model
 {
-    use HasFactory, SoftDeletes, HasRecursiveRelationships;
+    use HasFactory, HasRecursiveRelationships, Observable;
 
     protected $fillable = ['subject', 'message', 'read_at', 'parent_id', 'user_id'];
+
 
     protected $casts = [
         'read_at' => 'datetime:Y-m-d'

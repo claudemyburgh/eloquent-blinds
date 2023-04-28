@@ -1,8 +1,10 @@
 import React from "react";
 import { Panel } from "@/Components/Panel";
 import { useForm } from "@inertiajs/react";
-import { InputLabel, TextInput } from "@/Components/Form/index";
+import { InputError, InputLabel, TextInput } from "@/Components/Form/index";
 import { PrimaryButton } from "@/Components/Buttons";
+import toast from "react-hot-toast";
+import { ToastItem } from "@/Components/Notifications";
 
 const Newsletter = () => {
     const { data, setData, errors, reset, clearErrors, post } = useForm({
@@ -13,8 +15,30 @@ const Newsletter = () => {
         e.preventDefault();
         clearErrors();
         post(route("newsletter"), {
+            preserveState: true,
+            preserveScroll: true,
             onSuccess: () => {
                 reset();
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`success`}
+                        title={`Success`}
+                        message={`Successfully registered newsletter`}
+                        icon={`check`}
+                    />
+                ));
+            },
+            onError: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`error`}
+                        title={`Error`}
+                        message={`Something went wrong`}
+                        icon={`cross`}
+                    />
+                ));
             },
         });
     }
@@ -42,7 +66,6 @@ const Newsletter = () => {
                         </p>
                     </div>
                     <div className="mt-12 sm:w-full sm:max-w-md lg:mt-0 lg:ml-8 lg:flex-1">
-                        <pre>{JSON.stringify(errors, null, 2)}</pre>
                         <form
                             className="sm:flex"
                             onSubmit={handleNewsletterSubmit}
@@ -50,19 +73,30 @@ const Newsletter = () => {
                             <InputLabel htmlFor="email" className="sr-only">
                                 Email address
                             </InputLabel>
-                            <TextInput
-                                id="email"
-                                name="email"
-                                type="email"
-                                autoComplete="email"
-                                value={data.email}
-                                onChange={handleInputChange}
-                                placeholder="Enter your email"
-                                className="mr-4 flex-1 dark:bg-white dark:text-black"
-                            />
-                            <PrimaryButton type="submit">
-                                Subscribe
-                            </PrimaryButton>
+                            <div className={`mr-4 flex-1 `}>
+                                <TextInput
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    autoComplete="email"
+                                    value={data.email}
+                                    onChange={handleInputChange}
+                                    placeholder="Enter your email"
+                                    className="dark:bg-white dark:text-gray-900 w-full"
+                                />
+                                <InputError
+                                    className={`mt-2`}
+                                    message={errors.email}
+                                />
+                            </div>
+                            <div>
+                                <PrimaryButton
+                                    type="submit"
+                                    className={`min-h-[40px]`}
+                                >
+                                    Subscribe
+                                </PrimaryButton>
+                            </div>
                         </form>
                         <p className="mt-3 text-sm text-primary-100">
                             We care about the protection of your data. Read our{" "}

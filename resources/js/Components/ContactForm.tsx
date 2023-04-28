@@ -102,7 +102,7 @@ const ContactForm = () => {
             <form
                 onSubmit={handleSubmitForm}
                 method={`POST`}
-                className={"space-y-6"}
+                className={"space-y-2"}
             >
                 <div className="grid md:grid-cols-2 gap-6">
                     <div>

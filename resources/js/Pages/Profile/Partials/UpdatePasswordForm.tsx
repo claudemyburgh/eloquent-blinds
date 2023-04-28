@@ -1,4 +1,4 @@
-import { FormEventHandler, useRef } from "react";
+import React, { FormEventHandler, useRef } from "react";
 import {
     InputError,
     InputLabel,
@@ -7,6 +7,8 @@ import {
 } from "@/Components/Form";
 import { useForm } from "@inertiajs/react";
 import { Panel } from "@/Components/Panel";
+import toast from "react-hot-toast";
+import { ToastItem } from "@/Components/Notifications";
 
 export default function UpdatePasswordForm({
     className = "",
@@ -35,7 +37,18 @@ export default function UpdatePasswordForm({
 
         put(route("password.update"), {
             preserveScroll: true,
-            onSuccess: () => reset(),
+            onSuccess: () => {
+                reset();
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`success`}
+                        title={`Success`}
+                        message={`Password successfully updated`}
+                        icon={`check`}
+                    />
+                ));
+            },
             onError: (errors) => {
                 if (errors.password) {
                     reset("password", "password_confirmation");
@@ -46,6 +59,15 @@ export default function UpdatePasswordForm({
                     reset("current_password");
                     currentPasswordInput.current?.focus();
                 }
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`error`}
+                        title={`Error`}
+                        message={`Something went wrong`}
+                        icon={`cross`}
+                    />
+                ));
             },
         });
     };

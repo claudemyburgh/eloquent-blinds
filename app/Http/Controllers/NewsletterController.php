@@ -11,12 +11,13 @@ class NewsletterController extends Controller
     public function store(Request $request)
     {
         $request->validate(['email' => 'required|email']);
-        Newsletter::subscribe($request->email);
+
     }
 
     public function show()
     {
-        dd(Newsletter::hasMember('claude@eloquentblinds.co.za'));
+        return Newsletter::getMember('claude@eloquentblinds.co.za');
+
     }
 
 }

@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Traits\Live;
-use App\Traits\Slug;
+use App\Traits\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -15,7 +15,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 class Category extends Model implements HasMedia
 {
-    use HasFactory, Slug, HasRecursiveRelationships, InteractsWithMedia, Live, SoftDeletes;
+    use HasFactory, Sluggable, HasRecursiveRelationships, InteractsWithMedia, Live, SoftDeletes;
 
     protected $fillable = [
         'title',

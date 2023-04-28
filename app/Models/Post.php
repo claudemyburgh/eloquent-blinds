@@ -4,11 +4,10 @@ namespace App\Models;
 
 use App\Traits\Live;
 use App\Traits\Observable;
-use App\Traits\Slug;
+use App\Traits\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -17,7 +16,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Post extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, Slug, Live, SoftDeletes, Observable;
+    use HasFactory, InteractsWithMedia, Sluggable, Live, Observable;
 
     protected $fillable = [
         "uuid",

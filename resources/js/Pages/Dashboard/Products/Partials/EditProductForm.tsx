@@ -12,6 +12,8 @@ import {
 import { PageProps } from "@/types";
 import { slugIt } from "@/lib/helpers";
 import CharCounter from "@/Components/Form/CharCounter";
+import toast from "react-hot-toast";
+import { ToastItem } from "@/Components/Notifications";
 
 interface ProductProps {
     product: {
@@ -72,6 +74,28 @@ const EditProductForm = () => {
         put(route("dashboard.products.update", product), {
             preserveState: true,
             preserveScroll: true,
+            onSuccess: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`success`}
+                        title={`Success`}
+                        message={`Product successfully updated`}
+                        icon={`check`}
+                    />
+                ));
+            },
+            onError: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`error`}
+                        title={`Error`}
+                        message={`Something went wrong`}
+                        icon={`cross`}
+                    />
+                ));
+            },
         });
     };
 

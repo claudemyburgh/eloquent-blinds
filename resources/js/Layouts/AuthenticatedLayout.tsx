@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactNode, useState } from "react";
+import React, { PropsWithChildren, ReactNode, useState } from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Form/Dropdown";
 import NavLink from "@/Components/NavLink";
@@ -6,6 +6,7 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link, usePage } from "@inertiajs/react";
 import { PageProps, User } from "@/types";
 import useDatatable from "@/Components/Datatable/DatatableContext";
+import { Toaster } from "react-hot-toast";
 
 export default function Authenticated({
     user,
@@ -254,6 +255,12 @@ export default function Authenticated({
             </nav>
 
             <main>{children}</main>
+            <Toaster
+                position={`top-right`}
+                toastOptions={{
+                    duration: 2200,
+                }}
+            />
         </div>
     );
 }

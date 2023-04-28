@@ -19,6 +19,8 @@ import {
     SecondaryButton,
 } from "@/Components/Buttons";
 import { cleanUrl } from "@/lib/helpers";
+import toast from "react-hot-toast";
+import { ToastItem } from "@/Components/Notifications";
 
 const DatatableComponent: FC<UsePageDatatableProps<any> & any> = ({
     data,
@@ -76,6 +78,15 @@ const DatatableComponent: FC<UsePageDatatableProps<any> & any> = ({
             preserveState: false,
             onSuccess: () => {
                 setSelected([]);
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`success`}
+                        title={`Success`}
+                        message={`Deleted successfully`}
+                        icon={`check`}
+                    />
+                ));
             },
         });
     };

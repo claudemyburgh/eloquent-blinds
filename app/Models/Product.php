@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Traits\Live;
-use App\Traits\Slug;
+use App\Traits\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,7 +15,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Product extends Model implements HasMedia
 {
-    use HasFactory, Live, InteractsWithMedia, Slug, SoftDeletes;
+    use HasFactory, Live, InteractsWithMedia, Sluggable, SoftDeletes;
 
     protected $fillable = [
         'category_id',

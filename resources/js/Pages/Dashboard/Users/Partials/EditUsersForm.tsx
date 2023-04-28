@@ -8,6 +8,8 @@ import {
 } from "@/Components/Form";
 import { PageProps } from "@/types";
 import { slugIt } from "@/lib/helpers";
+import toast from "react-hot-toast";
+import { ToastItem } from "@/Components/Notifications";
 
 interface UsersProps {
     user: {
@@ -32,6 +34,28 @@ const EditUsersForm = () => {
         put(route("dashboard.users.update", user), {
             preserveState: true,
             preserveScroll: true,
+            onSuccess: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`success`}
+                        title={`Success`}
+                        message={`User successfully updated`}
+                        icon={`check`}
+                    />
+                ));
+            },
+            onError: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`error`}
+                        title={`Error`}
+                        message={`Something went wrong`}
+                        icon={`cross`}
+                    />
+                ));
+            },
         });
     };
 

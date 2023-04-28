@@ -1,6 +1,8 @@
 import React, { FC, useState } from "react";
 import { Link, usePage } from "@inertiajs/react";
 import { cleanUrl } from "@/lib/helpers";
+import toast from "react-hot-toast";
+import { ToastItem } from "@/Components/Notifications";
 
 const DatatableAction: FC<{ id: any; deletion: boolean }> = ({
     id,
@@ -49,6 +51,17 @@ const DatatableAction: FC<{ id: any; deletion: boolean }> = ({
                         preserveScroll={true}
                         preserveState={false}
                         method={`delete`}
+                        onSuccess={() => {
+                            toast.custom((t) => (
+                                <ToastItem
+                                    t={t}
+                                    type={`success`}
+                                    title={`Success`}
+                                    message={`Deleted successfully`}
+                                    icon={`check`}
+                                />
+                            ));
+                        }}
                         href={`${cleanUrl(url)}/${id}`}
                         as={`button`}
                         className={`text-green-500 bg-gray-900/75 p-1 rounded `}
