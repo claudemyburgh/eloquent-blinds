@@ -3,6 +3,7 @@ import AppLayout from "@/Layouts/AppLayout";
 import { Head, usePage } from "@inertiajs/react";
 import Newsletter from "@/Components/Form/Newsletter";
 import ContactForm from "@/Components/ContactForm";
+import { Toaster } from "react-hot-toast";
 
 const Home = () => {
     const { ziggy } = usePage<any>().props;
@@ -12,8 +13,13 @@ const Home = () => {
             <Head title="Home">
                 <link rel="canonical" href={ziggy.location} />
             </Head>
-            {route("home")}
-
+            <Toaster
+                position={`top-right`}
+                toastOptions={{
+                    duration: 2200,
+                }}
+            />
+            {/*{route("home")}*/}
             <ContactForm />
 
             <Newsletter />

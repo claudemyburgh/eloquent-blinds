@@ -29,6 +29,7 @@ export type PageProps<
     };
     csrf: string;
     categories_all: CategoriesProps;
+    flash: string | null;
     emails: {
         unread: number;
     };

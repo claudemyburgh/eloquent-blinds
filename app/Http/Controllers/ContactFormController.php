@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ContactSubmitted;
 use App\Http\Requests\ContactFormRequest;
 
 class ContactFormController extends Controller
@@ -11,6 +12,8 @@ class ContactFormController extends Controller
      */
     public function __invoke(ContactFormRequest $request)
     {
-        return $request->validated();
+        event(new ContactSubmitted($request->validated()));
+
+        return redirect()->back()->with("flash", "Success");
     }
 }

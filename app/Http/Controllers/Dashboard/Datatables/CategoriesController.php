@@ -67,8 +67,6 @@ class CategoriesController extends DatatablesController
      */
     public function destroy(string $ids)
     {
-
-
         Cache::forget('cat-all');
         $this->itemsDelete($ids);
     }

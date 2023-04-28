@@ -51,7 +51,6 @@ class MessagesController extends DatatablesController
             'read_at' => Carbon::now()
         ]);
 
-
         Cache::forget('messages');
 
         return Inertia::render("Dashboard/Messages/Show", compact('message'));

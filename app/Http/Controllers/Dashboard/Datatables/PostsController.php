@@ -53,11 +53,14 @@ class PostsController extends DatatablesController
 
     public function store(StorePostRequest $request)
     {
-        $post = Post::create($request->validated());
+        
+        $post = Post::create(array_merge($request->validated(), [
+            'user_id' => auth()->user()->id
+        ]));
 
         return to_route('dashboard.posts.edit', $post->id);
     }
-    
+
     public function destroy(string $ids)
     {
         $this->itemsDelete($ids);

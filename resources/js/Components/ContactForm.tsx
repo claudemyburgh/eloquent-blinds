@@ -11,6 +11,8 @@ import {
 import { useForm, usePage } from "@inertiajs/react";
 import axios from "axios";
 import { PageProps } from "@/types";
+import toast from "react-hot-toast";
+import { Banner, ToastItem } from "@/Components/Notifications";
 
 interface ContactsProps {
     data: {
@@ -20,7 +22,7 @@ interface ContactsProps {
 }
 
 const ContactForm = () => {
-    const { auth } = usePage<PageProps>().props;
+    const { auth, flash } = usePage<PageProps>().props;
 
     const [contacts, setContacts] = useState<ContactsProps>();
 
@@ -46,10 +48,32 @@ const ContactForm = () => {
     function handleSubmitForm(e: any): void {
         e.preventDefault();
         clearErrors();
-        post(route("contact-form"), {
+        post(route("contact.form"), {
             onSuccess: () => {
-                // reset();
+                reset();
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        type={`success`}
+                        title={`Success`}
+                        message={`Message successfully send`}
+                        icon={`check`}
+                    />
+                ));
             },
+            onError: () => {
+                toast.custom((t) => (
+                    <ToastItem
+                        t={t}
+                        icon={`cross`}
+                        type={`error`}
+                        title={`Error`}
+                        message={`Something went wrong`}
+                    />
+                ));
+            },
+            preserveState: true,
+            preserveScroll: true,
         });
     }
 
@@ -74,7 +98,7 @@ const ContactForm = () => {
     return (
         <Panel className={`my-4 md:my-6 lg:my-8 space-y-4`}>
             <Panel.Header heading={"Contact Us"} />
-            {<pre>{JSON.stringify(errors, null, 2)}</pre>}
+            {flash && <Banner message={flash} />}
             <form
                 onSubmit={handleSubmitForm}
                 method={`POST`}

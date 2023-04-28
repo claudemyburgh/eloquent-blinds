@@ -24,6 +24,7 @@ class StorePostRequest extends FormRequest
     {
         return [
             'title' => 'required',
+            'user_id' => 'nullable',
             'slug' => 'required|unique:posts,slug'
         ];
     }

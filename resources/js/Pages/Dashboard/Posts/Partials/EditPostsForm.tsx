@@ -16,6 +16,7 @@ import CharCounter from "@/Components/Form/CharCounter";
 interface PostProps {
     post: {
         title: string;
+        user_id: number;
         slug: string;
         description: string;
         body: string;
@@ -30,7 +31,7 @@ interface CountProps {
 }
 
 const EditPostsForm = () => {
-    const { post } = usePage<PostProps & PageProps>().props;
+    const { post, auth } = usePage<PostProps & PageProps>().props;
 
     const [count, setCount] = useState<CountProps>({
         description: post.description?.length,
@@ -41,6 +42,7 @@ const EditPostsForm = () => {
     const { data, setData, put, errors, processing, recentlySuccessful } =
         useForm({
             title: post.title || "",
+            user_id: auth.user.id,
             slug: post.slug || "",
             description: post.description || "",
             body: post.body || "",

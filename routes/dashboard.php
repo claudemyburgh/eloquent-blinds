@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\ContactFormReplayController;
 use App\Http\Controllers\Dashboard\ContactsController;
 use App\Http\Controllers\Dashboard\DashboardIndexController;
 use App\Http\Controllers\Dashboard\Datatables\CategoriesController;
@@ -57,5 +58,5 @@ Route::group([
     'prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
 
     Route::get('/contacts', ContactsController::class)->name('contacts');
-
+    Route::post('/contact.replay', ContactFormReplayController::class)->name('contact.replay');
 });

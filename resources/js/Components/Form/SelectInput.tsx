@@ -9,6 +9,7 @@ import React, {
 interface Props {
     isFocused?: boolean;
     options?: OptionProp[];
+    showValue?: boolean;
 }
 
 type OptionProp = {
@@ -21,6 +22,7 @@ export default forwardRef(function SelectInput(
         className = "",
         isFocused = false,
         children,
+        showValue = false,
         options = [],
         ...props
     }: SelectHTMLAttributes<HTMLSelectElement> & Props,
@@ -47,11 +49,7 @@ export default forwardRef(function SelectInput(
             }
             ref={localRef}
         >
-            {options.map((option: OptionProp) => (
-                <option key={option.value} value={option.value}>
-                    {option.label} - {option.value}
-                </option>
-            ))}
+            {children}
         </select>
     );
 });

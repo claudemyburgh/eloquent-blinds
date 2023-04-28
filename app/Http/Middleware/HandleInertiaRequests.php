@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Session;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
 
@@ -48,6 +49,8 @@ class HandleInertiaRequests extends Middleware
 //            'contacts' => Cache::rememberForever('contacts', function () {
 //                return User::get();
 //            }),
+
+            'flash' => Session::get('flash'),
 
             'emails' => function () {
                 return [

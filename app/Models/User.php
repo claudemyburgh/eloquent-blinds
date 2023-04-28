@@ -56,6 +56,11 @@ class User extends Authenticatable implements HasMedia
         return $this->hasMany(Message::class);
     }
 
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
+
 
     public function registerMediaConversions(Media $media = null): void
     {
