@@ -39,7 +39,7 @@ const UploadCard: FC<FileProps> = ({ file, ...props }) => {
                 </div>
                 <div className="flex-shrink flex-col flex items-start justify-center text-xs">
                     <div>{file.name}</div>
-                    <div>Size: {file.size.formatBytes()}</div>
+                    {/*<div>Size: {file.size.formatBytes()}</div>*/}
                     <Link
                         as={`button`}
                         method={`delete`}
