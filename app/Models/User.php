@@ -26,7 +26,8 @@ class User extends Authenticatable implements HasMedia
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
         'phone'
@@ -48,12 +49,18 @@ class User extends Authenticatable implements HasMedia
      * @var array<string, string>
      */
     protected $casts = [
+        'full_name' => 'string',
         'email_verified_at' => 'datetime',
     ];
 
-    protected $cascadeDeletes = ['posts', 'messages'];
-
     protected $dates = ['deleted_at'];
+
+    protected $appends = ['name'];
+
+    public function getNameAttribute(): string
+    {
+        return $this->first_name . " " . $this->last_name;
+    }
 
     public function messages(): HasMany
     {
@@ -64,7 +71,6 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->hasMany(Post::class);
     }
-
 
     public function registerMediaConversions(Media $media = null): void
     {
@@ -84,6 +90,5 @@ class User extends Authenticatable implements HasMedia
             ->singleFile()
             ->useFallbackUrl(url(config('app.placeholder')));
     }
-
 
 }

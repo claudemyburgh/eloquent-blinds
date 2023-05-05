@@ -14,13 +14,15 @@ class UserSeeder extends Seeder
     {
         $users = [
             [
-                "name" => "Claude Myburgh",
+                "first_name" => "Claude",
+                "last_name" => "Myburgh",
                 "email" => config('dashboard.admin.claude.email'),
                 "password" => bcrypt(config('dashboard.admin.claude.password')),
                 "phone" => config('dashboard.admin.claude.phone'),
             ],
             [
-                "name" => "Hendry Ollewagen",
+                "first_name" => "Hendry",
+                "last_name" => "Ollewagen",
                 "email" => config('dashboard.admin.hendry.email'),
                 "password" => bcrypt(config('dashboard.admin.hendry.password')),
                 "phone" => config('dashboard.admin.hendry.phone'),
@@ -29,7 +31,6 @@ class UserSeeder extends Seeder
 
         foreach ($users as $user) {
             $u = User::create($user);
-
             $u->assignRole('admin');
         }
     }

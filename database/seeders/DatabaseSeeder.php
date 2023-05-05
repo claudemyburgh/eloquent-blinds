@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Message;
-use App\Models\Post;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,8 +21,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class
         ]);
 
-        Post::factory()->count(5)->create();
-        Message::factory()->count(5)->create();
+//        Post::factory()->count(5)->create();
+//        Message::factory()->count(5)->create();
 
     }
 }
