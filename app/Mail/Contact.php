@@ -15,12 +15,15 @@ class Contact extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
+    public string $name;
+
 
     /**
      * Create a new message instance.
      */
     public function __construct(public array $data)
     {
+        $this->name = $this->data['first_name'] . " " . $this->data['last_name'];
     }
 
     /**
@@ -28,10 +31,11 @@ class Contact extends Mailable implements ShouldQueue
      */
     public function envelope(): Envelope
     {
+
         return new Envelope(
-            from: new Address($this->data['email'], $this->data['name']),
+            from: new Address($this->data['email'], $this->name),
             replyTo: [
-                new Address($this->data['email'], $this->data['name']),
+                new Address($this->data['email'], $this->name),
             ],
             subject: $this->data['subject'],
         );
@@ -45,7 +49,7 @@ class Contact extends Mailable implements ShouldQueue
         return new Content(
             markdown: 'emails.contact.index',
             with: [
-                'name' => $this->data['name'],
+                'name' => $this->name,
                 'email' => $this->data['email'],
                 'phone' => $this->data['phone'],
                 'subject' => $this->data['subject'],

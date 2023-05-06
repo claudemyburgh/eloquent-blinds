@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard\Datatables;
 
-use App\Http\Requests\User\UserRequest;
+use App\Helpers\GeneratePassword;
+use App\Http\Requests\User\UserDatatableRequest;
 use App\Models\User;
 use Designbycode\Datatables\DatatablesController;
 use Illuminate\Database\Eloquent\Builder;
@@ -34,19 +35,21 @@ class UsersController extends DatatablesController
         return Inertia::render('Dashboard/Table/Index', $this->getResponse($request));
     }
 
-    public function store(UserRequest $request)
+    public function store(UserDatatableRequest $request)
     {
         $user = User::create([
-            'name' => $request->name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => Hash::make(GeneratePassword::password(20)),
         ]);
+
 
         return to_route('dashboard.users.edit', $user->id);
     }
 
 
-    public function update(UserRequest $request, int $id)
+    public function update(UserDatatableRequest $request, int $id)
     {
         User::findOrFail($id)->update($request->validated());
     }
@@ -82,5 +85,16 @@ class UsersController extends DatatablesController
         return ['id', 'name', 'email', 'phone'];
     }
 
+
+    protected function getUpdatableColumns(): array
+    {
+        return ['id', 'first_name', 'last_name', 'email', 'phone'];
+    }
+
+
+    protected function getCreatableColumns(): array
+    {
+        return ['first_name', 'last_name', 'email', 'phone'];
+    }
 
 }

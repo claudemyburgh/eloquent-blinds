@@ -27,13 +27,13 @@ class SaveMessageToDatabase
 
         if (!$user) {
             $user = User::create([
-                'name' => $event->data['name'],
+                'first_name' => $event->data['first_name'],
+                'last_name' => $event->data['last_name'],
                 'email' => $event->data['email'],
                 'phone' => $event->data['phone'],
-                'password' => Hash::make(GeneratePassword::password(12)),
+                'password' => Hash::make(GeneratePassword::password(20)),
             ]);
         }
-
 
         $user->messages()->create([
             'subject' => $event->data['subject'],
@@ -41,6 +41,5 @@ class SaveMessageToDatabase
         ]);
 
         Session::now('flash', 'Success');
-
     }
 }

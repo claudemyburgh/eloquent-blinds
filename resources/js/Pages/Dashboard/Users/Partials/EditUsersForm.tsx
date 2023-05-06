@@ -13,7 +13,8 @@ import { ToastItem } from "@/Components/Notifications";
 
 interface UsersProps {
     user: {
-        name: string;
+        first_name: string;
+        last_name: string;
         email: string;
         password: string;
     };
@@ -24,7 +25,8 @@ const EditUsersForm = () => {
 
     const { data, setData, put, errors, processing, recentlySuccessful } =
         useForm({
-            name: user.name || "",
+            first_name: user.first_name || "",
+            last_name: user.last_name || "",
             email: user.email || "",
             password: user.password || "",
         });
@@ -70,16 +72,28 @@ const EditUsersForm = () => {
     return (
         <form className={`mt-6 space-y-6`} onSubmit={handleFormSubmit}>
             <div>
-                <InputLabel htmlFor="name" value="Name" />
+                <InputLabel htmlFor="first_name" value="First Name" />
                 <TextInput
-                    id="name"
-                    value={data.name}
+                    id="first_name"
+                    value={data.first_name}
                     onChange={handleFormInput}
                     type="text"
                     className="mt-1 block w-full"
                 />
 
-                <InputError message={errors.name} className="mt-2" />
+                <InputError message={errors.first_name} className="mt-2" />
+            </div>
+            <div>
+                <InputLabel htmlFor="last_name" value="Last Name" />
+                <TextInput
+                    id="last_name"
+                    value={data.last_name}
+                    onChange={handleFormInput}
+                    type="text"
+                    className="mt-1 block w-full"
+                />
+
+                <InputError message={errors.last_name} className="mt-2" />
             </div>
             <div>
                 <InputLabel htmlFor="email" value="Email" />
@@ -91,17 +105,6 @@ const EditUsersForm = () => {
                     className="mt-1 block w-full"
                 />
                 <InputError message={errors.email} className="mt-2" />
-            </div>
-            <div>
-                <InputLabel htmlFor="password" value="Password" />
-                <TextInput
-                    id="password"
-                    value={slugIt(data.password)}
-                    onChange={handleFormInput}
-                    type="password"
-                    className="mt-1 block w-full"
-                />
-                <InputError message={errors.password} className="mt-2" />
             </div>
 
             <div className={`flex items-center justify-between`}>
