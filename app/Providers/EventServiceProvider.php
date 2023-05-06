@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Events\ContactSubmitted;
+use App\Listeners\NewsletterSubscribe;
 use App\Listeners\SaveMessageToDatabase;
 use App\Listeners\SendContactEmail;
 use Illuminate\Auth\Events\Registered;
@@ -22,7 +23,8 @@ class EventServiceProvider extends ServiceProvider
         ],
         ContactSubmitted::class => [
             SendContactEmail::class,
-            SaveMessageToDatabase::class
+            SaveMessageToDatabase::class,
+            NewsletterSubscribe::class
         ]
     ];
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Panel } from "@/Components/Panel";
 
 import {
@@ -31,11 +31,11 @@ const ContactForm = () => {
         setContacts(data);
     }
 
-    useEffect(() => {
-        (async function () {
-            await getUsers();
-        })();
-    }, []);
+    // useEffect(() => {
+    //     (async function () {
+    //         await getUsers();
+    //     })();
+    // }, []);
 
     function handleInput(e: any) {
         e.preventDefault();
@@ -88,7 +88,8 @@ const ContactForm = () => {
         post,
         get,
     } = useForm({
-        name: "",
+        first_name: "",
+        last_name: "",
         email: "",
         phone: "",
         message: "",
@@ -101,20 +102,42 @@ const ContactForm = () => {
             {flash && <Banner message={flash} />}
             <form
                 onSubmit={handleSubmitForm}
+                noValidate
                 method={`POST`}
                 className={"space-y-2"}
             >
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-x-6 gap-y-2">
                     <div>
-                        <InputLabel htmlFor={`name`} value={`Name`} />
+                        <InputLabel
+                            htmlFor={`first_name`}
+                            value={`First Name`}
+                        />
                         <TextInput
-                            name={`name`}
-                            id={`name`}
-                            value={data.name}
+                            name={`first_name`}
+                            id={`first_name`}
+                            value={data.first_name}
                             onChange={handleInput}
                             className={`w-full mt-2`}
                         />
-                        <InputError className={`mt-2`} message={errors.name} />
+                        <InputError
+                            className={`mt-2`}
+                            message={errors.first_name}
+                        />
+                    </div>
+
+                    <div>
+                        <InputLabel htmlFor={`last_name`} value={`Last Name`} />
+                        <TextInput
+                            name={`last_name`}
+                            id={`last_name`}
+                            value={data.last_name}
+                            onChange={handleInput}
+                            className={`w-full mt-2`}
+                        />
+                        <InputError
+                            className={`mt-2`}
+                            message={errors.last_name}
+                        />
                     </div>
 
                     <div>
@@ -129,39 +152,42 @@ const ContactForm = () => {
                         />
                         <InputError className={`mt-2`} message={errors.email} />
                     </div>
-                </div>
 
-                <div>
-                    <InputLabel htmlFor={`phone`} value={`Phone`} />
-                    <TextInput
-                        name={`phone`}
-                        id={`phone`}
-                        type={`tel`}
-                        value={data.phone}
-                        onChange={handleInput}
-                        className={`w-full mt-2`}
-                    />
-                    <InputError className={`mt-2`} message={errors.phone} />
-                </div>
-                <div>
-                    <InputLabel htmlFor={`subject`} value={`Subject`} />
-                    <TextInput
-                        name={`subject`}
-                        id={`subject`}
-                        type={`text`}
-                        value={data.subject}
-                        onChange={handleInput}
-                        className={`w-full mt-2`}
-                    />
-                    <InputError className={`mt-2`} message={errors.subject} />
+                    <div>
+                        <InputLabel htmlFor={`phone`} value={`Phone`} />
+                        <TextInput
+                            name={`phone`}
+                            id={`phone`}
+                            type={`tel`}
+                            value={data.phone}
+                            onChange={handleInput}
+                            className={`w-full mt-2`}
+                        />
+                        <InputError className={`mt-2`} message={errors.phone} />
+                    </div>
+                    <div className={`col-span-2`}>
+                        <InputLabel htmlFor={`subject`} value={`Subject`} />
+                        <TextInput
+                            name={`subject`}
+                            id={`subject`}
+                            type={`text`}
+                            value={data.subject}
+                            onChange={handleInput}
+                            className={`w-full mt-2`}
+                        />
+                        <InputError
+                            className={`mt-2`}
+                            message={errors.subject}
+                        />
+                    </div>
                 </div>
                 <div>
                     <InputLabel htmlFor={`message`} value={`Message`} />
                     <Textarea
                         name={`message`}
                         id={`message`}
-                        value={data.message}
                         onChange={handleInput}
+                        value={data.message}
                         className={`w-full mt-2 min-h-[175px]`}
                     />
                     <InputError className={`mt-2`} message={errors.message} />

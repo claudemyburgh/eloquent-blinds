@@ -2,11 +2,7 @@ import { Head, Link } from "@inertiajs/react";
 import { PageProps } from "@/types";
 import React from "react";
 
-export default function Welcome({
-    auth,
-    laravelVersion,
-    phpVersion,
-}: PageProps<{ laravelVersion: string; phpVersion: string }>) {
+export default function Welcome({ auth }: PageProps) {
     return (
         <>
             <Head title="Welcome" />
@@ -329,10 +325,6 @@ export default function Welcome({
                                     Sponsor
                                 </a>
                             </div>
-                        </div>
-
-                        <div className="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                            Laravel v{laravelVersion} (PHP v{phpVersion})
                         </div>
                     </div>
                 </div>

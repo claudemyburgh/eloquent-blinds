@@ -106,17 +106,6 @@ const EditUsersForm = () => {
                 />
                 <InputError message={errors.email} className="mt-2" />
             </div>
-            <div>
-                <InputLabel htmlFor="password" value="Password" />
-                <TextInput
-                    id="password"
-                    value={slugIt(data.password)}
-                    onChange={handleFormInput}
-                    type="password"
-                    className="mt-1 block w-full"
-                />
-                <InputError message={errors.password} className="mt-2" />
-            </div>
 
             <div className={`flex items-center justify-between`}>
                 <SaveSubmitButton

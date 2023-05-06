@@ -1,9 +1,23 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { HandThumbUpIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import { Transition } from "@headlessui/react";
 
-const Banner: FC<{ message: string }> = ({ message }) => {
+const Banner: FC<{ message: string; time?: number }> = ({
+    message,
+    time = 3000,
+}) => {
     const [isShowing, setIsShowing] = useState<boolean>(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsShowing(false);
+        }, time);
+
+        return () => {
+            clearTimeout(timer);
+        };
+    }, [isShowing]);
+
     return (
         <Transition
             show={isShowing}
