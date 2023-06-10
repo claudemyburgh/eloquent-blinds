@@ -27,6 +27,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@popperjs/core": "^2.11.8",
+    "@react-google-maps/api": "^2.18.1",
     "@types/bytes": "^3.1.1",
     "@types/lodash": "^4.14.195",
     "@types/masonry-layout": "^4.2.5",

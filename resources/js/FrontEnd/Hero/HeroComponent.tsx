@@ -1,98 +1,42 @@
 import React from "react";
-import Wrapper from "@/FrontEnd/Layout/Wrapper";
 
 const HeroComponent = () => {
     return (
-        <div className={`bg-gray-900 text-white min-h-[300px]`}>
-            <Wrapper className={`py-24 flex`}>
-                <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
-                    <div className="sm:max-w-2xl">
-                        <h1 className="text-4xl font font-extrabold tracking-tight text-primary-500 sm:text-6xl">
-                            Supplier and Installer of high-quality blinds.
-                        </h1>
-                        <p className="mt-4 text-xl text-gray-500">
-                            This year, our new summer collection will shelter
-                            you from the harsh elements of a world that doesn't
-                            care if you live or die.
-                        </p>
-                    </div>
-                    <div>
-                        <div className="mt-10">
-                            <div
-                                aria-hidden="true"
-                                className="pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full"
-                            >
-                                <div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
-                                    <div className="flex items-center space-x-6 lg:space-x-8">
-                                        <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
-                                                <img
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
-                                                    alt=""
-                                                    className="w-full h-full object-center object-cover"
-                                                />
-                                            </div>
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                <img
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
-                                                    alt=""
-                                                    className="w-full h-full object-center object-cover"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                <img
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
-                                                    alt=""
-                                                    className="w-full h-full object-center object-cover"
-                                                />
-                                            </div>
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                <img
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
-                                                    alt=""
-                                                    className="w-full h-full object-center object-cover"
-                                                />
-                                            </div>
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                <img
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
-                                                    alt=""
-                                                    className="w-full h-full object-center object-cover"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                <img
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
-                                                    alt=""
-                                                    className="w-full h-full object-center object-cover"
-                                                />
-                                            </div>
-                                            <div className="w-44 h-64 rounded-lg overflow-hidden">
-                                                <img
-                                                    src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
-                                                    alt=""
-                                                    className="w-full h-full object-center object-cover"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <a
-                                href="#"
-                                className="inline-block text-center bg-primary-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-primary-700"
-                            >
-                                Shop Collection
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </Wrapper>
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
+            accusamus aliquam asperiores aspernatur, atque consequuntur culpa
+            cum debitis dolorum esse fugiat harum in ipsum itaque libero magnam
+            maiores, maxime minus officia officiis perferendis quae quisquam
+            ratione repudiandae sequi ut veritatis voluptatem! Accusamus commodi
+            dolor et, exercitationem fugiat ipsam minima molestiae, nesciunt
+            porro, quidem reprehenderit sint tempora veniam? A accusamus
+            adipisci alias, aliquam beatae consectetur debitis dolores ea earum,
+            eius eligendi eveniet fugit hic iste maiores minus molestiae nihil
+            nisi obcaecati officia optio placeat possimus rem sed sit totam
+            ullam unde velit voluptates voluptatum! Aliquid blanditiis cum
+            deserunt distinctio dolores impedit ipsam, ipsum magni maiores nemo
+            nobis quae quam quia quibusdam quisquam ratione rem tempore ullam ut
+            veniam. Ad aperiam atque culpa dolore, ipsa ipsam magnam nihil
+            possimus quis quod, recusandae, saepe sit soluta ullam vel.
+            Accusantium aliquam aliquid aperiam, consectetur eaque
+            exercitationem, fugiat hic iste labore laboriosam laudantium magnam
+            nemo odit porro quae quia quis ratione recusandae soluta temporibus
+            unde vitae voluptatum. Aliquam commodi deserunt enim ex fugiat id
+            perferendis quia sapiente! Adipisci dicta magnam neque quod vitae?
+            Aperiam architecto consequatur culpa et iste iusto odio quos rem
+            repellendus unde! A aut blanditiis cum debitis eaque eligendi, esse,
+            est ex facere facilis impedit incidunt iste iure laboriosam magnam
+            modi perspiciatis praesentium quibusdam rerum sapiente similique
+            tempora tempore temporibus ullam velit veritatis voluptas
+            voluptates! Atque aut ducimus excepturi, molestias sapiente tempore.
+            Dolorem, repellat ullam? Consectetur consequatur debitis deleniti
+            dolorum eius rem ut veniam. A accusamus accusantium alias aperiam
+            autem cum deserunt dolor, dolorem et eum id impedit iste magni
+            minima, nihil quibusdam, quos repellat sed voluptas voluptatibus?
+            Adipisci alias autem beatae commodi culpa doloribus, est ex ipsum
+            itaque labore laboriosam nam non obcaecati quae quaerat qui quo
+            sapiente sed voluptas voluptatem. Id necessitatibus porro quam rerum
+            ullam voluptas voluptatem. Maiores, quasi!
         </div>
     );
 };

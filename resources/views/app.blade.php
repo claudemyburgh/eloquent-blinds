@@ -18,5 +18,6 @@
 </head>
 <body class="font-sans antialiased bg-gray-100 dark:bg-gray-900 overflow-x-hidden">
 @inertia
+
 </body>
 </html>
