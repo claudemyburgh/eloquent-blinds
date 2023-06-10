@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import Navbar from "@/FrontEnd/Navbar/Navbar";
 import { Toaster } from "react-hot-toast";
+import Footer from "@/FrontEnd/Footer/Footer";
 
 export default function AppLayout({ children }: PropsWithChildren) {
     return (
@@ -14,6 +15,8 @@ export default function AppLayout({ children }: PropsWithChildren) {
 
             <Navbar />
             <div className="w-full text-white">{children}</div>
+
+            <Footer />
         </div>
     );
 }

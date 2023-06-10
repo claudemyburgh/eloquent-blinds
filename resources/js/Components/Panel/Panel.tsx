@@ -14,7 +14,7 @@ interface PanelHeaderProps extends PanelProps {
 const Panel = ({ children, className, styles = "default" }: PanelProps) => {
     return (
         <div
-            className={`p-4 sm:p-8 relative overflow-hidden shadow-md shadow-gray-950 rounded-lg ${colorStyles[styles]} ${className}`}
+            className={`p-4 sm:p-8 relative overflow-hidden shadow-md shadow-gray-950/10 dark:shadow-gray-950 rounded-lg ${colorStyles[styles]} ${className}`}
         >
             {styles !== "default" && (
                 <div
