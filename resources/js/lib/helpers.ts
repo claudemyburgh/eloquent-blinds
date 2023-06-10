@@ -27,3 +27,7 @@ export function bytesFormat(value: number): string {
     }
     return bytes.toFixed(2) + units[i];
 }
+
+export function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(" ");
+}

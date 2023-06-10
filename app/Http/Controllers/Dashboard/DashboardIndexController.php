@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
+
 class DashboardIndexController extends Controller
 {
     /**
@@ -25,6 +26,7 @@ class DashboardIndexController extends Controller
 
         $labels = $messages->pluck('date');
         $data = $messages->pluck('count');
+
 
         return Inertia::render('Dashboard/Dashboard', [
             'users' => $users,
