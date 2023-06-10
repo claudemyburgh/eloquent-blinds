@@ -2,6 +2,7 @@ import React from "react";
 import AppLayout from "@/Layouts/AppLayout";
 import { Head, usePage } from "@inertiajs/react";
 import ReviewPanel from "@/FrontEnd/Review/ReviewPanel";
+import CustomerCloud from "@/FrontEnd/CustomerCloud/CustomerCloud";
 
 const Home = () => {
     const { ziggy } = usePage<any>().props;
@@ -13,6 +14,10 @@ const Home = () => {
             <Head title="Home">
                 <link rel="canonical" href={ziggy.location} />
             </Head>
+
+            <div className="wrapper mt-24">
+                <CustomerCloud />
+            </div>
 
             <div className="relative">
                 <div className="wrapper mt-24 ">

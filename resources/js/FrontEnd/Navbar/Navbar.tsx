@@ -1,9 +1,11 @@
 import React from "react";
 import dark_logo from "@/../img/logo-on-dark.svg";
 import light_logo from "@/../img/logo-on-light.svg";
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 
 const Navbar = () => {
+    const url = usePage().url;
+
     return (
         <>
             <div className={`md:fixed w-full z-50 top-2`}>
@@ -28,11 +30,30 @@ const Navbar = () => {
                         <div className="sr-only">Eloquent Blinds</div>
                     </Link>
                     <div className="flex space-x-8 font-bold">
-                        <Link href={route("home")}>Home</Link>
+                        <Link
+                            className={url === "/" ? "text-primary-500" : ""}
+                            href={route("home")}
+                        >
+                            Home
+                        </Link>
                         <a href="#">Products</a>
-                        <Link href={route("reviews")}>Reviews</Link>
+                        <Link
+                            className={
+                                url === "/reviews" ? "text-primary-500" : ""
+                            }
+                            href={route("reviews")}
+                        >
+                            Reviews
+                        </Link>
                         <a href="#">FAQ's</a>
-                        <Link href={route("contact")}>Contact Us</Link>
+                        <Link
+                            className={
+                                url === "/contact-us" ? "text-primary-500" : ""
+                            }
+                            href={route("contact")}
+                        >
+                            Contact Us
+                        </Link>
                     </div>
                 </div>
             </div>

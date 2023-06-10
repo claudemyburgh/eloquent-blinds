@@ -12,9 +12,6 @@ const ReviewPanel = () => {
             itemSelector: ".grid-item",
             resize: true,
             stagger: 2,
-            // fitWidth: true,
-            // gutter: 50,
-            // columnWidth: 150,
         });
     }, []);
 
