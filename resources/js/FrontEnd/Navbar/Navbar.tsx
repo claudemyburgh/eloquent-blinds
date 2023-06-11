@@ -10,7 +10,7 @@ const Navbar = () => {
         <>
             <div className={`md:fixed w-full z-50 top-2`}>
                 <div
-                    className={`wrapper text-gray-500 dark:bg-gray-900/60 bg-gray-200/60 border border-gray-300 dark:border-primary-900/40 dark:text-gray-100 px-6 py-4 rounded-lg flex justify-between items-center shadow-2xl shadow-primary-900/30 backdrop-blur-sm`}
+                    className={`wrapper relative card text-gray-500 dark:bg-gray-900/60 bg-gray-200/60 border border-gray-300 dark:border-primary-900/40 dark:text-gray-100 px-6 py-4 rounded-lg flex justify-between items-center shadow-2xl shadow-primary-900/30 backdrop-blur-sm`}
                 >
                     <Link
                         href={route("home")}

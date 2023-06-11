@@ -17,7 +17,7 @@ interface DataProps {
 const ReviewCard = ({ data }: DataProps) => {
     return (
         <div
-            className={`p-4 md:p-6 space-y-4 rounded-lg dark:bg-gray-900 bg-gray-200 text-gray-500 border border-gray-300 dark:border-gray-800 ${classNames}`}
+            className={`card p-4 md:p-6 space-y-4 rounded-lg dark:bg-gray-900 bg-gray-200 text-gray-500 border border-gray-300 dark:border-gray-800 ${classNames}`}
         >
             <div
                 className={`text-sm space-y-4`}

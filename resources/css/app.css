@@ -77,4 +77,28 @@
         @apply bg-red-600 border border-transparent text-white hover:bg-red-500 active:bg-red-700 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800;
     }
 
+    .card {
+        @apply relative;
+        --mouse-x: 0;
+        --mouse-y: 0;
+    }
+
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    .card::before {
+        content: "";
+        background: radial-gradient(300px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.1), transparent);
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        position: absolute;
+        opacity: 0;
+        transition-duration: 250ms;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+    }
+
 }

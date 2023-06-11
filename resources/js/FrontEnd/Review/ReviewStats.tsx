@@ -35,8 +35,10 @@ const ReviewStats: FC<Props> = ({ className }) => {
     return (
         <div className={className}>
             <div
-                className={`p-4 md:p-6 rounded-lg dark:bg-gray-900 bg-gray-200 text-gray-500 border border-gray-300 dark:border-gray-800 ${classNames}`}
+                className={`p-4 md:p-6 relative card rounded-lg dark:bg-gray-900 bg-gray-200 text-gray-500 border border-gray-300 dark:border-gray-800 ${classNames}`}
             >
+                <div className="card-border" aria-hidden={true}></div>
+
                 <div className="lg:col-span-4">
                     <img className={`h-10 mb-2`} src={logo} alt="logo icon" />
                     <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
