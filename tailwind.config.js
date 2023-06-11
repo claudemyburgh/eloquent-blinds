@@ -9,7 +9,7 @@ module.exports = {
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.{tsx,ts}",
     ],
-
+    darkMode: "class",
     theme: {
         extend: {
             colors: {
@@ -20,6 +20,9 @@ module.exports = {
             },
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+            },
+            animation: {
+                "spin-slow": `spin 5s linear infinite`,
             },
         },
     },

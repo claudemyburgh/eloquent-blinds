@@ -13,7 +13,7 @@ const ContactUs = () => {
             </Head>
 
             <div className="relative">
-                <div className="wrapper mt-24 ">
+                <div className="wrapper pt-24 ">
                     <ContactForm />
                 </div>
             </div>

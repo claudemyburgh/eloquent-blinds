@@ -16,7 +16,7 @@ const Reviews = () => {
             </Head>
 
             <div className="relative">
-                <div className="wrapper mt-24 ">
+                <div className="wrapper pt-24 ">
                     <div className="my-10">
                         <img
                             className={`block mx-auto pt-12`}

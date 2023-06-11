@@ -81,6 +81,11 @@
         @apply relative;
         --mouse-x: 0;
         --mouse-y: 0;
+        --light: rgba(255, 255, 255, 0.51)
+    }
+
+    .dark .card {
+        --light: rgba(55, 155, 255, 0.1)
     }
 
     .card:hover::before {
@@ -89,7 +94,7 @@
 
     .card::before {
         content: "";
-        background: radial-gradient(300px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.1), transparent);
+        background: radial-gradient(300px circle at var(--mouse-x) var(--mouse-y), var(--light), transparent);
         height: 100%;
         width: 100%;
         z-index: 10;
@@ -99,6 +104,11 @@
         pointer-events: none;
         top: 0;
         left: 0;
+    }
+
+    #blob {
+        translate: -50% -50%;
+        @apply absolute left-1/2 rounded-ee-full top-1/2 animate-spin-slow -z-10 h-[600px] aspect-square;
     }
 
 }

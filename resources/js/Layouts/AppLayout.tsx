@@ -2,8 +2,12 @@ import React, { PropsWithChildren } from "react";
 import Navbar from "@/FrontEnd/Navbar/Navbar";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/FrontEnd/Footer/Footer";
+import Blob from "@/FrontEnd/Mouse/Blob";
+import { useDarkMode } from "usehooks-ts";
 
 export default function AppLayout({ children }: PropsWithChildren) {
+    const { isDarkMode } = useDarkMode();
+
     const handleMouseMovement = (e: MouseEvent) => {
         const { currentTarget: target } = e;
         const rect = (target as HTMLElement).getBoundingClientRect();
@@ -20,18 +24,21 @@ export default function AppLayout({ children }: PropsWithChildren) {
     }, 1000);
 
     return (
-        <div className="min-h-screen relative z-50">
-            <Toaster
-                position={`top-right`}
-                toastOptions={{
-                    duration: 2200,
-                }}
-            />
-
-            <Navbar />
-            <div className="w-full text-white">{children}</div>
-
-            <Footer />
+        <div className={`absolute inset-0 ${isDarkMode ? "dark" : "light"}`}>
+            <div
+                className={`min-h-screen relative z-0 bg-white dark:bg-gray-900`}
+            >
+                <Blob />
+                <Toaster
+                    position={`top-right`}
+                    toastOptions={{
+                        duration: 2200,
+                    }}
+                />
+                <Navbar />
+                <div className="w-full text-white">{children}</div>
+                <Footer />
+            </div>
         </div>
     );
 }

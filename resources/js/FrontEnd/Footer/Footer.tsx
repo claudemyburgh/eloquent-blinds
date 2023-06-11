@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "@inertiajs/react";
+import { useDarkMode } from "usehooks-ts";
 
 const Footer = () => {
+    const { toggle, isDarkMode } = useDarkMode();
+
     return (
         <footer className={`w-full mt-12`} aria-labelledby="footer-heading">
             <h2 id="footer-heading" className="sr-only">
@@ -98,11 +101,21 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="wrapper mb-6 pt-6 w-full">
+            <div className="wrapper relative z-10 mb-6 pt-6 w-full">
                 <p className="text-base text-gray-400 ">
                     &copy; {new Date().getFullYear()} Eloquent Blinds, Inc. All
                     rights reserved.
                 </p>
+                <p className={`text-black dark:text-white`}>
+                    Current theme: {isDarkMode ? "dark" : "light"}
+                </p>
+                <button
+                    className={"btn btn-secondary"}
+                    type={"button"}
+                    onClick={toggle}
+                >
+                    Darkmode
+                </button>
             </div>
         </footer>
     );
