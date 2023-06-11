@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "@inertiajs/react";
-import { useDarkMode } from "usehooks-ts";
 
 const Footer = () => {
-    const { toggle, isDarkMode } = useDarkMode();
+    // const { toggle, isDarkMode } = useDarkMode();
 
     return (
         <footer className={`w-full mt-12`} aria-labelledby="footer-heading">
@@ -11,10 +10,10 @@ const Footer = () => {
                 Footer
             </h2>
             <div
-                className={`wrapper text-gray-500 dark:bg-gray-900/60 bg-gray-200/60 border border-gray-300 dark:border-primary-900/40 dark:text-gray-100 px-6 py-6 rounded-lg flex justify-between items-center shadow-2xl shadow-primary-900/30 backdrop-blur-sm`}
+                className={`wrapper card text-gray-500 dark:bg-gray-900/60 bg-gray-200/60 border border-gray-300 dark:border-primary-900/40 dark:text-gray-100 px-6 py-6 rounded-lg flex justify-between items-center shadow-2xl shadow-primary-900/30 backdrop-blur-sm`}
             >
-                <div className="grid grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-                    <div>
+                <div className="grid  grid-cols-1 md:grid-cols-3 w-full gap-4 md:gap-6 lg:gap-8 ">
+                    <div className={`mb-6`}>
                         <h3 className="text-md font-semibold text-gray-400 tracking-wider uppercase">
                             Product Categories
                         </h3>
@@ -42,7 +41,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div>
+                    <div className={`mb-6`}>
                         <h3 className="text-md font-semibold text-gray-400 tracking-wider uppercase">
                             Friend's of us
                         </h3>
@@ -65,18 +64,10 @@ const Footer = () => {
                                     Crystal Bars
                                 </a>
                             </li>
-                            <li>
-                                <a
-                                    href={"/"}
-                                    className={`text-base text-gray-300 hover:text-gray-600`}
-                                >
-                                    AllyCat Garage Doors
-                                </a>
-                            </li>
                         </ul>
                     </div>
 
-                    <div>
+                    <div className={`mb-6`}>
                         <h3 className="text-md font-semibold text-gray-400 tracking-wider uppercase">
                             Legal Stuff
                         </h3>
@@ -102,20 +93,10 @@ const Footer = () => {
                 </div>
             </div>
             <div className="wrapper relative z-10 mb-6 pt-6 w-full">
-                <p className="text-base text-gray-400 ">
+                <p className="text-base text-gray-400 pb-6">
                     &copy; {new Date().getFullYear()} Eloquent Blinds, Inc. All
                     rights reserved.
                 </p>
-                <p className={`text-black dark:text-white`}>
-                    Current theme: {isDarkMode ? "dark" : "light"}
-                </p>
-                <button
-                    className={"btn btn-secondary"}
-                    type={"button"}
-                    onClick={toggle}
-                >
-                    Darkmode
-                </button>
             </div>
         </footer>
     );

@@ -19,11 +19,13 @@ const Reviews = () => {
                 <div className="wrapper pt-24 ">
                     <div className="my-10">
                         <img
+                            height={86}
+                            width={273}
+                            loading={`lazy`}
                             className={`block mx-auto pt-12`}
                             src={logo}
                             alt="google logo "
                         />
-
                         <h1
                             className={`text-2xl text-gray-500 dark:text-gray-200 font-bold text-center`}
                         >

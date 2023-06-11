@@ -27,6 +27,9 @@ const ReviewCard = ({ data }: DataProps) => {
             <div className={`flex space-x-4`}>
                 <div>
                     <img
+                        height={50}
+                        width={50}
+                        loading={`lazy`}
                         src={data.avatar}
                         alt={data.author}
                         className={`h-12 w-12 rounded-full`}

@@ -38,7 +38,14 @@ const ReviewStats: FC<Props> = ({ className }) => {
                 className={`p-4 md:p-6 relative card rounded-lg dark:bg-gray-900 bg-gray-50 text-gray-500 border border-gray-200 dark:border-gray-800 ${classNames}`}
             >
                 <div className="lg:col-span-4">
-                    <img className={`h-10 mb-2`} src={logo} alt="logo icon" />
+                    <img
+                        height={37}
+                        width={124}
+                        loading={`lazy`}
+                        className={`h-10 mb-2`}
+                        src={logo}
+                        alt="logo icon"
+                    />
                     <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
                         Customer Reviews
                     </h2>

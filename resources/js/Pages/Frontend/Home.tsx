@@ -2,6 +2,8 @@ import React from "react";
 import AppLayout from "@/Layouts/AppLayout";
 import { Head, Link, usePage } from "@inertiajs/react";
 import ReviewPanel from "@/FrontEnd/Review/ReviewPanel";
+import Map from "@/FrontEnd/Map/Map";
+import HeroComponent from "@/FrontEnd/Hero/HeroComponent";
 
 const Home = () => {
     const { ziggy } = usePage<any>().props;
@@ -15,7 +17,10 @@ const Home = () => {
             </Head>
 
             <div className="relative">
+                <HeroComponent />
                 <div className="wrapper pt-24 ">
+                    <Map />
+
                     <ReviewPanel />
                 </div>
                 <div className="h-[220px] bg-gradient-to-t from-white via-white dark:from-gray-900 dark:via-gray-900 to-transparent absolute bottom-0 inset-x-0 flex items-center justify-center">

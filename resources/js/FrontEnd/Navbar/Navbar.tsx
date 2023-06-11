@@ -4,6 +4,7 @@ import light_logo from "@/../img/logo-on-light.svg";
 import { Link, usePage } from "@inertiajs/react";
 import { Bars3BottomRightIcon } from "@heroicons/react/24/solid";
 import { Popover, Transition } from "@headlessui/react";
+import { ThemeSelector } from "@/FrontEnd/Theme/ThemeSelector";
 
 const links = [
     { href: "/", label: "Home" },
@@ -28,11 +29,17 @@ const Navbar = () => {
                         className="text-2xl font-black shrink-0"
                     >
                         <img
+                            height={37}
+                            width={252}
+                            loading={`lazy`}
                             className={`h-9 hidden dark:block`}
                             src={dark_logo}
                             alt=""
                         />
                         <img
+                            height={37}
+                            width={252}
+                            loading={`lazy`}
                             className={`h-9 dark:hidden block`}
                             src={light_logo}
                             alt=""
@@ -65,6 +72,8 @@ const Navbar = () => {
                         >
                             Contact Us
                         </Link>
+
+                        <ThemeSelector className="relative z-10" />
                     </div>
 
                     <Popover.Button className="h-10 w-10 rounded-lg border border-gray-500 hover:scale-105 text-gray-600 dark:text-gray-200 dark:bg-gray-900 flex justify-center items-center md:hidden">
