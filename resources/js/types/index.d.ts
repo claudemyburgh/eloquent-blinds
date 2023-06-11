@@ -35,6 +35,9 @@ export type PageProps<
     emails: {
         unread: number;
     };
+    api: {
+        maps: string;
+    };
 };
 
 export interface ChildrenProps {

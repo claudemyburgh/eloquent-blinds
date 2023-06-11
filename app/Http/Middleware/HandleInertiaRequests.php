@@ -62,6 +62,9 @@ class HandleInertiaRequests extends Middleware
             },
 
             'csrf' => csrf_token(),
+            'api' => [
+                'maps' => config('google.api.maps')
+            ]
         ]);
     }
 }
