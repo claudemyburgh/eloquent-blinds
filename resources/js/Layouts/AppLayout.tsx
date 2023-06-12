@@ -1,9 +1,10 @@
-import React, { PropsWithChildren } from "react";
-import Navbar from "@/FrontEnd/Navbar/Navbar";
-import { Toaster } from "react-hot-toast";
-import Footer from "@/FrontEnd/Footer/Footer";
-import { useDarkMode } from "usehooks-ts";
-import { Head } from "@inertiajs/react";
+import React, { PropsWithChildren } from "react"
+import Navbar from "@/FrontEnd/Navbar/Navbar"
+import { Toaster } from "react-hot-toast"
+import Footer from "@/FrontEnd/Footer/Footer"
+import { useDarkMode } from "usehooks-ts"
+import { Head } from "@inertiajs/react"
+import GridPattern from "@/FrontEnd/Theme/GridPattern"
 
 const themeScript = `
   let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -54,47 +55,47 @@ const themeScript = `
 
   mediaQuery.addEventListener('change', updateThemeWithoutTransitions)
   window.addEventListener('storage', updateThemeWithoutTransitions)
-`;
+`
 
 export default function AppLayout({ children }: PropsWithChildren) {
-    const { isDarkMode } = useDarkMode();
+  const { isDarkMode } = useDarkMode()
 
-    const handleMouseMovement = (e: MouseEvent) => {
-        const { currentTarget: target } = e;
-        const rect = (target as HTMLElement).getBoundingClientRect();
-        let y = e.clientY - rect.top;
-        let x = e.clientX - rect.left;
-        (target as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
-        (target as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
-    };
+  const handleMouseMovement = (e: MouseEvent) => {
+    const { currentTarget: target } = e
+    const rect = (target as HTMLElement).getBoundingClientRect()
+    let y = e.clientY - rect.top
+    let x = e.clientX - rect.left
+    ;(target as HTMLElement).style.setProperty("--mouse-x", `${x}px`)
+    ;(target as HTMLElement).style.setProperty("--mouse-y", `${y}px`)
+  }
 
-    setTimeout(() => {
-        for (const card of document.querySelectorAll(".card")) {
-            (card as HTMLElement).onmousemove = handleMouseMovement;
-        }
-    }, 1000);
+  setTimeout(() => {
+    for (const card of document.querySelectorAll(".card")) {
+      ;(card as HTMLElement).onmousemove = handleMouseMovement
+    }
+  }, 1000)
 
-    // ${isDarkMode ? "dark" : "light"}
-    return (
-        <div className={`relative inset-0 `}>
-            <div
-                className={`min-h-screen relative z-0 bg-white dark:bg-gray-900`}
-            >
-                <Head>
-                    <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-                </Head>
+  // ${isDarkMode ? "dark" : "light"}
+  return (
+    <div className={`relative inset-0 `}>
+      <div className={`min-h-screen  relative z-0 bg-white dark:bg-gray-900`}>
+        <Head>
+          <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        </Head>
 
-                {/*<Blob />*/}
-                <Toaster
-                    position={`top-right`}
-                    toastOptions={{
-                        duration: 2200,
-                    }}
-                />
-                <Navbar />
-                <div className="w-full text-white">{children}</div>
-                <Footer />
-            </div>
-        </div>
-    );
+        <GridPattern className={`h-[500px] fixed top-0 inset-x-0`} />
+
+        {/*<Blob />*/}
+        <Toaster
+          position={`top-right`}
+          toastOptions={{
+            duration: 2200,
+          }}
+        />
+        <Navbar />
+        <div className="w-full text-white">{children}</div>
+        <Footer />
+      </div>
+    </div>
+  )
 }
