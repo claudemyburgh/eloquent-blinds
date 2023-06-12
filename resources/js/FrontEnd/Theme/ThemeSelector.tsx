@@ -71,7 +71,7 @@ export function ThemeSelector(props: any) {
     <Listbox as="div" value={selectedTheme} onChange={setSelectedTheme} {...props}>
       <Listbox.Label className="sr-only">Theme</Listbox.Label>
       <Listbox.Button
-        className="flex h-9 w-9 items-center justify-center rounded-md shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-inset dark:ring-white/5"
+        className="h-8 w-8 md:h-9 md:w-9 rounded-lg border border-gray-500 hover:scale-105 text-gray-600 dark:text-gray-200 dark:bg-gray-900 flex justify-center items-center"
         aria-label={selectedTheme?.name}
       >
         <LightIcon className="hidden h-4 w-4 fill-primary-400 [[data-theme=light]_&]:block" />
@@ -96,7 +96,7 @@ export function ThemeSelector(props: any) {
           >
             {({ selected }) => (
               <>
-                <div className="rounded-md bg-white p-1 shadow ring-1 ring-gray-900/5 dark:bg-gray-700 dark:ring-inset dark:ring-white/5">
+                <div className="rounded-md bg-white hover:bg-gray-50 p-1 shadow ring-1 ring-gray-900/5 dark:bg-gray-700 hover:dark:bg-gray-800 dark:ring-inset dark:ring-white/5">
                   <theme.icon className={twMerge("h-4 w-4", selected ? "fill-primary-400 dark:fill-primary-400" : "fill-gray-400")} />
                 </div>
                 <div className="ml-3 hover:text-primary-400">{theme.name}</div>

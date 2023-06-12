@@ -23,14 +23,14 @@ const Navbar = () => {
         <div
           className={`wrapper relative card text-gray-500 dark:bg-gray-900/60 bg-gray-200/90 border border-gray-300 dark:border-primary-900/40 dark:text-gray-100 px-6 py-4 rounded-b-lg md:rounded-lg flex flex-wrap justify-between items-center shadow-2xl shadow-primary-900/30 backdrop-blur-sm`}
         >
-          <Link href={route("home")} id="logo" className="text-2xl font-black flex shrink-0 mr-2">
+          <Link href={route("home")} id="logo" className="flex shrink-0 -ml-12 md:ml-0">
             <>
-              <img height={37} width={252} loading={`lazy`} className={`h-7 md:h-9 -ml-6 md:ml-0 hidden dark:block`} src={dark_logo} alt="Eloquent Blinds Logo" />
-              <img height={37} width={252} loading={`lazy`} className={`h-7 md:h-9 -ml-6 md:ml-0 dark:hidden block`} src={light_logo} alt="Eloquent Blinds Logo" />
+              <img height={37} width={252} loading={`lazy`} className={`h-6 md:h-9 md:ml-0 hidden dark:block`} src={dark_logo} alt="Eloquent Blinds Logo" />
+              <img height={37} width={252} loading={`lazy`} className={`h-6 md:h-9 md:ml-0 dark:hidden block`} src={light_logo} alt="Eloquent Blinds Logo" />
               <div className="sr-only">Eloquent Blinds</div>
             </>
           </Link>
-          <div className={`flex space-x-2 md:space-x-8 items-center`}>
+          <div className={`flex space-x-2 md:space-x-6 items-center`}>
             <div className="md:flex space-x-8 font-bold hidden">
               {links.map((link, index) => (
                 <Link key={index} className={url === link.href ? "text-primary-500" : ""} href={link.href}>
@@ -39,7 +39,7 @@ const Navbar = () => {
               ))}
             </div>
             <ThemeSelector className="relative z-10" />
-            <Popover.Button className="h-9 w-9 rounded-lg border border-gray-500 hover:scale-105 text-gray-600 dark:text-gray-200 dark:bg-gray-900 flex justify-center items-center md:hidden">
+            <Popover.Button className="h-8 w-8 md:h-9 md:w-9 rounded-lg border border-gray-500 hover:scale-105 text-gray-600 dark:text-gray-200 dark:bg-gray-900 flex justify-center items-center md:hidden">
               <Bars3BottomRightIcon height={20} width={20} className={`block`} />
             </Popover.Button>
           </div>
