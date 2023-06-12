@@ -83,7 +83,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
           <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         </Head>
 
-        <GridPattern className={`h-[500px] fixed top-0 inset-x-0`} />
+        <GridPattern className={`h-[300px] fixed top-0 inset-x-0`} />
 
         {/*<Blob />*/}
         <Toaster

@@ -1,12 +1,12 @@
 import React from "react"
 import { ChevronRightIcon } from "@heroicons/react/20/solid"
 import { Link } from "@inertiajs/react"
-import hero from "@/../img/hero.png"
+import hero from "@/../img/hero.webp"
 
 const HeroComponent = () => {
   return (
     <div className="relative isolate overflow-hidden">
-      <div className="wrapper pt-10 pb-24 sm:pb-32 lg:flex lg:py-40">
+      <div className="wrapper pt-10 pb-4 sm:pb-32 lg:flex lg:pt-32">
         <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
           <div className="mt-24 sm:mt-32 lg:mt-16">
             <a href="#" className="inline-flex space-x-4">
@@ -25,8 +25,7 @@ const HeroComponent = () => {
           <p className="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
             We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space. We
             have a variety of options to choose from, including Aluminium Blinds , Bamboo Blinds , Basswood Blinds , Honeycomb Blinds , Roller Blinds , Venetian Blinds , and Zebra
-            Blinds . At Eloquent Blinds, we believe that the installation of your blinds should be just as hassle-free as the purchasing process. That's why we offer professional
-            installation services for all of our blinds.
+            Blinds.
           </p>
           <div className="mt-10 flex items-center gap-x-6">
             <Link
@@ -41,8 +40,9 @@ const HeroComponent = () => {
           </div>
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32">
-          <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-            <img src={hero} alt="App screenshot" width={2432} height={1442} className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10" />
+          <div className="max-w-3xl relative flex-none sm:max-w-5xl lg:max-w-none">
+            <img src={hero} alt="App screenshot" width={2432} height={1442} className="w-[76rem]  rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10" />
+            <div className="absolute inset-0 z-10 card w-full h-full "></div>
           </div>
         </div>
       </div>
