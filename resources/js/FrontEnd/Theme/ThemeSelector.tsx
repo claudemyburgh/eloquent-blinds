@@ -1,8 +1,14 @@
-import { useEffect, useState } from "react"
+import { ComponentType, useEffect, useState } from "react"
 import { Listbox } from "@headlessui/react"
 import { twJoin, twMerge } from "tailwind-merge"
 
-const themes = [
+interface ThemeProps {
+  name: string
+  value: string
+  icon: ComponentType<any>
+}
+
+const themes: ThemeProps[] = [
   { name: "Light", value: "light", icon: LightIcon },
   { name: "Dark", value: "dark", icon: DarkIcon },
   { name: "System", value: "system", icon: SystemIcon },
@@ -45,17 +51,22 @@ function SystemIcon(props: any) {
 }
 
 export function ThemeSelector(props: any) {
-  let [selectedTheme, setSelectedTheme] = useState<any>()
+  let [selectedTheme, setSelectedTheme] = useState<ThemeProps | null>(null)
 
   useEffect(() => {
-    if (selectedTheme) {
-      document.documentElement.setAttribute("data-theme", selectedTheme.value)
-    } else {
-      setSelectedTheme(themes.find((theme) => theme.value === document.documentElement.getAttribute("data-theme")))
+    try {
+      if (selectedTheme) {
+        document.documentElement.setAttribute("data-theme", selectedTheme.value)
+      } else {
+        const currentTheme = document.documentElement.getAttribute("data-theme")
+        // @ts-expect-error
+        setSelectedTheme(themes.find((theme: ThemeProps) => theme.value === currentTheme))
+      }
+    } catch (error) {
+      console.error("Error setting theme:", error)
     }
-  }, [selectedTheme])
+  }, [selectedTheme, themes, setSelectedTheme])
 
-  // @ts-ignore
   return (
     <Listbox as="div" value={selectedTheme} onChange={setSelectedTheme} {...props}>
       <Listbox.Label className="sr-only">Theme</Listbox.Label>

@@ -5,20 +5,16 @@ import hero from "@/../img/hero.webp"
 
 const HeroComponent = () => {
   return (
-    <div className="relative isolate overflow-hidden">
-      <div className="wrapper pt-10 pb-4 sm:pb-32 lg:flex lg:pt-32">
+    <div className="relative overflow-hidden">
+      <div className="wrapper pt-10 pb-4 sm:pb-1 lg:flex lg:pt-22 2xl:pt-32">
         <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
           <div className="mt-24 sm:mt-32 lg:mt-16">
-            <a href="#" className="inline-flex space-x-4">
+            <a href={`https://view.publitas.com/e-books/quantum-signature/page/1`} target={`_blank`} className="inline-flex space-x-4">
               <span className="rounded-full bg-primary-500/10 px-3 py-1 text-sm font-semibold leading-6 text-primary-400 ring-1 ring-inset ring-primary-500/20">What's new</span>
-              <a
-                href={`https://view.publitas.com/e-books/quantum-signature/page/1`}
-                target={`_blank`}
-                className="inline-flex group uppercase items-center space-x-2 text-sm font-medium leading-6 text-gray-300"
-              >
+              <span className="inline-flex group  items-center space-x-2 text-sm font-semibold leading-6 text-gray-500 dark:text-gray-300 ">
                 <span>E-Catalogue</span>
                 <ChevronRightIcon className="h-5 w-5 text-gray-500 transition-transform group-hover:translate-x-[5px]" aria-hidden="true" />
-              </a>
+              </span>
             </a>
           </div>
           <h1 className="mt-10 text-4xl font-black tracking-tight text-gray-800 dark:text-white sm:text-6xl">Supplier and installer of top quality blinds.</h1>

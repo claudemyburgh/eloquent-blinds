@@ -23,24 +23,20 @@ const Navbar = () => {
         <div
           className={`wrapper relative card text-gray-500 dark:bg-gray-900/60 bg-gray-200/90 border border-gray-300 dark:border-primary-900/40 dark:text-gray-100 px-6 py-4 rounded-b-lg md:rounded-lg flex flex-wrap justify-between items-center shadow-2xl shadow-primary-900/30 backdrop-blur-sm`}
         >
-          <Link href={route("home")} id="logo" className="text-2xl font-black flex flex-1">
-            <img height={37} width={252} loading={`lazy`} className={`h-7 md:h-9 -ml-6 md:ml-0 hidden dark:block`} src={dark_logo} alt="" />
-            <img height={37} width={252} loading={`lazy`} className={`h-7 md:h-9 -ml-6 md:ml-0 dark:hidden block`} src={light_logo} alt="" />
-            <div className="sr-only">Eloquent Blinds</div>
+          <Link href={route("home")} id="logo" className="text-2xl font-black flex shrink-0 mr-2">
+            <>
+              <img height={37} width={252} loading={`lazy`} className={`h-7 md:h-9 -ml-6 md:ml-0 hidden dark:block`} src={dark_logo} alt="Eloquent Blinds Logo" />
+              <img height={37} width={252} loading={`lazy`} className={`h-7 md:h-9 -ml-6 md:ml-0 dark:hidden block`} src={light_logo} alt="Eloquent Blinds Logo" />
+              <div className="sr-only">Eloquent Blinds</div>
+            </>
           </Link>
           <div className={`flex space-x-2 md:space-x-8 items-center`}>
             <div className="md:flex space-x-8 font-bold hidden">
-              <Link className={url === "/" ? "text-primary-500" : ""} href={route("home")}>
-                Home
-              </Link>
-              <a href="#">Products</a>
-              <Link className={url === "/reviews" ? "text-primary-500" : ""} href={route("reviews")}>
-                Reviews
-              </Link>
-              <a href="#">FAQ's</a>
-              <Link className={url === "/contact-us" ? "text-primary-500" : ""} href={route("contact")}>
-                Contact Us
-              </Link>
+              {links.map((link, index) => (
+                <Link key={index} className={url === link.href ? "text-primary-500" : ""} href={link.href}>
+                  {link.label}
+                </Link>
+              ))}
             </div>
             <ThemeSelector className="relative z-10" />
             <Popover.Button className="h-9 w-9 rounded-lg border border-gray-500 hover:scale-105 text-gray-600 dark:text-gray-200 dark:bg-gray-900 flex justify-center items-center md:hidden">

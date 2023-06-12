@@ -3,6 +3,7 @@ import AppLayout from "@/Layouts/AppLayout"
 import { Head, Link, usePage } from "@inertiajs/react"
 import ReviewPanel from "@/FrontEnd/Review/ReviewPanel"
 import HeroComponent from "@/FrontEnd/Hero/HeroComponent"
+import SectionProducts from "@/Sections/SectionProducts"
 
 const Home = () => {
   const { ziggy } = usePage<any>().props
@@ -17,6 +18,7 @@ const Home = () => {
 
       <div className="relative">
         <HeroComponent />
+        <SectionProducts />
         <div className="wrapper">
           <div className="max-w-3xl">
             <p className="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
