@@ -60,7 +60,7 @@ export function ThemeSelector(props: any) {
     <Listbox as="div" value={selectedTheme} onChange={setSelectedTheme} {...props}>
       <Listbox.Label className="sr-only">Theme</Listbox.Label>
       <Listbox.Button
-        className="flex h-10 w-10 items-center justify-center rounded-md shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-inset dark:ring-white/5"
+        className="flex h-9 w-9 items-center justify-center rounded-md shadow-md shadow-black/5 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-inset dark:ring-white/5"
         aria-label={selectedTheme?.name}
       >
         <LightIcon className="hidden h-4 w-4 fill-primary-400 [[data-theme=light]_&]:block" />

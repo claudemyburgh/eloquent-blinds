@@ -78,7 +78,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
   // ${isDarkMode ? "dark" : "light"}
   return (
     <div className={`relative inset-0 `}>
-      <div className={`min-h-screen  relative z-0 bg-white dark:bg-gray-900`}>
+      <div className={`min-h-screen  relative z-0`}>
         <Head>
           <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         </Head>
