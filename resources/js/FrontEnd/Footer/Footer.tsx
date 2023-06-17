@@ -8,9 +8,12 @@ const Footer = () => {
         Footer
       </h2>
       <div
-        className={`wrapper card text-gray-500 dark:bg-gray-900/60 bg-gray-200/60 border border-gray-300 dark:border-primary-900/40 dark:text-gray-100 px-6 py-6 rounded-lg flex justify-between items-center shadow-2xl shadow-primary-900/30 backdrop-blur-sm`}
+        className={`wrapper card text-gray-500 dark:bg-gray-900/60 bg-gray-200/60 border border-gray-300 dark:border-primary-900/40 dark:text-gray-100 px-6 py-6 rounded-lg flex justify-between relative items-center shadow-2xl shadow-primary-900/30 backdrop-blur-sm`}
       >
-        <div className="grid  grid-cols-1 md:grid-cols-3 w-full gap-4 md:gap-6 lg:gap-8 ">
+        <div aria-hidden={true} className="absolute w-1/2 top-0 h-[1px] left-1/3 bg-gradient-to-r from-transparent via-secondary-500 to-transparent">
+          <div className="w-1/2 h-[20px] rounded-b-full absolute top-0 translate-x-1/2 blur-md bg-secondary-500/10 "></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-4 md:gap-6 lg:gap-8 ">
           <div className={`mb-6`}>
             <h3 className="text-md font-semibold text-gray-400 tracking-wider uppercase">Product Categories</h3>
             <ul role="list" className="mt-4 space-y-3">

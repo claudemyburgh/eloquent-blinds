@@ -45,7 +45,6 @@ class Category extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('default')
-            ->withResponsiveImages()
             ->useFallbackUrl(url(config('app.placeholder')));
     }
 }

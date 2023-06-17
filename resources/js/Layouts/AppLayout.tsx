@@ -2,13 +2,10 @@ import React, { PropsWithChildren } from "react"
 import Navbar from "@/FrontEnd/Navbar/Navbar"
 import { Toaster } from "react-hot-toast"
 import Footer from "@/FrontEnd/Footer/Footer"
-import { useDarkMode } from "usehooks-ts"
 import GridPattern from "@/FrontEnd/Theme/GridPattern"
 import "@/lib/theme-script"
 
 export default function AppLayout({ children }: PropsWithChildren) {
-  const { isDarkMode } = useDarkMode()
-
   const handleMouseMovement = (e: MouseEvent) => {
     const { currentTarget: target } = e
     const rect = (target as HTMLElement).getBoundingClientRect()

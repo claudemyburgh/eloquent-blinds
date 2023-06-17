@@ -25,18 +25,21 @@ const HeroComponent = () => {
           </p>
           <div className="mt-10 flex items-center gap-x-6">
             <Link
-              href={route("contact")}
+              href={route("quote")}
               className="rounded-md bg-primary-500 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400"
             >
               Get a free quote
             </Link>
-            <Link href={route("contact")} className="text-base font-semibold leading-7 text-white">
+            <Link href={route("quote")} className="text-base font-semibold leading-7 text-gray-700 dark:text-white">
               Learn more <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32">
           <div className="max-w-3xl relative flex-none sm:max-w-5xl lg:max-w-none">
+            <div aria-hidden={true} className="absolute w-1/2 top-0 h-[1px] left-0 bg-gradient-to-r from-transparent via-secondary-500 to-transparent">
+              <div className="w-1/2 h-[20px] rounded-b-full absolute top-0 translate-x-1/2 blur-md bg-secondary-500/10 "></div>
+            </div>
             <img src={hero} alt="App screenshot" width={2432} height={1442} className="w-[76rem]  rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10" />
             <div className="absolute inset-0 z-10 card w-full h-full "></div>
           </div>

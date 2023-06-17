@@ -4,6 +4,7 @@ import { Head, Link, usePage } from "@inertiajs/react"
 import ReviewPanel from "@/FrontEnd/Review/ReviewPanel"
 import HeroComponent from "@/FrontEnd/Hero/HeroComponent"
 import SectionProducts from "@/Sections/SectionProducts"
+import IntroIcons2 from "@/FrontEnd/Parts/IntroIcons2"
 
 const Home = () => {
   const { ziggy } = usePage<any>().props
@@ -18,21 +19,10 @@ const Home = () => {
 
       <div className="relative">
         <HeroComponent />
-        <SectionProducts />
+        <IntroIcons2 />
+
+        <SectionProducts className={`mb-12`} />
         <div className="wrapper">
-          <div className="max-w-3xl">
-            <p className="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
-              We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space. We
-              have a variety of options to choose from, including Aluminium Blinds , Bamboo Blinds , Basswood Blinds , Honeycomb Blinds , Roller Blinds , Venetian Blinds , and
-              Zebra Blinds.
-            </p>
-
-            <p className="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
-              At Eloquent Blinds, we believe that the installation of your blinds should be just as hassle-free as the purchasing process. That's why we offer professional
-              installation services for all of our blinds.
-            </p>
-          </div>
-
           <ReviewPanel />
         </div>
         <div className="h-[220px] bg-gradient-to-t from-white via-white dark:from-gray-900 dark:via-gray-900 to-transparent absolute bottom-0 inset-x-0 flex items-center justify-center">
