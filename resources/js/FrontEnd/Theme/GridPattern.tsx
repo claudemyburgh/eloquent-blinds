@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge"
 
 const GridPattern: FC<{ className: string }> = ({ className, ...props }) => {
   return (
-    <div {...props} className={twMerge("isolate", className)}>
+    <div {...props} className={twMerge("isolate pointer-events-none", className)}>
       <svg className="absolute inset-0 -z-10 h-full w-full stroke-primary-500/20 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
         <defs>
           <pattern id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc" width={100} height={100} x="50%" y={-1} patternUnits="userSpaceOnUse">

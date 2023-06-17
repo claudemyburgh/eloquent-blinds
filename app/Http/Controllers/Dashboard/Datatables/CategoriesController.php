@@ -58,6 +58,8 @@ class CategoriesController extends DatatablesController
     public function update(UpdateCategoryRequest $request, string $id)
     {
         Cache::forget('cat-all');
+        Cache::forget('categories-list');
+
         Category::findOrFail($id)
             ->update($request->validated());
     }

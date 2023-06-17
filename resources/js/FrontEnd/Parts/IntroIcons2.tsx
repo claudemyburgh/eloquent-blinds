@@ -9,7 +9,9 @@ import horizontal from "@/../img/SVG/horizontal.svg"
 const IntroIcons2 = () => {
   return (
     <div className="wrapper grid mt-24 md:mt-32 grid-cols-12 lg:grid-rows-3 gap-8 text-gray-500 dark:text-gray-300">
-      <div className={`card relative col-span-12 row-span-2 lg:col-span-6 overflow-hidden -rotate-2 shadow-xl shadow-primary-500/10 rounded-lg p-6  border border-primary-500/20`}>
+      <div
+        className={`card relative col-span-12 row-span-2 lg:col-span-6 overflow-hidden md:-rotate-2 shadow-xl shadow-primary-500/10 rounded-lg p-6  border border-primary-500/20`}
+      >
         <div aria-hidden={true} className="absolute w-[2px] h-2/3 left-0 bg-gradient-to-b from-transparent via-secondary-500 to-transparent">
           <div className="w-[80px] h-full rounded-full absolute top-1/2 -translate-y-1/2 -translate-x-1/2 blur-md bg-secondary-500/10 "></div>
         </div>
@@ -20,27 +22,27 @@ const IntroIcons2 = () => {
         </p>
       </div>
       <div className={`card col-span-4 flex-shrink-0 lg:col-span-2 text-center  overflow-hidden  rounded-lg p-6 relative`}>
-        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px]`} src={roller} alt="" />
+        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px] relative`} src={roller} alt="" />
         <h4 className={`font-semibold`}>Roller Blinds</h4>
       </div>
       <div className={`card col-span-4 flex-shrink-0 lg:col-span-2 text-center  overflow-hidden  rounded-lg p-6 relative`}>
-        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px]`} src={zebra} alt="" />
+        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px] relative`} src={zebra} alt="" />
         <h4 className={`font-semibold`}>Zebra Blinds</h4>
       </div>
       <div className={`card col-span-4 flex-shrink-0 lg:col-span-2 text-center  overflow-hidden  rounded-lg p-6 relative`}>
-        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px]`} src={honey} alt="" />
+        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px] relative`} src={honey} alt="" />
         <h4 className={`font-semibold`}>Honey Comb Blinds</h4>
       </div>
       <div className={`card col-span-4 flex-shrink-0 lg:col-span-2 text-center  overflow-hidden  rounded-lg p-6 relative`}>
-        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px]`} src={automation} alt="" />
+        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px] relative`} src={automation} alt="" />
         <h4 className={`font-semibold`}>Blinds Automation </h4>
       </div>
       <div className={`card col-span-4 flex-shrink-0 lg:col-span-2 text-center  overflow-hidden  rounded-lg p-6 relative`}>
-        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px]`} src={vertical} alt="" />
+        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px] relative`} src={vertical} alt="" />
         <h4 className={`font-semibold`}>Vertical Blinds</h4>
       </div>
       <div className={`card col-span-4 flex-shrink-0 lg:col-span-2 text-center  overflow-hidden  rounded-lg p-6 relative`}>
-        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px]`} src={horizontal} alt="" />
+        <img height={100} width={75} className={`block mx-auto mb-2 w-75px] h-[100px] relative`} src={horizontal} alt="" />
         <h4 className={`font-semibold`}>Horizontal Blinds</h4>
       </div>
     </div>

@@ -5,6 +5,7 @@ import ReviewPanel from "@/FrontEnd/Review/ReviewPanel"
 import HeroComponent from "@/FrontEnd/Hero/HeroComponent"
 import SectionProducts from "@/Sections/SectionProducts"
 import IntroIcons2 from "@/FrontEnd/Parts/IntroIcons2"
+import Incentives from "@/Sections/Incentives"
 
 const Home = () => {
   const { ziggy } = usePage<any>().props
@@ -20,6 +21,7 @@ const Home = () => {
       <div className="relative">
         <HeroComponent />
         <IntroIcons2 />
+        <Incentives />
 
         <SectionProducts className={`mb-12`} />
         <div className="wrapper">

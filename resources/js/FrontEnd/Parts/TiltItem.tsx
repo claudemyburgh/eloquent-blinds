@@ -1,6 +1,7 @@
 import React, { FC, MutableRefObject, useEffect, useRef } from "react"
 import { ChildrenProps } from "@/types"
 import VanillaTilt from "vanilla-tilt"
+import { twMerge } from "tailwind-merge"
 
 interface OptionsProps {
   options?: {
@@ -57,7 +58,7 @@ const opt = {
   gyroscopeSamples: 10, // How many gyroscope moves to decide the starting position.
 }
 
-const TiltItem: FC<ChildrenProps & OptionsProps> = ({ children, options }) => {
+const TiltItem: FC<ChildrenProps & OptionsProps> = ({ children, options, className }) => {
   const tiltRef: MutableRefObject<any> = useRef()
 
   useEffect(() => {
@@ -68,10 +69,10 @@ const TiltItem: FC<ChildrenProps & OptionsProps> = ({ children, options }) => {
     })
 
     // return tilt.destroy()
-  }, [])
+  }, [options])
 
   return (
-    <div ref={tiltRef} style={{ position: "relative", zIndex: 5 }} className={`overflow-hidden rounded-lg`}>
+    <div ref={tiltRef} style={{ position: "relative", zIndex: 5 }} className={twMerge("overflow-hidden rounded-lg", className)}>
       {children}
     </div>
   )
