@@ -44,6 +44,6 @@
             }));
         d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
     })
-    ({key: "AIzaSyDLdXj8ZeKNd3GgtBbHJLQrgCMWeuInbvc", v: "weekly"});</script>
+    ({key: `{{ config('google.api.maps') }}`, v: "weekly"});</script>
 </body>
 </html>
