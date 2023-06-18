@@ -43,6 +43,7 @@ class Product extends Model implements HasMedia
         foreach (config('image-conversion') as $key => $image) {
             $this->addMediaConversion($key)
                 ->format($image['format'])
+                ->blur($image['blur'])
                 ->fit(Manipulations::FIT_CROP, $image['height'], $image['height']);
         }
     }

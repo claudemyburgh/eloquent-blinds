@@ -15,6 +15,7 @@ class ProductSeeder extends Seeder
         $products = [
             [
                 "title" => "Nairobi", //1
+                "slug" => "nairobi", //1
                 "category_id" => 8,
                 "product_range" => "Sheer",
                 "description" => "The Nairobi fabric boasts of its natural and one-of-a-kind texture and color variations, which gives a sense of purity to any interior space. Its generous width makes it perfect for larger windows and various other uses.",
@@ -23,6 +24,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Waving Leave", //2
+                "slug" => "waving-leave", //2
                 "category_id" => 8,
                 "product_range" => "Sheer",
                 "description" => "The intricate and delicate leaves and flowers on printed and jacquard woven fabrics bring a sense of liveliness. The soft pastel colors used in the fabrics create a romantic and gentle atmosphere, exuding femininity.",
@@ -31,6 +33,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Essential 3000 10%", //3
+                "slug" => "essential-3000-10%", //3
                 "category_id" => 8,
                 "product_range" => "Light Filtering",
                 "description" => "Screen 3010 is a fabric made of polyester featuring a delicate 2 x 2 basket weave structure, that provides a subtle texture while still allowing for a clear view through.",
@@ -39,6 +42,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Essential 4000 5%", //4
+                "slug" => "essential-4000-5%", //4
                 "category_id" => 8,
                 "product_range" => "Light Filtering",
                 "description" => "Screen 4005, made of polyester, has a delicate 2 x 2 basket weave structure that provides a subtle texture while allowing only 5% visibility, making it perfect for privacy needs",
@@ -46,7 +50,8 @@ class ProductSeeder extends Seeder
                 "body" => "Screen 4005, made of polyester, has a delicate 2 x 2 basket weave structure that provides a subtle texture while allowing only 5% visibility, making it perfect for privacy needs"
             ],
             [
-                "title" => "Mombassa", //5
+                "title" => "Mombassa Light Filtering", //5
+                "slug" => "mombassa-light-filtering", //5
                 "category_id" => 8,
                 "product_range" => "Light Filtering",
                 "description" => "The Mombassa LF collection features a contemporary design and a tactile sensation. Its natural fabrics provide a cozy ambiance in any room, and the soft color scheme adds a touch of sophistication to the space.",
@@ -55,6 +60,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Proto", //6
+                "slug" => "proto", //6
                 "category_id" => 8,
                 "product_range" => "Light Filtering",
                 "description" => "The Prato collection features modern, light-filtering fabrics made from recycled yarns and available in a variety of popular colors. It gives an aesthetic look with an eco-friendly touch.",
@@ -63,6 +69,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Berlin", //7
+                "slug" => "berlin", //7
                 "category_id" => 8,
                 "product_range" => "Block-out",
                 "description" => "The Berlin collection presents fabrics that completely block out daylight with a robust, durable textile appearance. The material provides complete darkness and privacy, and the collection is perfect for creating a cozy and secluded ambiance.",
@@ -70,7 +77,8 @@ class ProductSeeder extends Seeder
                 "body" => "The Berlin collection presents fabrics that completely block out daylight with a robust, durable textile appearance. The material provides complete darkness and privacy, and the collection is perfect for creating a cozy and secluded ambiance."
             ],
             [
-                "title" => "Mombassa", //8
+                "title" => "Mombassa Block-Out", //8
+                "slug" => "mombassa-block-out", //8
                 "category_id" => 8,
                 "product_range" => "Block-out",
                 "description" => "The Mombassa LF collection boasts of a modern aesthetic and a pleasant texture. The fabrics used are naturally delicate, which results in a warm and inviting atmosphere in any setting. The soft color palette adds a touch of elegance to the interior.",
@@ -79,6 +87,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Yamar", //9
+                "slug" => "yamar", //9
                 "category_id" => 8,
                 "product_range" => "Block-out",
                 "description" => "The Yamar collection features roller blind fabrics with a textured appearance, which adds a modern aesthetic. The collection comes in a range of neutral color tones.",
@@ -87,6 +96,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Satin Flower", //10
+                "slug" => "satin-flower", //10
                 "category_id" => 8,
                 "product_range" => "Block-out",
                 "description" => "Printed and jacquard woven fabrics feature intricate leaf and flower designs that bring a sense of liveliness. The soft pastel colors used in the fabrics create a pure and gentle atmosphere in the interior.",
@@ -95,6 +105,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Skyros", //10
+                "slug" => "skyros", //10
                 "category_id" => 10,
                 "product_range" => "Zebra-Blinds",
                 "description" => "The delicately woven structure and subtle satin gloss of these double roller fabrics brings a feeling of elegance to the interior.",
@@ -103,6 +114,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Zakynthos", //10
+                "slug" => "zakynthos", //10
                 "category_id" => 10,
                 "product_range" => "Zebra-Blinds",
                 "description" => "The refined silk-look texture of these double roller fabrics adds zest and makes the colors pop-out. The open weaving texture of the transparent stripes give the fabrics an o en feel.",
@@ -111,6 +123,7 @@ class ProductSeeder extends Seeder
             ],
             [
                 "title" => "Palma", //10
+                "slug" => "palma", //10
                 "category_id" => 7,
                 "product_range" => "Honeycomb",
                 "description" => "Create a pure atmosphere with the delicate light filtering and block-out fabrics in this collection. The refined plain fabrics in the Palma collection are available in 25 mm and 45 mm.",

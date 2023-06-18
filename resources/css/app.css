@@ -112,4 +112,14 @@
         @apply absolute left-1/2 rounded-ee-full top-1/2 animate-spin-slow -z-10 h-[600px] aspect-square;
     }
 
+
+    @keyframes loop {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
 }

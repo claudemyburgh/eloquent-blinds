@@ -34,7 +34,7 @@ export function classNames(...classes: string[]) {
 
 export function convertedImage(
   url: string,
-  type?: "thumb" | "small" | "medium" | "large" | "tail" | "screen",
+  type?: "tiny" | "thumb" | "small" | "medium" | "large" | "tail" | "screen",
   extension: string = "webp",
   fallbackImageUrl: string = "http://127.0.0.1:8000/img/placeholder.webp"
 ) {

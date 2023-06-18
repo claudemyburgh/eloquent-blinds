@@ -23,6 +23,7 @@ module.exports = {
       },
       animation: {
         "spin-slow": `spin 5s linear infinite`,
+        loop: `loop var(--duration) var(--direction) linear infinite`,
       },
       aspectRatio: {
         "4/3": "4 / 3",
@@ -30,5 +31,5 @@ module.exports = {
     },
   },
 
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 }
