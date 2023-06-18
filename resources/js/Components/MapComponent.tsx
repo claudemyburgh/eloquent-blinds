@@ -14,20 +14,24 @@ const MapComponent = () => {
 
     map = new Map(mapRef.current as HTMLElement, {
       center: { lat, lng },
-      zoom: 16,
+      zoom: 18,
       mapId: "87a17d4bc6260884",
     })
 
-    const titleTag = document.createElement("div")
-    titleTag.className = "title-tag"
-    titleTag.textContent = "Eloquent Blinds"
+    const pinScaled = new PinElement({
+      scale: 1.5,
+      background: "#0284c7",
+      borderColor: "#075985",
+      glyphColor: "white",
+    })
 
     const marker = new AdvancedMarkerElement({
       map,
       position: { lat, lng },
       title: "Eloquent Blinds",
-      content: titleTag,
+      content: pinScaled.element,
     })
+
 
     map.addListener("zoom_changed", () => {
       const zoom = map.getZoom()

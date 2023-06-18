@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast"
 import Footer from "@/FrontEnd/Footer/Footer"
 import GridPattern from "@/FrontEnd/Theme/GridPattern"
 import "@/lib/theme-script"
-import MapComponent from "@/Components/Map"
+import MapComponent from "@/Components/MapComponent"
 
 export default function AppLayout({ children }: PropsWithChildren) {
   const handleMouseMovement = (e: MouseEvent) => {
