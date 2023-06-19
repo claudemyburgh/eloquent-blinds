@@ -22,22 +22,24 @@ const Marquee: FC<
   }
 
   return (
-    <div
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
-      className={twMerge(`flex cursor-pointer -mx-4 py-1  group bg-gradient-to-r from-primary-700 to-cyan-200`, className)}
-      style={{
-        // @ts-expect-error
-        "--speed": `${moveSpeed}ms`,
-        "--direction": moveDirection.toString(),
-        width: "fit-content",
-      }}
-    >
-      <div className="bg-gray-900 py-8">
-        <div className="flex animate-loop  ">
-          {children}
-          {children}
-          {children}
+    <div className={`max-w-full overflow-x-clip`}>
+      <div
+        onMouseEnter={mouseEnter}
+        onMouseLeave={mouseLeave}
+        className={twMerge(`flex cursor-pointer -mx-4 py-1  group bg-gradient-to-r from-primary-700 to-cyan-200`, className)}
+        style={{
+          // @ts-expect-error
+          "--speed": `${moveSpeed}ms`,
+          "--direction": moveDirection.toString(),
+          width: "fit-content",
+        }}
+      >
+        <div className="bg-gray-100 dark:bg-gray-900 py-8">
+          <div className="flex animate-loop text-gray-700 dark:text-gray-100">
+            {children}
+            {children}
+            {children}
+          </div>
         </div>
       </div>
     </div>
