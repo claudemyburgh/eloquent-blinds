@@ -8,7 +8,7 @@ import MasonryCard from "@/FrontEnd/Masonry/MasonryCard"
 const ReviewPanel = () => {
   return (
     <div className={`relative w-full`}>
-      <MasonryGrid className={`-mx-4 md:-mx-6 lg:-mx-8 xl:-mx-10`}>
+      <MasonryGrid>
         <MasonryCard className={`w-full md:w-1/2 lg:w-1/3 p-2 `}>
           <ReviewStats />
         </MasonryCard>

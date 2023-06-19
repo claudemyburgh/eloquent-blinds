@@ -24,8 +24,8 @@ const Marquee: FC<
   return (
     <div className={`max-w-full overflow-x-clip`}>
       <div
-        onMouseEnter={mouseEnter}
-        onMouseLeave={mouseLeave}
+        // onMouseEnter={mouseEnter}
+        // onMouseLeave={mouseLeave}
         className={twMerge(`flex cursor-pointer -mx-4 py-1  group bg-gradient-to-r from-primary-700 to-cyan-200`, className)}
         style={{
           // @ts-expect-error

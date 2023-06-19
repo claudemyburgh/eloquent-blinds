@@ -43,7 +43,7 @@ class HandleInertiaRequests extends Middleware
                     'location' => $request->url(),
                 ]);
             },
-            'categories_all' => Cache::rememberForever('cat-all', function () {
+            'categories_all' => Cache::remember('categories-menu', 360, function () {
                 return Category::live()->orderBy('title')->tree()->get()->toTree();
             }),
             'flash' => Session::get('flash'),

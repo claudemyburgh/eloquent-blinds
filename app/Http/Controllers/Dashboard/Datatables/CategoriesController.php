@@ -35,7 +35,7 @@ class CategoriesController extends DatatablesController
      */
     public function store(StoreCategoryRequest $request)
     {
-        Cache::forget('cat-all');
+        Cache::forget('categories-menu');
         $category = Category::create($request->validated());
 
         return to_route('dashboard.categories.edit', $category);
@@ -56,9 +56,8 @@ class CategoriesController extends DatatablesController
      */
     public function update(UpdateCategoryRequest $request, string $id)
     {
-        Cache::forget('cat-all');
+        Cache::forget('categories-menu');
         Cache::forget('categories-list');
-
         Category::findOrFail($id)
             ->update($request->validated());
     }
@@ -68,7 +67,7 @@ class CategoriesController extends DatatablesController
      */
     public function destroy(string $ids)
     {
-        Cache::forget('cat-all');
+        Cache::forget('categories-menu');
         $this->itemsDelete($ids);
     }
 
