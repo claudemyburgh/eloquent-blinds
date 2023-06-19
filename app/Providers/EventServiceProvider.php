@@ -24,8 +24,8 @@ class EventServiceProvider extends ServiceProvider
         ContactSubmitted::class => [
             SendContactEmail::class,
             SaveMessageToDatabase::class,
-            NewsletterSubscribe::class
-        ]
+            NewsletterSubscribe::class,
+        ],
     ];
 
     /**

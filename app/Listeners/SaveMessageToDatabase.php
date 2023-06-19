@@ -25,7 +25,7 @@ class SaveMessageToDatabase
     {
         $user = User::where('email', $event->data['email'])->first();
 
-        if (!$user) {
+        if (! $user) {
             $user = User::create([
                 'first_name' => $event->data['first_name'],
                 'last_name' => $event->data['last_name'],

@@ -6,6 +6,7 @@ import HeroComponent from "@/FrontEnd/Hero/HeroComponent"
 import SectionProducts from "@/Sections/SectionProducts"
 import IntroIcons2 from "@/FrontEnd/Parts/IntroIcons2"
 import Incentives from "@/Sections/Incentives"
+import Marquee from "@/Components/Marquee"
 
 const Home = () => {
   const { ziggy, csrf } = usePage<any>().props
@@ -18,6 +19,12 @@ const Home = () => {
 
       <div className="relative">
         <HeroComponent />
+
+        <Marquee speed={10000} className={`-rotate-3 relative z-10 shadow-xl shadow-black/20`}>
+          <div className={`px-4 shrink-0`}>Lorem ipsum dolor sit amet, consectetur</div>
+          <div className={`px-4 shrink-0`}>Lorem ipsum dolor sit amet, consectetur sadsadsaffasf</div>
+          <div className={`px-4 shrink-0`}>Lorem ipsum dolor sit amet, consectetur</div>
+        </Marquee>
 
         <IntroIcons2 />
 

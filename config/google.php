@@ -1,7 +1,8 @@
 <?php
+
 return [
-    "api" => [
-        "maps" => env("MAPS_API")
-    ]
+    'api' => [
+        'maps' => env('MAPS_API'),
+    ],
 
 ];

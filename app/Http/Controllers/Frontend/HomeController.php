@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request): Response
     {
-        return Inertia::render("Frontend/Home", [
+        return Inertia::render('Frontend/Home', [
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
         ]);

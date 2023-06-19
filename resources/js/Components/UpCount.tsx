@@ -1,36 +1,34 @@
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef } from "react"
 
-import { ChildrenProps } from "@/types";
+import { ChildrenProps } from "@/types"
+import { CountUpOptions } from "countup.js"
 
 interface Props {
-    count: number;
+  count: number
+  options?: CountUpOptions
 }
 
-const UpCount: FC<Props & ChildrenProps> = ({ count }) => {
-    const refElement = useRef<any>();
+const UpCount: FC<Props & ChildrenProps> = ({ count, options }) => {
+  const refElement = useRef<any>()
 
-    async function CountInit() {
-        const CountUp = await import("countup.js");
-        const up = new CountUp.CountUp(
-            refElement.current as HTMLElement,
-            count,
-            {
-                enableScrollSpy: false,
-                scrollSpyOnce: false,
-                startVal: 0,
-                // duration: 50,
-            }
-        );
-        if (!up.error) {
-            up.start();
-        }
+  async function CountInit() {
+    const CountUp = await import("countup.js")
+    const up = new CountUp.CountUp(refElement.current as HTMLElement, count, {
+      enableScrollSpy: false,
+      scrollSpyOnce: false,
+      startVal: 0,
+      ...options,
+    })
+    if (!up.error) {
+      up.start()
     }
+  }
 
-    useEffect(() => {
-        CountInit();
-    }, []);
+  useEffect(() => {
+    CountInit()
+  }, [])
 
-    return <span ref={refElement}>0</span>;
-};
+  return <span ref={refElement}>0</span>
+}
 
-export default UpCount;
+export default UpCount

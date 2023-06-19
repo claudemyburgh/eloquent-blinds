@@ -16,10 +16,10 @@ class CategoriesController extends Controller
      */
     public function __invoke(Request $request): Response
     {
-        $categories = Cache::remember('categories-list', 3600, fn() => Category::live()->with('media', 'products')->tree()->get()->toTree());
+        $categories = Cache::remember('categories-list', 3600, fn () => Category::live()->with('media', 'products')->tree()->get()->toTree());
 
         return Inertia::render('Frontend/Categories', [
-            'categories' => $categories
+            'categories' => $categories,
         ]);
     }
 }

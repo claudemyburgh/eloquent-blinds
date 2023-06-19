@@ -14,6 +14,9 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
+/**
+ * @method static live()
+ */
 class Category extends Model implements HasMedia
 {
     use HasFactory, Sluggable, HasRecursiveRelationships, InteractsWithMedia, Live, SoftDeletes;
@@ -27,14 +30,13 @@ class Category extends Model implements HasMedia
         'description',
         'excerpt',
         'live',
-        'body'
+        'body',
     ];
 
     public function products(): HasMany
     {
         return $this->hasMany(Product::class);
     }
-
 
     public function registerMediaConversions(Media $media = null): void
     {
@@ -46,9 +48,6 @@ class Category extends Model implements HasMedia
         }
     }
 
-    /**
-     * @return void
-     */
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('default')

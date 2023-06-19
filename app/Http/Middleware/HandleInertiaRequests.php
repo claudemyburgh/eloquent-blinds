@@ -46,25 +46,18 @@ class HandleInertiaRequests extends Middleware
             'categories_all' => Cache::rememberForever('cat-all', function () {
                 return Category::live()->orderBy('title')->tree()->get()->toTree();
             }),
-//            'contacts' => Cache::rememberForever('contacts', function () {
-//                return User::get();
-//            }),
-
             'flash' => Session::get('flash'),
-
             'emails' => function () {
                 return [
                     'unread' => Cache::remember('messages', 120, function () {
-                        return Message::unread()->get()->count();
+                        return Message::unread()->count();
                     }),
-
                 ];
             },
-
             'csrf' => csrf_token(),
             'api' => [
-                'maps' => config('google.api.maps')
-            ]
+                'maps' => config('google.api.maps'),
+            ],
         ]);
     }
 }

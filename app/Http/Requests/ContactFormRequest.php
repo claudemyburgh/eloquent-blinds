@@ -29,7 +29,7 @@ class ContactFormRequest extends FormRequest
             'email' => 'required|email',
             'phone' => ['required', new Phone()],
             'subject' => 'required',
-            'message' => 'required'
+            'message' => 'required',
         ];
     }
 }

@@ -21,9 +21,21 @@ module.exports = {
       fontFamily: {
         sans: ["Figtree", ...defaultTheme.fontFamily.sans],
       },
+      keyframes: {
+        marquee: {
+          from: {
+            transform: "translateX(0)",
+          },
+          to: {
+            transform: "translateX(100%)",
+          },
+        },
+      },
       animation: {
         "spin-slow": `spin 5s linear infinite`,
-        loop: `loop var(--duration) var(--direction) linear infinite`,
+        loop: `loop var(--speed) var(--direction) linear infinite`,
+        marquee: `marquee var(--speed)ms var(--direction) linear infinite`,
+        "play-paused": "test",
       },
       aspectRatio: {
         "4/3": "4 / 3",

@@ -12,7 +12,6 @@ class ContactSubmitted
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-
     /**
      * Create a new event instance.
      *
@@ -21,7 +20,6 @@ class ContactSubmitted
     public function __construct(public array $data)
     {
     }
-
 
     /**
      * Get the channels the event should broadcast on.

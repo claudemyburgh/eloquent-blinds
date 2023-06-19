@@ -12,9 +12,8 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PrivacyPolicyController;
 use Illuminate\Support\Facades\Route;
 
-
-require __DIR__ . '/dashboard.php';
-require __DIR__ . '/auth.php';
+require __DIR__.'/dashboard.php';
+require __DIR__.'/auth.php';
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/reviews', ReviewsController::class)->name('reviews');
@@ -30,4 +29,3 @@ Route::get('/{category:slug}/{product:slug}', ProductController::class)->name('p
 Route::post('newsletter', [NewsletterController::class, 'store'])->name('newsletter');
 Route::get('newsletter', [NewsletterController::class, 'show'])->name('newsletter');
 Route::post('contact/form', ContactFormController::class)->name('contact.form');
-

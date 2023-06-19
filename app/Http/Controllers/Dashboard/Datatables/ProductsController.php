@@ -13,7 +13,6 @@ use Inertia\Response;
 
 class ProductsController extends DatatablesController
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -27,7 +26,7 @@ class ProductsController extends DatatablesController
 
     public function index(Request $request): Response
     {
-        return Inertia::render("Dashboard/Table/Index", $this->getResponse($request));
+        return Inertia::render('Dashboard/Table/Index', $this->getResponse($request));
     }
 
     /**
@@ -46,7 +45,8 @@ class ProductsController extends DatatablesController
     public function edit(string $id)
     {
         $product = Product::with('media')->find($id);
-        return Inertia::render("Dashboard/Products/Edit", compact('product'));
+
+        return Inertia::render('Dashboard/Products/Edit', compact('product'));
     }
 
     /**
@@ -88,5 +88,4 @@ class ProductsController extends DatatablesController
     {
         return ['id', 'title', 'slug'];
     }
-
 }

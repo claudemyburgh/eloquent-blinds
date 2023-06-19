@@ -6,14 +6,17 @@ use App\Http\Requests\Post\StorePostRequest;
 use App\Http\Requests\Post\UpdatePostRequest;
 use App\Models\Post;
 use Designbycode\Datatables\DatatablesController;
+use Illuminate;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
+/**
+ * @param Illuminate\Http\Request $request
+ */
 class PostsController extends DatatablesController
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -27,35 +30,31 @@ class PostsController extends DatatablesController
 
     public function index(Request $request): Response
     {
-        return Inertia::render("Dashboard/Table/Index", $this->getResponse($request));
+        return Inertia::render('Dashboard/Table/Index', $this->getResponse($request));
     }
 
-    /**
-     * @param string $id
-     * @return Response
-     */
     public function edit(string $id): Response
     {
         $post = Post::with('media')->findOrFail($id);
+
         return Inertia::render('Dashboard/Posts/Edit', ['post' => $post]);
     }
 
     /**
-     * @param Request $request
+     * @param UpdatePostRequest $request
      * @param string $id
-     * @return void
      */
     public function update(UpdatePostRequest $request, string $id): void
     {
-        Post::with("media")->findOrFail($id)
+        Post::with('media')->findOrFail($id)
             ->update($request->validated());
     }
 
     public function store(StorePostRequest $request)
     {
-        
+
         $post = Post::create(array_merge($request->validated(), [
-            'user_id' => auth()->user()->id
+            'user_id' => auth()->user()->id,
         ]));
 
         return to_route('dashboard.posts.edit', $post->id);
@@ -88,5 +87,4 @@ class PostsController extends DatatablesController
     {
         return ['id', 'title', 'slug', 'description'];
     }
-
 }

@@ -30,7 +30,6 @@ class SendEmailController extends Controller
             'read_at' => Carbon::now(),
         ]);
 
-
         Mail::to(new Address($request->email, $request->name))->queue(new Replay([
             'name' => $request->name,
             'email' => $request->email,

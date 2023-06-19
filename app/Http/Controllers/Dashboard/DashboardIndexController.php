@@ -7,16 +7,16 @@ use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-
+use Inertia\Response;
 
 class DashboardIndexController extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke(Request $request): Response
     {
-        $users = User::role('client')->get()->count();
+        $users = User::role('client')->count();
 
         $messages = Message::selectRaw('DATE(created_at) as date, COUNT(*) as count')
             ->where('created_at', '>=', now()->subDays(7))
@@ -27,13 +27,12 @@ class DashboardIndexController extends Controller
         $labels = $messages->pluck('date');
         $data = $messages->pluck('count');
 
-
         return Inertia::render('Dashboard/Dashboard', [
             'users' => $users,
             'messages' => [
                 'labels' => $labels,
-                'data' => $data
-            ]
+                'data' => $data,
+            ],
         ]);
     }
 }

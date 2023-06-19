@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -18,10 +17,9 @@ return [
 
     'name' => env('APP_NAME', 'Eloquent Blinds'),
 
-
     'slogan' => env('APP_SLOGAN', ''),
 
-    'placeholder' => env('APP_URL') . '/img/placeholder.webp',
+    'placeholder' => env('APP_URL').'/img/placeholder.webp',
 
     /*
     |--------------------------------------------------------------------------
@@ -47,7 +45,7 @@ return [
     |
     */
 
-    'debug' => (bool)env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------

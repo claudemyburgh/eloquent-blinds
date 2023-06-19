@@ -13,13 +13,12 @@ use Inertia\Response;
 
 class MessagesController extends DatatablesController
 {
-
     public function index(Request $request)
     {
         $messages = Message::isRoot()->orderBy('id', 'desc')->with('user')->paginate(20);
 
-        return Inertia::render("Dashboard/Messages/Index", [
-            'messages' => new MessageCollection($messages)
+        return Inertia::render('Dashboard/Messages/Index', [
+            'messages' => new MessageCollection($messages),
         ]);
     }
 
@@ -46,10 +45,10 @@ class MessagesController extends DatatablesController
     {
         $message = Message::with('user', 'children.user')->orderBy('created_at', 'asc')->find($id);
         $message->update([
-            'read_at' => Carbon::now()
+            'read_at' => Carbon::now(),
         ]);
-        
-        return Inertia::render("Dashboard/Messages/Show", compact('message'));
+
+        return Inertia::render('Dashboard/Messages/Show', compact('message'));
     }
 
     /**
@@ -58,7 +57,7 @@ class MessagesController extends DatatablesController
     public function update(Request $request, Message $message)
     {
         $message->update([
-            'read_at' => null
+            'read_at' => null,
         ]);
     }
 
@@ -82,6 +81,4 @@ class MessagesController extends DatatablesController
     {
         return Message::query();
     }
-
-
 }

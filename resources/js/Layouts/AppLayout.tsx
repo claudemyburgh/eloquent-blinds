@@ -4,7 +4,6 @@ import { Toaster } from "react-hot-toast"
 import Footer from "@/FrontEnd/Footer/Footer"
 import GridPattern from "@/FrontEnd/Theme/GridPattern"
 import "@/lib/theme-script"
-import MapComponent from "@/Components/MapComponent"
 
 export default function AppLayout({ children }: PropsWithChildren) {
   const handleMouseMovement = (e: MouseEvent) => {
@@ -36,7 +35,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
         <Navbar />
         <div className="w-full text-white">{children}</div>
 
-        <MapComponent />
+        {/*<MapComponent />*/}
         <Footer />
       </div>
     </div>

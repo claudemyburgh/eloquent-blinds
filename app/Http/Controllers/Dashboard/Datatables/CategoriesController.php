@@ -14,23 +14,20 @@ use Inertia\Response;
 
 class CategoriesController extends DatatablesController
 {
-
     public function __construct()
     {
         parent::__construct();
         $this->middleware(['permission:edit category|delete category|update category']);
     }
 
-
     public function builder(): Builder
     {
         return Category::query();
     }
 
-
     public function index(Request $request): Response
     {
-        return Inertia::render("Dashboard/Table/Index", $this->getResponse($request));
+        return Inertia::render('Dashboard/Table/Index', $this->getResponse($request));
     }
 
     /**
@@ -40,6 +37,7 @@ class CategoriesController extends DatatablesController
     {
         Cache::forget('cat-all');
         $category = Category::create($request->validated());
+
         return to_route('dashboard.categories.edit', $category);
     }
 
@@ -49,7 +47,8 @@ class CategoriesController extends DatatablesController
     public function edit(string $id)
     {
         $category = Category::with('media')->find($id);
-        return Inertia::render("Dashboard/Categories/Edit", compact('category'));
+
+        return Inertia::render('Dashboard/Categories/Edit', compact('category'));
     }
 
     /**
@@ -95,6 +94,4 @@ class CategoriesController extends DatatablesController
     {
         return ['id', 'title', 'slug'];
     }
-
-
 }

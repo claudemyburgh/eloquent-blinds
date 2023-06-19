@@ -15,7 +15,7 @@ class QuoteController extends Controller
      */
     public function __invoke(Request $request): Response
     {
-        return Inertia::render("Frontend/Quote", [
+        return Inertia::render('Frontend/Quote', [
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
         ]);

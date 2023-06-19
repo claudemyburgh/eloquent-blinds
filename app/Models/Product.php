@@ -26,17 +26,13 @@ class Product extends Model implements HasMedia
         'body',
         'live',
         'popular',
-        "product_range"
+        'product_range',
     ];
 
-    /**
-     * @return BelongsTo
-     */
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
-
 
     public function registerMediaConversions(Media $media = null): void
     {
@@ -48,9 +44,6 @@ class Product extends Model implements HasMedia
         }
     }
 
-    /**
-     * @return void
-     */
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('default')

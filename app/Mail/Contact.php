@@ -17,13 +17,12 @@ class Contact extends Mailable implements ShouldQueue
 
     public string $name;
 
-
     /**
      * Create a new message instance.
      */
     public function __construct(public array $data)
     {
-        $this->name = $this->data['first_name'] . " " . $this->data['last_name'];
+        $this->name = $this->data['first_name'].' '.$this->data['last_name'];
     }
 
     /**

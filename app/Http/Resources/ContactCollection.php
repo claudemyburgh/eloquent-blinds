@@ -7,8 +7,7 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class ContactCollection extends ResourceCollection
 {
-
-//    public $collects = User::class;
+    //    public $collects = User::class;
 
     /**
      * Transform the resource collection into an array.

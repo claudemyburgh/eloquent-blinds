@@ -18,11 +18,11 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
         ]);
 
-//        Post::factory()->count(5)->create();
-//        Message::factory()->count(5)->create();
+        //        Post::factory()->count(5)->create();
+        //        Message::factory()->count(5)->create();
 
     }
 }

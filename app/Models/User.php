@@ -15,7 +15,9 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Permission\Traits\HasRoles;
 
-
+/**
+ * @method static role(string $string)
+ */
 class User extends Authenticatable implements HasMedia
 {
     use HasApiTokens, HasFactory, Notifiable, InteractsWithMedia, HasRoles, Observable;
@@ -30,7 +32,7 @@ class User extends Authenticatable implements HasMedia
         'last_name',
         'email',
         'password',
-        'phone'
+        'phone',
     ];
 
     /**
@@ -59,7 +61,7 @@ class User extends Authenticatable implements HasMedia
 
     public function getNameAttribute(): string
     {
-        return $this->first_name . " " . $this->last_name;
+        return $this->first_name . ' ' . $this->last_name;
     }
 
     public function messages(): HasMany
@@ -81,14 +83,10 @@ class User extends Authenticatable implements HasMedia
         }
     }
 
-    /**
-     * @return void
-     */
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('default')
             ->singleFile()
             ->useFallbackUrl(url(config('app.placeholder')));
     }
-
 }

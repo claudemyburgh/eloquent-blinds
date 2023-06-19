@@ -24,7 +24,7 @@ class UpdateCategoryRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'slug' => 'required|unique:categories,id,' . $this->id,
+            'slug' => 'required|unique:categories,id,'.$this->id,
             'parent_id' => 'nullable',
             'excerpt' => 'required|max:500',
             'description' => 'required|max:500',

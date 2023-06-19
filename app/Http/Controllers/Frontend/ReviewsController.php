@@ -15,7 +15,7 @@ class ReviewsController extends Controller
      */
     public function __invoke(Request $request): Response
     {
-        return Inertia::render("Frontend/Reviews", [
+        return Inertia::render('Frontend/Reviews', [
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
         ]);

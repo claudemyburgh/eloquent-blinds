@@ -11,7 +11,7 @@ class PostObserver
      */
     public function created(Post $post): void
     {
-   
+
     }
 
     /**

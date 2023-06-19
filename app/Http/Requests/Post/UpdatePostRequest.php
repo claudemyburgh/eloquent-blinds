@@ -25,10 +25,10 @@ class UpdatePostRequest extends FormRequest
         return [
             'title' => 'required',
             'user_id' => 'required',
-            'slug' => 'required|unique:posts,id,' . $this->id,
+            'slug' => 'required|unique:posts,id,'.$this->id,
             'description' => 'required|max:500',
             'body' => 'required',
-            'live' => 'required'
+            'live' => 'required',
         ];
     }
 }

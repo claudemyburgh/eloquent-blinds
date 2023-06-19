@@ -4,12 +4,10 @@ namespace App\Helpers;
 
 class GeneratePassword
 {
-
     public function __construct()
     {
 
     }
-
 
     public static function password(int $password_length): string
     {
@@ -20,7 +18,7 @@ class GeneratePassword
             $n = random_int(0, $alphaLength);
             $pass[] = $alphabet[$n];
         }
+
         return implode($pass); //turn the array into a string
     }
-
 }

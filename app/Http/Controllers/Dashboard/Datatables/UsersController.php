@@ -14,7 +14,6 @@ use Inertia\Response;
 
 class UsersController extends DatatablesController
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -26,10 +25,6 @@ class UsersController extends DatatablesController
         return User::query();
     }
 
-    /**
-     * @param Request $request
-     * @return Response
-     */
     public function index(Request $request): Response
     {
         return Inertia::render('Dashboard/Table/Index', $this->getResponse($request));
@@ -44,10 +39,8 @@ class UsersController extends DatatablesController
             'password' => Hash::make(GeneratePassword::password(20)),
         ]);
 
-
         return to_route('dashboard.users.edit', $user->id);
     }
-
 
     public function update(UserDatatableRequest $request, int $id)
     {
@@ -60,7 +53,6 @@ class UsersController extends DatatablesController
 
         return Inertia::render('Dashboard/Users/Edit', compact('user'));
     }
-
 
     public function destroy(string $ids)
     {
@@ -85,16 +77,13 @@ class UsersController extends DatatablesController
         return ['id', 'name', 'email', 'phone'];
     }
 
-
     protected function getUpdatableColumns(): array
     {
         return ['id', 'first_name', 'last_name', 'email', 'phone'];
     }
 
-
     protected function getCreatableColumns(): array
     {
         return ['first_name', 'last_name', 'email', 'phone'];
     }
-
 }
