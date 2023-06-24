@@ -44,5 +44,5 @@ module.exports = {
     },
   },
 
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography"), require("tailwindcss-image-mask")],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography"), require("tailwindcss-image-mask"), require("@tailwindcss/container-queries")],
 }

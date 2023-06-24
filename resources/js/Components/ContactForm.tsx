@@ -64,8 +64,8 @@ const ContactForm = () => {
   })
 
   return (
-    <Panel className={`my-4 md:my-6 lg:my-8 space-y-4`}>
-      <Panel.Header heading={"Contact Us"} />
+    <Panel className={`my-4 md:my-6 lg:my-8 space-y-4`} styles={`default`}>
+      <Panel.Header heading={"Contact Us / Quote"} />
       {flash && <Banner message={flash} />}
       <form onSubmit={handleSubmitForm} noValidate method={`POST`} className={"space-y-2"}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">

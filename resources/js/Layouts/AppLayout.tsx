@@ -4,8 +4,12 @@ import { Toaster } from "react-hot-toast"
 import Footer from "@/FrontEnd/Footer/Footer"
 import GridPattern from "@/FrontEnd/Theme/GridPattern"
 import "@/lib/theme-script"
+import ContactSection from "@/Sections/ContactSection"
+import { usePage } from "@inertiajs/react"
 
 export default function AppLayout({ children }: PropsWithChildren) {
+  const component = usePage().component
+
   const handleMouseMovement = (e: MouseEvent) => {
     const { currentTarget: target } = e
     const rect = (target as HTMLElement).getBoundingClientRect()
@@ -34,7 +38,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
         />
         <Navbar />
         <div className="w-full text-white">{children}</div>
-
+        {component !== "Frontend/Quote" && <ContactSection />}
         {/*<MapComponent />*/}
         <Footer />
       </div>

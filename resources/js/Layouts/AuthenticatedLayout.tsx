@@ -7,8 +7,8 @@ import { Link, usePage } from "@inertiajs/react"
 import { PageProps, User } from "@/types"
 import useDatatable from "@/Components/Datatable/DatatableContext"
 import { Toaster } from "react-hot-toast"
-import { ThemeSelector } from "@/FrontEnd/Theme/ThemeSelector"
 import "@/lib/theme-script"
+import { ThemeSelector } from "@/FrontEnd/Theme/ThemeSelector"
 
 export default function Authenticated({ user, header, children }: PropsWithChildren<{ user: User; header?: ReactNode }>) {
   const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false)
@@ -23,7 +23,7 @@ export default function Authenticated({ user, header, children }: PropsWithChild
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 relative md:pt-[100px]">
       <nav className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 md:fixed top-0 inset-x-0 z-40">
         <div className="wrapper">
-          <div className="flex justify-between h-16">
+          <div className="flex justify-between items-center min-h-16">
             <div className="flex">
               <div className="shrink-0 flex items-center">
                 <Link href="/">
@@ -37,7 +37,7 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                 </NavLink>
                 <NavLink href={route("dashboard.messages.index")} active={route().current("dashboard.messages.*")}>
                   Message
-                  {unread > 0 && <span className={`bg-red-500 text-white px-2 absolute -top-1.5 -right-1.5 rounded-lg text-xs`}>{unread}</span>}
+                  {unread > 0 && <span className={`bg-red-500 text-white px-2 absolute top-1.5 -right-1.5 rounded-lg text-xs`}>{unread}</span>}
                 </NavLink>
                 <NavLink data={{ limit }} href={route("dashboard.users.index")} active={route().current("dashboard.users.index")}>
                   Users
@@ -51,8 +51,6 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                 <NavLink href={route("dashboard.products.index")} active={route().current("dashboard.products.*")}>
                   Products
                 </NavLink>
-
-                <ThemeSelector className="relative z-10" />
               </div>
             </div>
 
@@ -85,6 +83,7 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                   </Dropdown.Content>
                 </Dropdown>
               </div>
+              <ThemeSelector className="relative z-10" />
             </div>
 
             <div className="-mr-2 flex items-center sm:hidden">

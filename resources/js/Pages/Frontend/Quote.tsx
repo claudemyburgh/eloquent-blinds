@@ -2,6 +2,7 @@ import React from "react"
 import { Head, usePage } from "@inertiajs/react"
 import AppLayout from "@/Layouts/AppLayout"
 import ContactForm from "@/Components/ContactForm"
+import ContactSection from "@/Sections/ContactSection"
 
 const Quote = () => {
   const { ziggy } = usePage<any>().props
@@ -13,8 +14,13 @@ const Quote = () => {
       </Head>
 
       <div className="relative">
-        <div className="wrapper pt-24 ">
-          <ContactForm />
+        <div className="wrapper pt-24 lg:flex lg:space-x-8">
+          <div className={`w-full lg:w-1/2`}>
+            <ContactForm />
+          </div>
+          <div className={`w-full lg:w-1/2`}>
+            <ContactSection />
+          </div>
         </div>
       </div>
     </AppLayout>

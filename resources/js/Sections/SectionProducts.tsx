@@ -1,5 +1,4 @@
 import React, { FC } from "react"
-import { Link } from "@inertiajs/react"
 
 import blackBlinds from "@/../img/black-blinds.webp"
 import aluBlinds from "@/../img/alu-blinds.webp"
@@ -9,6 +8,7 @@ import rollerBlinds from "@/../img/roller-blinds.webp"
 import honeyBlinds from "@/../img/honey-blinds.webp"
 import TiltItem from "@/FrontEnd/Parts/TiltItem"
 import { twMerge } from "tailwind-merge"
+import { PrimaryLink } from "@/FrontEnd/Links"
 
 const SectionProducts: FC<{ className?: string }> = ({ className }) => {
   return (
@@ -35,12 +35,9 @@ const SectionProducts: FC<{ className?: string }> = ({ className }) => {
               </p>
 
               <div className="mt-10 flex items-center gap-x-6">
-                <Link
-                  href={route("quote")}
-                  className="rounded-md bg-white px-3.5 py-1.5 text-base font-semibold leading-7 text-primary-500 shadow-sm hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                >
+                <PrimaryLink size={`xl`} href={route("quote")}>
                   Get a free quote
-                </Link>
+                </PrimaryLink>
               </div>
             </div>
             <div className={`flex-1 relative`}>

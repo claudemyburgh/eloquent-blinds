@@ -20,7 +20,7 @@ const ReviewCard = ({ data }: DataProps) => {
       <div className={`text-sm space-y-4`} dangerouslySetInnerHTML={{ __html: data.content }}></div>
       <div className={`flex space-x-4`}>
         <div>
-          <img height={50} width={50} loading={`lazy`} src={data.avatar} alt={data.author} className={`h-12 w-12 rounded-full`} />
+          <img height={50} width={50} loading={`lazy`} src={data.avatar} alt={data.author} className={`h-12 w-12 rounded-lg`} />
         </div>
         <div className="flex flex-col">
           <div className="font-bold text-sm text-gray-500">{data.author}</div>
