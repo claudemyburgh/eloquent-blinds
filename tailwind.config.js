@@ -10,6 +10,7 @@ module.exports = {
     "./resources/js/**/*.{tsx,ts}",
   ],
   darkMode: "class",
+  safelist: ["swiper-wrapper"],
   theme: {
     extend: {
       colors: {
@@ -43,5 +44,5 @@ module.exports = {
     },
   },
 
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography"), require("tailwindcss-image-mask")],
 }

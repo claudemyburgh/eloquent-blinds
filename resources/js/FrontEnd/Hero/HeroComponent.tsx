@@ -5,8 +5,8 @@ import hero from "@/../img/hero.webp"
 
 const HeroComponent = () => {
   return (
-    <div className="relative overflow-hidden">
-      <div className="wrapper pt-10 pb-4 sm:pb-1 lg:flex lg:pt-22 2xl:pt-32">
+    <div className="relative overflow-hidden isolate">
+      <div className="wrapper pt-10 pb-4 sm:pb-1 lg:flex z-20 lg:pt-22 2xl:pt-32">
         <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
           <div className="mt-24 sm:mt-32 lg:mt-16">
             <a href={`https://view.publitas.com/e-books/quantum-signature/page/1`} target={`_blank`} className="inline-flex space-x-4">
@@ -19,9 +19,7 @@ const HeroComponent = () => {
           </div>
           <h1 className="mt-10 text-4xl font-black tracking-tight text-gray-800 dark:text-white sm:text-6xl">Supplier and installer of top quality blinds.</h1>
           <p className="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
-            We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space. We
-            have a variety of options to choose from, including Aluminium Blinds , Bamboo Blinds , Basswood Blinds , Honeycomb Blinds , Roller Blinds , Venetian Blinds , and Zebra
-            Blinds.
+            We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space.
           </p>
           <div className="mt-10 flex items-center gap-x-6">
             <Link
@@ -35,13 +33,13 @@ const HeroComponent = () => {
             </Link>
           </div>
         </div>
-        <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32">
-          <div className="max-w-3xl relative flex-none sm:max-w-5xl lg:max-w-none">
+        <div className="mx-auto mt-16 opacity-40 md:opacity-100 flex max-w-full sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32 absolute md:relative top-0 inset-x-0 -z-10">
+          <div className="max-w-full image-mask-b-20 md:image-mask-b-100 md:max-w-3xl relative flex-none sm:max-w-5xl lg:max-w-none">
             <div aria-hidden={true} className="absolute w-1/2 top-0 h-[1px] left-0 bg-gradient-to-r from-transparent via-secondary-500 to-transparent">
               <div className="w-1/2 h-[20px] rounded-b-full absolute top-0 translate-x-1/2 blur-md bg-secondary-500/10 "></div>
             </div>
-            <img src={hero} alt="App screenshot" width={2432} height={1442} className="w-[76rem]  rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10" />
-            <div className="absolute inset-0 z-10 card w-full h-full "></div>
+            <img src={hero} alt="App screenshot" width={2432} height={1442} className={`w-full md:max-w-5xl max-w-full rounded-lg`} />
+            <div className="absolute inset-0 z-20 card w-full h-full"></div>
           </div>
         </div>
       </div>

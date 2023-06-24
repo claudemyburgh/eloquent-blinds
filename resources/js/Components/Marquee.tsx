@@ -26,7 +26,7 @@ const Marquee: FC<
       <div
         // onMouseEnter={mouseEnter}
         // onMouseLeave={mouseLeave}
-        className={twMerge(`flex cursor-pointer -mx-4 py-1  group bg-gradient-to-r from-primary-700 to-cyan-200`, className)}
+        className={twMerge(`flex cursor-pointer -mx-4 py-1  group bg-gradient-to-r from-primary-600 to-purple-500`, className)}
         style={{
           // @ts-expect-error
           "--speed": `${moveSpeed}ms`,
@@ -35,7 +35,7 @@ const Marquee: FC<
         }}
       >
         <div className="bg-gray-100 dark:bg-gray-900 py-8">
-          <div className="flex animate-loop text-gray-700 dark:text-gray-100">
+          <div className="flex animate-loop min-w-full text-gray-700 dark:text-gray-100">
             {children}
             {children}
             {children}
