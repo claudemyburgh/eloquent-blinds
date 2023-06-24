@@ -1,14 +1,11 @@
 import React from "react"
 import AppLayout from "@/Layouts/AppLayout"
 import { Head, usePage } from "@inertiajs/react"
-import ReviewPanel from "@/FrontEnd/Review/ReviewPanel"
 import HeroComponent from "@/FrontEnd/Hero/HeroComponent"
 import SectionProducts from "@/Sections/SectionProducts"
 import IntroIcons2 from "@/FrontEnd/Parts/IntroIcons2"
 import Incentives from "@/Sections/Incentives"
 import Marquee from "@/Components/Marquee"
-import Reviews from "@/FrontEnd/Map/Reviews"
-import { DefaultLink } from "@/FrontEnd/Links"
 
 const Home = () => {
   const { ziggy, csrf, categories_all } = usePage<any>().props
@@ -37,18 +34,18 @@ const Home = () => {
 
         <IntroIcons2 />
 
-        <Reviews />
+        {/*<Reviews />*/}
 
-        <div className="max-w-7xl mx-auto ">
-          <div className="px-4">
-            <ReviewPanel />
-          </div>
-        </div>
-        <div className="h-[350px] bg-gradient-to-t from-white via-white dark:from-gray-900 dark:via-gray-900 to-transparent absolute bottom-0 inset-x-0 flex items-center justify-center">
-          <DefaultLink className={`min-w-[220px]`} size={`xl`} href={route("reviews")}>
-            See more
-          </DefaultLink>
-        </div>
+        {/*<div className="max-w-7xl mx-auto ">*/}
+        {/*  <div className="px-4">*/}
+        {/*    <ReviewPanel />*/}
+        {/*  </div>*/}
+        {/*</div>*/}
+        {/*<div className="h-[350px] bg-gradient-to-t from-white via-white dark:from-gray-900 dark:via-gray-900 to-transparent absolute bottom-0 inset-x-0 flex items-center justify-center">*/}
+        {/*  <DefaultLink className={`min-w-[220px]`} size={`xl`} href={route("reviews")}>*/}
+        {/*    See more*/}
+        {/*  </DefaultLink>*/}
+        {/*</div>*/}
       </div>
       <Incentives />
       <SectionProducts className={`mb-12 `} />

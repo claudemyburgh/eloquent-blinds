@@ -21,8 +21,8 @@ return [
     ],
     'medium' => [
         'format' => 'webp',
-        'width' => 400,
-        'height' => 400,
+        'width' => 390,
+        'height' => 258,
         'blur' => 0,
     ],
     'large' => [
@@ -33,8 +33,8 @@ return [
     ],
     'tail' => [
         'format' => 'webp',
-        'width' => 400,
-        'height' => 600,
+        'width' => 388,
+        'height' => 641,
         'blur' => 0,
     ],
     'screen' => [

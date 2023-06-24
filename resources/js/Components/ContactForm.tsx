@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { FC, useState } from "react"
 import { Panel } from "@/Components/Panel"
 import { InputError, InputLabel, SaveSubmitButton, Textarea, TextInput } from "@/Components/Form"
 import { useForm, usePage } from "@inertiajs/react"
@@ -6,6 +6,7 @@ import axios from "axios"
 import { PageProps } from "@/types"
 import toast from "react-hot-toast"
 import { Banner, ToastItem } from "@/Components/Notifications"
+import { twMerge } from "tailwind-merge"
 
 interface ContactsProps {
   data: {
@@ -14,7 +15,12 @@ interface ContactsProps {
   }
 }
 
-const ContactForm = () => {
+interface SubjectProp {
+  subject?: string
+  className?: string
+}
+
+const ContactForm: FC<SubjectProp> = ({ subject: productSubject = "", className }) => {
   const { auth, flash } = usePage<PageProps>().props
 
   const [contacts, setContacts] = useState<ContactsProps>()
@@ -60,12 +66,12 @@ const ContactForm = () => {
     email: "",
     phone: "",
     message: "",
-    subject: "",
+    subject: productSubject,
   })
 
   return (
-    <Panel className={`my-4 md:my-6 lg:my-8 space-y-4`} styles={`default`}>
-      <Panel.Header heading={"Contact Us / Quote"} />
+    <Panel className={twMerge(`my-4 md:my-6 lg:my-8 space-y-4`, className)} styles={`default`}>
+      <Panel.Header heading={`${productSubject?.length === 0 ? "Contact Us" : "Get Quote"}`} />
       {flash && <Banner message={flash} />}
       <form onSubmit={handleSubmitForm} noValidate method={`POST`} className={"space-y-2"}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
@@ -94,7 +100,15 @@ const ContactForm = () => {
           </div>
           <div className={`col-span-2`}>
             <InputLabel htmlFor={`subject`} value={`Subject`} />
-            <TextInput name={`subject`} id={`subject`} type={`text`} value={data.subject} onChange={handleInput} className={`w-full mt-2`} />
+            <TextInput
+              name={`subject`}
+              id={`subject`}
+              type={`text`}
+              disabled={productSubject?.length !== 0}
+              value={data.subject}
+              onChange={handleInput}
+              className={`w-full mt-2`}
+            />
             <InputError className={`mt-2`} message={errors.subject} />
           </div>
         </div>
