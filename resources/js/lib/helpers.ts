@@ -36,7 +36,7 @@ export function convertedImage(
   url: string,
   type?: "tiny" | "thumb" | "small" | "medium" | "large" | "tail" | "screen",
   extension: string = "webp",
-  fallbackImageUrl: string = "http://127.0.0.1:8000/img/placeholder.webp"
+  fallbackImageUrl: string = "/i    mg/placeholder.webp"
 ) {
   const regex = /([^/]+)\.[^.]+$/
   const hasImage = regex.test(url)
