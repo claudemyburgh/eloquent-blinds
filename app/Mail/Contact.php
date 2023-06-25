@@ -30,12 +30,12 @@ class Contact extends Mailable implements ShouldQueue
      */
     public function envelope(): Envelope
     {
-
+        dd($this->data['email']);
         return new Envelope(
             from: new Address($this->data['email'], $this->name),
-//            replyTo: [
-//                new Address($this->data['email'], $this->name),
-//            ],
+            replyTo: [
+                new Address($this->data['email'], $this->name),
+            ],
             subject: $this->data['subject'],
         );
     }

@@ -12,7 +12,7 @@ const Faq = () => {
       </Head>
 
       <div className="relative wrapper pt-40">
-        <div className="grid md:grid-cols-2 md:divide-x md:divide-dashed md:divide-gray-800">
+        <div className="grid md:grid-cols-2 md:divide-x md:divide-dashed md:divide-gray-900/10 md:dark:divide-gray-500/10">
           <div className="relative md:pr-6">
             <header className="md:sticky top-32">
               <h2 className="text-3xl font-extrabold text-gray-900 dark:text-gray-100 sm:text-4xl">Frequently asked questions</h2>
@@ -27,7 +27,7 @@ const Faq = () => {
           </div>
 
           <section className={`md:pl-6`}>
-            <dl className="sm:mt-16 divide-y divide-solid divide-gray-900/10 dark:divide-gray-500/10">
+            <dl className="sm:mt-16 divide-y divide-dashed divide-gray-900/10 dark:divide-gray-500/10">
               {faqs.map((faq: { id: number; question: string; answer: string }) => (
                 <div className={`py-8`} key={faq.id}>
                   <dt className="text-xl font-medium text-gray-900 dark:text-gray-100">{faq.question}</dt>
