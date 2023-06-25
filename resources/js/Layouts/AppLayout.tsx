@@ -9,10 +9,11 @@ import { usePage } from "@inertiajs/react"
 import Marquee from "@/Components/Marquee"
 import Incentives from "@/Sections/Incentives"
 import SectionProducts from "@/Sections/SectionProducts"
+import DevBanner from "@/Components/DevBanner"
 
 export default function AppLayout({ children }: PropsWithChildren) {
   const component = usePage().component
-  const { categories_all } = usePage<any>().props
+  const { categories_all, production } = usePage<any>().props
   const handleMouseMovement = (e: MouseEvent) => {
     const { currentTarget: target } = e
     const rect = (target as HTMLElement).getBoundingClientRect()
@@ -30,6 +31,8 @@ export default function AppLayout({ children }: PropsWithChildren) {
 
   return (
     <div className={`relative inset-0 `}>
+      <DevBanner on={!production} />
+
       <div className={`min-h-screen relative z-0`}>
         {/*<Blob />*/}
         <GridPattern className={`h-[300px] fixed top-0 inset-x-0`} />

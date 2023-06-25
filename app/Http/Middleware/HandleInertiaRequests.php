@@ -58,6 +58,7 @@ class HandleInertiaRequests extends Middleware
             'api' => [
                 'maps' => config('google.api.maps'),
             ],
+            "production" => app()->isProduction()
         ]);
     }
 }
