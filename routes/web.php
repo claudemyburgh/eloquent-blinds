@@ -12,8 +12,8 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PrivacyPolicyController;
 use Illuminate\Support\Facades\Route;
 
-require __DIR__.'/dashboard.php';
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+require __DIR__ . '/dashboard.php';
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/reviews', ReviewsController::class)->name('reviews');
