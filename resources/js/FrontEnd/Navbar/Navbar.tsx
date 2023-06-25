@@ -26,7 +26,7 @@ const Navbar = () => {
     <>
       <Popover as={"nav"} className={`fixed w-full z-50 top-0 md:top-2`}>
         <div
-          className={`wrapper relative card text-gray-500 dark:bg-gray-900/60 bg-gray-200/90 border border-gray-300 dark:border-primary-900/40 dark:text-gray-100 px-6 py-4 rounded-b-lg md:rounded-lg flex flex-wrap justify-between items-center shadow-2xl shadow-primary-900/30 backdrop-blur-sm`}
+          className={`wrapper relative card text-gray-500 dark:bg-gray-900/80 bg-gray-200/90 border border-gray-300 dark:border-primary-900/40 dark:text-gray-100 px-6 py-4 rounded-b-lg md:rounded-lg flex flex-wrap justify-between items-center shadow-2xl shadow-primary-900/30 backdrop-blur-sm`}
         >
           <div aria-hidden={true} className="absolute w-1/2 top-0 h-[1px] left-0 bg-gradient-to-r from-transparent via-secondary-500 to-transparent">
             <div className="w-1/2 h-[20px] rounded-b-full absolute top-0 translate-x-1/2 blur-md bg-secondary-500/10 "></div>

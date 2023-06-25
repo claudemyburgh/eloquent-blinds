@@ -15,11 +15,11 @@ const Quote = () => {
 
       <div className="relative">
         <div className="wrapper pt-24 lg:flex lg:space-x-8">
-          <div className={`w-full lg:w-1/2`}>
-            <ContactForm />
+          <div className={`w-full lg:w-1/2 relative`}>
+            <ContactSection className={"sticky top-32"} />
           </div>
           <div className={`w-full lg:w-1/2`}>
-            <ContactSection />
+            <ContactForm />
           </div>
         </div>
       </div>

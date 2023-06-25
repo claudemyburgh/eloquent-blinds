@@ -66,12 +66,12 @@ const ContactForm: FC<SubjectProp> = ({ subject: productSubject = "", className 
     email: "",
     phone: "",
     message: "",
-    subject: productSubject,
+    subject: `${productSubject?.length !== 0 ? "Please give me a quote for " + productSubject : ""}  `,
   })
 
   return (
     <Panel className={twMerge(`my-4 md:my-6 lg:my-8 space-y-4`, className)} styles={`default`}>
-      <Panel.Header heading={`${productSubject?.length === 0 ? "Contact Us" : "Get Quote"}`} />
+      <Panel.Header heading={`${productSubject?.length === 0 ? "Contact Us" : "Get Quote for " + productSubject}`} />
       {flash && <Banner message={flash} />}
       <form onSubmit={handleSubmitForm} noValidate method={`POST`} className={"space-y-2"}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">

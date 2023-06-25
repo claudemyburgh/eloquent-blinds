@@ -65,7 +65,7 @@ const Product = () => {
             <ReactMarkdown className={`prose prose-lg dark:prose-invert my-8 `} children={product.body} remarkPlugins={[remarkGfm]} />
           </div>
           <div className={`relative`}>
-            <ContactForm className={`sticky top-32`} subject={`Please give me a quote for ${product.title} ${category.title}`} />
+            <ContactForm className={`sticky top-32`} subject={`${product.title} ${category.title}`} />
           </div>
         </div>
       </div>

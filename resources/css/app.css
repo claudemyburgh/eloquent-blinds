@@ -71,7 +71,7 @@
 
 @layer component {
     .wrapper {
-        @apply w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+        @apply w-full max-w-7xl mx-auto px-4 ;
     }
 
 
@@ -95,7 +95,7 @@
     }
 
     .card {
-        @apply relative;
+        @apply relative rounded-lg;
         --mouse-x: 0;
         --mouse-y: 0;
         --light: rgba(55, 255, 255, 0.15)

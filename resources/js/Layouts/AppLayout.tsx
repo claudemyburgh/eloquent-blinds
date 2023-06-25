@@ -6,10 +6,13 @@ import GridPattern from "@/FrontEnd/Theme/GridPattern"
 import "@/lib/theme-script"
 import ContactSection from "@/Sections/ContactSection"
 import { usePage } from "@inertiajs/react"
+import Marquee from "@/Components/Marquee"
+import Incentives from "@/Sections/Incentives"
+import SectionProducts from "@/Sections/SectionProducts"
 
 export default function AppLayout({ children }: PropsWithChildren) {
   const component = usePage().component
-
+  const { categories_all } = usePage<any>().props
   const handleMouseMovement = (e: MouseEvent) => {
     const { currentTarget: target } = e
     const rect = (target as HTMLElement).getBoundingClientRect()
@@ -27,7 +30,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
 
   return (
     <div className={`relative inset-0 `}>
-      <div className={`min-h-screen  relative z-0`}>
+      <div className={`min-h-screen relative z-0`}>
         {/*<Blob />*/}
         <GridPattern className={`h-[300px] fixed top-0 inset-x-0`} />
         <Toaster
@@ -38,7 +41,26 @@ export default function AppLayout({ children }: PropsWithChildren) {
         />
         <Navbar />
         <div className="w-full text-white">{children}</div>
-        {component !== "Frontend/Quote" && <ContactSection />}
+
+        <Incentives />
+        <SectionProducts />
+        <Marquee speed={25500} className={` min-w-full relative z-10 shadow-xl shadow-black/20`}>
+          {categories_all.map((category: any) => (
+            <div key={category.id} className={`px-4 shrink-0 flex`}>
+              {category.title}
+              {category.children.map((child: any) => (
+                <div key={child.id} className={`px-4 shrink-0`}>
+                  {child.title}
+                </div>
+              ))}
+            </div>
+          ))}
+        </Marquee>
+        {component !== "Frontend/Quote" && (
+          <div className={`wrapper`}>
+            <ContactSection className={`-mx-4 px-4`} />
+          </div>
+        )}
         {/*<MapComponent />*/}
         <Footer />
       </div>

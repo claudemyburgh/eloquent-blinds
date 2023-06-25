@@ -45,7 +45,7 @@ const AudioPlayer: FC<{ src: string }> = ({ src }) => {
         <button type={`button`} onClick={togglePlay} className={`p-2.5  rounded-lg bg-primary-500 text-white`}>
           {isPlaying ? <PauseIcon className={`h-4 w-4 `} /> : <PlayIcon className={`h-4 w-4 `} />}
         </button>
-        <div className="flex flex-1 justify-between px-4">
+        <div className="flex flex-1 text-xs justify-between px-4">
           <div>{convertSeconds(currentTime)}</div>
           <div>{convertSeconds(duration)}</div>
         </div>

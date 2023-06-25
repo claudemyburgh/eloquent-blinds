@@ -14,18 +14,18 @@ interface DetailsProps {
 const ContactCard = ({ details }: DetailsProps) => {
   return (
     <div className={`@container/card`}>
-      <div className={`bg-gray-100 @[400px]:flex items-center dark:bg-gray-900 overflow-clip relative card w-full p-6 rounded-lg border dark:border-gray-800 border-gray-300`}>
-        <GridPattern className={`h-[100px] absolute -top-[20px] -rotate-6 inset-x-0`} />
+      <div className={`bg-gray-100 @[550px]:flex items-center dark:bg-gray-900 overflow-clip relative card w-full p-6 rounded-lg border dark:border-gray-800 border-gray-300`}>
+        <GridPattern className={`h-[100px] absolute top-0 inset-x-0`} />
         <figure
-          className={`w-[150px] shrink-0 h-[150px] @[400px]:w-[110px] @[400px]:h-[110px] mx-auto @[400px]:mx-0 block  rounded-2xl overflow-clip shadow-lg shadow-primary-500/30 border-[4px] border-primary-500/50`}
+          className={`w-[150px] shrink-0 h-[150px] @[550px]:w-[110px] @[550px]:h-[110px] mx-auto @[550px]:mx-0 block  rounded-2xl overflow-clip shadow-lg shadow-primary-500/30 border-[4px] border-primary-500/50`}
         >
           <img src={details.image} alt={`${details.first_name} ${details.last_name}`} />
           <figcaption className={`sr-only`}>
             A profile image for {details.first_name} {details.last_name}.
           </figcaption>
         </figure>
-        <div className="-space-y-0.5 text-center @[400px]:text-left @[400px]:ml-6 mt-4 @[400px]:mt-0">
-          <p className={`text-3xl @[400px]:text-xl text-gray-700 dark:text-gray-100 font-black`}>
+        <div className="-space-y-0.5 text-center @[550px]:text-left @[550px]:ml-6 mt-4 @[550px]:mt-0">
+          <p className={`text-3xl @[550px]:text-xl text-gray-700 dark:text-gray-100 font-black`}>
             {details.first_name} {details.last_name}
           </p>
 

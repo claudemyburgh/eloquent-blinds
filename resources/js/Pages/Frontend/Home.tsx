@@ -2,10 +2,7 @@ import React from "react"
 import AppLayout from "@/Layouts/AppLayout"
 import { Head, usePage } from "@inertiajs/react"
 import HeroComponent from "@/FrontEnd/Hero/HeroComponent"
-import SectionProducts from "@/Sections/SectionProducts"
 import IntroIcons2 from "@/FrontEnd/Parts/IntroIcons2"
-import Incentives from "@/Sections/Incentives"
-import Marquee from "@/Components/Marquee"
 
 const Home = () => {
   const { ziggy, csrf, categories_all } = usePage<any>().props
@@ -18,19 +15,6 @@ const Home = () => {
 
       <div className="relative">
         <HeroComponent />
-
-        <Marquee speed={10000} className={`-rotate-3 min-w-full relative z-10 shadow-xl shadow-black/20`}>
-          {categories_all.map((category: any) => (
-            <div key={category.id} className={`px-4 shrink-0 flex`}>
-              {category.title}
-              {category.children.map((child: any) => (
-                <div key={child.id} className={`px-4 shrink-0`}>
-                  {child.title}
-                </div>
-              ))}
-            </div>
-          ))}
-        </Marquee>
 
         <IntroIcons2 />
 
@@ -47,8 +31,6 @@ const Home = () => {
         {/*  </DefaultLink>*/}
         {/*</div>*/}
       </div>
-      <Incentives />
-      <SectionProducts className={`mb-12 `} />
     </AppLayout>
   )
 }

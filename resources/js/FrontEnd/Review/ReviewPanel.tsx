@@ -9,7 +9,7 @@ const ReviewPanel = () => {
   return (
     <div className={`relative w-full`}>
       <MasonryGrid>
-        <MasonryCard className={`w-full md:w-1/2 lg:w-1/3 p-2 `}>
+        <MasonryCard className={`w-full md:w-1/2 lg:w-1/3 p-2`}>
           <ReviewStats />
         </MasonryCard>
 
