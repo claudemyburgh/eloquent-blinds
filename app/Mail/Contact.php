@@ -22,7 +22,7 @@ class Contact extends Mailable implements ShouldQueue
      */
     public function __construct(public array $data)
     {
-        $this->name = $this->data['first_name'].' '.$this->data['last_name'];
+        $this->name = $this->data['first_name'] . ' ' . $this->data['last_name'];
     }
 
     /**
@@ -33,9 +33,9 @@ class Contact extends Mailable implements ShouldQueue
 
         return new Envelope(
             from: new Address($this->data['email'], $this->name),
-            replyTo: [
-                new Address($this->data['email'], $this->name),
-            ],
+//            replyTo: [
+//                new Address($this->data['email'], $this->name),
+//            ],
             subject: $this->data['subject'],
         );
     }
