@@ -19,7 +19,7 @@ return [
 
     'slogan' => env('APP_SLOGAN', ''),
 
-    'placeholder' => env('APP_URL').'/img/placeholder.webp',
+    'placeholder' => '/img/placeholder.webp',
 
     /*
     |--------------------------------------------------------------------------
