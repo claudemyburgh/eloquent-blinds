@@ -19,7 +19,7 @@ return [
 
     'slogan' => env('APP_SLOGAN', ''),
 
-    'placeholder' => '/img/placeholder.webp',
+    'placeholder' => env('APP_URL') .'/img/placeholder.webp',
 
     /*
     |--------------------------------------------------------------------------
@@ -58,7 +58,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://eloquentblinds.co.za'),
 
     'asset_url' => env('ASSET_URL'),
 
