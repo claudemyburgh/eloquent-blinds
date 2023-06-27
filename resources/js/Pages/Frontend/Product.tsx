@@ -61,7 +61,7 @@ const Product = () => {
             <h1 className={`mt-5 text-4xl font-black tracking-tight text-gray-800 dark:text-white sm:text-6xl text-shadow-lg`}>
               {product.title} {category.title}
             </h1>
-            <AudioPlayer src={sound} />
+            {/*<AudioPlayer src={sound} />*/}
             <ReactMarkdown className={`prose prose-lg dark:prose-invert my-8 `} children={product.body} remarkPlugins={[remarkGfm]} />
           </div>
           <div className={`relative`}>
