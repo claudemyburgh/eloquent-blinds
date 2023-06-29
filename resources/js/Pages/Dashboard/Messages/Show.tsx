@@ -80,11 +80,10 @@ const Show = ({ auth, message }: any) => {
                 </span>
               </div>
             </div>
-
-            <div className={`my-4 text-gray-200`}>{message.message}</div>
+              <ReactMarkdown className={`prose dark:prose-invert my-8 `} children={message.message} remarkPlugins={[remarkGfm]} />
             <div className="space-x-4 pt-4">
               <SecondaryButton className={`btn btn-secondary text-white`} onClick={openModal}>
-                Replay
+                Reply
               </SecondaryButton>
             </div>
           </Panel>
@@ -101,7 +100,6 @@ const Show = ({ auth, message }: any) => {
                   })}
                 </span>
                 <ReactMarkdown className={`prose dark:prose-invert my-8 `} children={child.message} remarkPlugins={[remarkGfm]} />
-                <div className={`my-4 text-gray-200`}>{child.message}</div>
               </Panel>
             ))}
 
