@@ -19,7 +19,7 @@ class ContactFormController extends Controller implements ShouldQueue
     {
 //        event(new ContactSubmitted($request->validated()));
 
-        Mail::to('claude@eloquentblinds.co.za')->queue(new Quote());
+        Mail::to('claude@eloquentblinds.co.za')->queue(new Quote($request->validated()));
 
 
         return redirect()->back()->with('flash', 'Success');

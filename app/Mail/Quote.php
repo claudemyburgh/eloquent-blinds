@@ -17,9 +17,9 @@ class Quote extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(public array $data)
     {
-        //
+
     }
 
     /**
@@ -28,8 +28,8 @@ class Quote extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('claudemyburgh@googlemail.com', 'Claude'),
-            subject: 'Quote',
+            from: new Address($this->data['email'], $this->data['first_name']),
+            subject: $this->data['subject'],
         );
     }
 
