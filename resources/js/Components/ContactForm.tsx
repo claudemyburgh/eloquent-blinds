@@ -7,6 +7,9 @@ import { PageProps } from "@/types"
 import toast from "react-hot-toast"
 import { Banner, ToastItem } from "@/Components/Notifications"
 import { twMerge } from "tailwind-merge"
+import confetti from "canvas-confetti";
+
+
 
 interface ContactsProps {
   data: {
@@ -51,6 +54,13 @@ const ContactForm: FC<SubjectProp> = ({ subject: productSubject = "", className 
       onSuccess: () => {
         reset()
         toast.custom((t) => <ToastItem t={t} type={`success`} title={`Success`} message={`Message successfully send`} icon={`check`} />)
+          confetti({
+              particleCount: 200,
+              spread: 220,
+              origin: { y: 0.4 },
+              gravity: 2,
+              colors: ['#5eead4', '#2dd4bf', '#0284c7', '#22d3ee']
+          });
       },
       onError: () => {
         toast.custom((t) => <ToastItem t={t} icon={`cross`} type={`error`} title={`Error`} message={`Something went wrong`} />)

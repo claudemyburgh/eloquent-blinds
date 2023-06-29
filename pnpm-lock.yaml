@@ -9,6 +9,7 @@ specifiers:
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/typography': ^0.5.9
   '@types/bytes': ^3.1.1
+  '@types/canvas-confetti': ^1.6.0
   '@types/chart.js': ^2.9.37
   '@types/google-map-react': ^2.1.7
   '@types/lodash': ^4.14.195
@@ -22,6 +23,7 @@ specifiers:
   autoprefixer: ^10.4.14
   axios: ^1.4.0
   bytes: ^3.1.2
+  canvas-confetti: ^1.6.0
   chart.js: ^4.3.0
   countup.js: ^2.6.2
   date-fns: ^2.30.0
@@ -54,10 +56,12 @@ dependencies:
   '@popperjs/core': 2.11.8
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.3.2
   '@types/bytes': 3.1.1
+  '@types/canvas-confetti': 1.6.0
   '@types/google-map-react': 2.1.7
   '@types/lodash': 4.14.195
   '@types/masonry-layout': 4.2.5
   bytes: 3.1.2
+  canvas-confetti: 1.6.0
   chart.js: 4.3.0
   countup.js: 2.6.2
   date-fns: 2.30.0
@@ -679,6 +683,10 @@ packages:
     resolution: {integrity: sha512-lOGyCnw+2JVPKU3wIV0srU0NyALwTBJlVSx5DfMQOFuuohA8y9S8orImpuIQikZ0uIQ8gehrRjxgQC1rLRi11w==}
     dev: false
 
+  /@types/canvas-confetti/1.6.0:
+    resolution: {integrity: sha512-Yq6rIccwcco0TLD5SMUrIM7Fk7Fe/C0jmNRxJJCLtAF6gebDkPuUjK5EHedxecm69Pi/aA+It39Ux4OHmFhjRw==}
+    dev: false
+
   /@types/chart.js/2.9.37:
     resolution: {integrity: sha512-9bosRfHhkXxKYfrw94EmyDQcdjMaQPkU1fH2tDxu8DWXxf1mjzWQAV4laJF51ZbC2ycYwNDvIm1rGez8Bug0vg==}
     dependencies:
@@ -896,6 +904,10 @@ packages:
   /caniuse-lite/1.0.30001507:
     resolution: {integrity: sha512-SFpUDoSLCaE5XYL2jfqe9ova/pbQHEmbheDf5r4diNwbAgR3qxM9NQtfsiSscjqoya5K7kFcHPUQ+VsUkIJR4A==}
     dev: true
+
+  /canvas-confetti/1.6.0:
+    resolution: {integrity: sha512-ej+w/m8Jzpv9Z7W7uJZer14Ke8P2ogsjg4ZMGIuq4iqUOqY2Jq8BNW42iGmNfRwREaaEfFIczLuZZiEVSYNHAA==}
+    dev: false
 
   /ccount/2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
