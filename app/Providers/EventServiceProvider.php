@@ -6,6 +6,7 @@ use App\Events\ContactSubmitted;
 use App\Listeners\NewsletterSubscribe;
 use App\Listeners\SaveMessageToDatabase;
 use App\Listeners\SendContactEmail;
+use App\Listeners\SendThankYourMail;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -23,6 +24,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         ContactSubmitted::class => [
             SendContactEmail::class,
+            SendThankYourMail::class,
             SaveMessageToDatabase::class,
             NewsletterSubscribe::class,
         ],
