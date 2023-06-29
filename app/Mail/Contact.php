@@ -33,7 +33,7 @@ class Contact extends Mailable implements ShouldQueue
     {
 
         return new Envelope(
-            from: new Address($this->data['email'], $this->data['first_name']),
+//            from: new Address($this->data['email'], $this->data['first_name']),
             replyTo: [
                 new Address($this->data['email'], $this->name),
             ],
