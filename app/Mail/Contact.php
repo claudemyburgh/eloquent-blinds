@@ -25,6 +25,7 @@ class Contact extends Mailable implements ShouldQueue
         $this->name = $this->data['first_name'] . ' ' . $this->data['last_name'];
     }
 
+
     /**
      * Get the message envelope.
      */
@@ -32,7 +33,10 @@ class Contact extends Mailable implements ShouldQueue
     {
 
         return new Envelope(
-            from: $this->data['email'], //new Address($this->data['email'], $this->data['first_name']),
+            from: new Address($this->data['email'], $this->data['first_name']),
+            replyTo: [
+                new Address($this->data['email'], $this->name),
+            ],
             subject: $this->data['subject'],
         );
     }
