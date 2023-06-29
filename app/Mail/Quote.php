@@ -28,7 +28,7 @@ class Quote extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('claudemyburgh@gmail.com', 'Claude'),
+            from: new Address('claudemyburgh@googlemail.com', 'Claude'),
             subject: 'Quote',
         );
     }
