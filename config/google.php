@@ -7,8 +7,10 @@ return [
       'site_key' => env('RECAPTCH_SITE_KEY'),
       'secret_key' => env('RECAPTCH_SECRET_KEY'),
     ]
-
   ],
+  'gtag' => [
+    'id' => env('GOOGLE_GTAG_ID')
+  ]
 
 
 ];
