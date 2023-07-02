@@ -61,11 +61,6 @@ const Footer = () => {
                   Policy
                 </Link>
               </li>
-              <li>
-                <Link href={"/"} className={`text-base text-gray-700 dark:text-gray-300 hover:text-primary-600 `}>
-                  Cookie
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
