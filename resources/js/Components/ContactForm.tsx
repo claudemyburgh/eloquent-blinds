@@ -7,9 +7,7 @@ import { PageProps } from "@/types"
 import toast from "react-hot-toast"
 import { Banner, ToastItem } from "@/Components/Notifications"
 import { twMerge } from "tailwind-merge"
-import confetti from "canvas-confetti";
-
-
+import confetti from "canvas-confetti"
 
 interface ContactsProps {
   data: {
@@ -24,7 +22,7 @@ interface SubjectProp {
 }
 
 const ContactForm: FC<SubjectProp> = ({ subject: productSubject = "", className }) => {
-  const { auth, flash } = usePage<PageProps>().props
+  const { flash } = usePage<PageProps>().props
 
   const [contacts, setContacts] = useState<ContactsProps>()
 
@@ -54,13 +52,13 @@ const ContactForm: FC<SubjectProp> = ({ subject: productSubject = "", className 
       onSuccess: () => {
         reset()
         toast.custom((t) => <ToastItem t={t} type={`success`} title={`Success`} message={`Message successfully send`} icon={`check`} />)
-          confetti({
-              particleCount: 200,
-              spread: 220,
-              origin: { y: 0.4 },
-              gravity: 2,
-              colors: ['#5eead4', '#2dd4bf', '#0284c7', '#22d3ee']
-          });
+        confetti({
+          particleCount: 200,
+          spread: 220,
+          origin: { y: 0.4 },
+          gravity: 2,
+          colors: ["#5eead4", "#2dd4bf", "#0284c7", "#22d3ee"],
+        })
       },
       onError: () => {
         toast.custom((t) => <ToastItem t={t} icon={`cross`} type={`error`} title={`Error`} message={`Something went wrong`} />)
@@ -84,7 +82,7 @@ const ContactForm: FC<SubjectProp> = ({ subject: productSubject = "", className 
       <Panel.Header heading={`${productSubject?.length === 0 ? "Contact Us" : "Get Quote for " + productSubject}`} />
       {flash && <Banner message={flash} />}
       <form onSubmit={handleSubmitForm} noValidate method={`POST`} className={"space-y-2"}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+        <div className="grid grid-co  ls-1 md:grid-cols-2 gap-x-6 gap-y-2">
           <div className={`col-span-2 md:col-span-1`}>
             <InputLabel htmlFor={`first_name`} value={`First Name`} />
             <TextInput name={`first_name`} id={`first_name`} value={data.first_name} onChange={handleInput} className={`w-full mt-2`} />

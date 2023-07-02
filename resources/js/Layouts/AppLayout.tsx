@@ -9,6 +9,7 @@ import { Link, usePage } from "@inertiajs/react"
 import Marquee from "@/Components/Marquee"
 import SectionProducts from "@/Sections/SectionProducts"
 import DevBanner from "@/Components/DevBanner"
+import MapComponent from "@/Components/MapComponent"
 
 export default function AppLayout({ children }: PropsWithChildren) {
   const component = usePage().component
@@ -71,7 +72,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
             <ContactSection className={`-mx-4 px-4`} />
           </div>
         )}
-        {/*<MapComponent />*/}
+        <MapComponent />
         <Footer />
       </div>
     </div>

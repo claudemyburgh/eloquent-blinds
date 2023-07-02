@@ -35,6 +35,10 @@ export type PageProps<T extends Record<string, unknown> = Record<string, unknown
   }
   api: {
     maps: string
+    recaptch: {
+      site_key: string
+      secret_key: string
+    }
   }
 }
 

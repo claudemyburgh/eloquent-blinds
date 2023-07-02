@@ -12,53 +12,56 @@ use Tightenco\Ziggy\Ziggy;
 
 class HandleInertiaRequests extends Middleware
 {
-    /**
-     * The root template that is loaded on the first page visit.
-     *
-     * @var string
-     */
-    protected $rootView = 'app';
+  /**
+   * The root template that is loaded on the first page visit.
+   *
+   * @var string
+   */
+  protected $rootView = 'app';
 
-    /**
-     * Determine the current asset version.
-     */
-    public function version(Request $request): string|null
-    {
-        return parent::version($request);
-    }
+  /**
+   * Determine the current asset version.
+   */
+  public function version(Request $request): string|null
+  {
+    return parent::version($request);
+  }
 
-    /**
-     * Define the props that are shared by default.
-     *
-     * @return array<string, mixed>
-     */
-    public function share(Request $request): array
-    {
-        return array_merge(parent::share($request), [
-            'auth' => [
-                'user' => $request->user(),
-            ],
-            'ziggy' => function () use ($request) {
-                return array_merge((new Ziggy)->toArray(), [
-                    'location' => $request->url(),
-                ]);
-            },
-            'categories_all' => Cache::remember('categories-menu', 360, function () {
-                return Category::live()->orderBy('title')->tree()->get()->toTree();
-            }),
-            'flash' => Session::get('flash'),
-            'emails' => function () {
-                return [
-                    'unread' => Cache::remember('messages', 120, function () {
-                        return Message::unread()->count();
-                    }),
-                ];
-            },
-            'csrf' => csrf_token(),
-            'api' => [
-                'maps' => config('google.api.maps'),
-            ],
-            "production" => app()->isProduction()
+  /**
+   * Define the props that are shared by default.
+   *
+   * @return array<string, mixed>
+   */
+  public function share(Request $request): array
+  {
+    return array_merge(parent::share($request), [
+      'auth' => [
+        'user' => $request->user(),
+      ],
+      'ziggy' => function () use ($request) {
+        return array_merge((new Ziggy)->toArray(), [
+          'location' => $request->url(),
         ]);
-    }
+      },
+      'categories_all' => Cache::remember('categories-menu', 360, function () {
+        return Category::live()->orderBy('title')->tree()->get()->toTree();
+      }),
+      'flash' => Session::get('flash'),
+      'emails' => function () {
+        return [
+          'unread' => Cache::remember('messages', 120, function () {
+            return Message::unread()->count();
+          }),
+        ];
+      },
+      'csrf' => csrf_token(),
+      'api' => [
+        'maps' => config('google.api.maps'),
+//        'recaptch' => [
+//          'site_key' => config('google.api.recaptch.site_key')
+//        ]
+      ],
+      "production" => app()->isProduction()
+    ]);
+  }
 }
