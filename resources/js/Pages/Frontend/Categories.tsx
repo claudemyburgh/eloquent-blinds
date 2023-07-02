@@ -33,7 +33,10 @@ Elevate your home with privacy, light control, and exquisite aesthetics. Start e
               categories.map((category: CategoryProps) => (
                 <div key={category.slug} className={` grid grid-cols-12 gap-6 mb-6`}>
                   <div className="col-span-12">
-                    <Link href={route("category", category)} className={`relative group hover:underline inline-block text-2xl md:text-5xl font-bold tracking-tight`}>
+                    <Link
+                      href={route("category", category)}
+                      className={`relative group hover:underline inline-block text-2xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white `}
+                    >
                       <span>
                         <LinkIcon className={`h-8 w-8 absolute -left-[36px] top-2 hidden group-hover:lg:block`} />
                       </span>

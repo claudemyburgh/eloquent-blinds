@@ -28,12 +28,11 @@ const SectionProducts: FC<{ className?: string }> = ({ className }) => {
           <div className="wrapper flex flex-col-reverse md:flex-row-reverse min-h-[300px] gap-8 py-12 ">
             <div className={`flex-1`}>
               <Heading as={`h3`} type={`h1`} className="mt-10 ">
-                Supplier and installer of top quality blinds.
+                Your destination for all things blinds related.
               </Heading>
               <p className="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
-                We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space.
-                We have a variety of options to choose from, including Aluminium Blinds , Bamboo Blinds , Basswood Blinds , Honeycomb Blinds , Roller Blinds , Venetian Blinds , and
-                Zebra Blinds.
+                We take immense pride in offering a wide selection of high-quality blinds, meticulously designed to elevate your space with style and functionality. Our team of
+                experts is dedicated to providing seamless installation services, ensuring a hassle-free experience from start to finish.
               </p>
 
               <div className="mt-10 flex items-center gap-x-6">

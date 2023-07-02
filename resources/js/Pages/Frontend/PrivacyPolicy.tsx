@@ -1,5 +1,5 @@
 import React from "react"
-import { Head, usePage } from "@inertiajs/react"
+import { Head, Link, usePage } from "@inertiajs/react"
 import AppLayout from "@/Layouts/AppLayout"
 
 const PrivacyPolicy = () => {
@@ -15,8 +15,8 @@ const PrivacyPolicy = () => {
         <h1>Privacy Policy for Eloquent Blinds</h1>
 
         <p>
-          At Eloquent Blinds, accessible from https://eloquontblinds.co.za, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types
-          of information that is collected and recorded by Eloquent Blinds and how we use it.
+          At Eloquent Blinds, accessible from <Link href={route("home")}>https://eloquontblinds.co.za</Link>, one of our main priorities is the privacy of our visitors. This
+          Privacy Policy document contains types of information that is collected and recorded by Eloquent Blinds and how we use it.
         </p>
 
         <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
