@@ -25,8 +25,8 @@ const Category = () => {
       <div className="relative wrapper pt-24">
         <div className="wrapper md:flex md:flex-row-reverse gap-8">
           <div className={`md:w-1/2 mb-12 relative`}>
-            <GradientBorder className="aspect-[1/2] md:aspect-square overflow-hidden sticky top-24 ">
-              <Image className={` rounded-lg`} src={convertedImage(category?.media[0]?.original_url, "large")} alt={category.title} />
+            <GradientBorder className="overflow-hidden sticky top-24 ">
+              <Image className={` rounded-lg aspect-4/3 object-cover`} src={convertedImage(category?.media[0]?.original_url, "large")} alt={category.title} />
             </GradientBorder>
           </div>
 
@@ -39,7 +39,7 @@ const Category = () => {
         </div>
       </div>
 
-      <div className="wrapper my-12 grid grid-cols-4 gap-6">
+      <div className="wrapper my-12 grid grid-cols-2 md:grid-cols-4 gap-6">
         {descendants && descendants.map((category: CategoryProps) => <CategoryCard key={category.title} item={category} url={route("category", category)} />)}
 
         {category.products &&
