@@ -4,9 +4,16 @@ import AppLayout from "@/Layouts/AppLayout"
 import { CategoryProps } from "@/types/categories"
 import Heading from "@/FrontEnd/Typography/Heading"
 import CategoryCard from "@/FrontEnd/Card/CategoryCard"
+import ReactMarkdown from "react-markdown"
+import remarkGfm from "remark-gfm"
+import { LinkIcon } from "@heroicons/react/20/solid"
 
 const Categories = () => {
   const { ziggy, categories } = usePage<any>().props
+
+  const bodyHTML = `Discover a world of stunning blinds as you explore our diverse product categories. From timeless classics to contemporary designs, our curated selection offers unparalleled style and functionality. Browse through our user-friendly website and find the perfect window coverings to enhance your living space.
+
+Elevate your home with privacy, light control, and exquisite aesthetics. Start exploring now and transform your decor with our captivating blinds.`
 
   return (
     <AppLayout>
@@ -19,23 +26,23 @@ const Categories = () => {
           <Heading as={`h1`} type={`h1`} className={`col-span-12`}>
             Product Categories
           </Heading>
-          <p className={`prose prose-lg col-span-6 text-gray-700 dark:text-white`}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate dolores error facilis ipsam odit praesentium qui quia repellat totam? Assumenda
-            distinctio dolore iure laborum neque odit, recusandae veniam voluptates.
-          </p>
+          <ReactMarkdown className={`prose prose-lg dark:prose-invert my-8 `} children={bodyHTML} remarkPlugins={[remarkGfm]} />
 
           <div>
             {categories &&
               categories.map((category: CategoryProps) => (
                 <div key={category.slug} className={` grid grid-cols-12 gap-6 mb-6`}>
-                  <Link href={route("category", category)} className={`text-2xl md:text-4xl font-bold tracking-tight col-span-12`}>
-                    {category.title}
-                  </Link>
+                  <div className="col-span-12">
+                    <Link href={route("category", category)} className={`relative group hover:underline inline-block text-2xl md:text-5xl font-bold tracking-tight`}>
+                      <span>
+                        <LinkIcon className={`h-8 w-8 absolute -left-[36px] top-2 hidden group-hover:lg:block`} />
+                      </span>
+                      {category.title}
+                    </Link>
+                  </div>
 
                   {category.children &&
-                    category.children.map((cat: CategoryProps) => (
-                      <CategoryCard key={category.id} url={route("category", category)} className={`col-span-6 md:col-span-3`} item={category} />
-                    ))}
+                    category.children.map((cat: CategoryProps) => <CategoryCard key={cat.id} url={route("category", cat)} className={`col-span-6 md:col-span-3`} item={cat} />)}
                 </div>
               ))}
           </div>

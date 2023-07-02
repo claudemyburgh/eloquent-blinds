@@ -5,6 +5,7 @@ import { convertedImage } from "@/lib/helpers"
 import { Link } from "@inertiajs/react"
 import { twMerge } from "tailwind-merge"
 import { CategoryProps } from "@/types/categories"
+import { LinkIcon } from "@heroicons/react/20/solid"
 
 interface ItemProp {
   item: CategoryProps
@@ -23,10 +24,9 @@ const CategoryCard: FC<ItemProp> = ({ item, url, className, ...restProps }) => {
             alt={item.title}
           />
         </div>
-        <div className={`p-4 text-xs sm:text-sm md:text-md text-gray-700 font-semibold dark:text-white flex justify-between`}>
+        <div className={`p-4 text-xs sm:text-sm md:text-lg text-gray-700 font-semibold dark:text-white flex justify-between group-hover:underline`}>
           {item.title}
-
-          <span>{item?.children?.length}</span>
+          <span>{<LinkIcon className={`h-4 w-4`} />}</span>
         </div>
       </Link>
     </GradientBorder>
