@@ -1,5 +1,4 @@
 import React, { FC } from "react"
-import PlainLink from "@/FrontEnd/Links/PlainLink"
 import { EnvelopeIcon } from "@heroicons/react/24/outline"
 import contactUsers from "@/Data/contact-users"
 import TiltItem from "@/FrontEnd/Parts/TiltItem"
@@ -7,6 +6,7 @@ import ContactCard from "@/Components/ContactCard"
 import { usePage } from "@inertiajs/react"
 import { twMerge } from "tailwind-merge"
 import Heading from "@/FrontEnd/Typography/Heading"
+import { PrimaryLink } from "@/FrontEnd/Links"
 
 const ContactSection: FC<{ className?: string }> = ({ className }) => {
   const component = usePage().component
@@ -19,12 +19,12 @@ const ContactSection: FC<{ className?: string }> = ({ className }) => {
         <p className="mt-4 text-lg text-gray-500 dark:text-gray-300 sm:mt-3">We’d love to hear from you! Send us a message via email, whatapp or simply give us a call.</p>
         {component !== "Frontend/Quote" && (
           <div>
-            <PlainLink size={`2xl`} href={`#`} className={`border card mt-4 border-secondary-600/10`}>
+            <PrimaryLink size={`2xl`} href={route("quote")} className={`card mt-4 `}>
               Contact Us{" "}
               <span aria-hidden="true" className={`pl-2`}>
                 <EnvelopeIcon className={`h-5 w-5`} />
               </span>
-            </PlainLink>
+            </PrimaryLink>
           </div>
         )}
       </header>

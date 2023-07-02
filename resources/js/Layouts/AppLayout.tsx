@@ -5,9 +5,8 @@ import Footer from "@/FrontEnd/Footer/Footer"
 import GridPattern from "@/FrontEnd/Theme/GridPattern"
 import "@/lib/theme-script"
 import ContactSection from "@/Sections/ContactSection"
-import { usePage } from "@inertiajs/react"
+import { Link, usePage } from "@inertiajs/react"
 import Marquee from "@/Components/Marquee"
-import Incentives from "@/Sections/Incentives"
 import SectionProducts from "@/Sections/SectionProducts"
 import DevBanner from "@/Components/DevBanner"
 
@@ -45,16 +44,24 @@ export default function AppLayout({ children }: PropsWithChildren) {
         <Navbar />
         <main className="w-full text-white">{children}</main>
 
-        <Incentives />
+        {/*<Incentives />*/}
         <SectionProducts />
         <Marquee speed={25500} className={` min-w-full relative z-10 shadow-xl shadow-black/20`}>
           {categories_all.map((category: any) => (
-            <div key={category.id} className={`px-4 shrink-0 flex`}>
-              {category.title}
+            <div key={category.id} className={` shrink-0 flex`}>
+              <Link href={route("category", category)} className={`hover:underline underline-offset-8 decoration-wavy decoration-primary-500 decoration-2 shrink-0 px-4`}>
+                {category.title}
+              </Link>
               {category.children.map((child: any) => (
-                <div key={child.id} className={`px-4 shrink-0`}>
+                <Link
+                  href={route("category", {
+                    category: child,
+                  })}
+                  key={child.id}
+                  className={`hover:underline underline-offset-8 decoration-wavy decoration-primary-500 decoration-2 px-4 shrink-0`}
+                >
                   {child.title}
-                </div>
+                </Link>
               ))}
             </div>
           ))}

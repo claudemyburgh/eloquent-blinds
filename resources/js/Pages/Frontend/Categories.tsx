@@ -20,18 +20,16 @@ Elevate your home with privacy, light control, and exquisite aesthetics. Start e
       <Head title="Categories">
         <link rel="canonical" href={ziggy.location} />
       </Head>
-
       <div className="relative">
-        <div className="wrapper pt-24 space-y-6">
+        <div className="wrapper pt-32 space-y-6">
           <Heading as={`h1`} type={`h1`} className={`col-span-12`}>
             Product Categories
           </Heading>
           <ReactMarkdown className={`prose prose-lg dark:prose-invert my-8 `} children={bodyHTML} remarkPlugins={[remarkGfm]} />
-
           <div>
             {categories &&
               categories.map((category: CategoryProps) => (
-                <div key={category.slug} className={` grid grid-cols-12 gap-6 mb-6`}>
+                <div key={category.slug} className={` grid grid-cols-12 gap-6 my-12`}>
                   <div className="col-span-12">
                     <Link
                       href={route("category", category)}
@@ -43,7 +41,6 @@ Elevate your home with privacy, light control, and exquisite aesthetics. Start e
                       {category.title}
                     </Link>
                   </div>
-
                   {category.children &&
                     category.children.map((cat: CategoryProps) => <CategoryCard key={cat.id} url={route("category", cat)} className={`col-span-6 md:col-span-3`} item={cat} />)}
                 </div>

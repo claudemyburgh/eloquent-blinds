@@ -26,7 +26,7 @@ const Marquee: FC<
       <div
         // onMouseEnter={mouseEnter}
         // onMouseLeave={mouseLeave}
-        className={twMerge(`flex cursor-pointer -mx-4 py-px  group bg-gradient-to-r from-primary-600 to-secondary-400`, className)}
+        className={twMerge(`flex -mx-4 py-px group bg-gradient-to-r from-primary-600 to-secondary-400`, className)}
         style={{
           // @ts-expect-error
           "--speed": `${moveSpeed}ms`,

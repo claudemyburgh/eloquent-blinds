@@ -27,7 +27,7 @@ const HeroComponent = () => {
           <p className="mt-3 text-lg leading-8 text-gray-500 dark:text-gray-300">
             We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space.
           </p>
-          <div className="mt-10 flex items-center gap-x-6">
+          <div className="mt-5 flex items-center gap-x-6">
             <PrimaryLink size={"2xl"} href={route("quote")}>
               Get a free quote
             </PrimaryLink>

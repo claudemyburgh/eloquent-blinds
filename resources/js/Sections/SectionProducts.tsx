@@ -11,6 +11,7 @@ import { twMerge } from "tailwind-merge"
 import { PrimaryLink } from "@/FrontEnd/Links"
 import Heading from "@/FrontEnd/Typography/Heading"
 import Image from "@/FrontEnd/Image/Image"
+import { EnvelopeIcon } from "@heroicons/react/24/outline"
 
 const SectionProducts: FC<{ className?: string }> = ({ className }) => {
   return (
@@ -35,9 +36,12 @@ const SectionProducts: FC<{ className?: string }> = ({ className }) => {
                 experts is dedicated to providing seamless installation services, ensuring a hassle-free experience from start to finish.
               </p>
 
-              <div className="mt-10 flex items-center gap-x-6">
-                <PrimaryLink size={`xl`} href={route("quote")}>
+              <div className="mt-2 flex items-center gap-x-6">
+                <PrimaryLink size={`2xl`} href={route("quote")} className={`card mt-4 `}>
                   Get a free quote
+                  <span aria-hidden="true" className={`pl-2`}>
+                    <EnvelopeIcon className={`h-5 w-5`} />
+                  </span>
                 </PrimaryLink>
               </div>
             </div>
