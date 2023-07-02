@@ -11,6 +11,7 @@ const Quote = () => {
     <AppLayout>
       <Head title="Get Free Quote">
         <link rel="canonical" href={ziggy.location} />
+        <meta name={`description`} content={`We’d love to hear from you! Send us a message via email, whatapp or simply give us a call.`} />
       </Head>
 
       <div className="relative wrapper pt-24 lg:flex lg:space-x-8">

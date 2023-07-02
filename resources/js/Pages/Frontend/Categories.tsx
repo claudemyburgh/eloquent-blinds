@@ -17,11 +17,15 @@ Elevate your home with privacy, light control, and exquisite aesthetics. Start e
 
   return (
     <AppLayout>
-      <Head title="Categories">
+      <Head title="Products categories">
         <link rel="canonical" href={ziggy.location} />
+        <meta
+          name={`description`}
+          content={`Discover a world of stunning blinds as you explore our diverse product categories. From timeless classics to contemporary designs, our curated selection offers unparalleled style and functionality.`}
+        />
       </Head>
       <div className="relative">
-        <div className="wrapper pt-32 space-y-6">
+        <div className="wrapper pt-32 space-y-4">
           <Heading as={`h1`} type={`h1`} className={`col-span-12`}>
             Product Categories
           </Heading>

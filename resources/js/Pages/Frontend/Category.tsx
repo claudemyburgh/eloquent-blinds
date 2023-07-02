@@ -18,24 +18,21 @@ const Category = () => {
     <AppLayout>
       <Head title="Frequently asked questions">
         <link rel="canonical" href={ziggy.location} />
-        <meta
-          name={`description`}
-          content={`Questions. Frequently asked ones. Plus our answers. That's how FAQs work. If you can't find what you're looking for, you can always send us an email with your enquiry.`}
-        />
+        <meta name={`description`} content={category.description} />
       </Head>
       <div className="relative wrapper pt-32">
-        <div className="wrapper md:flex md:flex-row-reverse gap-8">
+        <div className="wrapper md:flex md:flex-row-reverse gap-8 md:-mr-2">
           <div className={`md:w-1/2 mb-12 relative`}>
             <GradientBorder className="overflow-hidden sticky top-24 ">
               <Image className={` rounded-lg aspect-4/3 object-cover`} src={convertedImage(category?.media[0]?.original_url, "large")} alt={category.title} />
             </GradientBorder>
           </div>
 
-          <div className={`md:w-1/2`}>
+          <div className={`md:w-1/2 space-y-6 md:-ml-2`}>
             <Heading as={`h1`} type={`h1`}>
               {category.title}
             </Heading>
-            <ReactMarkdown className={`prose prose-lg dark:prose-invert my-8 `} children={category.body} remarkPlugins={[remarkGfm]} />
+            <ReactMarkdown className={`prose prose-lg dark:prose-invert `} children={category.body} remarkPlugins={[remarkGfm]} />
           </div>
         </div>
       </div>

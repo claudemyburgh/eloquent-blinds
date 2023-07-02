@@ -7,8 +7,12 @@ const PrivacyPolicy = () => {
 
   return (
     <AppLayout>
-      <Head title="FAQ's">
+      <Head title="Privacy Policy for Eloquent Blinds">
         <link rel="canonical" href={ziggy.location} />
+        <meta
+          name={`description`}
+          content={`At Eloquent Blinds, accessible from Privacy Policy document contains types of information that is collected and recorded by Eloquent Blinds and how we use it.`}
+        />
       </Head>
 
       <div className={`prose my-32 dark:prose-invert mx-auto`}>

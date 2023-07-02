@@ -10,7 +10,7 @@ import { twMerge } from "tailwind-merge"
 const links = [
   { href: "/", label: "Home", classes: "", component: "Frontend/Home" },
   { href: "/categories", label: "Products", classes: "", component: "Frontend/Categories" },
-  { href: "/reviews", label: "Reviews", classes: "", component: "Frontend/Reviews" },
+  // { href: "/reviews", label: "Reviews", classes: "", component: "Frontend/Reviews" },
   { href: "/faq", label: "FAQ's", classes: "", component: "Frontend/Faq" },
   {
     href: "/quote",
