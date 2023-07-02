@@ -12,17 +12,17 @@ const Categories = () => {
       </Head>
 
       <div className="relative">
-        <div className="wrapper pt-24">
+        <div className="wrapper pt-24 text-gray-700 dark:text-white">
           <ul className={`list-outside list-disc space-y-2 mt-2`}>
             {categories &&
               categories.map((category: any) => (
                 <li key={category.id}>
-                  {category.title}
+                  <Link href={route("category", { category: category.slug })}>{category.title}</Link>
                   {category.children && (
                     <ul className={`list-outside list-disc ml-8 mt-2 space-y-2`}>
                       {category.children.map((categoryChild: any) => (
                         <li key={`${categoryChild.slug}-${categoryChild.id}`}>
-                          {categoryChild.title}
+                          <Link href={route("category", { category: categoryChild.slug })}>{categoryChild.title}</Link>
                           {categoryChild.products && (
                             <ul className={`list-outside list-disc ml-8 mt-2 space-y-2`}>
                               {categoryChild.products.map((product: any) => (
@@ -48,7 +48,7 @@ const Categories = () => {
               ))}
           </ul>
 
-          {/*<pre>{JSON.stringify(categories[0].children, null, 2)}</pre>*/}
+          <pre>{JSON.stringify(categories[0].children, null, 2)}</pre>
         </div>
       </div>
     </AppLayout>

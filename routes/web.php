@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\Frontend\CategoriesController;
+use App\Http\Controllers\Frontend\CategoryController;
 use App\Http\Controllers\Frontend\CategoryProductsController;
 use App\Http\Controllers\Frontend\FAQController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -23,8 +24,10 @@ Route::get('categories', CategoriesController::class)->name('categories');
 
 Route::get('privacy-policy', PrivacyPolicyController::class)->name('privacy-policy');
 
-Route::get('category/{category:slug}', CategoryProductsController::class)->name('category');
+
+Route::get('category/{category:slug}', CategoryController::class)->name('category');
 Route::get('{category:slug}/{product:slug}', ProductController::class)->name('product');
+
 
 Route::post('newsletter', [NewsletterController::class, 'store'])->name('newsletter');
 Route::get('newsletter', [NewsletterController::class, 'show'])->name('newsletter');

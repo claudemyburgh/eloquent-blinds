@@ -1,10 +1,11 @@
 import React from "react"
 import roller from "@/../img/SVG/roller.svg"
-import zebra from "@/../img/SVG/zebra.svg"
+import zebra from "@/../img/SVG/zebra_1.svg"
 import honey from "@/../img/SVG/honey.svg"
 import automation from "@/../img/SVG/automation.svg"
 import vertical from "@/../img/SVG/verticle.svg"
 import horizontal from "@/../img/SVG/horizontal.svg"
+import Heading from "@/FrontEnd/Typography/Heading"
 
 const IntroIcons2 = () => {
   return (
@@ -13,7 +14,9 @@ const IntroIcons2 = () => {
         <div aria-hidden={true} className="absolute w-[2px] h-2/3 left-0 bg-gradient-to-b from-transparent via-secondary-500 to-transparent">
           <div className="w-[80px] h-full rounded-full absolute top-1/2 -translate-y-1/2 -translate-x-1/2 blur-md bg-secondary-500/10 "></div>
         </div>
-        <h2 className={`mt-10 drop-shadow-md text-4xl font-black tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl`}>What we can do for you</h2>
+        <Heading as={`h3`} type={`h3`} className={`mt-10`}>
+          What we can do for you
+        </Heading>
         <p className="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
           We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space. We have
           a variety of options to choose from, including Aluminium Blinds , Bamboo Blinds , Basswood Blinds , Honeycomb Blinds , Roller Blinds , Venetian Blinds , and Zebra Blinds.

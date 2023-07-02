@@ -2,7 +2,7 @@ import React from "react"
 import { Head, usePage } from "@inertiajs/react"
 import AppLayout from "@/Layouts/AppLayout"
 import ReviewPanel from "@/FrontEnd/Review/ReviewPanel"
-import logo from "@/../img/google-logo.svg"
+import Heading from "@/FrontEnd/Typography/Heading"
 
 const Reviews = () => {
   const { ziggy } = usePage<any>().props
@@ -13,13 +13,15 @@ const Reviews = () => {
     <AppLayout>
       <Head title="Reviews">
         <link rel="canonical" href={ziggy.location} />
+        <meta name="description" content=""></meta>
       </Head>
 
       <div className="relative">
-        <div className="wrapper pt-6 ">
-          <div className="my-10">
-            <img height={46} width={173} loading={`lazy`} className={`block pt-12`} src={logo} alt="google logo " />
-            <h1 className={`text-2xl text-gray-500 dark:text-gray-200 font-bold`}>Customer Reviews</h1>
+        <div className="wrapper pt-24">
+          <div className="mb-10">
+            <Heading as={`h1`} type={`h1`}>
+              Customer Reviews
+            </Heading>
           </div>
           <ReviewPanel />
         </div>

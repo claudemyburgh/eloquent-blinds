@@ -21,7 +21,7 @@ const PrimaryLink: FC<Props> = ({ children, className, href, size = "md", ...res
     <Link
       href={href}
       className={twMerge(
-        `inline-flex items-center bg-gradient-to-b from-primary-600 to-secondary-400 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:to-secondary-300 focus:to-secondary-300 active:to-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition ease-in-out duration-150 text-shadow`,
+        `inline-flex items-center bg-gradient-to-b from-primary-600 to-secondary-400 border border-transparent rounded-md font-semibold text-xs  uppercase tracking-widest hover:to-secondary-300 focus:to-secondary-300 active:to-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition ease-in-out duration-150 text-shadow text-white`,
         sizes[size],
         className
       )}

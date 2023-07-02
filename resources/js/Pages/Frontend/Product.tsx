@@ -5,8 +5,8 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { convertedImage } from "@/lib/helpers"
 import ContactForm from "@/Components/ContactForm"
-import AudioPlayer from "@/Components/AudioPlayer"
-import sound from "@/../audio/Essential 3000 1 2.wav"
+import Image from "@/FrontEnd/Image/Image"
+import Heading from "@/FrontEnd/Typography/Heading"
 
 const Product = () => {
   const { ziggy, product, category } = usePage<any>().props
@@ -14,21 +14,22 @@ const Product = () => {
     <AppLayout>
       <Head title={`${product.title} ${category.title}`}>
         <link rel="canonical" href={ziggy.location} />
+        <meta name="description" content={product.description}></meta>
       </Head>
       <div className="wrapper my-24 relative z-10">
         <div className="mt-6 lg:grid lg:grid-cols-3 lg:gap-x-8">
           <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden md:block">
-            <img
+            <Image
               width={388}
               height={641}
               src={convertedImage(product?.media[0]?.original_url, "tail")}
               alt={`${product.title} ${category.title} product `}
-              className="w-full h-full object-center object-cover"
+              className="w-full h-full object-center object-cover aspect-[3/2]"
             />
           </div>
           <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-            <div className="aspect-[3/2]  rounded-lg overflow-hidden">
-              <img
+            <div className="aspect-[3/2] rounded-lg overflow-hidden">
+              <Image
                 width={390}
                 height={258}
                 src={convertedImage(product?.media[1]?.original_url, "medium")}
@@ -37,7 +38,7 @@ const Product = () => {
               />
             </div>
             <div className="aspect-[3/2]  rounded-lg overflow-hidden">
-              <img
+              <Image
                 width={390}
                 height={258}
                 src={convertedImage(product?.media[2]?.original_url, "medium")}
@@ -47,7 +48,7 @@ const Product = () => {
             </div>
           </div>
           <div className="hidden lg:block aspect-w-4 aspect-h-5 rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4">
-            <img
+            <Image
               width={388}
               height={641}
               src={convertedImage(product?.media[2]?.original_url, "tail")}
@@ -58,9 +59,9 @@ const Product = () => {
         </div>
         <div className={`border-t mt-12 border-gray-200 grid lg:grid-cols-2 gap-6 dark:border-gray-800`}>
           <div>
-            <h1 className={`mt-5 text-4xl font-black tracking-tight text-gray-800 dark:text-white sm:text-6xl text-shadow-lg`}>
+            <Heading className={`mt-5`}>
               {product.title} {category.title}
-            </h1>
+            </Heading>
             {/*<AudioPlayer src={sound} />*/}
             <ReactMarkdown className={`prose prose-lg dark:prose-invert my-8 `} children={product.body} remarkPlugins={[remarkGfm]} />
           </div>

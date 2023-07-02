@@ -1,3 +1,6 @@
+import { MediaProps } from "@/types/Media"
+import { ProductsProps } from "@/types/products"
+
 export interface CategoriesAllProp {
   categories_all: CategoryProps[]
 }
@@ -19,4 +22,6 @@ export interface CategoryProps {
   created_at: string
   updated_at: string
   deleted_at: string
+  media: MediaProps[]
+  products: ProductsProps[]
 }

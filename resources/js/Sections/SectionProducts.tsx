@@ -9,6 +9,8 @@ import honeyBlinds from "@/../img/honey-blinds.webp"
 import TiltItem from "@/FrontEnd/Parts/TiltItem"
 import { twMerge } from "tailwind-merge"
 import { PrimaryLink } from "@/FrontEnd/Links"
+import Heading from "@/FrontEnd/Typography/Heading"
+import Image from "@/FrontEnd/Image/Image"
 
 const SectionProducts: FC<{ className?: string }> = ({ className }) => {
   return (
@@ -25,9 +27,9 @@ const SectionProducts: FC<{ className?: string }> = ({ className }) => {
 
           <div className="wrapper flex flex-col-reverse md:flex-row-reverse min-h-[300px] gap-8 py-12 ">
             <div className={`flex-1`}>
-              <h2 className="mt-10 drop-shadow-md text-3xl font-black tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl">
+              <Heading as={`h3`} type={`h1`} className="mt-10 ">
                 Supplier and installer of top quality blinds.
-              </h2>
+              </Heading>
               <p className="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
                 We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space.
                 We have a variety of options to choose from, including Aluminium Blinds , Bamboo Blinds , Basswood Blinds , Honeycomb Blinds , Roller Blinds , Venetian Blinds , and
@@ -46,81 +48,39 @@ const SectionProducts: FC<{ className?: string }> = ({ className }) => {
                   <div className="flex space-y-6 flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
                     <div className="flex-shrink-0">
                       <TiltItem options={{ glare: true, speed: 2000, perspective: 800, max: 5 }}>
-                        <img
-                          height={290}
-                          width={290}
-                          loading={`lazy`}
-                          className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square"
-                          src={blackBlinds}
-                          alt="blinds"
-                        />
+                        <Image height={290} width={290} className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square" src={blackBlinds} alt="blinds" />
                       </TiltItem>
                     </div>
 
                     <div className="mt-6 flex-shrink-0 sm:mt-0">
                       <TiltItem options={{ glare: true, speed: 2000, perspective: 800, max: 5 }}>
-                        <img
-                          height={290}
-                          width={290}
-                          loading={`lazy`}
-                          className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square"
-                          src={aluBlinds}
-                          alt="blinds"
-                        />
+                        <Image height={290} width={290} className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square" src={aluBlinds} alt="blinds" />
                       </TiltItem>
                     </div>
                   </div>
                   <div className="flex space-y-6 sm:-mt-20 flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
                     <div className="flex-shrink-0">
                       <TiltItem options={{ glare: true, speed: 2000, perspective: 800, max: 5 }}>
-                        <img
-                          height={290}
-                          width={290}
-                          loading={`lazy`}
-                          className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square"
-                          src={bambooBlinds}
-                          alt="blinds"
-                        />
+                        <Image height={290} width={290} className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square" src={bambooBlinds} alt="blinds" />
                       </TiltItem>
                     </div>
 
                     <div className="mt-6 flex-shrink-0 sm:mt-0">
                       <TiltItem options={{ glare: true, speed: 2000, perspective: 800, max: 5 }}>
-                        <img
-                          height={290}
-                          width={290}
-                          loading={`lazy`}
-                          className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square"
-                          src={zebraBlinds}
-                          alt="blinds"
-                        />
+                        <Image height={290} width={290} className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square" src={zebraBlinds} alt="blinds" />
                       </TiltItem>
                     </div>
                   </div>
                   <div className="flex space-y-6 flex-col sm:space-x-0 sm:space-y-6 lg:space-y-8">
                     <div className="flex-shrink-0">
                       <TiltItem options={{ glare: true, speed: 2000, perspective: 800, max: 5 }}>
-                        <img
-                          height={290}
-                          width={290}
-                          loading={`lazy`}
-                          className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square"
-                          src={rollerBlinds}
-                          alt="blinds"
-                        />
+                        <Image height={290} width={290} className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square" src={rollerBlinds} alt="blinds" />
                       </TiltItem>
                     </div>
 
                     <div className="mt-6 flex-shrink-0 sm:mt-0">
                       <TiltItem options={{ glare: true, speed: 2000, perspective: 800, max: 5 }}>
-                        <img
-                          height={290}
-                          width={290}
-                          loading={`lazy`}
-                          className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square"
-                          src={honeyBlinds}
-                          alt="blinds"
-                        />
+                        <Image height={290} width={290} className="h-44 shadow-2xl rounded-lg object-cover md:h-64 2xl:h-72 aspect-square" src={honeyBlinds} alt="blinds" />
                       </TiltItem>
                     </div>
                   </div>

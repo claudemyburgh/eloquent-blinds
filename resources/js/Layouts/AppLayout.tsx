@@ -35,7 +35,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
 
       <div className={`min-h-screen relative z-0`}>
         {/*<Blob />*/}
-        <GridPattern className={`h-[300px] fixed top-0 inset-x-0`} />
+        <GridPattern aria-hidden={true} className={`h-[300px] fixed top-0 inset-x-0`} />
         <Toaster
           position={`top-right`}
           toastOptions={{
@@ -43,7 +43,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
           }}
         />
         <Navbar />
-        <div className="w-full text-white">{children}</div>
+        <main className="w-full text-white">{children}</main>
 
         <Incentives />
         <SectionProducts />

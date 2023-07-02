@@ -3,6 +3,9 @@ import { ArrowRightIcon, ChevronRightIcon } from "@heroicons/react/20/solid"
 import hero from "@/../img/hero.webp"
 import { PrimaryLink } from "../Links"
 import PlainLink from "@/FrontEnd/Links/PlainLink"
+import Heading from "@/FrontEnd/Typography/Heading"
+import Image from "@/FrontEnd/Image/Image"
+import GradientBorder from "@/Components/GradientBorder"
 
 const HeroComponent = () => {
   return (
@@ -18,7 +21,9 @@ const HeroComponent = () => {
               </span>
             </a>
           </div>
-          <h1 className="mt-5 text-4xl font-black tracking-tight text-gray-800 dark:text-white sm:text-6xl text-shadow-lg">Blind supplies and installers.</h1>
+          <Heading as={`h1`} type={`h1`} className="mt-5">
+            Blind supplies and installers.
+          </Heading>
           <p className="mt-3 text-lg leading-8 text-gray-500 dark:text-gray-300">
             We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space.
           </p>
@@ -36,13 +41,10 @@ const HeroComponent = () => {
           </div>
         </div>
         <div className="mx-auto opacity-40 md:opacity-100 flex max-w-full mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32 absolute lg:relative -top-20 lg:top-0 inset-x-0 -z-10">
-          <div className="max-w-full image-mask-b-20 lg:image-mask-b-100 lg:max-w-5xl relative flex-none sm:max-w-5xl xl:max-w-none">
-            <div aria-hidden={true} className="absolute w-1/2 top-0 h-[1px] left-0 bg-gradient-to-r from-transparent via-secondary-500 to-transparent">
-              <div className="w-1/2 h-[20px] rounded-b-full absolute top-0 translate-x-1/2 blur-md bg-secondary-500/10 "></div>
-            </div>
-            <img src={hero} alt="App screenshot" width={2432} height={1442} className={`w-full lg:max-w-5xl max-w-full rounded-lg `} />
-            <div className="absolute inset-0 z-20 card "></div>
-          </div>
+          <GradientBorder className="max-w-full image-mask-b-20 lg:image-mask-b-100 lg:max-w-5xl relative flex-none sm:max-w-5xl xl:max-w-none">
+            <Image src={hero} alt="App screenshot" width={2432} height={1442} className={`w-full lg:max-w-5xl max-w-full rounded-lg `} />
+            <div className="absolute inset-0 z-20"></div>
+          </GradientBorder>
         </div>
       </div>
     </div>
