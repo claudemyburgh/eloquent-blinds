@@ -1,6 +1,9 @@
 import React from "react"
 import { Head, Link, usePage } from "@inertiajs/react"
 import AppLayout from "@/Layouts/AppLayout"
+import { CategoryProps } from "@/types/categories"
+import Heading from "@/FrontEnd/Typography/Heading"
+import CategoryCard from "@/FrontEnd/Card/CategoryCard"
 
 const Categories = () => {
   const { ziggy, categories } = usePage<any>().props
@@ -12,44 +15,32 @@ const Categories = () => {
       </Head>
 
       <div className="relative">
-        <div className="wrapper pt-24 text-gray-700 dark:text-white">
-          <ul className={`list-outside list-disc space-y-2 mt-2`}>
-            {categories &&
-              categories.map((category: any) => (
-                <li key={category.id}>
-                  <Link href={route("category", { category: category.slug })}>{category.title}</Link>
-                  {category.children && (
-                    <ul className={`list-outside list-disc ml-8 mt-2 space-y-2`}>
-                      {category.children.map((categoryChild: any) => (
-                        <li key={`${categoryChild.slug}-${categoryChild.id}`}>
-                          <Link href={route("category", { category: categoryChild.slug })}>{categoryChild.title}</Link>
-                          {categoryChild.products && (
-                            <ul className={`list-outside list-disc ml-8 mt-2 space-y-2`}>
-                              {categoryChild.products.map((product: any) => (
-                                <li key={`${product.slug}-${product.id}`}>
-                                  <Link
-                                    className={`hover:text-primary-500 hover:underline`}
-                                    href={route("product", {
-                                      category: categoryChild.slug,
-                                      product,
-                                    })}
-                                  >
-                                    {product.title}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-          </ul>
+        <div className="wrapper pt-24 space-y-6">
+          <Heading as={`h1`} type={`h1`} className={`col-span-12`}>
+            Product Categories
+          </Heading>
+          <p className={`prose prose-lg col-span-6 text-gray-700 dark:text-white`}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cupiditate dolores error facilis ipsam odit praesentium qui quia repellat totam? Assumenda
+            distinctio dolore iure laborum neque odit, recusandae veniam voluptates.
+          </p>
 
-          <pre>{JSON.stringify(categories[0].children, null, 2)}</pre>
+          <div>
+            {categories &&
+              categories.map((category: CategoryProps) => (
+                <div key={category.slug} className={` grid grid-cols-12 gap-6 mb-6`}>
+                  <Link href={route("category", category)} className={`text-2xl md:text-4xl font-bold tracking-tight col-span-12`}>
+                    {category.title}
+                  </Link>
+
+                  {category.children &&
+                    category.children.map((cat: CategoryProps) => (
+                      <CategoryCard key={category.id} url={route("category", category)} className={`col-span-6 md:col-span-3`} item={category} />
+                    ))}
+                </div>
+              ))}
+          </div>
         </div>
+        {/*<pre>{JSON.stringify(categories, null, 4)}</pre>*/}
       </div>
     </AppLayout>
   )

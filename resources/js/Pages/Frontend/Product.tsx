@@ -16,7 +16,7 @@ const Product = () => {
         <link rel="canonical" href={ziggy.location} />
         <meta name="description" content={product.description}></meta>
       </Head>
-      <div className="wrapper my-24 relative z-10">
+      <div className="wrapper pt-32 relative z-10">
         <div className="mt-6 lg:grid lg:grid-cols-3 lg:gap-x-8">
           <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden md:block">
             <Image

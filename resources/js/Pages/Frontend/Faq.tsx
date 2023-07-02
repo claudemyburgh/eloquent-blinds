@@ -16,7 +16,7 @@ const Faq = () => {
         />
       </Head>
 
-      <div className="relative wrapper pt-24">
+      <div className="relative wrapper pt-32">
         <div className="grid md:grid-cols-2 md:divide-x md:divide-dashed md:divide-gray-900/10 md:dark:divide-gray-500/10">
           <div className="relative md:pr-6">
             <header className="md:sticky top-32">

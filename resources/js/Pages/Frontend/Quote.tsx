@@ -13,14 +13,12 @@ const Quote = () => {
         <link rel="canonical" href={ziggy.location} />
       </Head>
 
-      <div className="relative">
-        <div className="wrapper pt-24 lg:flex lg:space-x-8">
-          <div className={`w-full lg:w-1/2 relative`}>
-            <ContactSection className={"sticky top-32"} />
-          </div>
-          <div className={`w-full lg:w-1/2`}>
-            <ContactForm />
-          </div>
+      <div className="relative wrapper pt-24 lg:flex lg:space-x-8">
+        <div className={`w-full lg:w-1/2 relative`}>
+          <ContactSection className={"sticky top-32"} />
+        </div>
+        <div className={`w-full lg:w-1/2`}>
+          <ContactForm />
         </div>
       </div>
     </AppLayout>

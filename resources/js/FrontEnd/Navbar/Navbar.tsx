@@ -8,19 +8,20 @@ import { ThemeSelector } from "@/FrontEnd/Theme/ThemeSelector"
 import { twMerge } from "tailwind-merge"
 
 const links = [
-  { href: "/", label: "Home", classes: "" },
-  { href: "/categories", label: "Products", classes: "" },
-  { href: "/reviews", label: "Reviews", classes: "" },
-  { href: "/faq", label: "FAQ's", classes: "" },
+  { href: "/", label: "Home", classes: "", component: "Frontend/Home" },
+  { href: "/categories", label: "Products", classes: "", component: "Frontend/Categories" },
+  { href: "/reviews", label: "Reviews", classes: "", component: "Frontend/Reviews" },
+  { href: "/faq", label: "FAQ's", classes: "", component: "Frontend/Faq" },
   {
     href: "/quote",
     label: "Free Quote",
     classes: "text-white bg-primary-500 hover:bg-primary-600 px-3 py-2 rounded-md",
+    component: "Frontend/Quote",
   },
 ]
 
 const Navbar = () => {
-  const url = usePage().url
+  const { url, component } = usePage()
 
   return (
     <>
@@ -41,7 +42,7 @@ const Navbar = () => {
           <div className={`flex space-x-2 md:space-x-6 items-center`}>
             <div className="md:flex space-x-8 font-bold hidden items-center">
               {links.map((link, index) => (
-                <Link key={index} className={twMerge(url == link.href && "text-primary-500", link.classes)} href={link.href}>
+                <Link key={index} className={twMerge(component == link.component && "text-primary-500", link.classes)} href={link.href}>
                   {link.label}
                 </Link>
               ))}
@@ -63,7 +64,7 @@ const Navbar = () => {
           >
             <Popover.Panel className={`w-full space-y-2.5 mt-3 flex flex-col`}>
               {links.map((link) => (
-                <Link href={link.href} key={link.href} className={twMerge(url === link.href && "text-primary-500", "flex font-semibold")}>
+                <Link href={link.href} key={link.href} className={twMerge(component == link.component && "text-primary-500", "flex font-semibold")}>
                   {link.label}
                 </Link>
               ))}

@@ -8,11 +8,12 @@ import Image from "@/FrontEnd/Image/Image"
 import { convertedImage } from "@/lib/helpers"
 import GradientBorder from "@/Components/GradientBorder"
 import { CategoryProps } from "@/types/categories"
-import { ProductsProps } from "@/types/products"
 import CategoryCard from "@/FrontEnd/Card/CategoryCard"
+import { ProductsProps } from "@/types/products"
 
 const Category = () => {
   const { ziggy, category, descendants } = usePage<any>().props
+  // @ts-ignore
   return (
     <AppLayout>
       <Head title="Frequently asked questions">
@@ -22,7 +23,7 @@ const Category = () => {
           content={`Questions. Frequently asked ones. Plus our answers. That's how FAQs work. If you can't find what you're looking for, you can always send us an email with your enquiry.`}
         />
       </Head>
-      <div className="relative wrapper pt-24">
+      <div className="relative wrapper pt-32">
         <div className="wrapper md:flex md:flex-row-reverse gap-8">
           <div className={`md:w-1/2 mb-12 relative`}>
             <GradientBorder className="overflow-hidden sticky top-24 ">
@@ -46,6 +47,7 @@ const Category = () => {
           category.products.map((product: ProductsProps) => (
             <CategoryCard
               key={product.title}
+              // @ts-expect-error
               item={product}
               url={route("product", {
                 category,

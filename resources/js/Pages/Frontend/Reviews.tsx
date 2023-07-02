@@ -17,7 +17,7 @@ const Reviews = () => {
       </Head>
 
       <div className="relative">
-        <div className="wrapper pt-24">
+        <div className="wrapper pt-32">
           <div className="mb-10">
             <Heading as={`h1`} type={`h1`}>
               Customer Reviews

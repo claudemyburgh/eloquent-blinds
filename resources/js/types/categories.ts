@@ -24,4 +24,5 @@ export interface CategoryProps {
   deleted_at: string
   media: MediaProps[]
   products: ProductsProps[]
+  children: CategoryProps[]
 }
