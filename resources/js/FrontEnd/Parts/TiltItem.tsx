@@ -58,7 +58,7 @@ const opt = {
   gyroscopeSamples: 10, // How many gyroscope moves to decide the starting position.
 }
 
-const TiltItem: FC<ChildrenProps & OptionsProps> = ({ children, options, className }) => {
+const TiltItem: FC<ChildrenProps & OptionsProps> = ({ children, options, className, ...restProps }) => {
   const tiltRef: MutableRefObject<any> = useRef()
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const TiltItem: FC<ChildrenProps & OptionsProps> = ({ children, options, classNa
   }, [options])
 
   return (
-    <div ref={tiltRef} style={{ position: "relative", zIndex: 5 }} className={twMerge("overflow-hidden rounded-lg", className)}>
+    <div ref={tiltRef} {...restProps} style={{ position: "relative", zIndex: 5 }} className={twMerge("overflow-hidden rounded-lg", className)}>
       {children}
     </div>
   )

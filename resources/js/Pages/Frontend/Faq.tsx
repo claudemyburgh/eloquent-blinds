@@ -15,7 +15,6 @@ const Faq = () => {
           content={`Questions. Frequently asked ones. Plus our answers. That's how FAQs work. If you can't find what you're looking for, you can always send us an email with your enquiry.`}
         />
       </Head>
-
       <div className="relative wrapper pt-32">
         <div className="grid md:grid-cols-2 md:divide-x md:divide-dashed md:divide-gray-900/10 md:dark:divide-gray-500/10">
           <div className="relative md:pr-6">
@@ -32,7 +31,6 @@ const Faq = () => {
               </p>
             </header>
           </div>
-
           <section className={`md:pl-6`}>
             <dl className="sm:mt-16 divide-y divide-dashed divide-gray-900/10 dark:divide-gray-500/10">
               {faqs.map((faq: { id: number; question: string; answer: string }) => (

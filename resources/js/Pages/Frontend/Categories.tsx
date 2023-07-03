@@ -10,10 +10,7 @@ import { LinkIcon } from "@heroicons/react/20/solid"
 
 const Categories = () => {
   const { ziggy, categories } = usePage<any>().props
-
-  const bodyHTML = `Discover a world of stunning blinds as you explore our diverse product categories. From timeless classics to contemporary designs, our curated selection offers unparalleled style and functionality. Browse through our user-friendly website and find the perfect window coverings to enhance your living space.
-
-Elevate your home with privacy, light control, and exquisite aesthetics. Start exploring now and transform your decor with our captivating blinds.`
+  const bodyHTML = `Discover a world of stunning blinds as you explore our diverse product categories. From timeless classics to contemporary designs, our curated selection offers unparalleled style and functionality. Browse through our user-friendly website and find the perfect window coverings to enhance your living space. Elevate your home with privacy, light control, and exquisite aesthetics. Start exploring now and transform your decor with our captivating blinds.`
 
   return (
     <AppLayout>
@@ -33,7 +30,7 @@ Elevate your home with privacy, light control, and exquisite aesthetics. Start e
           <div>
             {categories &&
               categories.map((category: CategoryProps) => (
-                <div key={category.slug} className={` grid grid-cols-12 gap-6 my-12`}>
+                <div key={category.slug} className={`grid grid-cols-12 gap-6 my-12`}>
                   <div className="col-span-12">
                     <Link
                       href={route("category", category)}
@@ -51,7 +48,6 @@ Elevate your home with privacy, light control, and exquisite aesthetics. Start e
               ))}
           </div>
         </div>
-        {/*<pre>{JSON.stringify(categories, null, 4)}</pre>*/}
       </div>
     </AppLayout>
   )

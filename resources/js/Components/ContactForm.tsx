@@ -88,19 +88,16 @@ const ContactForm: FC<SubjectProp> = ({ subject: productSubject = "", className 
             <TextInput name={`first_name`} id={`first_name`} value={data.first_name} onChange={handleInput} className={`w-full mt-2`} />
             <InputError className={`mt-2`} message={errors.first_name} />
           </div>
-
           <div className={`col-span-2 md:col-span-1`}>
             <InputLabel htmlFor={`last_name`} value={`Last Name`} />
             <TextInput name={`last_name`} id={`last_name`} value={data.last_name} onChange={handleInput} className={`w-full mt-2`} />
             <InputError className={`mt-2`} message={errors.last_name} />
           </div>
-
           <div className={`col-span-2 md:col-span-1`}>
             <InputLabel htmlFor={`email`} value={`Email`} />
             <TextInput name={`email`} id={`email`} type={`email`} value={data.email} onChange={handleInput} className={`w-full mt-2`} />
             <InputError className={`mt-2`} message={errors.email} />
           </div>
-
           <div className={`col-span-2 md:col-span-1`}>
             <InputLabel htmlFor={`phone`} value={`Phone`} />
             <TextInput name={`phone`} id={`phone`} type={`tel`} value={data.phone} onChange={handleInput} className={`w-full mt-2`} />
@@ -125,7 +122,6 @@ const ContactForm: FC<SubjectProp> = ({ subject: productSubject = "", className 
           <Textarea name={`message`} id={`message`} onChange={handleInput} value={data.message} className={`w-full mt-2 min-h-[175px]`} />
           <InputError className={`mt-2`} message={errors.message} />
         </div>
-
         <div>
           <SaveSubmitButton type={`submit`} processing={processing} recentlySuccessful={recentlySuccessful} buttonText={`Send email`} />
         </div>

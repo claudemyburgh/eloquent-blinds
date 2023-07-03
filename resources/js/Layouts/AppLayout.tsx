@@ -44,7 +44,6 @@ export default function AppLayout({ children }: PropsWithChildren) {
         />
         <Navbar />
         <main className="w-full text-white">{children}</main>
-
         {/*<Incentives />*/}
         <SectionProducts />
         <Marquee speed={25500} className={` min-w-full relative z-10 shadow-xl shadow-black/20`}>

@@ -2,7 +2,7 @@ import { ArrowPathIcon, CalendarIcon, TruckIcon } from "@heroicons/react/24/outl
 
 const perks = [
   { name: "10-year all-inclusive warranty", description: "We’ll replace it with a new one", icon: CalendarIcon },
-  { name: "Free shipping on returns", description: "Send it back for free", icon: ArrowPathIcon },
+  { name: "Free Installation", description: "The installation is on us", icon: ArrowPathIcon },
   { name: "Free, contactless delivery", description: "The shipping is on us", icon: TruckIcon },
 ]
 

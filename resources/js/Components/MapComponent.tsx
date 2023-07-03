@@ -32,7 +32,6 @@ const MapComponent = () => {
       content: pinScaled.element,
     })
 
-
     map.addListener("zoom_changed", () => {
       const zoom = map.getZoom()
       marker.map = zoom > 12 ? map : null

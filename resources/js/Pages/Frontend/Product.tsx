@@ -70,7 +70,6 @@ const Product = () => {
           </div>
         </div>
       </div>
-      {/*<pre>{JSON.stringify(product, null, 2)}</pre>*/}
     </AppLayout>
   )
 }

@@ -17,14 +17,12 @@ const Reviews = () => {
         <link rel="canonical" href={ziggy.location} />
         <meta name="description" content=""></meta>
       </Head>
-
       <div className="relative">
         <div className="wrapper pt-32">
           <div className="mb-10">
             <Heading as={`h1`} type={`h1`}>
               Customer Reviews
             </Heading>
-
             <ReactMarkdown
               className={`prose prose-lg dark:prose-invert my-4  `}
               children={`We value your feedback and invite you to share your experience with us. Your opinion matters to us, and we would greatly appreciate it if you could take a moment to leave a Google review.`}

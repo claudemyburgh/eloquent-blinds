@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, usePage } from "@inertiajs/react"
 import { CategoryProps } from "@/types/categories"
-
 const Footer = () => {
   const { categories_all } = usePage().props
 
@@ -36,7 +35,6 @@ const Footer = () => {
                 ))}
             </ul>
           </div>
-
           <div className={`mb-6`}>
             <h3 className="text-md font-semibold text-gray-400 tracking-wider uppercase">Friend's of us</h3>
             <ul role="list" className="mt-4 space-y-3">
@@ -52,7 +50,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
           <div className={`mb-6`}>
             <h3 className="text-md font-semibold text-gray-400 tracking-wider uppercase">Legal Stuff</h3>
             <ul role="list" className="mt-4 space-y-3">

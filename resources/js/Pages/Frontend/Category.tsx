@@ -24,10 +24,9 @@ const Category = () => {
         <div className="wrapper md:flex md:flex-row-reverse gap-8 md:-mr-2">
           <div className={`md:w-1/2 mb-12 relative`}>
             <GradientBorder className="overflow-hidden sticky top-24 ">
-              <Image className={` rounded-lg aspect-4/3 object-cover`} src={convertedImage(category?.media[0]?.original_url, "large")} alt={category.title} />
+              <Image width={1028} height={607} className={`rounded-lg aspect-4/3 object-cover`} src={convertedImage(category?.media[0]?.original_url, "large")} alt={category.title} />
             </GradientBorder>
           </div>
-
           <div className={`md:w-1/2 space-y-6 md:-ml-2`}>
             <Heading as={`h1`} type={`h1`}>
               {category.title}
@@ -36,10 +35,8 @@ const Category = () => {
           </div>
         </div>
       </div>
-
       <div className="wrapper my-12 grid grid-cols-2 md:grid-cols-4 gap-6">
         {descendants && descendants.map((category: CategoryProps) => <CategoryCard key={category.title} item={category} url={route("category", category)} />)}
-
         {category.products &&
           category.products.map((product: ProductsProps) => (
             <CategoryCard
