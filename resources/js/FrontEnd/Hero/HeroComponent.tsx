@@ -42,7 +42,7 @@ const HeroComponent = () => {
         </div>
         <div className="mx-auto opacity-40 md:opacity-100 flex max-w-full mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32 absolute lg:relative -top-20 lg:top-0 inset-x-0 -z-10">
           <GradientBorder className="max-w-full image-mask-b-20 lg:image-mask-b-100 lg:max-w-5xl relative flex-none sm:max-w-5xl xl:max-w-none">
-            <Image src={hero} alt="App screenshot" width={2432} height={1442} className={`w-full lg:max-w-5xl max-w-full rounded-lg `} />
+            <Image src={hero} alt="App screenshot" width={1037} height={615} className={`w-full lg:max-w-5xl max-w-full rounded-lg `} />
             <div className="absolute inset-0 z-20"></div>
           </GradientBorder>
         </div>
