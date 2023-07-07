@@ -20,11 +20,17 @@ const Category = () => {
         <link rel="canonical" href={ziggy.location} />
         <meta name={`description`} content={category.description} />
       </Head>
-      <div className="relative wrapper pt-32">
+      <div className="relative wrapper pt-24 lg:pt-32">
         <div className="wrapper md:flex md:flex-row-reverse gap-8 md:-mr-2">
           <div className={`md:w-1/2 mb-12 relative`}>
             <GradientBorder className="overflow-hidden sticky top-24 ">
-              <Image width={1028} height={607} className={`rounded-lg aspect-4/3 object-cover`} src={convertedImage(category?.media[0]?.original_url, "large")} alt={category.title} />
+              <Image
+                width={1028}
+                height={607}
+                className={`rounded-lg aspect-4/3 object-cover`}
+                src={convertedImage(category?.media[0]?.original_url, "large")}
+                alt={category.title}
+              />
             </GradientBorder>
           </div>
           <div className={`md:w-1/2 space-y-6 md:-ml-2`}>

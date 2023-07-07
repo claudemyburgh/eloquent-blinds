@@ -15,7 +15,7 @@ const Faq = () => {
           content={`Questions. Frequently asked ones. Plus our answers. That's how FAQs work. If you can't find what you're looking for, you can always send us an email with your enquiry.`}
         />
       </Head>
-      <div className="relative wrapper pt-32">
+      <div className="relative wrapper pt-24 lg:pt-32">
         <div className="grid md:grid-cols-2 md:divide-x md:divide-dashed md:divide-gray-900/10 md:dark:divide-gray-500/10">
           <div className="relative md:pr-6">
             <header className="md:sticky top-32">
@@ -29,6 +29,7 @@ const Faq = () => {
                 </Link>{" "}
                 with your enquiry.
               </p>
+              {/*<Video className={`w-full my-6`} src={`https://www.youtube.com/embed/FwIDKoVmtsY`} />*/}
             </header>
           </div>
           <section className={`md:pl-6`}>

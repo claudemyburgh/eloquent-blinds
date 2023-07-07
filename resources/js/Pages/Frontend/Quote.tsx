@@ -13,7 +13,7 @@ const Quote = () => {
         <link rel="canonical" href={ziggy.location} />
         <meta name={`description`} content={`We’d love to hear from you! Send us a message via email, whatapp or simply give us a call.`} />
       </Head>
-      <div className="relative wrapper pt-24 lg:flex lg:space-x-8">
+      <div className="relative wrapper pt-24 lg:pt-32 lg:flex lg:space-x-8">
         <div className={`w-full lg:w-1/2 relative`}>
           <ContactSection className={"sticky top-32"} />
         </div>

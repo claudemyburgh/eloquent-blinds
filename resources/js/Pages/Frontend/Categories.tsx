@@ -7,6 +7,7 @@ import CategoryCard from "@/FrontEnd/Card/CategoryCard"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { LinkIcon } from "@heroicons/react/20/solid"
+import Video from "@/Components/Video"
 
 const Categories = () => {
   const { ziggy, categories } = usePage<any>().props
@@ -22,11 +23,17 @@ const Categories = () => {
         />
       </Head>
       <div className="relative">
-        <div className="wrapper pt-32 space-y-4">
-          <Heading as={`h1`} type={`h1`} className={`col-span-12`}>
-            Product Categories
-          </Heading>
-          <ReactMarkdown className={`prose prose-lg dark:prose-invert my-8 `} children={bodyHTML} remarkPlugins={[remarkGfm]} />
+        <div className="wrapper pt-24 lg:pt-32 space-y-4">
+          <div className="md:flex flex-row-reverse">
+            <Video className={`col-start-1 w-full md:ml-6 md:w-1/2 mb-12`} src={`https://www.youtube.com/embed/FwIDKoVmtsY`} />
+
+            <div className={`w-full  md:w-1/2`}>
+              <Heading as={`h1`} type={`h1`} className={`col-span-12`}>
+                Product Categories
+              </Heading>
+              <ReactMarkdown className={`prose prose-lg dark:prose-invert my-8 `} children={bodyHTML} remarkPlugins={[remarkGfm]} />
+            </div>
+          </div>
           <div>
             {categories &&
               categories.map((category: CategoryProps) => (
