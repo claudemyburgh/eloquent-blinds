@@ -17,7 +17,7 @@ module.exports = {
         primary: colors.sky,
         secondary: colors.cyan,
         tri: colors.rose,
-        gray: colors.gray,
+        gray: colors.slate,
       },
       fontFamily: {
         sans: ["Figtree", ...defaultTheme.fontFamily.sans],
