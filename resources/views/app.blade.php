@@ -7,6 +7,8 @@
 
   <title inertia>{{ config('app.name', 'Eloquent Blinds') }}</title>
 
+  <meta inertia name="description" content="We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space."/>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800,900&display=swap" rel="stylesheet"/>

@@ -13,7 +13,7 @@ const Home = () => {
       <Head title={meta.title}>
         {/* HTML Meta Tags */}
         <link rel="canonical" href={ziggy.location} />
-        <meta name="description" content={meta.description} />
+        <meta name="description" content={meta.description} head-key={`description`} />
         {/* Facebook Meta Tags */}
         <meta property="og:url" content={ziggy.location} />
         <meta property="og:type" content="website" />

@@ -1,0 +1,1 @@
+import{a as r}from"./app-975b1814.js";const t=({children:a})=>r("div",{className:"bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-800 text-gray-700 dark:text-gray-200 rounded",children:r("table",{className:"table w-full text-left overflow-hidden rounded",children:a})});export{t as D};
