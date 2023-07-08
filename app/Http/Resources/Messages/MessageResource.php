@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * @property int $id
- * @property mixed $read_at
  * @property mixed $user
- * @property string $subject
+ * @property mixed $read_at
+ * @property mixed $subject
+ * @property mixed $id
  */
 class MessageResource extends JsonResource
 {
@@ -22,11 +22,14 @@ class MessageResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'read_at' => $this->read_at,
+            'read_at' => $this->read_at?->diffForHumans(),
             'name' => $this->user?->name,
             'email' => $this->user?->email,
             'phone' => $this->user?->phone,
             'subject' => $this->subject,
+            'children' => new MessageCollection($this->children),
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ];
     }
 }

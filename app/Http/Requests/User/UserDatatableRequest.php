@@ -6,6 +6,11 @@ use App\Models\User;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property mixed $first_name
+ * @property mixed $last_name
+ * @property mixed $email
+ */
 class UserDatatableRequest extends FormRequest
 {
     /**
@@ -26,7 +31,7 @@ class UserDatatableRequest extends FormRequest
         return [
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,id,'.User::class,
+            'email' => 'required|string|email|max:255|unique:users,id,' . User::class,
             //            'password' => ['required', Password::defaults()],
         ];
     }

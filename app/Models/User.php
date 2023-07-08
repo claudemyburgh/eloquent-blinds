@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Image\Exceptions\InvalidManipulation;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -17,6 +18,11 @@ use Spatie\Permission\Traits\HasRoles;
 
 /**
  * @method static role(string $string)
+ * @method static create(array $array)
+ * @method static findOrFail(int $id)
+ * @method static find(mixed $id)
+ * @property mixed $first_name
+ * @property mixed $last_name
  */
 class User extends Authenticatable implements HasMedia
 {
@@ -52,9 +58,10 @@ class User extends Authenticatable implements HasMedia
      */
     protected $casts = [
         'full_name' => 'string',
+
         'email_verified_at' => 'datetime',
     ];
-
+    
     protected $dates = ['deleted_at'];
 
     protected $appends = ['name'];
@@ -74,6 +81,9 @@ class User extends Authenticatable implements HasMedia
         return $this->hasMany(Post::class);
     }
 
+    /**
+     * @throws InvalidManipulation
+     */
     public function registerMediaConversions(Media $media = null): void
     {
         foreach (config('image-conversion') as $key => $image) {

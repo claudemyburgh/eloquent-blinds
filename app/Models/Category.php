@@ -31,6 +31,8 @@ class Category extends Model implements HasMedia
         'excerpt',
         'live',
         'body',
+        'video_url',
+        'video_thumbnail',
     ];
 
     public function products(): HasMany

@@ -65,13 +65,16 @@
         @apply min-h-[300px] flex;
     }
 
-
 }
 
 
 @layer component {
     .wrapper {
         @apply w-full max-w-7xl mx-auto px-4 ;
+    }
+
+    #dashboard .wrapper {
+        @apply w-full max-w-screen-2xl mx-auto px-4 ;
     }
 
 

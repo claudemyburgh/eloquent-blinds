@@ -63,12 +63,12 @@ const Show = ({ auth, message }: any) => {
       <div className="py-12">
         <div className="wrapper ">
           <Panel>
-            <Panel.Header heading={message.subject} paragraph={`Message from ${message.user.name}`} />
+            <Panel.Header heading={message.subject} paragraph={`Message from ${message.name}`} />
             <div className="flex justify-between items-center">
               <ul className="md:flex md:space-x-4 my-4 text-white">
-                <li>{message.user.name}</li>
-                <li>{message.user.email}</li>
-                <li>{message.user.phone}</li>
+                <li>{message.name}</li>
+                <li>{message.email}</li>
+                <li>{message.phone}</li>
               </ul>
               <div>
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs md:text-sm font-medium bg-gray-100 text-gray-800`}>
@@ -80,7 +80,7 @@ const Show = ({ auth, message }: any) => {
                 </span>
               </div>
             </div>
-              <ReactMarkdown className={`prose dark:prose-invert my-8 `} children={message.message} remarkPlugins={[remarkGfm]} />
+            <ReactMarkdown className={`prose dark:prose-invert my-8 `} children={message.message} remarkPlugins={[remarkGfm]} />
             <div className="space-x-4 pt-4">
               <SecondaryButton className={`btn btn-secondary text-white`} onClick={openModal}>
                 Reply
@@ -91,7 +91,7 @@ const Show = ({ auth, message }: any) => {
           {message.children &&
             (message.children as unknown as any[]).map((child) => (
               <Panel styles={`default`} className={`my-4`} key={child.id}>
-                <Panel.Header heading={child.subject} paragraph={`Message from ${child.user.name}`} />
+                <Panel.Header heading={child.subject} paragraph={`Message from ${child.name}`} />
                 <span className={`inline-flex items-center my-4 px-2.5 py-0.5 rounded-full text-xs md:text-sm font-medium bg-gray-100 text-gray-800`}>
                   Send{" "}
                   {formatDistance(parseISO(child.created_at), date, {

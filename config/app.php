@@ -1,5 +1,7 @@
 <?php
 
+use App\Providers\MessageServicesProvider;
+use App\Providers\UserServiceProvider;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -19,7 +21,7 @@ return [
 
     'slogan' => env('APP_SLOGAN', ''),
 
-    'placeholder' => env('APP_URL') .'/img/placeholder.webp',
+    'placeholder' => env('APP_URL') . '/img/placeholder.webp',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +47,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -198,6 +200,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        MessageServicesProvider::class,
+        UserServiceProvider::class,
 
     ],
 

@@ -7,6 +7,7 @@ use App\Http\Requests\User\UserDatatableRequest;
 use App\Models\User;
 use Designbycode\Datatables\DatatablesController;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
@@ -20,17 +21,17 @@ class UsersController extends DatatablesController
         $this->middleware(['permission:edit user|delete user|update user']);
     }
 
-    public function builder(): Builder
-    {
-        return User::query();
-    }
-
     public function index(Request $request): Response
     {
         return Inertia::render('Dashboard/Table/Index', $this->getResponse($request));
     }
 
-    public function store(UserDatatableRequest $request)
+    public function builder(): Builder
+    {
+        return User::query();
+    }
+
+    public function store(UserDatatableRequest $request): RedirectResponse
     {
         $user = User::create([
             'first_name' => $request->first_name,
@@ -42,24 +43,25 @@ class UsersController extends DatatablesController
         return to_route('dashboard.users.edit', $user->id);
     }
 
-    public function update(UserDatatableRequest $request, int $id)
+    public function update(UserDatatableRequest $request, int $id): void
     {
         User::findOrFail($id)->update($request->validated());
     }
 
-    public function edit(User $user)
+    public function edit(User $user): Response
     {
         $user->load('media');
 
         return Inertia::render('Dashboard/Users/Edit', compact('user'));
     }
 
-    public function destroy(string $ids)
+    public function destroy(string $ids): void
     {
+
         $this->itemsDelete($ids);
     }
 
-    public function upload(Request $request)
+    public function upload(Request $request): void
     {
         $request->validate([
             'image.*' => 'image|mimes:jpeg,jpg,png,gif,webp|max:10000',

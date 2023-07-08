@@ -21,12 +21,10 @@ class Message extends Model
 
     protected $casts = [
         'read_at' => 'datetime:Y-m-d',
+        'name' => 'string',
     ];
 
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+    protected $appends = ['name'];
 
     public function scopeUnread(Builder $builder): void
     {
@@ -37,4 +35,16 @@ class Message extends Model
     {
         $builder->whereNotNull('read_at');
     }
+
+    public function getNameAttribute()
+    {
+        return $this->user->name;
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+
 }
