@@ -4,10 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0284c7"/>
-
+  <link rel="canonical" href="{{ config('app.url') }}"/>
   <title inertia>{{ config('app.name', 'Eloquent Blinds') }}</title>
+  <meta head-key="description" inertia name="description" content="We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space."/>
+  {{--  HTML Meta Tags--}}
+  <meta head-key="fb-url" property="og:url" content="{{ config('app.url') }}"/>
+  <meta head-key="fb-type" property="og:type" content="website"/>
+  <meta head-key="fb-title" property="og:title" content="Eloquent Blinds"/>
+  <meta head-key="fb-description" property="og:description" content="{{ config('app.description') }}"/>
+  <meta head-key="fb-image" property="og:image" content="{{ config('app.url') . "/img/hero.webp" }}"/>
+  {{--  Twitter Meta Tags --}}
+  <meta head-key="tw-card" name="twitter:card" content="summary_large_image"/>
+  <meta head-key="tw-domain" property="twitter:domain" content="eloquentblinds.co.za"/>
+  <meta head-key="tw-url" property="twitter:url" content="{{ config('app.url') }}"/>
+  <meta head-key="tw-title" name="twitter:title" content="Eloquent Blinds"/>
+  <meta head-key="tw-description" name="twitter:description" content="{{ config('app.description') }}"/>
+  <meta head-key="tw-image" name="twitter:image" content="{{ config('app.url') . "/img/hero.webp" }}"/>
 
-  <meta inertia name="description" content="We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space."/>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">

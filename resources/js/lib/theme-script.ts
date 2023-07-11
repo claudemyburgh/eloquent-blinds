@@ -3,7 +3,7 @@ let mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
 function updateTheme(savedTheme?: string): string {
   let theme = "system"
   try {
-    if (!savedTheme) {
+    if (typeof window !== "undefined" && !savedTheme) {
       savedTheme = window.localStorage.theme
     }
     if (savedTheme === "dark") {

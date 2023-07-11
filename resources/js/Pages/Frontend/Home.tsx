@@ -15,18 +15,18 @@ const Home = () => {
         <link rel="canonical" href={ziggy.location} />
         <meta name="description" content={meta.description} head-key={`description`} />
         {/* Facebook Meta Tags */}
-        <meta property="og:url" content={ziggy.location} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Eloquent Blinds" />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:image" content={meta.image} />
+        <meta head-key="fb-url" property="og:url" content={ziggy.location} />
+        <meta head-key="fb-type" property="og:type" content="website" />
+        <meta head-key="fb-title" property="og:title" content="Eloquent Blinds" />
+        <meta head-key="fb-description" property="og:description" content={meta.description} />
+        <meta head-key="fb-image" property="og:image" content={meta.image} />
         {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="eloquentblinds.co.za" />
-        <meta property="twitter:url" content={ziggy.location} />
-        <meta name="twitter:title" content="Eloquent Blinds" />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
+        <meta head-key="tw-card" name="twitter:card" content="summary_large_image" />
+        <meta head-key="tw-domain" property="twitter:domain" content="eloquentblinds.co.za" />
+        <meta head-key="tw-url" property="twitter:url" content={ziggy.location} />
+        <meta head-key="tw-title" name="twitter:title" content="Eloquent Blinds" />
+        <meta head-key="tw-description" name="twitter:description" content={meta.description} />
+        <meta head-key="tw-image" name="twitter:image" content={meta.image} />
       </Head>
       <div className="relative">
         <HeroComponent />
