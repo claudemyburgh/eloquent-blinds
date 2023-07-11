@@ -12,8 +12,8 @@ const Home = () => {
     <AppLayout>
       <Head title={meta.title}>
         {/* HTML Meta Tags */}
-        <link rel="canonical" href={ziggy.location} />
-        <meta name="description" content={meta.description} head-key={`description`} />
+        <link head-key={`canonical`} rel="canonical" href={ziggy.location} />
+        <meta head-key={`description`} name="description" content={meta.description} />
         {/* Facebook Meta Tags */}
         <meta head-key="fb-url" property="og:url" content={ziggy.location} />
         <meta head-key="fb-type" property="og:type" content="website" />

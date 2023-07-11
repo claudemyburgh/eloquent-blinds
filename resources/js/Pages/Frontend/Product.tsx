@@ -7,15 +7,31 @@ import { convertedImage } from "@/lib/helpers"
 import ContactForm from "@/Components/ContactForm"
 import Image from "@/FrontEnd/Image/Image"
 import Heading from "@/FrontEnd/Typography/Heading"
+import { meta_categories as meta } from "@/Data/header-data"
 
 const Product = () => {
   const { ziggy, product, category } = usePage<any>().props
   return (
     <AppLayout>
       <Head title={`${product.title} ${category.title}`}>
-        <link rel="canonical" href={ziggy.location} />
-        <meta name="description" content={product.description}></meta>
+        {/* HTML Meta Tags */}
+        <link head-key={`canonical`} rel="canonical" href={ziggy.location} />
+        <meta head-key={`description`} name="description" content={category.description} />
+        {/* Facebook Meta Tags */}
+        <meta head-key="fb-url" property="og:url" content={ziggy.location} />
+        <meta head-key="fb-type" property="og:type" content="website" />
+        <meta head-key="fb-title" property="og:title" content={`Eloquent Blinds - ${product.title}`} />
+        <meta head-key="fb-description" property="og:description" content={product.description} />
+        <meta head-key="fb-image" property="og:image" content={convertedImage(product?.media[0]?.original_url, "card")} />
+        {/* Twitter Meta Tags */}
+        <meta head-key="tw-card" name="twitter:card" content="summary_large_image" />
+        <meta head-key="tw-domain" property="twitter:domain" content="eloquentblinds.co.za" />
+        <meta head-key="tw-url" property="twitter:url" content={ziggy.location} />
+        <meta head-key="tw-title" name="twitter:title" content={`Eloquent Blinds - ${product.title}`} />
+        <meta head-key="tw-description" name="twitter:description" content={product.description} />
+        <meta head-key="tw-image" name="twitter:image" content={convertedImage(product?.media[0]?.original_url, "card")} />
       </Head>
+
       <div className="wrapper pt-24 lg:pt-32 relative z-10">
         <div className="mt-6 lg:grid lg:grid-cols-3 lg:gap-x-8">
           <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden md:block">

@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { LinkIcon } from "@heroicons/react/20/solid"
 import Video from "@/Components/Video"
+import { meta_categories as meta } from "@/Data/header-data"
 
 const Categories = () => {
   const { ziggy, categories } = usePage<any>().props
@@ -15,13 +16,25 @@ const Categories = () => {
 
   return (
     <AppLayout>
-      <Head title="Products categories">
-        <link rel="canonical" href={ziggy.location} />
-        <meta
-          name={`description`}
-          content={`Discover a world of stunning blinds as you explore our diverse product categories. From timeless classics to contemporary designs, our curated selection offers unparalleled style and functionality.`}
-        />
+      <Head title={meta.title}>
+        {/* HTML Meta Tags */}
+        <link head-key={`canonical`} rel="canonical" href={ziggy.location} />
+        <meta head-key={`description`} name="description" content={meta.description} />
+        {/* Facebook Meta Tags */}
+        <meta head-key="fb-url" property="og:url" content={ziggy.location} />
+        <meta head-key="fb-type" property="og:type" content="website" />
+        <meta head-key="fb-title" property="og:title" content="Eloquent Blinds" />
+        <meta head-key="fb-description" property="og:description" content={meta.description} />
+        <meta head-key="fb-image" property="og:image" content={meta.image} />
+        {/* Twitter Meta Tags */}
+        <meta head-key="tw-card" name="twitter:card" content="summary_large_image" />
+        <meta head-key="tw-domain" property="twitter:domain" content="eloquentblinds.co.za" />
+        <meta head-key="tw-url" property="twitter:url" content={ziggy.location} />
+        <meta head-key="tw-title" name="twitter:title" content="Eloquent Blinds" />
+        <meta head-key="tw-description" name="twitter:description" content={meta.description} />
+        <meta head-key="tw-image" name="twitter:image" content={meta.image} />
       </Head>
+
       <div className="relative">
         <div className="wrapper pt-24 lg:pt-32 space-y-4">
           <div className="md:flex flex-row-reverse">

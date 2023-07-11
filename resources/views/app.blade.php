@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0284c7"/>
-  <link rel="canonical" href="{{ config('app.url') }}"/>
+  <link head-key="canonical" rel="canonical" href="{{ config('app.url') }}"/>
   <title inertia>{{ config('app.name', 'Eloquent Blinds') }}</title>
   <meta head-key="description" inertia name="description" content="We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space."/>
   {{--  HTML Meta Tags--}}
