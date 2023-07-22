@@ -36,7 +36,7 @@
                 ->add(Url::create('/')->setPriority(1))
                 ->add(Url::create('/categories')->setPriority(0.8))
                 ->add(Url::create('/faq')->setPriority(0.8))
-//      ->add(Url::create('/reviews')->setPriority(0.8))
+                ->add(Url::create('/reviews')->setPriority(0.8))
                 ->add(Url::create('/free-quote')->setPriority(0.8))
                 ->add(Url::create('/privacy-policy')->setPriority(0.5));
 
