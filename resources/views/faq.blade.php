@@ -1,4 +1,17 @@
-<x-app-layout title="Frequently asked questions">
+<x-app-layout title="Frequently asked questions" description="Questions. Frequently asked ones. Plus our answers. That's how FAQs work. If you can't find what you're looking for, you can always send us an email with your enquiry.">
+    <x-slot name="seo">
+        {{--  HTML Meta Tags--}}
+        <meta property="og:title" content="Eloquent Blinds | Frequently asked questions"/>
+        <meta property="og:description"
+              content="Questions. Frequently asked ones. Plus our answers. That's how FAQs work. If you can't find what you're looking for, you can always send us an email with your enquiry."/>
+        <meta property="og:image" content="{{ config('app.url') . "/img/hero.webp" }}"/>
+        {{--  Twitter Meta Tags --}}
+        <meta name="twitter:title" content="Eloquent Blinds | Frequently asked questions"/>
+        <meta name="twitter:description"
+              content=""/>
+        <meta name="twitter:image" content="{{ config('app.url') . "/img/hero.webp" }}"/>
+    </x-slot>
+
     <div class="wrapper pt-24 lg:pt-24 space-y-4">
         <div class="grid md:grid-cols-2 md:divide-x md:divide-dashed md:divide-gray-900/10 md:dark:divide-gray-500/10">
             <div class="relative md:pr-6">

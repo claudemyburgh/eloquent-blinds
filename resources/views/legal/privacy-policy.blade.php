@@ -1,4 +1,18 @@
-<x-app-layout title="Privacy Policy">
+<x-app-layout title="Privacy Policy"
+              description="At Eloquent Blinds, accessible from https://eloquontblinds.co.za, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Eloquent Blinds and how we use it.">
+    <x-slot name="seo">
+        {{--  HTML Meta Tags--}}
+        <meta property="og:title" content="Eloquent Blinds | Privacy Policy "/>
+        <meta property="og:description"
+              content="At Eloquent Blinds, accessible from https://eloquontblinds.co.za, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Eloquent Blinds and how we use it."/>
+        <meta property="og:image" content="{{ config('app.url') . "/img/hero.webp" }}"/>
+        {{--  Twitter Meta Tags --}}
+        <meta name="twitter:title" content="Eloquent Blinds | Privacy Policy "/>
+        <meta name="twitter:description"
+              content="At Eloquent Blinds, accessible from https://eloquontblinds.co.za, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Eloquent Blinds and how we use it."/>
+        <meta name="twitter:image" content="{{ config('app.url') . "/img/hero.webp" }}"/>
+    </x-slot>
+
 
     <section class="prose dark:prose-invert mx-auto py-32 relative z-10">
         <h1>Privacy Policy for Eloquent Blinds</h1>
