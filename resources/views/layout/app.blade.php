@@ -12,6 +12,7 @@
         @endisset {{ config('app.name', 'Eloquent Blinds') }} </title>
     <meta name="description" content="{{ $description }}"/>
 
+    <meta name="facebook-domain-verification" content="28lq7xcnda4nkrexr76giuekw41nc8"/>
     <meta property="fb:app_id" content="{{ config('social.facebook.app_id') }}"/>
     {{ $seo }}
 
