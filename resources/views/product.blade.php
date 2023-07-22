@@ -7,6 +7,7 @@
                 <x-product.media class="sticky top-32" :$product/>
             </div>
 
+
             <div class=" md:col-span-3 lg:col-span-7">
                 <h1 class="heading-1 text-shadow-lg mt-5">{{ $product->title }} {{ $category->title }}</h1>
                 <a href="{{ route('category', $category) }}" class="rounded-full bg-primary-500/10 px-3 py-1 mt-2 inline-block text-sm font-semibold leading-6 text-primary-400 ring-1 ring-inset ring-primary-500/20">In category {{

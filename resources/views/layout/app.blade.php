@@ -5,15 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="theme-color" content="#0284c7"/>
-    <link rel="canonical" href="{{ config('app.url') }}"/>
+    <link rel="canonical" href="{{ URL::current() }}"/>
 
     <title>@isset($title)
             {{ $title }} |
         @endisset {{ config('app.name', 'Eloquent Blinds') }} </title>
     <meta name="description" content="{{ $description }}"/>
 
-    <meta name="facebook-domain-verification" content="28lq7xcnda4nkrexr76giuekw41nc8"/>
     <meta property="fb:app_id" content="{{ config('social.facebook.app_id') }}"/>
+    {{--  HTML Meta Tags--}}
+    <meta property="og:url" content="{{  URL::current() }}"/>
+    <meta property="og:type" content="website"/>
+    {{--  Twitter Meta Tags --}}
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:domain" content="eloquentblinds.co.za"/>
+    <meta property="twitter:url" content="{{ URL::current() }}"/>
+
     {{ $seo }}
 
     <!-- Fonts -->
