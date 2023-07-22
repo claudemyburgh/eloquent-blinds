@@ -1,6 +1,7 @@
 <x-app-layout title="Blind automation, supplier and installer" description="We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space.">
     <x-slot name="seo">
         {{--  HTML Meta Tags--}}
+
         <meta property="og:url" content="{{ config('app.url') }}"/>
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="Eloquent Blinds | Blind automation, supplier and installer"/>

@@ -12,7 +12,7 @@
         @endisset {{ config('app.name', 'Eloquent Blinds') }} </title>
     <meta name="description" content="{{ $description }}"/>
 
-
+    <meta property="fb:app_id" content="{{ config('social.facebook.app_id') }}"/>
     {{ $seo }}
 
     <!-- Fonts -->
