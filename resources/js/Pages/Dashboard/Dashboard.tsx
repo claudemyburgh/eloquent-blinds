@@ -135,6 +135,15 @@ export default function Dashboard({ auth, users, emails, messages }: PageProps &
             <Link className={`btn btn-secondary`} href={route("dashboard.cache")} method="post" as={`button`} type={`button`}>
               Clear Cache
             </Link>
+            <Link
+              className={`btn btn-secondary`}
+              href={`https://www.google.com/ping?sitemap=https://www.eloquentblinds.co.za/sitemap.xml`}
+              method="post"
+              as={`button`}
+              type={`button`}
+            >
+              Ping Google Sitemap
+            </Link>
           </div>
         </div>
       </div>
