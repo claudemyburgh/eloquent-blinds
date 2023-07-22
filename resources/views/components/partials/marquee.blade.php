@@ -1,4 +1,4 @@
-<section class="max-w-full overflow-x-clip relative z-10">
+<section {{ $attributes->merge(['class' => 'max-w-full overflow-x-clip relative z-10']) }}>
     <div style="--speed: 30000ms; --direction: normal" class="flex  py-px group bg-gradient-to-r from-primary-600 to-secondary-400">
         <div class="bg-gray-100 dark:bg-gray-900 py-8">
             <div class="flex animate-loop min-w-full space-x-20 w-full text-gray-700 dark:text-gray-100 fit-content">

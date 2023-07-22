@@ -11,8 +11,7 @@
               content="Discover a world of stunning blinds as you explore our diverse product categories. From timeless classics to contemporary designs, our curated selection offers unparalleled style and functionality."/>
         <meta name="twitter:image" content="{{ config('app.url') . "/img/hero.webp" }}"/>
     </x-slot>
-
-
+    
     <section class="relative">
         <div class="wrapper pt-24 lg:pt-32 space-y-4">
             <div class="lg:flex flex-row-reverse">

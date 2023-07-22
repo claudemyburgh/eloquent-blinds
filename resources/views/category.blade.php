@@ -17,9 +17,9 @@
         <div class="wrapper pt-24 lg:pt-32 space-y-4">
             <div class="lg:flex flex-row-reverse">
                 <div class="w-full lg:w-1/2">
-                    <figure class="relative p-[2px] flex rounded-global shadow-2xl shadow-primary-500/50 bg-gradient-to-br from-primary-500 to-secondary-400">
+                    <figure class="relative p-[2px] w-full mb-6 flex rounded-global shadow-2xl shadow-primary-500/50 bg-gradient-to-br from-primary-500 to-secondary-400">
                         <div aria-hidden="true" class="absolute w-1/2 top-0 h-[2px] left-0 bg-gradient-to-r  from-transparent via-primary-200 to-transparent"></div>
-                        <img width="800" height="600" class="rounded-global aspect-4/3 object-cover" src="{{ $category->getFirstMediaUrl('default', 'large') }}" alt="{{ $category->title }} image">
+                        <img width="800" height="600" class="rounded-global w-full aspect-4/3 object-cover" src="{{ $category->getFirstMediaUrl('default', 'large') }}" alt="{{ $category->title }} image">
                     </figure>
                 </div>
                 <div class="w-full lg:w-1/2 pr-6">
@@ -31,7 +31,6 @@
                     </article>
                 </div>
             </div>
-
 
             @if($category->products->count())
                 <div class="grid grid-cols-12 gap-6 my-12">
@@ -58,8 +57,6 @@
                             <x-product-card class="col-span-6 md:col-span-3" :$product route="{{ route('product', [$descendant, $product]) }}"/>
                         @endforeach
                     @endforeach
-
-
                 </div>
             @endif
         </div>
