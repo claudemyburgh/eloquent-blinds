@@ -1,7 +1,4 @@
 <?php
-
-use App\Providers\MessageServicesProvider;
-use App\Providers\UserServiceProvider;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -202,8 +199,9 @@ return [
     // App\Providers\BroadcastServiceProvider::class,
     App\Providers\EventServiceProvider::class,
     App\Providers\RouteServiceProvider::class,
-    MessageServicesProvider::class,
-    UserServiceProvider::class,
+    \App\Providers\ViewComposerServiceProvider::class,
+    \App\Providers\MessageServicesProvider::class,
+    \App\Providers\UserServiceProvider::class,
 
   ],
 

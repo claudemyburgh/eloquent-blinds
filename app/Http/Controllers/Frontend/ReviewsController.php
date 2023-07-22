@@ -1,23 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+    namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
-use Inertia\Response;
+    use App\Http\Controllers\Controller;
+    use Illuminate\Http\Request;
 
-class ReviewsController extends Controller
-{
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke(Request $request): Response
+    class ReviewsController extends Controller
     {
-        return Inertia::render('Frontend/Reviews', [
-            'canLogin' => Route::has('login'),
-            'canRegister' => Route::has('register'),
-        ]);
+        /**
+         * Handle the incoming request.
+         */
+        public function __invoke(Request $request)
+        {
+            return view('reviews');
+        }
     }
-}

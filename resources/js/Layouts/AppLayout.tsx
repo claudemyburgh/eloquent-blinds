@@ -30,7 +30,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
   }, 1000)
 
   return (
-    <div className={`relative inset-0 `}>
+    <div className={`relative inset-0`}>
       <DevBanner on={!production} />
 
       <div className={`min-h-screen relative z-0`}>

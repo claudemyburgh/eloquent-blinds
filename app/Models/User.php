@@ -61,7 +61,7 @@ class User extends Authenticatable implements HasMedia
 
         'email_verified_at' => 'datetime',
     ];
-    
+
     protected $dates = ['deleted_at'];
 
     protected $appends = ['name'];
@@ -99,4 +99,6 @@ class User extends Authenticatable implements HasMedia
             ->singleFile()
             ->useFallbackUrl(url(config('app.placeholder')));
     }
+
+
 }

@@ -8,18 +8,7 @@ import toast from "react-hot-toast"
 import { Banner, ToastItem } from "@/Components/Notifications"
 import { twMerge } from "tailwind-merge"
 import confetti from "canvas-confetti"
-
-interface ContactsProps {
-  data: {
-    label: string
-    value: string
-  }
-}
-
-interface SubjectProp {
-  subject?: string
-  className?: string
-}
+import { ContactsProps, SubjectProp } from "@/types/form"
 
 const ContactForm: FC<SubjectProp> = ({ subject: productSubject = "", className }) => {
   const { flash } = usePage<PageProps>().props

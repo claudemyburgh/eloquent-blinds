@@ -128,8 +128,13 @@ export default function Dashboard({ auth, users, emails, messages }: PageProps &
           <ChartLine type={`line`} data={data} className={`col-span-2`} />
         </div>
         <div className="wrapper">
-          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-            <div className="p-6 text-gray-900 dark:text-gray-100">You're logged in!</div>
+          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6 space-x-4">
+            <Link className={`btn btn-secondary`} href={route("dashboard.sitemap")} method="post" as={`button`} type={`button`}>
+              Sitemap
+            </Link>
+            <Link className={`btn btn-secondary`} href={route("dashboard.cache")} method="post" as={`button`} type={`button`}>
+              Clear Cache
+            </Link>
           </div>
         </div>
       </div>

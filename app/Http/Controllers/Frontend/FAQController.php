@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -12,9 +13,9 @@ class FAQController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request): Response
+    public function __invoke(Request $request): View
     {
-        $fags = [
+        $faqs = [
             [
                 'id' => 1,
                 'question' => 'Where are your company based?',
@@ -35,10 +36,17 @@ class FAQController extends Controller
                 'question' => 'Do you do blind repair?',
                 'answer' => 'Yes, we do repairs on variety of blind types.',
             ],
+            [
+                'id' => 5,
+                'question' => 'Do you do blind blind automation?',
+                'answer' => 'Yes, do blind automation on most types of blinds.',
+            ],
         ];
 
-        return Inertia::render('Frontend/Faq', [
-            'faqs' => $fags,
+
+
+        return view('faq', [
+            'faqs' => $faqs,
         ]);
     }
 }

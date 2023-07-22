@@ -8,16 +8,26 @@ module.exports = {
     "./storage/framework/views/*.php",
     "./resources/views/**/*.blade.php",
     "./resources/js/**/*.{tsx,ts}",
+    "./resources/ts/**/*.{tsx,ts}",
   ],
   darkMode: "class",
-  safelist: ["swiper-wrapper"],
+  safelist: ["swiper-wrapper", "heading-1", "heading-2", "heading-3", "image-mask-none"],
   theme: {
+    corePlugins: {
+      aria: false,
+    },
     extend: {
       colors: {
         primary: colors.sky,
         secondary: colors.cyan,
         tri: colors.rose,
         gray: colors.slate,
+      },
+      width: {
+        "square-diagonal": Math.sqrt(2) * 100 + "%",
+      },
+      borderRadius: {
+        global: ".75rem",
       },
       fontFamily: {
         sans: ["Figtree", ...defaultTheme.fontFamily.sans],
@@ -44,5 +54,11 @@ module.exports = {
     },
   },
 
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography"), require("tailwindcss-image-mask"), require("@tailwindcss/container-queries")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/container-queries"),
+    require("tailwindcss-image-mask"),
+    require("tailwindcss-attributes"),
+  ],
 }

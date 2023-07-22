@@ -1,91 +1,90 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard\Datatables;
+    namespace App\Http\Controllers\Dashboard\Datatables;
 
-use App\Helpers\GeneratePassword;
-use App\Http\Requests\User\UserDatatableRequest;
-use App\Models\User;
-use Designbycode\Datatables\DatatablesController;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Inertia\Inertia;
-use Inertia\Response;
+    use App\Helpers\GeneratePassword;
+    use App\Http\Requests\User\UserDatatableRequest;
+    use App\Models\User;
+    use Designbycode\Datatables\DatatablesController;
+    use Illuminate\Database\Eloquent\Builder;
+    use Illuminate\Http\RedirectResponse;
+    use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\Hash;
+    use Inertia\Inertia;
+    use Inertia\Response;
 
-class UsersController extends DatatablesController
-{
-    public function __construct()
+    class UsersController extends DatatablesController
     {
-        parent::__construct();
-        $this->middleware(['permission:edit user|delete user|update user']);
-    }
+        public function __construct()
+        {
+            parent::__construct();
+            $this->middleware(['permission:edit user|delete user|update user']);
+        }
 
-    public function index(Request $request): Response
-    {
-        return Inertia::render('Dashboard/Table/Index', $this->getResponse($request));
-    }
+        public function index(Request $request): Response
+        {
+            return Inertia::render('Dashboard/Table/Index', $this->getResponse($request));
+        }
 
-    public function builder(): Builder
-    {
-        return User::query();
-    }
+        public function builder(): Builder
+        {
+            return User::query();
+        }
 
-    public function store(UserDatatableRequest $request): RedirectResponse
-    {
-        $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'password' => Hash::make(GeneratePassword::password(20)),
-        ]);
+        public function store(UserDatatableRequest $request): RedirectResponse
+        {
+            $user = User::create([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'password' => Hash::make(GeneratePassword::password(20)),
+            ]);
 
-        return to_route('dashboard.users.edit', $user->id);
-    }
+            return to_route('dashboard.users.edit', $user->id);
+        }
 
-    public function update(UserDatatableRequest $request, int $id): void
-    {
-        User::findOrFail($id)->update($request->validated());
-    }
+        public function update(UserDatatableRequest $request, int $id): void
+        {
+            User::findOrFail($id)->update($request->validated());
+        }
 
-    public function edit(User $user): Response
-    {
-        $user->load('media');
+        public function edit(User $user): Response
+        {
+            $user->load('media');
 
-        return Inertia::render('Dashboard/Users/Edit', compact('user'));
-    }
+            return Inertia::render('Dashboard/Users/Edit', compact('user'));
+        }
 
-    public function destroy(string $ids): void
-    {
+        public function destroy(string $ids): void
+        {
+            $this->itemsDelete($ids);
+        }
 
-        $this->itemsDelete($ids);
-    }
+        public function upload(Request $request): void
+        {
+            $request->validate([
+                'image.*' => 'image|mimes:jpeg,jpg,png,gif,webp|max:10000',
+            ]);
 
-    public function upload(Request $request): void
-    {
-        $request->validate([
-            'image.*' => 'image|mimes:jpeg,jpg,png,gif,webp|max:10000',
-        ]);
+            if ($request->has('image')) {
+                $user = User::find($request->id);
+                $user->addMedia($request->image)
+                    ->toMediaCollection('default');
+            }
+        }
 
-        if ($request->has('image')) {
-            $user = User::find($request->id);
-            $user->addMedia($request->image)
-                ->toMediaCollection('default');
+        protected function getDisplayableColumnNames(): array
+        {
+            return ['id', 'name', 'email', 'phone'];
+        }
+
+        protected function getUpdatableColumns(): array
+        {
+            return ['id', 'first_name', 'last_name', 'email', 'phone'];
+        }
+
+        protected function getCreatableColumns(): array
+        {
+            return ['first_name', 'last_name', 'email', 'phone'];
         }
     }
-
-    protected function getDisplayableColumnNames(): array
-    {
-        return ['id', 'name', 'email', 'phone'];
-    }
-
-    protected function getUpdatableColumns(): array
-    {
-        return ['id', 'first_name', 'last_name', 'email', 'phone'];
-    }
-
-    protected function getCreatableColumns(): array
-    {
-        return ['first_name', 'last_name', 'email', 'phone'];
-    }
-}
