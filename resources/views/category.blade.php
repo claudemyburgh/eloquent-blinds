@@ -1,15 +1,15 @@
-<x-app-layout :title="$category->title" :description="$category->$description">
+<x-app-layout :title="$category->title" :description="$category->description">
 
     <x-slot name="seo">
         {{--  HTML Meta Tags--}}
         <meta property="og:title" content="Eloquent Blinds | {{ $category->title }}"/>
         <meta property="og:description"
-              content="{{ $category->$description }}"/>
+              content="{{ $category->description }}"/>
         <meta property="og:image" content="{{ $category->getFirstMediaUrl('default', 'card') }}"/>
         {{--  Twitter Meta Tags --}}
         <meta name="twitter:title" content="Eloquent Blinds | {{ $category->title }}"/>
         <meta name="twitter:description"
-              content="{{ $category->$description }}"/>
+              content="{{ $category->description }}"/>
         <meta name="twitter:image" content="{{ $category->getFirstMediaUrl('default', 'card') }}"/>
     </x-slot>
 
