@@ -11,17 +11,6 @@
                         @endforeach
                     @endforeach
                 @endforeach
-
-                @foreach($categories as $category)
-                    <a class="hover-underline px-4 shrink-0" href="#">{{ $category->title }}</a>
-                    @foreach($category->children as $child)
-                        <a class="hover-underline px-4 shrink-0" href="#">{{ $child->title }}</a>
-                        @foreach($child->products as $product)
-                            <a class="hover-underline px-4 shrink-0" href="#">{{ $product->title }}</a>
-                        @endforeach
-                    @endforeach
-                @endforeach
-
             </div>
         </div>
     </div>

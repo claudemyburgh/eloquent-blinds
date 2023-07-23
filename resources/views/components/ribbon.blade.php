@@ -9,6 +9,5 @@
             </a>
         </div>
     @endif
-
     {{ $slot }}
 </div>

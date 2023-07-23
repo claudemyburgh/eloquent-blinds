@@ -1,6 +1,6 @@
 <div {{ $attributes->merge(['class' => 'shadow-lg shadow-primary-600/10 col-span-6 @lg:col-span-6 @5xl:col-span-2']) }}>
     <div class="@container/card">
-        <div class="bg-gray-100 @[550px]:flex items-center dark:bg-gray-900 overflow-clip relative card w-full p-6 rounded-global border dark:border-gray-800 border-gray-300">
+        <mouse-spotlight class="bg-gray-100 block @[550px]:flex items-center dark:bg-gray-900 overflow-clip relative w-full p-6 rounded-global border dark:border-gray-800 border-gray-300">
             <x-pattern.grid class="h-[100px] z-0"/>
             <figure class="w-[150px] shrink-0 h-[150px] @[550px]:w-[110px] @[550px]:h-[110px] mx-auto @[550px]:mx-0 block  rounded-global overflow-clip shadow-lg shadow-primary-500/30 border-[4px] border-primary-500/50">
                 <img class=" rounded-global w-full" loading="lazy" width="149" height="149" src="{{ Vite::asset($image) }}" alt="user details">
@@ -19,6 +19,6 @@
                     <a href="{{ 'mailto:' . $email }}" class="hover:text-primary-500 hover:underline">{{ $email }}</a>
                 </p>
             </div>
-        </div>
+        </mouse-spotlight>
     </div>
 </div>

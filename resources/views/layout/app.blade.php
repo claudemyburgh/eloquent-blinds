@@ -52,7 +52,7 @@
     @viteReactRefresh
     @vite(['resources/css/app.css', 'resources/ts/app.tsx'])
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans antialiased overflow-x-hidden">
 
 
 @production
@@ -72,7 +72,7 @@
         {{ $slot }}
     </main>
     <x-partials.section-products/>
-    <x-partials.marquee/>
+    <x-partials.marquee2/>
     @if(Route::currentRouteName() !== 'quote')
         <div class="wrapper">
             <div class="-mr-4">
