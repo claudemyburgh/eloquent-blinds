@@ -1,5 +1,5 @@
 import Flickity from "flickity"
-import "flickity/css/flickity.css"
+import "flickity/css/flickity.css" // Add this to declare the method on Flickity prototype
 
 // Add this to declare the method on Flickity prototype
 declare module "flickity" {
@@ -15,10 +15,15 @@ class MarqueeScroller extends HTMLElement {
     super()
   }
 
-  protected _tickerSpeed: number | undefined
+  // Define observedAttributes to watch for changes in attributes
+  static get observedAttributes() {
+    return ["ticker-speed"]
+  }
+
+  protected _tickerSpeed: number = 2
 
   get tickerSpeed(): number {
-    return this._tickerSpeed as number
+    return this._tickerSpeed
   }
 
   set tickerSpeed(value: number) {
@@ -28,11 +33,18 @@ class MarqueeScroller extends HTMLElement {
   protected _isPaused: boolean = false
 
   get isPaused(): boolean {
-    return this._isPaused as boolean
+    return this._isPaused
   }
 
   set isPaused(value: boolean) {
     this._isPaused = value
+  }
+
+  // Handle attribute changes
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+    if (name === "ticker-speed" && oldValue !== newValue) {
+      this.tickerSpeed = parseFloat(newValue) || 2
+    }
   }
 
   connectedCallback() {
@@ -51,7 +63,8 @@ class MarqueeScroller extends HTMLElement {
   }
 
   protected init() {
-    this._tickerSpeed = 5
+    //@ts-expect-error
+    this.tickerSpeed = parseFloat(this.getAttribute("ticker-speed")) || 2
     this._isPaused = false
     this.kitty = new Flickity(this, {
       autoPlay: true,
@@ -73,7 +86,7 @@ class MarqueeScroller extends HTMLElement {
       //@ts-expect-error
       this.kitty.x = (this.kitty.x - this.tickerSpeed) % this.kitty.slideableWidth
       //@ts-expect-error
-      this.kitty.selectedIndex = this.kitty.dragEndRestingSelect() // Access the method from the prototype
+      this.kitty.selectedIndex = this.kitty["dragEndRestingSelect"]() // Access the method from the prototype
       //@ts-expect-error
       this.kitty.updateSelectedSlide()
       //@ts-expect-error

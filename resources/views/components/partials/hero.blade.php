@@ -16,9 +16,9 @@
             <p class="mt-3 text-lg leading-8 text-gray-500 dark:text-gray-300  text-shadow-lg">
                 We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space.
             </p>
-            <div class="flex md:space-x-4">
-                <a href="{{ route('quote') }}" class="btn mt-4 btn-gradient px-6 py-4 text-white">Get a free quote</a>
-                <a href="#learn-more" class=" mt-4 btn-secondary btn px-6 py-4 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-100/10">Learn more
+            <div class="flex space-x-4">
+                <a href="{{ route('quote') }}" class="btn mt-4 btn-gradient px-3 py-2 md:px-6 md:py-4 text-white">Get a free quote</a>
+                <a href="#learn-more" class=" mt-4 btn-secondary btn px-3 py-2 md:px-6 md:py-4 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-100/10">Learn more
                     <span class="ml-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
   <path stroke-linecap="round" stroke-linejoin="round"

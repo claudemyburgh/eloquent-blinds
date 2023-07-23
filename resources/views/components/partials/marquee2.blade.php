@@ -1,5 +1,5 @@
 <div class="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-white border-y-2 border-primary-500 ">
-    <marquee-scroller class="carousel">
+    <marquee-scroller ticker-speed="1" class="carousel">
         @foreach($categories as $category)
             <div class="carousel-cell py-8 mr-10">
                 <a class="hover-underline px-4 shrink-0" href="{{ route('category', $category) }}">{{ $category->title }}</a>
