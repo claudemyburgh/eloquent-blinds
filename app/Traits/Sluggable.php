@@ -1,32 +1,30 @@
 <?php
 
-namespace App\Traits;
+    namespace App\Traits;
 
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
+    use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Support\Str;
 
-
-trait Sluggable
-{
-
-    public Model $model;
-
-    protected static function bootSluggable(): void
+    trait Sluggable
     {
 
-        self::creating(function (Model $model): void {
+        public Model $model;
 
-            /** @var TYPE_NAME $model */
-            $model->uuid = Str::uuid();
+        protected static function bootSluggable(): void
+        {
+            static::creating(function (Model $model): void {
 
-            if (!$model->slug) {
-                $model->slug = $model->uuid;
-            }
-        });
+                /** @var $model TYPE_NAME */
+                $model->uuid = Str::uuid()->toString();
 
-        self::updating(function (Model $model): void {
-            $model->slug = Str::slug($model->slug);
-        });
+                if (!$model->slug) {
+                    $model->slug = $model->uuid;
+                }
+            });
+
+            static::updating(function (Model $model): void {
+                $model->slug = Str::slug($model->slug);
+            });
+        }
     }
-}

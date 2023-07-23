@@ -17,6 +17,7 @@
                 f.parentNode.insertBefore(j, f);
             })(window, document, 'script', 'dataLayer', '{{ config('google.gtag.id') }}');</script>
         <!-- End Google Tag Manager -->
+
     @endproduction
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,6 +53,8 @@
     @vite(['resources/css/app.css', 'resources/ts/app.tsx'])
 </head>
 <body class="font-sans antialiased">
+
+
 @production
     <!-- Google Tag Manager (noscript) -->
     <noscript>

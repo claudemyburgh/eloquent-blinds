@@ -15,7 +15,7 @@
          */
         public function __invoke(Request $request): View
         {
-            $categories = Cache::remember('categories-list', 3600, fn() => Category::live()->with('media', 'products')->tree()->get()->toTree());
+            $categories = Cache::rememberForever('categories-list', fn() => Category::live()->with('media', 'products')->tree()->get()->toTree());
 
             return view('categories', [
                 'categories' => $categories,

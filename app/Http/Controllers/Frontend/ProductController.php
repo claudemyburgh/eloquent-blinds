@@ -5,16 +5,15 @@
     use App\Http\Controllers\Controller;
     use App\Models\Category;
     use App\Models\Product;
-    use Illuminate\View\View;
 
     class ProductController extends Controller
     {
         /**
          * Handle the incoming request.
          */
-        public function __invoke(Category $category, Product $product): View
+        public function __invoke(Category $category, Product $product)
         {
-            $product->load('media');
+            $product->load('media', 'tags');
             return view('product', compact('product', 'category'));
         }
     }

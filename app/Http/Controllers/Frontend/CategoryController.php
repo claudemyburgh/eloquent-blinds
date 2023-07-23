@@ -13,8 +13,8 @@
          */
         public function __invoke(Category $category)
         {
-            $category = Cache::remember('category-' . $category->id, 3600, fn() => $category->load('media', 'products.media'));
-            $descendants = Cache::remember('descendants-' . $category->id, 3600, fn() => $category->load('descendants.products.media'));
+            $category = Cache::rememberForever('category-' . $category->id, fn() => $category->load('media', 'products.media'));
+            $descendants = Cache::rememberForever('descendants-' . $category->id, fn() => $category->load('descendants.products.media'));
             return view('category', ['category' => $category, 'descendants' => $descendants]);
         }
     }

@@ -12,15 +12,17 @@
     use Spatie\MediaLibrary\HasMedia;
     use Spatie\MediaLibrary\InteractsWithMedia;
     use Spatie\MediaLibrary\MediaCollections\Models\Media;
+    use Spatie\Tags\HasTags;
     use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
     /**
      * @method static live()
+     * @method static withAnyTags(string[] $array, string $type)
      * @property mixed $id
      */
     class Category extends Model implements HasMedia
     {
-        use HasFactory, Sluggable, HasRecursiveRelationships, InteractsWithMedia, Live, SoftDeletes;
+        use HasFactory, Sluggable, HasRecursiveRelationships, InteractsWithMedia, Live, SoftDeletes, HasTags;
 
         protected $fillable = [
             'title',

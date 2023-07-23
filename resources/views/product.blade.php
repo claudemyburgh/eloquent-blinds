@@ -17,10 +17,21 @@
                 <x-product.media class="sticky top-32" :$product/>
             </div>
             <div class=" md:col-span-3 lg:col-span-7">
+
+
                 <h1 class="heading-1 text-shadow-lg mt-5">{{ $product->title }} {{ $category->title }}</h1>
-                <a href="{{ route('category', $category) }}" class="rounded-full bg-primary-500/10 px-3 py-1 mt-2 inline-block text-sm font-semibold leading-6 text-primary-400 ring-1 ring-inset ring-primary-500/20">In category {{
-                Str::lower($category->title)
-                }}</a>
+                <div class="space-x-2">
+                    <a href="{{ route('category', $category) }}" class="rounded-full bg-primary-500/10 hover:bg-primary-500/20 px-3 py-1 mt-2 inline-block text-xs font-semibold leading-6 text-primary-400 ring-1 ring-inset
+                    ring-primary-500/20">In
+                        category {{ Str::lower($category->title) }}</a>
+                    @foreach($product->tags as $tag)
+                        <a href="{{ route('tag', $tag) }}" class="rounded-full bg-gray-500/10 hover:bg-gray-500/20 px-3 py-1 mt-2 inline-block text-xs font-semibold leading-6 text-gray-400 ring-1 ring-inset ring-gray-500/20">
+                            #{{ $tag->name }}
+                        </a>
+                    @endforeach
+                </div>
+
+
                 <div class="prose prose-lg dark:prose-invert my-2 ">
                     @markdown($product->body)
                 </div>

@@ -10,6 +10,7 @@
         <meta name="twitter:image" content="{{ config('app.url') . "/img/hero.webp" }}"/>
     </x-slot>
     <x-partials.hero/>
+    
     <x-partials.marquee class="-rotate-2"/>
     <div id="learn-more" class="wrapper grid mt-24 md:mt-32 grid-cols-12  gap-8 text-gray-500 dark:text-gray-300">
         <div class="col-span-12 lg:col-span-6 relative">
