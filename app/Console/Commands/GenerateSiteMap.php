@@ -7,7 +7,6 @@
     use Illuminate\Console\Command;
     use Spatie\Sitemap\SitemapGenerator;
     use Spatie\Sitemap\Tags\Url;
-    use Spatie\Tags\Tag;
 
     class GenerateSiteMap extends Command
     {
@@ -48,9 +47,9 @@
             foreach (Product::all() as $product) {
                 $sitemap->getSitemap()->add(Url::create(route('product', [$product->category, $product])));
             }
-            foreach (Tag::where('type', 'products')->get() as $tag) {
-                $sitemap->getSitemap()->add(Url::create(route('tag', [$tag->slug])));
-            }
+//            foreach (Tag::where('type', 'products')->get() as $tag) {
+//                $sitemap->getSitemap()->add(Url::create(route('tag', [$tag->slug])));
+//            }
 
             $sitemap->writeToFile(public_path('sitemap.xml'));
 

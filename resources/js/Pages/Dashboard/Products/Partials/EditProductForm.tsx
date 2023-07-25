@@ -103,11 +103,11 @@ const EditProductForm = () => {
       </div>
 
       {/*Keywords tags*/}
-      <div>
-        <InputLabel htmlFor="tag" value="Keywords" />
-        <TextInput id="tag" value={data.tag} onChange={handleProductFormInput} type="text" className="mt-1 block w-full" />
-        <InputError message={errors.tag} className="mt-4" />
-      </div>
+      {/*<div>*/}
+      {/*  <InputLabel htmlFor="tag" value="Keywords" />*/}
+      {/*  <TextInput id="tag" value={data.tag} onChange={handleProductFormInput} type="text" className="mt-1 block w-full" />*/}
+      {/*  <InputError message={errors.tag} className="mt-4" />*/}
+      {/*</div>*/}
 
       <div>
         <InputLabel htmlFor="category_id" value="Category" />

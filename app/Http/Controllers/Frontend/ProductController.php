@@ -13,7 +13,7 @@
          */
         public function __invoke(Category $category, Product $product)
         {
-            $product->load('media', 'tags');
+            $product->load('media');
             return view('product', compact('product', 'category'));
         }
     }

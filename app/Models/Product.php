@@ -12,14 +12,13 @@
     use Spatie\MediaLibrary\HasMedia;
     use Spatie\MediaLibrary\InteractsWithMedia;
     use Spatie\MediaLibrary\MediaCollections\Models\Media;
-    use Spatie\Tags\HasTags;
 
     /**
      * @method static withAnyTags(string[] $array, string $type)
      */
     class Product extends Model implements HasMedia
     {
-        use HasFactory, Live, InteractsWithMedia, Sluggable, SoftDeletes, HasTags;
+        use HasFactory, Live, InteractsWithMedia, Sluggable, SoftDeletes;
 
         protected $fillable = [
             'category_id',

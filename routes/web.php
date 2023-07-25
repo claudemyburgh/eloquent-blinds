@@ -9,7 +9,6 @@
     use App\Http\Controllers\Frontend\ProductController;
     use App\Http\Controllers\Frontend\QuoteController;
     use App\Http\Controllers\Frontend\ReviewsController;
-    use App\Http\Controllers\Frontend\TagController;
     use App\Http\Controllers\GoogleReviewController;
     use App\Http\Controllers\NewsletterController;
     use App\Http\Controllers\PrivacyPolicyController;
@@ -26,7 +25,7 @@
     Route::get('privacy-policy', PrivacyPolicyController::class)->name('privacy-policy');
 
     Route::get('category/{category:slug}', CategoryController::class)->name('category');
-    Route::get('tag/{tag:slug}', TagController::class)->name('tag');
+//    Route::get('tag/{tag:slug}', TagController::class)->name('tag');
     Route::get('{category:slug}/{product:slug}', ProductController::class)->name('product');
 
     Route::post('newsletter', [NewsletterController::class, 'store'])->name('newsletter.store');

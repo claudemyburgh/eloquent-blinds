@@ -1,8 +1,5 @@
 <x-app-layout title="{{ $product->title }} {{ $category->title }}" :description="$product->description">
     <x-slot name="seo">
-        @if($product->tags)
-            <meta name="keywords" content="{{ implode(',', $product->tags->pluck('name')->toArray()) }}"/>
-        @endif
         {{--  HTML Meta Tags--}}
         <meta property="og:title" content="Eloquent Blinds | {{ $product->title }} {{ $category->title }}"/>
         <meta property="og:description"
@@ -27,11 +24,11 @@
                     <a href="{{ route('category', $category) }}" class="rounded-full bg-primary-500/10 hover:bg-primary-500/20 px-3 py-1 mt-2 inline-block text-xs font-semibold leading-6 text-primary-400 ring-1 ring-inset
                     ring-primary-500/20">In
                         category {{ Str::lower($category->title) }}</a>
-                    @foreach($product->tags as $tag)
-                        <a href="{{ route('tag', $tag) }}" class="rounded-full bg-gray-500/10 hover:bg-gray-500/20 px-3 py-1 mt-2 inline-block text-xs font-semibold leading-6 text-gray-400 ring-1 ring-inset ring-gray-500/20">
-                            #{{ $tag->name }}
-                        </a>
-                    @endforeach
+                    {{--                    @foreach($product->tags as $tag)--}}
+                    {{--                        <a href="{{ route('tag', $tag) }}" class="rounded-full bg-gray-500/10 hover:bg-gray-500/20 px-3 py-1 mt-2 inline-block text-xs font-semibold leading-6 text-gray-400 ring-1 ring-inset ring-gray-500/20">--}}
+                    {{--                            #{{ $tag->name }}--}}
+                    {{--                        </a>--}}
+                    {{--                    @endforeach--}}
                 </div>
 
 
