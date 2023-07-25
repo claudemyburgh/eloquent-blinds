@@ -33,6 +33,7 @@
          */
         public function store(StoreProductRequest $request)
         {
+
             $post = Product::create($request->validated());
 
             return to_route('dashboard.products.edit', $post);
@@ -43,9 +44,10 @@
          */
         public function edit(string $id)
         {
-            $product = Product::with('media')->find($id);
+            $product = Product::with('media', 'tags')->find($id);
 
-            return Inertia::render('Dashboard/Products/Edit', compact('product'));
+            $tags = implode(', ', $product->tags->pluck('name')->toArray());
+            return Inertia::render('Dashboard/Products/Edit', compact('product', 'tags'));
         }
 
         /**
@@ -54,7 +56,9 @@
         public function update(UpdateProductRequest $request, string $id)
         {
             Product::findOrFail($id)
+                ->syncTagsWithType(explode(',', $request->tag), 'products')
                 ->update($request->validated());
+
         }
 
         /**

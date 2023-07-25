@@ -52,8 +52,14 @@
                 $sitemap->getSitemap()->add(Url::create(route('tag', [$tag->slug])));
             }
 
-
             $sitemap->writeToFile(public_path('sitemap.xml'));
+
+
+//            SitemapGenerator::create(config('app.url'))
+//                ->configureCrawler(function (Crawler $crawler) {
+//                    $crawler->setMaximumDepth(3);
+//                })
+//                ->writeToFile(public_path('sitemap-crawl.xml'));
 
 
         }
