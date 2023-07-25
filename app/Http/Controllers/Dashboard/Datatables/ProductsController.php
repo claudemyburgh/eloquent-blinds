@@ -47,6 +47,7 @@
             $product = Product::with('media', 'tags')->find($id);
 
             $tags = implode(', ', $product->tags->pluck('name')->toArray());
+
             return Inertia::render('Dashboard/Products/Edit', compact('product', 'tags'));
         }
 
@@ -56,7 +57,7 @@
         public function update(UpdateProductRequest $request, string $id)
         {
             Product::findOrFail($id)
-                ->syncTagsWithType(explode(',', $request->tag), 'products')
+                ->syncTags(explode(',', $request->tag))
                 ->update($request->validated());
 
         }
