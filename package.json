@@ -43,6 +43,7 @@
         "countup.js": "^2.7.0",
         "date-fns": "^2.30.0",
         "flickity": "^3.0.0",
+        "flickity-as-nav-for": "^3.0.0",
         "google-map-react": "^2.2.1",
         "lodash": "^4.17.21",
         "masonry-layout": "^4.2.2",

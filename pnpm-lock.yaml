@@ -30,6 +30,7 @@ specifiers:
   countup.js: ^2.7.0
   date-fns: ^2.30.0
   flickity: ^3.0.0
+  flickity-as-nav-for: ^3.0.0
   google-map-react: ^2.2.1
   laravel-vite-plugin: ^0.7.8
   lodash: ^4.17.21
@@ -74,6 +75,7 @@ dependencies:
   countup.js: 2.7.0
   date-fns: 2.30.0
   flickity: 3.0.0
+  flickity-as-nav-for: 3.0.0_flickity@3.0.0
   google-map-react: 2.2.1_biqbaboplfbrettd7655fr4n2y
   lodash: 4.17.21
   masonry-layout: 4.2.2
@@ -1171,6 +1173,15 @@ packages:
 
   /fizzy-ui-utils/3.0.0:
     resolution: {integrity: sha512-uJj38QFQiJ/KCio5tiZhwAjIbTXSIgzBCKdKVbaYfLS053F6z23Nb0o1ZoO9gnxOQWN7BCc35jsvrCtAq3gY9g==}
+    dev: false
+
+  /flickity-as-nav-for/3.0.0_flickity@3.0.0:
+    resolution: {integrity: sha512-JBeVvmkrzPQJ83/Y5KrwG/7waXQdgeEKyH709MwAgG4HTUTmDyehq7nTE8KDt4vpj0o4zs2yVqonGYx7APeRbQ==}
+    peerDependencies:
+      flickity: ^3.0.0
+    dependencies:
+      fizzy-ui-utils: 3.0.0
+      flickity: 3.0.0
     dev: false
 
   /flickity/3.0.0:
