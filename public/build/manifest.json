@@ -29,8 +29,8 @@
       "_index.esm-7e288f01.js"
     ]
   },
-  "_AuthenticatedLayout-393515b3.js": {
-    "file": "assets/AuthenticatedLayout-393515b3.js",
+  "_AuthenticatedLayout-9095249d.js": {
+    "file": "assets/AuthenticatedLayout-9095249d.js",
     "imports": [
       "_index.esm-7e288f01.js",
       "_ApplicationLogo-e80fc51b.js",
@@ -98,8 +98,8 @@
       "_transition-d4d33e78.js"
     ]
   },
-  "_EmailClient-a5d87919.js": {
-    "file": "assets/EmailClient-a5d87919.js",
+  "_EmailClient-46922dae.js": {
+    "file": "assets/EmailClient-46922dae.js",
     "imports": [
       "_index.esm-7e288f01.js",
       "_Panel-26424cc9.js",
@@ -205,11 +205,11 @@
       "_transition-d4d33e78.js"
     ]
   },
-  "_UploadCard-f0e7f9a5.js": {
-    "file": "assets/UploadCard-f0e7f9a5.js",
+  "_UploadCard-20536477.js": {
+    "file": "assets/UploadCard-20536477.js",
     "imports": [
       "_index.esm-7e288f01.js",
-      "_AuthenticatedLayout-393515b3.js",
+      "_AuthenticatedLayout-9095249d.js",
       "_prototypes-b1fda430.js",
       "_helpers-4f89d69e.js"
     ]
@@ -280,7 +280,7 @@
     "src": "node_modules/.pnpm/countup.js@2.7.0/node_modules/countup.js/dist/countUp.min.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-f28e6f87.css",
+    "file": "assets/app-7217b7f7.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -456,14 +456,14 @@
     "src": "resources/js/Pages/Auth/VerifyEmail.tsx"
   },
   "resources/js/Pages/Dashboard/Categories/Edit.tsx": {
-    "file": "assets/Edit-10028caf.js",
+    "file": "assets/Edit-573f528e.js",
     "imports": [
       "_index.esm-7e288f01.js",
-      "_AuthenticatedLayout-393515b3.js",
+      "_AuthenticatedLayout-9095249d.js",
       "_Panel-26424cc9.js",
       "resources/js/Pages/Dashboard/Categories/Partials/EditCategoryForm.tsx",
       "_LiveLabel-14658062.js",
-      "_UploadCard-f0e7f9a5.js",
+      "_UploadCard-20536477.js",
       "_prototypes-b1fda430.js",
       "_slugify-05cdbe72.js",
       "_ApplicationLogo-e80fc51b.js",
@@ -510,10 +510,10 @@
     "dynamicImports": [
       "node_modules/.pnpm/countup.js@2.7.0/node_modules/countup.js/dist/countUp.min.js"
     ],
-    "file": "assets/Dashboard-9c26dcac.js",
+    "file": "assets/Dashboard-04a2b662.js",
     "imports": [
       "_index.esm-7e288f01.js",
-      "_AuthenticatedLayout-393515b3.js",
+      "_AuthenticatedLayout-9095249d.js",
       "resources/js/app.tsx",
       "_Panel-26424cc9.js",
       "_ApplicationLogo-e80fc51b.js",
@@ -528,10 +528,10 @@
     "src": "resources/js/Pages/Dashboard/Dashboard.tsx"
   },
   "resources/js/Pages/Dashboard/Messages/Index.tsx": {
-    "file": "assets/Index-433136db.js",
+    "file": "assets/Index-f58beb4d.js",
     "imports": [
       "_index.esm-7e288f01.js",
-      "_AuthenticatedLayout-393515b3.js",
+      "_AuthenticatedLayout-9095249d.js",
       "_slugify-05cdbe72.js",
       "_index-0ee53222.js",
       "_Dropdown-c8bbabc6.js",
@@ -549,13 +549,13 @@
     "src": "resources/js/Pages/Dashboard/Messages/Index.tsx"
   },
   "resources/js/Pages/Dashboard/Messages/Show.tsx": {
-    "file": "assets/Show-8ef0e26c.js",
+    "file": "assets/Show-b1491657.js",
     "imports": [
       "_index.esm-7e288f01.js",
-      "_AuthenticatedLayout-393515b3.js",
+      "_AuthenticatedLayout-9095249d.js",
       "_Panel-26424cc9.js",
       "_Modal-60b1b0ae.js",
-      "_EmailClient-a5d87919.js",
+      "_EmailClient-46922dae.js",
       "resources/js/app.tsx",
       "_react-markdown-35f9953a.js",
       "_ApplicationLogo-e80fc51b.js",
@@ -576,13 +576,13 @@
     "src": "resources/js/Pages/Dashboard/Messages/Show.tsx"
   },
   "resources/js/Pages/Dashboard/Posts/Edit.tsx": {
-    "file": "assets/Edit-a546f809.js",
+    "file": "assets/Edit-64bbe184.js",
     "imports": [
       "_index.esm-7e288f01.js",
-      "_AuthenticatedLayout-393515b3.js",
+      "_AuthenticatedLayout-9095249d.js",
       "_Panel-26424cc9.js",
       "resources/js/Pages/Dashboard/Posts/Partials/EditPostsForm.tsx",
-      "_UploadCard-f0e7f9a5.js",
+      "_UploadCard-20536477.js",
       "_prototypes-b1fda430.js",
       "_slugify-05cdbe72.js",
       "_LiveLabel-14658062.js",
@@ -627,13 +627,13 @@
     "src": "resources/js/Pages/Dashboard/Posts/Partials/EditPostsForm.tsx"
   },
   "resources/js/Pages/Dashboard/Products/Edit.tsx": {
-    "file": "assets/Edit-de43da93.js",
+    "file": "assets/Edit-cebeb2f3.js",
     "imports": [
       "_index.esm-7e288f01.js",
-      "_AuthenticatedLayout-393515b3.js",
+      "_AuthenticatedLayout-9095249d.js",
       "_Panel-26424cc9.js",
       "_LiveLabel-14658062.js",
-      "_UploadCard-f0e7f9a5.js",
+      "_UploadCard-20536477.js",
       "_prototypes-b1fda430.js",
       "_slugify-05cdbe72.js",
       "resources/js/Pages/Dashboard/Products/Partials/EditProductForm.tsx",
@@ -680,10 +680,10 @@
     "src": "resources/js/Pages/Dashboard/Products/Partials/EditProductForm.tsx"
   },
   "resources/js/Pages/Dashboard/Table/Index.tsx": {
-    "file": "assets/Index-c6a0f553.js",
+    "file": "assets/Index-f47299b5.js",
     "imports": [
       "_index.esm-7e288f01.js",
-      "_AuthenticatedLayout-393515b3.js",
+      "_AuthenticatedLayout-9095249d.js",
       "_prototypes-b1fda430.js",
       "_DangerButton-6a0aad80.js",
       "_PrimaryButton-0cec20dc.js",
@@ -712,12 +712,12 @@
     "src": "resources/js/Pages/Dashboard/Table/Index.tsx"
   },
   "resources/js/Pages/Dashboard/Users/Edit.tsx": {
-    "file": "assets/Edit-d5dc83d0.js",
+    "file": "assets/Edit-feb249b7.js",
     "imports": [
       "_index.esm-7e288f01.js",
-      "_AuthenticatedLayout-393515b3.js",
+      "_AuthenticatedLayout-9095249d.js",
       "_Panel-26424cc9.js",
-      "_UploadCard-f0e7f9a5.js",
+      "_UploadCard-20536477.js",
       "_prototypes-b1fda430.js",
       "_slugify-05cdbe72.js",
       "resources/js/Pages/Dashboard/Users/Partials/EditUsersForm.tsx",
@@ -950,10 +950,10 @@
     "src": "resources/js/Pages/Frontend/Reviews.tsx"
   },
   "resources/js/Pages/Profile/Edit.tsx": {
-    "file": "assets/Edit-3baff4ea.js",
+    "file": "assets/Edit-6fce0dff.js",
     "imports": [
       "_index.esm-7e288f01.js",
-      "_AuthenticatedLayout-393515b3.js",
+      "_AuthenticatedLayout-9095249d.js",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
@@ -1034,13 +1034,13 @@
     "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx"
   },
   "resources/js/app.css": {
-    "file": "assets/app-f28e6f87.css",
+    "file": "assets/app-7217b7f7.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.tsx": {
     "css": [
-      "assets/app-f28e6f87.css"
+      "assets/app-7217b7f7.css"
     ],
     "dynamicImports": [
       "resources/js/Pages/Auth/ConfirmPassword.tsx",
@@ -1053,7 +1053,7 @@
       "resources/js/Pages/Dashboard/Categories/Partials/EditCategoryForm.tsx",
       "resources/js/Pages/Dashboard/Dashboard.tsx",
       "resources/js/Pages/Dashboard/Messages/Index.tsx",
-      "_EmailClient-a5d87919.js",
+      "_EmailClient-46922dae.js",
       "resources/js/Pages/Dashboard/Messages/Show.tsx",
       "resources/js/Pages/Dashboard/Posts/Edit.tsx",
       "resources/js/Pages/Dashboard/Posts/Partials/EditPostsForm.tsx",
@@ -1076,7 +1076,7 @@
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx"
     ],
-    "file": "assets/app-96eede58.js",
+    "file": "assets/app-a40e5205.js",
     "imports": [
       "_index.esm-7e288f01.js"
     ],
@@ -1091,7 +1091,7 @@
     "css": [
       "assets/app-2722653d.css"
     ],
-    "file": "assets/app-9e29ab83.js",
+    "file": "assets/app-f6d2072e.js",
     "imports": [
       "_index.esm-7e288f01.js",
       "_Panel-26424cc9.js",
@@ -1107,5 +1107,10 @@
     ],
     "isEntry": true,
     "src": "resources/ts/app.tsx"
+  },
+  "resources/ts/lib/dark-mode.ts": {
+    "file": "assets/dark-mode-5412d858.js",
+    "isEntry": true,
+    "src": "resources/ts/lib/dark-mode.ts"
   }
 }

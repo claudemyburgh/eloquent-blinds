@@ -45,7 +45,7 @@
                 [
                     "name" => "Free Quote",
                     "route" => "quote",
-                    "classes" => "btn btn-gradient text-white"
+                    "classes" => "btn btn-gradient rounded-md text-white"
                 ],
             ];
 

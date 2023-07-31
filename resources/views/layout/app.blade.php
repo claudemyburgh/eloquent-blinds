@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth dark">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
     @production
         <!-- Google Tag Manager -->
@@ -50,11 +50,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <!-- Scripts -->
     @viteReactRefresh
-    @vite(['resources/css/app.css', 'resources/ts/app.tsx'])
+    @vite(['resources/ts/lib/dark-mode.ts', 'resources/css/app.css', 'resources/ts/app.tsx'])
 </head>
 <body class="font-sans antialiased overflow-x-hidden">
-
-
 @production
     <!-- Google Tag Manager (noscript) -->
     <noscript>

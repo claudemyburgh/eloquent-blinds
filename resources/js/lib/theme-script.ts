@@ -1,3 +1,4 @@
+//@ts-expect-error
 let mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
 
 function updateTheme(savedTheme?: string): string {
@@ -24,6 +25,7 @@ function updateTheme(savedTheme?: string): string {
   return theme
 }
 
+//@ts-expect-error
 function updateThemeWithoutTransitions(savedTheme?: string) {
   updateTheme(savedTheme)
   document.documentElement.classList.add("[&_*]:!transition-none")

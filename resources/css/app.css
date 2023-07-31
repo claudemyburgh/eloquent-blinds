@@ -165,5 +165,9 @@ for the scroll bar colours
     }
   }
 
+  /* purgecss ignore */
+  [data-theme-value="dark"] {
+    @apply text-primary-500 bg-red-400;
+  }
 
 }

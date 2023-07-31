@@ -1,6 +1,6 @@
 <div class="relative overflow-hidden isolate">
     <div class="wrapper pt-10 pb-4 sm:pb-20 lg:flex z-20 lg:pt-22 2xl:pt-32">
-        <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
+        <div class="mx-auto relative z-20 max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
             <div class="mt-24 sm:mt-32 lg:mt-16">
                 <a href="https://view.publitas.com/e-books/quantum-signature/page/1" target="_blank" class="inline-flex space-x-4">
                     <span class="rounded-full bg-primary-500/10 px-3 py-1 text-sm font-semibold leading-6 text-primary-400 ring-1 ring-inset ring-primary-500/20">What's new</span>
@@ -31,7 +31,8 @@
         </div>
 
         <div
-            class="mx-auto opacity-40 md:opacity-100 flex max-w-full mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32 absolute lg:relative -top-20 lg:top-0 inset-x-0 image-mask-b-10 lg:image-mask-b-100 shadow-2xl shadow-black">
+            class="mx-auto opacity-40 md:opacity-100 flex max-w-full mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32 absolute lg:relative -top-20 lg:top-0 inset-x-0 image-mask-b-10 lg:image-mask-b-100 shadow-2xl
+            shadow-black z-0">
             <mouse-spotlight class="bg-gradient-to-br block from-primary-500 to-secondary-400 p-[2px] rounded-global">
                 <img class="w-full lg:max-w-5xl max-w-full rounded-global block" src="{{ Vite::asset('resources/img/hero.webp') }}" alt="hero blind image">
             </mouse-spotlight>
