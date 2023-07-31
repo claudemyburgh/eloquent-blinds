@@ -64,11 +64,11 @@
     <!-- End Google Tag Manager (noscript) -->
 @endproduction
 <div class="min-h-screen relative bg-white dark:bg-gray-900">
-    <x-pattern.grid class="h-1/3"/>
+    <x-pattern.grid class="h-1/3 "/>
     <x-navigation/>
     <div id="portal"></div>
     <!-- Page Content -->
-    <main>
+    <main class="relative z-10">
         {{ $slot }}
     </main>
     <x-partials.section-products/>

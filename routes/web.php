@@ -6,12 +6,12 @@
     use App\Http\Controllers\Frontend\CategoryProductsController;
     use App\Http\Controllers\Frontend\FAQController;
     use App\Http\Controllers\Frontend\HomeController;
+    use App\Http\Controllers\Frontend\PrivacyPolicyController;
     use App\Http\Controllers\Frontend\ProductController;
     use App\Http\Controllers\Frontend\QuoteController;
     use App\Http\Controllers\Frontend\ReviewsController;
     use App\Http\Controllers\GoogleReviewController;
     use App\Http\Controllers\NewsletterController;
-    use App\Http\Controllers\PrivacyPolicyController;
     use Illuminate\Support\Facades\Route;
 
     require __DIR__ . '/dashboard.php';
