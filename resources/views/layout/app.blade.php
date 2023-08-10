@@ -79,7 +79,6 @@
         </div>
     @endif
     <x-footer/>
-    <x-main.footer/>
 </div>
 </body>
 </html>

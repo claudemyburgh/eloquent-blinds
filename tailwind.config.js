@@ -58,7 +58,7 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
     require("@tailwindcss/container-queries"),
-    require("tailwindcss-image-mask"),
+    require("@designbycode/tailwindcss-mask-image"),
     require("tailwindcss-attributes"),
   ],
 }
