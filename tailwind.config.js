@@ -32,6 +32,9 @@ module.exports = {
       fontFamily: {
         sans: ["Figtree", ...defaultTheme.fontFamily.sans],
       },
+      dropShadow: {
+        hard: ["0 3px 3px rgba(0, 0, 0, 0.5)", "0 6px 6px rgba(0, 0, 0, 0.25)"],
+      },
       keyframes: {
         marquee: {
           from: {
@@ -59,6 +62,7 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/container-queries"),
     require("@designbycode/tailwindcss-mask-image"),
+    require("@designbycode/tailwindcss-conic-gradient"),
     require("tailwindcss-attributes"),
     require("@designbycode/tailwindcss-text-shadow")({
       experimental: true,
