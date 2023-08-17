@@ -56,7 +56,7 @@
                                             <x-ribbon {{ $attributes->merge([
                                                     'class' => 'relative  flex rounded-global shadow-lg shadow-primary-500/20 ']) }}
                                                       show="true" text="BEST SELLER" url="{{ route('product', ['roller-blinds', 'nairobi-blinds']) }}">
-                                                <a href="{{ route('product', ['roller-blinds', 'nairobi-blinds']) }}" class="overflow-hidden rounded-global">
+                                                <a href="{{ route('product', ['roller-blinds', 'nairobi']) }}" class="overflow-hidden rounded-global">
                                                     <img class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100" loading="lazy" width="300" height="300"
                                                          src="{{ Vite::asset('resources/img/nairobi-card.webp') }}"
                                                          alt="Motion Blinds">
@@ -72,7 +72,8 @@
                                                     </a>
                                                     <div class="mt-2 space-y-2 pl-4 border-l border-gray-300 dark:border-gray-800">
                                                         @foreach($category->children as $child)
-                                                            <a tabindex="0" href="{{ route('category', $child) }}" class="block group relative text-gray-700 dark:text-gray-300 hover:text-primary-500  hover:dark:text-primary-500
+                                                            <a tabindex="0" href="{{ route('category', $child) }}" class="flex items-center justify-between group relative text-gray-700 dark:text-gray-300 hover:text-primary-500
+                                                            hover:dark:text-primary-500
                                                             focus:text-primary-500   focus:dark:text-primary-500">{{
                                                             $child->title }}
                                                                 <span class="absolute top-1.5 bg-gray-200 dark:bg-gray-900 -left-[22px] border-2 group-hover:border-amber-500 border-gray-300 dark:border-gray-800 w-3 h-3 rounded-full
