@@ -304,29 +304,61 @@
     "file": "assets/verticle-a7d00f2d.svg",
     "src": "resources/img/SVG/verticle.svg"
   },
+  "resources/img/SVG/zebra.svg": {
+    "file": "assets/zebra-f2b0247e.svg",
+    "src": "resources/img/SVG/zebra.svg"
+  },
   "resources/img/SVG/zebra_1.svg": {
     "file": "assets/zebra_1-36853dba.svg",
     "src": "resources/img/SVG/zebra_1.svg"
+  },
+  "resources/img/alu-blinds.png": {
+    "file": "assets/alu-blinds-9a0e628b.png",
+    "src": "resources/img/alu-blinds.png"
   },
   "resources/img/alu-blinds.webp": {
     "file": "assets/alu-blinds-99881d96.webp",
     "src": "resources/img/alu-blinds.webp"
   },
+  "resources/img/bambo-blinds.png": {
+    "file": "assets/bambo-blinds-cf84aa58.png",
+    "src": "resources/img/bambo-blinds.png"
+  },
   "resources/img/bambo-blinds.webp": {
     "file": "assets/bambo-blinds-2aa47dbe.webp",
     "src": "resources/img/bambo-blinds.webp"
+  },
+  "resources/img/black-blinds.png": {
+    "file": "assets/black-blinds-b260ecde.png",
+    "src": "resources/img/black-blinds.png"
   },
   "resources/img/black-blinds.webp": {
     "file": "assets/black-blinds-8060f198.webp",
     "src": "resources/img/black-blinds.webp"
   },
+  "resources/img/customers/CB.svg": {
+    "file": "assets/CB-f9ce5193.svg",
+    "src": "resources/img/customers/CB.svg"
+  },
+  "resources/img/customers/DBC.svg": {
+    "file": "assets/DBC-db32b72b.svg",
+    "src": "resources/img/customers/DBC.svg"
+  },
   "resources/img/google-logo.svg": {
     "file": "assets/google-logo-a33a47a2.svg",
     "src": "resources/img/google-logo.svg"
   },
+  "resources/img/hero.png": {
+    "file": "assets/hero-a62dfd1a.png",
+    "src": "resources/img/hero.png"
+  },
   "resources/img/hero.webp": {
     "file": "assets/hero-0aea704f.webp",
     "src": "resources/img/hero.webp"
+  },
+  "resources/img/honey-blinds.png": {
+    "file": "assets/honey-blinds-a2a31789.png",
+    "src": "resources/img/honey-blinds.png"
   },
   "resources/img/honey-blinds.webp": {
     "file": "assets/honey-blinds-3c50b5a6.webp",
@@ -340,17 +372,41 @@
     "file": "assets/logo-on-light-2b16d695.svg",
     "src": "resources/img/logo-on-light.svg"
   },
+  "resources/img/motion.webp": {
+    "file": "assets/motion-970f1999.webp",
+    "src": "resources/img/motion.webp"
+  },
+  "resources/img/nairobi-card.webp": {
+    "file": "assets/nairobi-card-a46e8338.webp",
+    "src": "resources/img/nairobi-card.webp"
+  },
+  "resources/img/profile/claude.png": {
+    "file": "assets/claude-afb154fa.png",
+    "src": "resources/img/profile/claude.png"
+  },
   "resources/img/profile/claude.webp": {
     "file": "assets/claude-f8214037.webp",
     "src": "resources/img/profile/claude.webp"
+  },
+  "resources/img/profile/hendry.png": {
+    "file": "assets/hendry-81c4dd8c.png",
+    "src": "resources/img/profile/hendry.png"
   },
   "resources/img/profile/hendry.webp": {
     "file": "assets/hendry-235dc8ae.webp",
     "src": "resources/img/profile/hendry.webp"
   },
+  "resources/img/roller-blinds.png": {
+    "file": "assets/roller-blinds-7095302e.png",
+    "src": "resources/img/roller-blinds.png"
+  },
   "resources/img/roller-blinds.webp": {
     "file": "assets/roller-blinds-731894a5.webp",
     "src": "resources/img/roller-blinds.webp"
+  },
+  "resources/img/zebra-blinds.png": {
+    "file": "assets/zebra-blinds-49e442c1.png",
+    "src": "resources/img/zebra-blinds.png"
   },
   "resources/img/zebra-blinds.webp": {
     "file": "assets/zebra-blinds-a131278f.webp",
