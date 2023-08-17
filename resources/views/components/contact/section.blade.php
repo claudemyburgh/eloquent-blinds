@@ -23,8 +23,8 @@
         @endif
     </header>
 
-
     <x-contact.card name="Hendry Ollewagen" phone="079 491 2812" email="henry@eloquentblinds.co.za" image="resources/img/profile/hendry.webp"/>
+
     <x-contact.card name="Claude Myburgh" phone="081 719 8302" email="claude@eloquentblinds.co.za" image="resources/img/profile/claude.webp"/>
 
 </section>
