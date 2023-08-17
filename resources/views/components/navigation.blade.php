@@ -55,7 +55,7 @@
 
                                             <x-ribbon {{ $attributes->merge([
                                                     'class' => 'relative  flex rounded-global shadow-lg shadow-primary-500/20 ']) }}
-                                                      show="true" text="BEST SELLER" url="{{ route('product', ['roller-blinds', 'nairobi-blinds']) }}">
+                                                      show="true" text="BEST SELLER" url="{{ route('product', ['roller-blinds', 'nairobi']) }}">
                                                 <a href="{{ route('product', ['roller-blinds', 'nairobi']) }}" class="overflow-hidden rounded-global">
                                                     <img class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100" loading="lazy" width="300" height="300"
                                                          src="{{ Vite::asset('resources/img/nairobi-card.webp') }}"
