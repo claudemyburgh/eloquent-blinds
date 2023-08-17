@@ -49,7 +49,7 @@
                                                 <div aria-hidden="true" class="pulse-loader scale-50 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"></div>
                                                 <x-svg.motion class="absolute inset-1 z-10 -translate-y-1 drop-shadow-hard"/>
                                                 <img class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100" loading="lazy" width="300" height="300"
-                                                     src="{{ Vite::asset('resources/img/hero.webp') }}"
+                                                     src="{{ Vite::asset('resources/img/motion.webp') }}"
                                                      alt="Motion Blinds">
                                             </a>
 
@@ -58,7 +58,7 @@
                                                       show="true" text="BEST SELLER" url="{{ route('product', ['roller-blinds', 'nairobi-blinds']) }}">
                                                 <a href="{{ route('product', ['roller-blinds', 'nairobi-blinds']) }}" class="overflow-hidden rounded-global">
                                                     <img class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100" loading="lazy" width="300" height="300"
-                                                         src="{{ Vite::asset('resources/img/hero.webp') }}"
+                                                         src="{{ Vite::asset('resources/img/nairobi-card.webp') }}"
                                                          alt="Motion Blinds">
                                                 </a>
                                             </x-ribbon>
