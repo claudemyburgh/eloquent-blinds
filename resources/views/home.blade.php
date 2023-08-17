@@ -19,8 +19,8 @@
                     <div aria-hidden="true" class="absolute w-[1px] h-2/3  left-0 top-0 bg-gradient-to-b from-transparent via-secondary-500 to-transparent">
                         <div class="w-[80px] h-full rounded-full absolute top-1/2 -translate-y-1/2 -translate-x-1/2 blur-md bg-secondary-500/10"></div>
                     </div>
-                    <h3 class="heading-3 text-shadow-lg mt-6">What we can do for you</h3>
-                    
+                    <h3 class="heading-3 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black mt-6">What we can do for you</h3>
+
                     <p class="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
                         Discover our expansive collection of premium blinds, meticulously crafted to offer exceptional quality at affordable prices. Whether you're sprucing up a living room, bedroom, or any other space in your home, our
                         blinds

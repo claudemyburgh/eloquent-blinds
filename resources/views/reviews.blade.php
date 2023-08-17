@@ -16,7 +16,7 @@
 
     <div class="wrapper pt-24 lg:pt-32 space-y-4 grid md:grid-cols-2 gap-6">
         <div class="w-full relative">
-            <h1 class="heading-1 text-shadow-lg">
+            <h1 class="heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black">
                 Google Customer Reviews
             </h1>
             <p class="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
@@ -25,7 +25,7 @@
             </p>
         </div>
         <div class="w-full ">
-
+       
         </div>
     </div>
 </x-app-layout>

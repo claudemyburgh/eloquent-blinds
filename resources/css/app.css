@@ -44,23 +44,7 @@ for the scroll bar colours
   *::selection {
     @apply bg-primary-100 text-primary-600;
   }
-
-  .text-shadow {
-    text-shadow: rgba(0, 0, 0, 0.75) 1px 1px 2px;
-  }
-
-  .dark .text-shadow {
-    text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 2px;
-  }
-
-  .text-shadow-lg {
-    text-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
-  }
-
-  .dark .text-shadow-lg {
-    text-shadow: rgba(0, 0, 0, 0.75) 5px 5px 5px;
-  }
-
+  
   .swiper-wrapper {
     @apply min-h-[300px] flex;
   }

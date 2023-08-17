@@ -1,7 +1,7 @@
 @php use App\Data\ContactPerson; @endphp
 <section {{  $attributes->merge(['class' => '@container grid grid-cols-6 my-12 gap-6']) }}>
     <header class="flex justify-center flex-col pr-6 col-span-6 @lg:col-span-6 @5xl:col-span-2">
-        <h1 class="heading-1 text-shadow-lg">
+        <h1 class="heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black">
             @if(Route::currentRouteName() !== 'quote')
                 Get in touch
             @else

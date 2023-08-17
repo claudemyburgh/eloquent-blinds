@@ -23,7 +23,7 @@
                     </figure>
                 </div>
                 <div class="w-full lg:w-1/2 pr-6">
-                    <h1 class="col-span-12 heading-1 text-shadow-lg">
+                    <h1 class="col-span-12 heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black">
                         {{ $category->title }}
                     </h1>
                     <article class="prose prose-lg dark:prose-invert my-8 ">
@@ -35,7 +35,7 @@
             @if($category->products->count())
                 <div class="grid grid-cols-12 gap-6 my-12">
                     <div class="col-span-12">
-                        <h3 class="heading-3 text-shadow-lg">
+                        <h3 class="heading-3 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black">
                             {{ $category->products->count() }} Products in category {{ $category->title }}
                         </h3>
                     </div>
@@ -48,7 +48,7 @@
             @if($descendants->descendants->count())
                 <div class="grid grid-cols-12 gap-6 my-12">
                     <div class="col-span-12">
-                        <h3 class="heading-3 text-shadow-lg">
+                        <h3 class="heading-3 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black">
                             All products in {{ $category->title }}
                         </h3>
                     </div>

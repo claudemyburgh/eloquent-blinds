@@ -11,7 +11,7 @@
               content="Discover a world of stunning blinds as you explore our diverse product categories. From timeless classics to contemporary designs, our curated selection offers unparalleled style and functionality."/>
         <meta name="twitter:image" content="{{ config('app.url') . "/img/hero.webp" }}"/>
     </x-slot>
-    
+
     <section class="relative">
         <div class="wrapper pt-24 lg:pt-32 space-y-4">
             <div class="lg:flex flex-row-reverse">
@@ -19,7 +19,7 @@
                     <x-youtube-video class="mb-6" src="https://www.youtube.com/embed/FwIDKoVmtsY"/>
                 </div>
                 <div class="w-full  lg:w-1/2 pr-6">
-                    <h1 class="col-span-12 heading-1 text-shadow-lg">
+                    <h1 class="col-span-12 heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black">
                         Product Categories
                     </h1>
                     <article class="prose prose-lg dark:prose-invert my-8 ">
@@ -33,7 +33,8 @@
             <div class="grid grid-cols-12 gap-6 my-12">
                 @foreach($categories as $category)
                     <div class="col-span-12">
-                        <a class="relative group inline-block text-2xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white hover-underline" href="{{ route('category', $category) }}">
+                        <a class="relative group inline-block text-2xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white hover-underline text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black"
+                           href="{{ route('category', $category) }}">
                             {{ $category->title }}
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 absolute -left-[36px] top-2 hidden group-hover:lg:block"><path

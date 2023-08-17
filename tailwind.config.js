@@ -60,5 +60,8 @@ module.exports = {
     require("@tailwindcss/container-queries"),
     require("@designbycode/tailwindcss-mask-image"),
     require("tailwindcss-attributes"),
+    require("@designbycode/tailwindcss-text-shadow")({
+      experimental: true,
+    }),
   ],
 }

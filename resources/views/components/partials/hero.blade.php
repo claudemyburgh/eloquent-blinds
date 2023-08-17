@@ -12,8 +12,8 @@
               </span>
                 </a>
             </div>
-            <h1 class="mt-5 heading-1 text-shadow-lg">Blind automation, supplier and installer.</h1>
-            <p class="mt-3 text-lg leading-8 text-gray-500 dark:text-gray-300  text-shadow-lg">
+            <h1 class="mt-5 heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black">Blind automation, supplier and installer.</h1>
+            <p class="mt-3 text-lg leading-8 text-gray-500 dark:text-gray-300  text-shadow">
                 We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space.
             </p>
             <div class="flex space-x-4">
@@ -27,17 +27,13 @@
                     </span>
                 </a>
             </div>
-
         </div>
-
         <div
-            class="mx-auto opacity-40 md:opacity-100 flex max-w-full mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32 absolute lg:relative -top-20 lg:top-0 inset-x-0 image-mask-b-10 lg:image-mask-b-100 shadow-2xl
+            class="mx-auto opacity-40 md:opacity-100 flex max-w-full mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32 absolute lg:relative -top-20 lg:top-0 inset-x-0 shadow-2xl mask-image-b lg:mask-image-start-100
             shadow-black z-0">
             <mouse-spotlight class="bg-gradient-to-br block from-primary-500 to-secondary-400 p-[2px] rounded-global">
                 <img class="w-full lg:max-w-5xl max-w-full rounded-global block" src="{{ Vite::asset('resources/img/hero.webp') }}" alt="hero blind image">
             </mouse-spotlight>
         </div>
-
-
     </div>
 </div>

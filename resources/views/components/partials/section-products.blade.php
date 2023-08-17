@@ -11,7 +11,7 @@
 
             <div class="wrapper flex flex-col-reverse md:flex-row-reverse min-h-[300px] gap-8 py-12 ">
                 <div class="flex-1 relative">
-                    <h4 class="heading-1 text-shadow-xl mt-10"> Your destination for all things blinds related.</h4>
+                    <h4 class="heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black mt-10"> Your destination for all things blinds related.</h4>
                     <p class="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
                         We take immense pride in offering a wide selection of high-quality blinds, meticulously designed to elevate your space with style and functionality. Our team of
                         experts is dedicated to providing seamless installation services, ensuring a hassle-free experience from start to finish.
