@@ -14,8 +14,8 @@
         <meta name="twitter:image" content="{{ config('app.url') . "/img/hero.webp" }}"/>
     </x-slot>
 
-    <div class="wrapper pt-24 lg:pt-32 space-y-4 grid md:grid-cols-2 gap-6">
-        <div class="w-full relative">
+    <div class="wrapper pt-24 lg:pt-32 space-y-4 grid  gap-6">
+        <div class="w-full relative lg:w-1/2">
             <h1 class="heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black">
                 Google Customer Reviews
             </h1>
@@ -24,8 +24,11 @@
                 experienced our offerings.
             </p>
         </div>
-        <div class="w-full ">
-       
+        <div class="w-full">
+            <div class="text-3xl font-bold text-center my-5 text-gray-800 dark:text-gray-100">
+                Coming soon
+            </div>
+            {{--            <x-google-reviews-container/>--}}
         </div>
     </div>
 </x-app-layout>

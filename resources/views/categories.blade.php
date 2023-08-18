@@ -44,7 +44,7 @@
                         </a>
                     </div>
                     @foreach($category->children as $child)
-                        <x-product-card class="col-span-6 md:col-span-3" :product="$child" route="{{ route('category', $child) }}"/>
+                        <x-product-card class="col-span-6 md:col-span-4 lg:col-span-3" :product="$child" route="{{ route('category', $child) }}"/>
                     @endforeach
                 @endforeach
             </div>

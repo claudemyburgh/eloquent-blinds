@@ -15,6 +15,10 @@
         {
             $category = Cache::rememberForever('category-' . $category->id, fn() => $category->load('media', 'products.media'));
             $descendants = Cache::rememberForever('descendants-' . $category->id, fn() => $category->load('descendants.products.media'));
-            return view('category', ['category' => $category, 'descendants' => $descendants]);
+            if ($category->slug === 'motion-blinds') {
+                return view('category_motion', ['category' => $category, 'descendants' => $descendants]);
+            } else {
+                return view('category', ['category' => $category, 'descendants' => $descendants]);
+            }
         }
     }
