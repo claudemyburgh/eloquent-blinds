@@ -71,7 +71,7 @@ for the scroll bar colours
 
 @layer component {
   .wrapper {
-    @apply w-full max-w-7xl mx-auto px-4 ;
+    @apply w-full max-w-7xl mx-auto px-4 md:px-6 ;
   }
 
   #dashboard .wrapper {
