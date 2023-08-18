@@ -1,4 +1,4 @@
-<headless-dropdown class="relative inline-block text-left z-10 ml-3" placement="bottom bottom-start" offset="0 6" popper>
+<headless-dropdown class="relative inline-block text-left z-10 " placement="bottom bottom-start" offset="0 6" popper>
     <div>
         <button
             aria-expanded="false"
