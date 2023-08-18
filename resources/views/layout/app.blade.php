@@ -88,7 +88,7 @@ not-sr-only:block sr-only focus:not-sr-only"
     @endif
     <x-footer/>
 
-    <div aria-hidden="true" class="fixed bottom-20 inset-x-0 z-[1001] pointer-events-none">
+    <div class="fixed bottom-20 inset-x-0 z-[1001] pointer-events-none">
         <div class="wrapper relative">
             <button class="absolute right-4 pointer-events-auto md:-right-14 h-12 w-12 flex items-center justify-center rounded-lg border border-gray-700 bg-primary-500 text-white" is="headless-scrolltop">
                 <span class="sr-only"> Scroll to top</span>

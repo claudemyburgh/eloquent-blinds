@@ -1,6 +1,6 @@
 <x-ribbon {{ $attributes->merge([
         'class' => 'relative p-[2px] flex rounded-global shadow-2xl shadow-primary-500/50 bg-gradient-to-br from-primary-500 to-secondary-400']) }}
-          :show="$product->popular" text="BEST SELLER" :url="$route">
+          :show="$product->popular" text="BEST SELLER">
     <div class="w-full flex">
         <div aria-hidden="true" class="absolute w-1/2 top-0 h-[2px] left-0 bg-gradient-to-r from-transparent via-primary-200 to-transparent"></div>
         <a href="{{ $route }}" @class(['relative bg-white group dark:bg-gray-900 rounded-global flex flex-1 flex-col'])>
