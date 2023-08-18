@@ -9,6 +9,7 @@
     use Illuminate\Database\Eloquent\Builder;
     use Illuminate\Http\Request;
     use Inertia\Inertia;
+    use Inertia\Response;
 
     class ProductsController extends DatatablesController
     {
@@ -42,22 +43,19 @@
         /**
          * Show the form for editing the specified resource.
          */
-        public function edit(string $id)
+        public function edit(string $id): Response
         {
             $product = Product::with('media')->find($id);
-//            $tags = implode(', ', $product->tags->pluck('name')->toArray());
-            $tags = '';
-            return Inertia::render('Dashboard/Products/Edit', compact('product', 'tags'));
+            return Inertia::render('Dashboard/Products/Edit', compact('product'));
         }
 
         /**
          * Update the specified resource in storage.
          */
-        public function update(UpdateProductRequest $request, string $id)
+        public function update(UpdateProductRequest $request, string $id): void
         {
             Product::findOrFail($id)
                 ->update($request->validated());
-
         }
 
         /**
