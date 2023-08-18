@@ -6,10 +6,10 @@
             <div aria-hidden="true" class="absolute w-1/2 top-0 h-[1px] left-0 bg-gradient-to-r from-transparent via-secondary-500 to-transparent">
                 <div class="w-1/2 h-[20px] rounded-b-full absolute top-0 translate-x-1/2 blur-md bg-secondary-500/10 "></div>
             </div>
-            <a href="{{ config('app.url') }}" class="flex shrink-0 md:ml-0">
+            <a href="{{ config('app.url') }}" class="flex shrink-0 md:ml-0 scale-75 md:scale-100 origin-left">
                 <span class="sr-only">{{ config('app.name') }}</span>
-                <img height="52" width="283" aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-dark.svg') }}" class="h-7 md:h-10 md:ml-0 hidden dark:block" alt="{{ config('app.name') }}">
-                <img height="52" width="283" aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-light.svg') }}" class="h-7 md:h-10 md:ml-0 dark:hidden block" alt="{{ config('app.name') }}">
+                <img height="52" width="283" aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-dark.svg') }}" class="h-10 md:ml-0 hidden dark:block" alt="{{ config('app.name') }}">
+                <img height="52" width="283" aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-light.svg') }}" class="h-10 md:ml-0 dark:hidden block" alt="{{ config('app.name') }}">
             </a>
 
             <div class="flex items-center">
