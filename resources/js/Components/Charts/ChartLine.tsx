@@ -28,7 +28,7 @@ const ChartLine: FC<ChartConfiguration & { className?: string }> = ({ type = "li
 
   return (
     <Panel className={className}>
-      <Panel.Header heading={`Messages`} paragraph={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, magni?`}></Panel.Header>
+      <Panel.Header heading={`Messages`}></Panel.Header>
       <canvas width={600} height={300} className={`aspect-video min-w-full mt-4`} ref={canvasRef}></canvas>
     </Panel>
   )
