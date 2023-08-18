@@ -32,7 +32,7 @@
             class="mx-auto opacity-40 md:opacity-100 flex max-w-full mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32 absolute lg:relative -top-20 lg:top-0 inset-x-0 shadow-2xl mask-image-b lg:mask-image-start-100
             shadow-black z-0">
             <mouse-spotlight class="bg-gradient-to-br block from-primary-500 to-secondary-400 p-[2px] rounded-global">
-                <img class="w-full lg:max-w-5xl max-w-full rounded-global block" src="{{ Vite::asset('resources/img/hero.webp') }}" alt="hero blind image">
+                <img width="1037" height="615" loading="lazy" class="w-full lg:max-w-5xl max-w-full rounded-global block" src="{{ Vite::asset('resources/img/hero.webp') }}" alt="hero blind image">
             </mouse-spotlight>
         </div>
     </div>
