@@ -1,4 +1,4 @@
-<svg {{ $attributes->merge(['class' => 'fill-white']) }} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+<svg aria-hidden="true" {{ $attributes->merge(['class' => 'fill-white']) }} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
      viewBox="0 0 293.6 300" xml:space="preserve">
     <path d="M271.8,13h-250c-6.6,0-12,5.4-12,12v250c0,6.6,5.4,12,12,12h8.5c1.4,0,2.5-1.1,2.5-2.5c0-1.4-1.1-2.5-2.5-2.5h-8.5
 			c-3.9,0-7-3.1-7-7V25c0-3.9,3.1-7,7-7h250c3.9,0,7,3.1,7,7v250c0,3.9-3.1,7-7,7h-8.5c-1.4,0-2.5,1.1-2.5,2.5

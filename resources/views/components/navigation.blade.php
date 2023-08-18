@@ -7,8 +7,9 @@
                 <div class="w-1/2 h-[20px] rounded-b-full absolute top-0 translate-x-1/2 blur-md bg-secondary-500/10 "></div>
             </div>
             <a href="{{ config('app.url') }}" class="flex shrink-0 md:ml-0">
-                <img src="{{ Vite::asset('resources/img/logo-on-dark.svg') }}" class="h-7 md:h-10 md:ml-0 hidden dark:block" alt="{{ config('app.name') }}">
-                <img src="{{ Vite::asset('resources/img/logo-on-light.svg') }}" class="h-7 md:h-10 md:ml-0 dark:hidden block" alt="{{ config('app.name') }}">
+                <span class="sr-only">{{ config('app.name') }}</span>
+                <img aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-dark.svg') }}" class="h-7 md:h-10 md:ml-0 hidden dark:block" alt="{{ config('app.name') }}">
+                <img aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-light.svg') }}" class="h-7 md:h-10 md:ml-0 dark:hidden block" alt="{{ config('app.name') }}">
             </a>
 
             <div class="flex items-center">
@@ -48,7 +49,7 @@
                                                 <div aria-hidden="true" class="pulse-loader absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"></div>
                                                 <div aria-hidden="true" class="pulse-loader scale-50 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"></div>
                                                 <x-svg.motion class="absolute inset-1 z-10 -translate-y-1 drop-shadow-hard"/>
-                                                <img class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100" loading="lazy" width="300" height="300"
+                                                <img class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100" loading="lazy" width="290" height="290"
                                                      src="{{ Vite::asset('resources/img/motion.webp') }}"
                                                      alt="Motion Blinds">
                                             </a>
@@ -56,8 +57,8 @@
                                             <x-ribbon {{ $attributes->merge([
                                                     'class' => 'relative  flex rounded-global shadow-lg shadow-primary-500/20 ']) }}
                                                       show="true" text="BEST SELLER" url="{{ route('product', ['roller-blinds', 'nairobi']) }}">
-                                                <a href="{{ route('product', ['roller-blinds', 'nairobi']) }}" class="overflow-hidden rounded-global">
-                                                    <img class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100" loading="lazy" width="300" height="300"
+                                                <a href="{{ route('product', ['roller-blinds', 'nairobi']) }}" class="overflow-hidden rounded-global group">
+                                                    <img class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100" loading="lazy" width="290" height="290"
                                                          src="{{ Vite::asset('resources/img/nairobi-card.webp') }}"
                                                          alt="Motion Blinds">
                                                 </a>
@@ -70,11 +71,11 @@
                                                        href="{{ route('category', $category) }}" role="menuitem">
                                                         {{$category->title}}
                                                     </a>
-                                                    <div class="mt-2 space-y-2 pl-4 border-l border-gray-300 dark:border-gray-800">
+                                                    <div class="mt-2 space-y-3 pl-4 border-l border-gray-300 dark:border-gray-800">
                                                         @foreach($category->children as $child)
                                                             <a tabindex="0" href="{{ route('category', $child) }}" class="flex items-center justify-between group relative text-gray-700 dark:text-gray-300 hover:text-primary-500
                                                             hover:dark:text-primary-500
-                                                            focus:text-primary-500   focus:dark:text-primary-500">{{
+                                                            focus:text-primary-500 focus:dark:text-primary-500">{{
                                                             $child->title }}
                                                                 <span class="absolute top-1.5 bg-gray-200 dark:bg-gray-900 -left-[22px] border-2 group-hover:border-amber-500 border-gray-300 dark:border-gray-800 w-3 h-3 rounded-full
                                                                 group-focus:ring-0
@@ -88,15 +89,11 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </headless-popover>
                         @endif
                     @endforeach
                 </div>
-
-
                 <x-theme-switcher/>
-
                 <button
                     aria-controls="mobile_close"
                     aria-expanded="false"

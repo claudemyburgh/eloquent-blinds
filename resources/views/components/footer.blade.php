@@ -60,6 +60,7 @@
         &copy;{{ Carbon::now()->year }} Eloquent Blinds, Inc. All rights reserved.
     </p>
     <p>
-        Design <abbr class="no-underline" title="and">&amp;</abbr> Developed by <a class="hover:text-primary-500 underline decoration-gray-300/10 hover-underline decoration-1" href="https://designbycode.co.za">DesignByCode</a>
+        Design <abbr class="no-underline" title="and">&amp;</abbr> Developed by <a class="hover:text-primary-500 underline decoration-gray-300/10 hover-underline decoration-1" href="https://designbycode.co.za"
+                                                                                   target="_blank">DesignByCode</a>
     </p>
 </div>
