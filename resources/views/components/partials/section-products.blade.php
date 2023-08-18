@@ -11,7 +11,7 @@
 
             <div class="wrapper flex flex-col-reverse md:flex-row-reverse min-h-[300px] gap-8 py-12 ">
                 <div class="flex-1 relative">
-                    <h6 class="heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black mt-10"> Your destination for all things blinds related.</h6>
+                    <h3 class="heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black mt-10"> Your destination for all things blinds related.</h3>
                     <p class="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
                         We take immense pride in offering a wide selection of high-quality blinds, meticulously designed to elevate your space with style and functionality. Our team of
                         experts is dedicated to providing seamless installation services, ensuring a hassle-free experience from start to finish.
@@ -56,14 +56,11 @@
                                 <div class="mt-6 flex-shrink-0 sm:mt-0">
                                     <img loading="lazy" width="290" height="290" class="h-44 shadow-2xl rounded-global object-cover md:h-64 2xl:h-72 aspect-square" src="{{ Vite::asset('resources/img/roller-blinds.webp') }}" alt="">
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

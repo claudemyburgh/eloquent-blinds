@@ -8,8 +8,8 @@
             </div>
             <a href="{{ config('app.url') }}" class="flex shrink-0 md:ml-0">
                 <span class="sr-only">{{ config('app.name') }}</span>
-                <img aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-dark.svg') }}" class="h-7 md:h-10 md:ml-0 hidden dark:block" alt="{{ config('app.name') }}">
-                <img aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-light.svg') }}" class="h-7 md:h-10 md:ml-0 dark:hidden block" alt="{{ config('app.name') }}">
+                <img height="52" width="283" aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-dark.svg') }}" class="h-7 md:h-10 md:ml-0 hidden dark:block" alt="{{ config('app.name') }}">
+                <img height="52" width="283" aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-light.svg') }}" class="h-7 md:h-10 md:ml-0 dark:hidden block" alt="{{ config('app.name') }}">
             </a>
 
             <div class="flex items-center">
