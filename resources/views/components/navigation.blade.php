@@ -8,10 +8,9 @@
             </div>
             <a href="{{ config('app.url') }}" class="flex shrink-0 md:ml-0 origin-left md:scale-125">
                 <span class="sr-only">{{ config('app.name') }}</span>
-                <img height="36" width="196" aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-dark.svg') }}" class="h-9 md:ml-0 hidden dark:block" alt="{{ config('app.name') }}">
-                <img height="36" width="196" aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-light.svg') }}" class="h-9 md:ml-0 dark:hidden block" alt="{{ config('app.name') }}">
+                <img height="35" width="180" aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-dark.svg') }}" class="h-8 md:ml-0 hidden dark:block" alt="{{ config('app.name') }}">
+                <img height="35" width="180" aria-hidden="true" src="{{ Vite::asset('resources/img/logo-on-light.svg') }}" class="h-8 md:ml-0 dark:hidden block" alt="{{ config('app.name') }}">
             </a>
-
 
             <div class="flex items-center">
                 <div class="lg:flex hidden space-x-8 font-bold items-center">
@@ -23,25 +22,25 @@
                         @else
                             <headless-popover>
                                 <button
-                                        aria-expanded="false"
-                                        aria-haspopup="true"
-                                        @class([$link['classes'],'flex items-center group -mr-4' , 'text-primary-500 ' => Route::currentRouteName() === $link['route']])>
+                                    aria-expanded="false"
+                                    aria-haspopup="true"
+                                    @class([$link['classes'],'flex items-center group -mr-4' , 'text-primary-500 ' => Route::currentRouteName() === $link['route']])>
                                     <span>{{ $link['name'] }}</span>
                                     <svg aria-hidden="true" class="text-gray-400 ml-[2px] h-5 w-5 group-hover:text-primary-500" fill="currentColor"
                                          viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path
-                                                clip-rule="evenodd"
-                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            fill-rule="evenodd"
                                         />
                                     </svg>
                                 </button>
                                 <div
-                                        aria-labelledby="nav_link_1"
-                                        class="absolute w-full inset-x-0 top-full mt-2"
-                                        role="menu"
-                                        tabindex="-1"
-                                        hidden
+                                    aria-labelledby="nav_link_1"
+                                    class="absolute w-full inset-x-0 top-full mt-2"
+                                    role="menu"
+                                    tabindex="-1"
+                                    hidden
                                 >
                                     <div class="rounded-global shadow-2xl shadow-primary-500/50 ring-1 ring-black ring-opacity-5 overflow-hidden ">
                                         <div class="relative bg-gray-200 dark:bg-gray-900 p-6 grid grid-cols-4 gap-6 border border-primary-500 rounded-global">
@@ -64,7 +63,6 @@
                                                 </a>
                                             </x-ribbon>
 
-
                                             @foreach($categories as $category)
                                                 <div>
                                                     <a class="font-black text-gray-900 dark:text-gray-100 hover:text-primary-500 text-lg hover:dark:text-primary-500"
@@ -84,7 +82,6 @@
                                                         @endforeach
                                                     </div>
                                                 </div>
-
                                             @endforeach
                                         </div>
                                     </div>
@@ -93,7 +90,7 @@
                         @endif
                     @endforeach
                 </div>
-                <button id="search-modal" type="button" class="inline-flex justify-center items-center h-9 w-9 rounded-md border border-gray-300 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900 text-sm font-medium text-primary-500
+                <button id="search-modal" type="button" class="inline-flex justify-center items-center  h-7 md:h-9 w-7 md:w-9  rounded-md border border-gray-300 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900 text-sm font-medium text-primary-500
                 ml-2.5
                 hover:bg-gray-100
                 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-primary-500">
@@ -104,14 +101,14 @@
                 <x-theme-switcher/>
 
                 <button
-                        aria-controls="mobile_close"
-                        aria-expanded="false"
-                        @class([
-                'lg:hidden inline-flex justify-center items-center h-9 w-9 rounded-md border border-gray-300 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900 text-sm font-medium text-primary-500 ml-2 hover:bg-gray-100
-                dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-primary-500'])
-                        type="button">
+                    aria-controls="mobile_close"
+                    aria-expanded="false"
+                    @class([
+            'lg:hidden inline-flex justify-center items-center h-7 md:h-9 w-7 md:w-9 rounded-md border border-gray-300 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900 text-sm font-medium text-primary-500 ml-2 hover:bg-gray-100
+            dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-primary-500'])
+                    type="button">
                     <span class="sr-only">Open menu</span>
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <svg class="h-5 w-5" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path data-state class="inline-flex data-state-open:hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         <path data-state class="hidden data-state-open:inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
@@ -122,13 +119,7 @@
                 @foreach($links as $link)
                     <a @class([$link['classes'], 'w-full flex items-center justify-start hover:bg-primary-500/10 px-4 py-2 rounded-global border border-transparent hover:border-primary-500/20', 'text-primary-500 ' =>
                     Route::currentRouteName()
-                    ===
-                    $link['route']])
-                       href="{{
-                route
-                ($link['route'])
-                }}">{{
-                $link['name'] }}</a>
+                    ===  $link['route']])  href="{{ route($link['route'])}}">{{ $link['name'] }}</a>
                 @endforeach
             </div>
         </mouse-spotlight>

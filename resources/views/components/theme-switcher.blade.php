@@ -1,15 +1,15 @@
 <headless-dropdown class="relative inline-block text-left z-10 ml-2 " placement="bottom bottom-start" offset="0 6" popper>
     <div>
         <button
-                aria-expanded="false"
-                aria-haspopup="true"
-                class="inline-flex justify-center items-center h-9 w-9 rounded-md border border-gray-300 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900 text-sm font-medium text-primary-500 hover:bg-gray-100
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="inline-flex justify-center items-center  h-7 md:h-9 w-7 md:w-9  rounded-md border border-gray-300 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900 text-sm font-medium text-primary-500 hover:bg-gray-100
                 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-primary-500"
-                id="theme-switcher"
-                type="button"
+            id="theme-switcher"
+            type="button"
         >
             <span class="sr-only">Toggle between light and dark mode</span>
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                 <path class="dark:block hidden" stroke-linecap="round" stroke-linejoin="round"
                       d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
                 <path class="dark:hidden block" stroke-linecap="round" stroke-linejoin="round"
@@ -19,11 +19,11 @@
     </div>
 
     <div
-            aria-labelledby="theme-switcher"
-            aria-orientation="vertical"
-            class="hidden origin-top-right absolute w-32 rounded-md shadow-lg bg-white dark:bg-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none"
-            role="menu"
-            tabindex="-1"
+        aria-labelledby="theme-switcher"
+        aria-orientation="vertical"
+        class="hidden origin-top-right absolute w-32 rounded-md shadow-lg bg-white dark:bg-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none"
+        role="menu"
+        tabindex="-1"
     >
 
         <div class="py-1" role="none">
