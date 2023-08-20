@@ -1,5 +1,5 @@
 <dialog id="search-dialog"
-        class="max-w-xl max-h-[80%] w-full mt-10 rounded-global border dark:border-gray-800 dark:bg-gray-900 border-gray-400 bd-gray-100 shadow-2xl shadow-black/50 backdrop:bg-gray-100/70 backdrop:dark:bg-gray-950/70
+        class="max-w-xl max-h-[80%] w-full mt-2 md:mt-10 rounded-global border dark:border-gray-800 dark:bg-gray-900 border-gray-400 bd-gray-100 shadow-2xl shadow-black/50 backdrop:bg-gray-100/90 backdrop:dark:bg-gray-950/90
         backdrop:backdrop-blur overflow-hidden">
     <form id="search-form" class="bg-primary-500 sticky top-0 rounded-b-sm px-2 pt-4 pb-2">
         <label for="search-input" class="sr-only">Search</label>
@@ -7,11 +7,11 @@
                class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 text-gray-600 dark:text-gray-300 focus:border-primary-500 dark:focus:border-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 rounded-md shadow-sm
         disabled:opacity-50 disabled:cursor-no-drop w-full">
     </form>
-    <div id="search-results" class="space-y-1 max-h-[400px] overflow-y-auto">
+    <div id="search-results" class="space-y-1 max-h-[400px] overflow-y-auto text-shadow ">
     </div>
     <div class="bg-gray-300 sticky flex justify-between bottom-0 dark:bg-gray-900 px-4 py-2 border-t border-gray-400 dark:border-gray-800">
         <small class="text-gray-600 dark:text-gray-600">Search by <strong class="font-black ">category</strong> or <strong class="font-black ">product</strong> name</small>
-        <ul aria-hidden="true" class="flex text-gray-600 dark:text-gray-600 space-x-2">
+        <ul aria-hidden="true" class="lg:flex text-gray-600 dark:text-gray-600 space-x-2 hidden ">
             <li class="flex items-center space-x-1 text-sm"><kbd class="DocSearch-Commands-Key">
                     <svg class="bg-gray-100 dark:bg-gray-950 rounded-sm" width="15" height="15" aria-label="Enter key" role="img">
                         <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2">
