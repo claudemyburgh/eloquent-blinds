@@ -52,4 +52,6 @@
             $this->addMediaCollection('default')
                 ->useFallbackUrl(url(config('app.placeholder')));
         }
+
+
     }

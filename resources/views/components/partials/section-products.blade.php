@@ -4,11 +4,8 @@
             <div aria-hidden="true" class="absolute w-1/2 top-0 h-[1px] left-1/2 bg-gradient-to-r from-transparent via-secondary-500 to-transparent">
                 <div class="w-1/2 h-[20px] rounded-b-full absolute top-0 translate-x-1/2 blur-md bg-secondary-500/10 "></div>
             </div>
-
-            <div aria-hidden="true" class="absolute w-1/2 top-full h-[10px] left-1/3 bg-gradient-to-r from-transparent via-primary-500 to-transparent">
-                <div class="w-1/2 h-[110px] rounded-t-full absolute top-0 -translate-y-1/2 blur-md bg-primary-500/10 "></div>
+            <div aria-hidden="true" class="absolute w-1/2 top-full blur-sm rounded-full h-1 left-1/3 bg-gradient-to-r from-transparent via-primary-600 to-transparent">
             </div>
-
             <div class="wrapper flex flex-col-reverse md:flex-row-reverse min-h-[300px] gap-8 py-12 ">
                 <div class="flex-1 relative">
                     <h3 class="heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black mt-10"> Your destination for all things blinds related.</h3>

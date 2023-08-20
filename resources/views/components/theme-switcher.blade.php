@@ -1,12 +1,12 @@
-<headless-dropdown class="relative inline-block text-left z-10 ml-3 " placement="bottom bottom-start" offset="0 6" popper>
+<headless-dropdown class="relative inline-block text-left z-10 ml-2 " placement="bottom bottom-start" offset="0 6" popper>
     <div>
         <button
-            aria-expanded="false"
-            aria-haspopup="true"
-            class="inline-flex justify-center items-center h-9 w-9 rounded-md border border-gray-300 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900 text-sm font-medium text-primary-500  hover:bg-gray-100
-            dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-primary-500"
-            id="theme-switcher"
-            type="button"
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="inline-flex justify-center items-center h-9 w-9 rounded-md border border-gray-300 dark:border-gray-800 shadow-sm bg-white dark:bg-gray-900 text-sm font-medium text-primary-500 hover:bg-gray-100
+                dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-primary-500"
+                id="theme-switcher"
+                type="button"
         >
             <span class="sr-only">Toggle between light and dark mode</span>
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
@@ -19,11 +19,11 @@
     </div>
 
     <div
-        aria-labelledby="theme-switcher"
-        aria-orientation="vertical"
-        class="hidden origin-top-right absolute w-32 rounded-md shadow-lg bg-white dark:bg-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none"
-        role="menu"
-        tabindex="-1"
+            aria-labelledby="theme-switcher"
+            aria-orientation="vertical"
+            class="hidden origin-top-right absolute w-32 rounded-md shadow-lg bg-white dark:bg-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none"
+            role="menu"
+            tabindex="-1"
     >
 
         <div class="py-1" role="none">

@@ -1,6 +1,7 @@
 <?php
 
     use App\Http\Controllers\Api\SendQuoteController;
+    use App\Http\Controllers\SearchResults;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,6 @@
     });
 
     Route::post('send-quote', SendQuoteController::class);
+
+    Route::get("search", SearchResults::class)->name('search');
+

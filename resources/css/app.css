@@ -4,201 +4,205 @@
 
 
 @layer base {
-  /*
-These are the styles from DaisyUI needed
-for the scroll bar colours
-*/
-  :root {
-    /* Default is Dark */
-    --primary: theme('colors.gray.800');
-    --secondary: theme('colors.primary.400');
-  }
+    /*
+  These are the styles from DaisyUI needed
+  for the scroll bar colours
+  */
+    :root {
+        /* Default is Dark */
+        --primary: theme('colors.gray.800');
+        --secondary: theme('colors.primary.400');
+    }
 
-  *::selection {
-    background: var(--secondary);
-    color: var(--primary)
-  }
+    *::selection {
+        background: var(--secondary);
+        color: var(--primary)
+    }
 
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--secondary) var(--primary);
-  }
+    /* Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--secondary) var(--primary);
+    }
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 12px;
-  }
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 12px;
+    }
 
-  *::-webkit-scrollbar-track {
-    background: var(--primary);
-    border-radius: 0;
-  }
+    *::-webkit-scrollbar-track {
+        background: var(--primary);
+        border-radius: 0;
+    }
 
-  *::-webkit-scrollbar-thumb {
-    background-color: var(--secondary);
-    border-radius: 5px;
-    border: 2px solid var(--primary);
-  }
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--secondary);
+        border-radius: 5px;
+        border: 2px solid var(--primary);
+    }
 
-  *::selection {
-    @apply bg-primary-100 text-primary-600;
-  }
+    *::selection {
+        @apply bg-primary-100 text-primary-600;
+    }
 
-  .swiper-wrapper {
-    @apply min-h-[300px] flex;
-  }
+    .swiper-wrapper {
+        @apply min-h-[300px] flex;
+    }
 
 
-  .heading-1 {
-    @apply text-4xl font-black sm:text-6xl text-gray-900 dark:text-white tracking-tight;
-  }
+    .heading-1 {
+        @apply text-4xl font-black sm:text-6xl text-gray-900 dark:text-white tracking-tight;
+    }
 
-  .heading-2 {
-    @apply text-3xl font-black sm:text-5xl text-gray-900 dark:text-white tracking-tight;
-  }
+    .heading-2 {
+        @apply text-3xl font-black sm:text-5xl text-gray-900 dark:text-white tracking-tight;
+    }
 
-  .heading-3 {
-    @apply text-3xl font-extrabold sm:text-4xl text-gray-900 dark:text-white tracking-tight;
-  }
+    .heading-3 {
+        @apply text-3xl font-extrabold sm:text-4xl text-gray-900 dark:text-white tracking-tight;
+    }
 
-  .hover-underline {
-    @apply hover:underline underline-offset-8 decoration-wavy decoration-gray-300/10 hover:decoration-primary-500 decoration-1;
-  }
+    .hover-underline {
+        @apply hover:underline underline-offset-8 decoration-wavy decoration-gray-300/10 hover:decoration-primary-500 decoration-1;
+    }
 
 }
 
 
 @layer component {
-  .wrapper {
-    @apply w-full max-w-7xl mx-auto px-4 md:px-6 ;
-  }
-
-  #dashboard .wrapper {
-    @apply w-full max-w-screen-2xl mx-auto px-4 ;
-  }
-
-
-  .btn {
-    @apply inline-flex items-center px-4 py-2 rounded-global font-semibold text-xs uppercase tracking-widest transition ease-in-out duration-150 disabled:opacity-25 focus:outline-none focus:ring-2;
-  }
-
-  .btn-gradient {
-    @apply inline-flex items-center bg-gradient-to-b from-primary-600 to-secondary-400 border border-transparent rounded-global font-semibold text-xs  uppercase tracking-widest hover:to-secondary-300 focus:to-secondary-300 active:to-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition ease-in-out duration-150 text-shadow text-white;
-  }
-
-  .btn-primary {
-    @apply bg-gray-800 dark:bg-gray-200 border-transparent text-white dark:text-gray-800 hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800;
-  }
-
-
-  .btn-secondary {
-    @apply bg-transparent border border-black dark:border-gray-500/10 text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-950/50  focus:ring-primary-500/10 focus:ring-offset-2 dark:focus:ring-offset-gray-800;
-  }
-
-  .image-mask-none {
-    mask-image: none;
-  }
-
-  .btn-danger {
-    @apply bg-red-600 border border-transparent text-white hover:bg-red-500 active:bg-red-700 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800;
-  }
-
-  .card {
-    @apply relative rounded-global;
-    --mouse-x: 0;
-    --mouse-y: 0;
-    --light: rgba(55, 255, 255, 0.15)
-  }
-
-  .dark .card {
-    --light: rgba(75, 155, 255, 0.25)
-  }
-
-  .card:hover::before {
-    opacity: 1;
-  }
-
-  .card::before {
-    content: "";
-    background: radial-gradient(300px circle at var(--mouse-x) var(--mouse-y), var(--light), transparent);
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    position: absolute;
-    opacity: 0;
-    transition-duration: 250ms;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    transform-origin: center;
-  }
-
-  #blob {
-    translate: -50% -50%;
-    @apply absolute left-1/2 rounded-ee-full top-1/2 animate-spin-slow -z-10 h-[600px] aspect-square;
-  }
-
-
-  @keyframes loop {
-    0% {
-      transform: translateX(0);
+    .wrapper {
+        @apply w-full max-w-7xl mx-auto px-4 md:px-6 ;
     }
-    100% {
-      transform: translateX(-50%);
+
+    #dashboard .wrapper {
+        @apply w-full max-w-screen-2xl mx-auto px-4 ;
     }
-  }
-
-  /* purgecss ignore */
-  [data-theme-value="dark"] {
-    @apply text-primary-500 bg-red-400;
-  }
 
 
-  .pulse-loader {
-    --loader-size: 130px;
-    --loader-speed: 2s;
-    --loader-color: #fff;
-    height: var(--loader-size);
-    margin: auto 0;
-    position: relative;
-    width: var(--loader-size);
-  }
-
-  .pulse-loader::before,
-  .pulse-loader::after {
-    animation-name: pulse-loader;
-    animation-iteration-count: infinite;
-    animation-duration: var(--loader-speed);
-    box-shadow: 0 0 10px var(--loader-color);
-    border-radius: 50%;
-    border: 5px solid var(--loader-color);
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-
-  .pulse-loader::after {
-    animation-delay: 1000ms;
-  }
-
-  @keyframes pulse-loader {
-    0% {
-      opacity: 0;
-      transform: scale(0)
+    .btn {
+        @apply inline-flex items-center px-4 py-2 rounded-md font-semibold text-xs uppercase tracking-widest transition ease-in-out duration-150 disabled:opacity-25 focus:outline-none focus:ring-2;
     }
-    60% {
-      opacity: 1
+
+    .btn-gradient {
+        @apply inline-flex items-center bg-gradient-to-b from-primary-600 to-secondary-400 border border-transparent rounded-global font-semibold text-xs  uppercase tracking-widest hover:to-secondary-300 focus:to-secondary-300 active:to-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition ease-in-out duration-150 text-shadow text-white;
     }
-    100% {
-      opacity: 0;
-      transform: scale(1)
+
+    .btn-primary {
+        @apply bg-gray-800 dark:bg-gray-200 border-transparent text-white dark:text-gray-800 hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800;
     }
-  }
+
+
+    .btn-secondary {
+        @apply bg-transparent border border-black dark:border-gray-500/10 text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-950/50  focus:ring-primary-500/10 focus:ring-offset-2 dark:focus:ring-offset-gray-800;
+    }
+
+    .image-mask-none {
+        mask-image: none;
+    }
+
+    .btn-danger {
+        @apply bg-red-600 border border-transparent text-white hover:bg-red-500 active:bg-red-700 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800;
+    }
+
+    .card {
+        @apply relative rounded-global;
+        --mouse-x: 0;
+        --mouse-y: 0;
+        --light: rgba(55, 255, 255, 0.15)
+    }
+
+    .dark .card {
+        --light: rgba(75, 155, 255, 0.25)
+    }
+
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    .card::before {
+        content: "";
+        background: radial-gradient(300px circle at var(--mouse-x) var(--mouse-y), var(--light), transparent);
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        position: absolute;
+        opacity: 0;
+        transition-duration: 250ms;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        transform-origin: center;
+    }
+
+    #blob {
+        translate: -50% -50%;
+        @apply absolute left-1/2 rounded-ee-full top-1/2 animate-spin-slow -z-10 h-[600px] aspect-square;
+    }
+
+
+    @keyframes loop {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* purgecss ignore */
+    [data-theme-value="dark"] {
+        @apply text-primary-500 bg-red-400;
+    }
+
+
+    .pulse-loader {
+        --loader-size: 130px;
+        --loader-speed: 2s;
+        --loader-color: #fff;
+        height: var(--loader-size);
+        margin: auto 0;
+        position: relative;
+        width: var(--loader-size);
+    }
+
+    .pulse-loader::before,
+    .pulse-loader::after {
+        animation-name: pulse-loader;
+        animation-iteration-count: infinite;
+        animation-duration: var(--loader-speed);
+        box-shadow: 0 0 10px var(--loader-color);
+        border-radius: 50%;
+        border: 5px solid var(--loader-color);
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .pulse-loader::after {
+        animation-delay: 1000ms;
+    }
+
+    @keyframes pulse-loader {
+        0% {
+            opacity: 0;
+            transform: scale(0)
+        }
+        60% {
+            opacity: 1
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1)
+        }
+    }
+
+    .flickity-button {
+        background: transparent;
+    }
 
 }

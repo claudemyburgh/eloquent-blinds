@@ -33,3 +33,5 @@
     Route::post('contact/form', ContactFormController::class)->name('contact.form');
 
     Route::get('google-reviews', GoogleReviewController::class)->name('google-reviews');
+
+    //    Route::get("search", SearchResults::class)->name('search');

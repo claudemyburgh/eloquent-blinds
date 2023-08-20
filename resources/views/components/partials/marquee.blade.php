@@ -1,17 +1,22 @@
-<section {{ $attributes->merge(['class' => 'max-w-full overflow-x-clip relative z-10']) }}>
-    <div style="--speed: 30000ms; --direction: normal" class="flex  py-px group bg-gradient-to-r from-primary-600 to-secondary-400">
-        <div class="bg-gray-100 dark:bg-gray-900 py-8">
-            <div class="flex animate-loop min-w-full space-x-20 w-full text-gray-700 dark:text-gray-100 fit-content">
-                @foreach($categories as $category)
-                    <a class="hover-underline px-4 shrink-0" href="{{ route('category', $category) }}">{{ $category->title }}</a>
-                    @foreach($category->children as $child)
-                        <a class="hover-underline px-4 shrink-0" href="{{ route('category', $child) }}">{{ $child->title }}</a>
-                        @foreach($child->products as $product)
-                            <a class="hover-underline px-4 shrink-0" href="{{ route('product', [$child, $product]) }}">{{ $product->title }}</a>
-                        @endforeach
-                    @endforeach
-                @endforeach
+<div class="bg-gray-100 dark:bg-gray-950 text-gray-700 overflow-hidden dark:text-white h-16 border-y-2 md:border-y-[5px] border-primary-500 ">
+    <marquee-scroller ticker-speed="1" class="carousel ">
+        @foreach($categories as $category)
+            <div class="carousel-cell py-2 mr-10">
+                <a class="hover-underline inline-block btn py-3 px-4 shrink-0" href="{{ route('category', $category) }}">{{ $category->title }}</a>
             </div>
-        </div>
-    </div>
-</section>
+
+            @foreach($category->children as $child)
+                <div class="carousel-cell py-2 mr-10">
+                    <a class="hover-underline inline-block btn py-3 px-4 shrink-0" href="{{ route('category', $child) }}">{{ $child->title }}</a>
+                </div>
+
+                @foreach($child->products as $product)
+                    <div class="carousel-cell py-2 mr-10">
+                        <a class="hover-underline inline-block btn py-3 px-4 shrink-0" href="{{ route('product', [$child, $product]) }}">{{ $product->title }}</a>
+                    </div>
+                @endforeach
+            @endforeach
+        @endforeach
+    </marquee-scroller>
+</div>
+

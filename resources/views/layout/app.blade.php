@@ -78,7 +78,7 @@ not-sr-only:block sr-only focus:not-sr-only"
         {{ $slot }}
     </main>
     <x-partials.section-products/>
-    <x-partials.marquee2/>
+    <x-partials.marquee/>
     @if(Route::currentRouteName() !== 'quote')
         <div class="wrapper">
             <div class="lg:-mr-4">
@@ -99,5 +99,6 @@ not-sr-only:block sr-only focus:not-sr-only"
         </div>
     </div>
 </div>
+<x-search/>
 </body>
 </html>

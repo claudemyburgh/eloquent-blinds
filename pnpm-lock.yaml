@@ -4,11 +4,11 @@ specifiers:
   '@designbycode/tailwindcss-conic-gradient': ^1.0.3
   '@designbycode/tailwindcss-mask-image': ^2.0.3
   '@designbycode/tailwindcss-stripes': ^1.0.5
-  '@designbycode/tailwindcss-text-shadow': ^1.2.1
+  '@designbycode/tailwindcss-text-shadow': ^1.3.1
   '@designbycode/tailwindcss-text-stroke': ^1.2.1
-  '@headlessui/react': ^1.7.16
+  '@headlessui/react': ^1.7.17
   '@heroicons/react': ^2.0.18
-  '@inertiajs/react': ^1.0.10
+  '@inertiajs/react': ^1.0.11
   '@popperjs/core': ^2.11.8
   '@tailwindcss/container-queries': ^0.1.1
   '@tailwindcss/forms': ^0.5.4
@@ -20,7 +20,7 @@ specifiers:
   '@types/google-map-react': ^2.1.7
   '@types/lodash': ^4.14.197
   '@types/masonry-layout': ^4.2.5
-  '@types/node': ^18.17.5
+  '@types/node': ^18.17.6
   '@types/react': ^18.2.20
   '@types/react-dom': ^18.2.7
   '@types/react-google-recaptcha': ^2.1.5
@@ -36,6 +36,7 @@ specifiers:
   date-fns: ^2.30.0
   flickity: ^3.0.0
   flickity-as-nav-for: ^3.0.0
+  fuse.js: ^6.6.2
   google-map-react: ^2.2.1
   laravel-vite-plugin: ^0.7.8
   lodash: ^4.17.21
@@ -66,7 +67,7 @@ dependencies:
   '@designbycode/tailwindcss-conic-gradient': 1.0.3_tailwindcss@3.3.3
   '@designbycode/tailwindcss-mask-image': 2.0.3_tailwindcss@3.3.3
   '@designbycode/tailwindcss-stripes': 1.0.5_tailwindcss@3.3.3
-  '@designbycode/tailwindcss-text-shadow': 1.2.1_tailwindcss@3.3.3
+  '@designbycode/tailwindcss-text-shadow': 1.3.1_tailwindcss@3.3.3
   '@designbycode/tailwindcss-text-stroke': 1.2.1_tailwindcss@3.3.3
   '@heroicons/react': 2.0.18_react@18.2.0
   '@popperjs/core': 2.11.8
@@ -85,6 +86,7 @@ dependencies:
   date-fns: 2.30.0
   flickity: 3.0.0
   flickity-as-nav-for: 3.0.0_flickity@3.0.0
+  fuse.js: 6.6.2
   google-map-react: 2.2.1_biqbaboplfbrettd7655fr4n2y
   lodash: 4.17.21
   masonry-layout: 4.2.2
@@ -105,12 +107,12 @@ dependencies:
   vanilla-tilt: 1.8.1
 
 devDependencies:
-  '@headlessui/react': 1.7.16_biqbaboplfbrettd7655fr4n2y
-  '@inertiajs/react': 1.0.10_react@18.2.0
+  '@headlessui/react': 1.7.17_biqbaboplfbrettd7655fr4n2y
+  '@inertiajs/react': 1.0.11_react@18.2.0
   '@tailwindcss/container-queries': 0.1.1_tailwindcss@3.3.3
   '@tailwindcss/forms': 0.5.4_tailwindcss@3.3.3
   '@types/chart.js': 2.9.37
-  '@types/node': 18.17.5
+  '@types/node': 18.17.6
   '@types/react': 18.2.20
   '@types/react-dom': 18.2.7
   '@types/react-lazy-load-image-component': 1.5.3
@@ -124,7 +126,7 @@ devDependencies:
   react-dom: 18.2.0_react@18.2.0
   tailwindcss: 3.3.3
   typescript: 5.1.6
-  vite: 4.4.9_@types+node@18.17.5
+  vite: 4.4.9_@types+node@18.17.6
 
 packages:
 
@@ -387,8 +389,8 @@ packages:
       tailwindcss: 3.3.3
     dev: false
 
-  /@designbycode/tailwindcss-text-shadow/1.2.1_tailwindcss@3.3.3:
-    resolution: {integrity: sha512-9qYIrU56M6ajnzTt+3TvHHoHasFPKhzlYtldzmr56qbvklcHzgQTMnbKuF//YbjXA1AtUI/wLuysnH+13nwBTA==}
+  /@designbycode/tailwindcss-text-shadow/1.3.1_tailwindcss@3.3.3:
+    resolution: {integrity: sha512-ITo8HuWlQx5fCRpXoiZyNzRN+/zoNCrRYzWNgboZ2PEcBUt7YW50nYKP0CgEWieO9qwlJh6pSdWavsCDq7/0hg==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
@@ -607,8 +609,8 @@ packages:
       fast-deep-equal: 3.1.3
     dev: false
 
-  /@headlessui/react/1.7.16_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-2MphIAZdSUacZBT6EXk8AJkj+EuvaaJbtCyHTJrPsz8inhzCl7qeNPI1uk1AUvCgWylVtdN8cVVmnhUDPxPy3g==}
+  /@headlessui/react/1.7.17_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-4am+tzvkqDSSgiwrsEpGWqgGo9dz8qU5M3znCkC4PgkpY4HcCZzEDEvozltGGGHIKl9jbXbZPSH5TWn4sWJdow==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16 || ^17 || ^18
@@ -627,8 +629,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@inertiajs/core/1.0.10:
-    resolution: {integrity: sha512-tki90YtXqlKiPz/pvv0kBVHELypDrwL8Fze+qgxnI1aaTxWRTyj0iye60xQVO44yBYi2wS06vuZ3trfaD4Y6Gg==}
+  /@inertiajs/core/1.0.11:
+    resolution: {integrity: sha512-EFUvVsq8TvvIaUDrfbL/pvEBvu67gdBvV/cyepDZqCdAolld0N3AO+TZ7i7UtwKwLKw8eAFbixgbkicugojhGA==}
     dependencies:
       axios: 1.4.0
       deepmerge: 4.3.1
@@ -638,12 +640,12 @@ packages:
       - debug
     dev: true
 
-  /@inertiajs/react/1.0.10_react@18.2.0:
-    resolution: {integrity: sha512-0fPCqXNKZkShmyIezm7jeaSY6uLtC07/KP4OeMEJSxytHI++XTeqwttgUoeMRErHaoYSsF/je45KxetEdx/FSA==}
+  /@inertiajs/react/1.0.11_react@18.2.0:
+    resolution: {integrity: sha512-847xQGY3cIhGw3RxH0pRfrJPkiFb0q37uLjNH05fxYv5TR8hMzyEFpmeILbGHsVSPvw7B7hBabURTOrIam1c4w==}
     peerDependencies:
       react: ^16.9.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@inertiajs/core': 1.0.10
+      '@inertiajs/core': 1.0.11
       lodash.isequal: 4.5.0
       react: 18.2.0
     transitivePeerDependencies:
@@ -800,8 +802,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
 
-  /@types/node/18.17.5:
-    resolution: {integrity: sha512-xNbS75FxH6P4UXTPUJp/zNPq6/xsfdJKussCWNOnz4aULWIRwMgP1LgaB5RiBnMX1DPCYenuqGZfnIAx5mbFLA==}
+  /@types/node/18.17.6:
+    resolution: {integrity: sha512-fGmT/P7z7ecA6bv/ia5DlaWCH4YeZvAQMNpUhrJjtAhOhZfoxS1VLUgU2pdk63efSjQaOJWdXMuAJsws+8I6dg==}
     dev: true
 
   /@types/prop-types/15.7.5:
@@ -861,7 +863,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.22.5_@babel+core@7.22.10
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.4.9_@types+node@18.17.5
+      vite: 4.4.9_@types+node@18.17.6
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -902,8 +904,8 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.10
-      caniuse-lite: 1.0.30001521
-      fraction.js: 4.2.0
+      caniuse-lite: 1.0.30001522
+      fraction.js: 4.2.1
       normalize-range: 0.1.2
       picocolors: 1.0.0
       postcss: 8.4.28
@@ -948,8 +950,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001521
-      electron-to-chromium: 1.4.494
+      caniuse-lite: 1.0.30001522
+      electron-to-chromium: 1.4.496
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11_browserslist@4.21.10
     dev: true
@@ -970,8 +972,8 @@ packages:
     resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
     engines: {node: '>= 6'}
 
-  /caniuse-lite/1.0.30001521:
-    resolution: {integrity: sha512-fnx1grfpEOvDGH+V17eccmNjucGUnCbP6KL+l5KqBIerp26WK/+RQ7CIDE37KGJjaPyqWXXlFUyKiWmvdNNKmQ==}
+  /caniuse-lite/1.0.30001522:
+    resolution: {integrity: sha512-TKiyTVZxJGhsTszLuzb+6vUZSjVOAhClszBr2Ta2k9IwtNBT/4dzmL6aywt0HCgEZlmwJzXJd8yNiob6HgwTRg==}
     dev: true
 
   /canvas-confetti/1.6.0:
@@ -1118,8 +1120,8 @@ packages:
   /dlv/1.1.3:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
 
-  /electron-to-chromium/1.4.494:
-    resolution: {integrity: sha512-KF7wtsFFDu4ws1ZsSOt4pdmO1yWVNWCFtijVYZPUeW4SV7/hy/AESjLn/+qIWgq7mHscNOKAwN5AIM1+YAy+Ww==}
+  /electron-to-chromium/1.4.496:
+    resolution: {integrity: sha512-qeXC3Zbykq44RCrBa4kr8v/dWzYJA8rAwpyh9Qd+NKWoJfjG5vvJqy9XOJ9H4P/lqulZBCgUWAYi+FeK5AuJ8g==}
     dev: true
 
   /esbuild/0.18.20:
@@ -1256,8 +1258,8 @@ packages:
       mime-types: 2.1.35
     dev: true
 
-  /fraction.js/4.2.0:
-    resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
+  /fraction.js/4.2.1:
+    resolution: {integrity: sha512-/KxoyCnPM0GwYI4NN0Iag38Tqt+od3/mLuguepLgCAKPn0ZhC544nssAW0tG2/00zXEYl9W+7hwAIpLHo6Oc7Q==}
     dev: true
 
   /fs.realpath/1.0.0:
@@ -1272,6 +1274,11 @@ packages:
 
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
+
+  /fuse.js/6.6.2:
+    resolution: {integrity: sha512-cJaJkxCCxC8qIIcPBF9yGxY0W/tVZS3uEISDxhYIdtk8OL93pe+6Zj7LjCqVV4dzbqcriOZ+kQ/NE4RXZHsIGA==}
+    engines: {node: '>=10'}
+    dev: false
 
   /gensync/1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
@@ -1428,8 +1435,8 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /jiti/1.19.1:
-    resolution: {integrity: sha512-oVhqoRDaBXf7sjkll95LHVS6Myyyb1zaunVwk4Z0+WPSW4gjS0pl01zYKHScTuyEhQsFxV5L4DR5r+YqSyqyyg==}
+  /jiti/1.19.3:
+    resolution: {integrity: sha512-5eEbBDQT/jF1xg6l36P+mWGGoH9Spuy0PCdSr2dtWRDGC6ph/w9ZCL4lmESW8f8F7MwT3XKescfP0wnZWAKL9w==}
     hasBin: true
 
   /js-tokens/4.0.0:
@@ -1463,7 +1470,7 @@ packages:
       vite: ^3.0.0 || ^4.0.0
     dependencies:
       picocolors: 1.0.0
-      vite: 4.4.9_@types+node@18.17.5
+      vite: 4.4.9_@types+node@18.17.6
       vite-plugin-full-reload: 1.0.5_vite@4.4.9
     dev: true
 
@@ -2462,7 +2469,7 @@ packages:
       fast-glob: 3.3.1
       glob-parent: 6.0.2
       is-glob: 4.0.3
-      jiti: 1.19.1
+      jiti: 1.19.3
       lilconfig: 2.1.0
       micromatch: 4.0.5
       normalize-path: 3.0.0
@@ -2649,10 +2656,10 @@ packages:
     dependencies:
       picocolors: 1.0.0
       picomatch: 2.3.1
-      vite: 4.4.9_@types+node@18.17.5
+      vite: 4.4.9_@types+node@18.17.6
     dev: true
 
-  /vite/4.4.9_@types+node@18.17.5:
+  /vite/4.4.9_@types+node@18.17.6:
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -2680,7 +2687,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.17.5
+      '@types/node': 18.17.6
       esbuild: 0.18.20
       postcss: 8.4.28
       rollup: 3.28.0
