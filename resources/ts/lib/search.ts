@@ -63,7 +63,7 @@ async function retrieveSearchResults(query: string): Promise<Fuse.FuseResult<Pro
 
 function generatePostHTML(product: Fuse.FuseResult<Product>): string {
   return `
-      <a href="${product.item.url}" class="border text-gray-700 m-2  border-gray-800 p-2 rounded-md flex flex-col dark:text-white hover:text-white focus:text-white hover:bg-primary-500 focus:bg-primary-500 ">
+      <a href="${product.item.url}"  role="menuitem" class="border text-gray-700 m-2  border-gray-800 p-2 rounded-md flex flex-col dark:text-white hover:text-white focus:text-white hover:bg-primary-500 focus:bg-primary-500 ">
           <span>${product.item.title}</span>
           <small>in category: ${product.item.category}</small>
       </a>

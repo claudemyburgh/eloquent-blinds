@@ -1,4 +1,5 @@
 import "vanilla-headless"
+import "@designbycode/traverse"
 import {createRoot} from "react-dom/client"
 import QuoteForm from "./components/QuoteForm"
 import "@/../ts/comps/MouseSpotlight"

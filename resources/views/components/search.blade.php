@@ -7,7 +7,7 @@
                class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 text-gray-600 dark:text-gray-300 focus:border-primary-500 dark:focus:border-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 rounded-md shadow-sm
         disabled:opacity-50 disabled:cursor-no-drop w-full">
     </form>
-    <div id="search-results" class="space-y-1 max-h-[400px] overflow-y-auto text-shadow ">
+    <div id="search-results" class="space-y-1 max-h-[400px] block overflow-y-auto text-shadow ">
     </div>
     <div class="bg-gray-300 sticky flex justify-between bottom-0 dark:bg-gray-900 px-4 py-2 border-t border-gray-400 dark:border-gray-800">
         <small class="text-gray-600 dark:text-gray-600">Search by <strong class="font-black ">category</strong> or <strong class="font-black ">product</strong> name</small>
