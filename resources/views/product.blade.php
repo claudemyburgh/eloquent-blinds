@@ -1,12 +1,12 @@
-<x-app-layout title="{{ $product->title }} {{ $category->title }}" :description="$product->description">
+<x-app-layout title="{{ $product->title }}" :description="$product->description">
     <x-slot name="seo">
         {{--  HTML Meta Tags--}}
-        <meta property="og:title" content="Eloquent Blinds | {{ $product->title }} {{ $category->title }}"/>
+        <meta property="og:title" content="Eloquent Blinds | {{ $product->title }} "/>
         <meta property="og:description"
               content="{{ $product->description }}"/>
         <meta property="og:image" content="{{ $category->getFirstMediaUrl('default', 'card') }}"/>
         {{--  Twitter Meta Tags --}}
-        <meta name="twitter:title" content="Eloquent Blinds | {{ $product->title }} {{ $category->title }}"/>
+        <meta name="twitter:title" content="Eloquent Blinds | {{ $product->title }}"/>
         <meta name="twitter:description"
               content="{{ $product->description }}"/>
         <meta name="twitter:image" content="{{ $product->getFirstMediaUrl('default', 'card') }}"/>
@@ -18,7 +18,7 @@
                 <x-product.media class="sticky top-32" :$product/>
             </div>
             <div class=" md:col-span-3 lg:col-span-7">
-                <h1 class="heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black mt-5 mb-2">{{ $product->title }} {{ $category->title }}</h1>
+                <h1 class="heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black mt-5 mb-2">{{ $product->title }}</h1>
 
                 <div class="space-x-2 ">
                     <a href="{{ route('category', $category) }}" class="rounded-full bg-primary-500/10 hover:bg-primary-500/20 px-3 py-1 mt-2 inline-block text-xs font-semibold leading-6 text-primary-400 ring-1 ring-inset
