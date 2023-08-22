@@ -65,7 +65,11 @@ function generatePostHTML(product: Fuse.FuseResult<Product>): string {
   return `
       <a href="${product.item.url}"  role="menuitem" class="border text-gray-700 m-2  border-gray-800 p-2 rounded-md flex flex-col dark:text-white hover:text-white focus:text-white hover:bg-primary-500 focus:bg-primary-500 ">
           <span>${product.item.title}</span>
-          <small>in category: ${product.item.category}</small>
+          <small>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" class="h-2.5 w-3 -translate-y-0.5  inline-block mr-1" viewBox="0 0 19 19">
+  <path fill="currentColor" d="m18.7 12.7-6 6c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l4.3-4.3H.3c-.2 0-.3-.1-.3-.3V1c0-.6.4-1 1-1s1 .4 1 1v9.7c0 .2.1.3.3.3h13.3l-4.3-4.3c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l6 6c.4.4.4 1 0 1.4z"/>
+</svg>
+          in category: ${product.item.category}</small>
       </a>
   `
 }
