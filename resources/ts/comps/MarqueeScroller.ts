@@ -43,7 +43,7 @@ class MarqueeScroller extends HTMLElement {
   // Handle attribute changes
   attributeChangedCallback(name: string, oldValue: string, newValue: string) {
     if (name === "ticker-speed" && oldValue !== newValue) {
-      this.tickerSpeed = parseFloat(newValue) || 2
+      this.tickerSpeed = parseFloat(newValue)
     }
   }
 
@@ -69,13 +69,14 @@ class MarqueeScroller extends HTMLElement {
     this.kitty = new Flickity(this, {
       autoPlay: true,
       prevNextButtons: false,
-      pageDots: false,
+      pageDots: true,
       draggable: true,
       wrapAround: true,
-      selectedAttraction: 0.05,
-      friction: 0.25,
+      groupCells: true,
+      selectedAttraction: 0.2,
+      friction: 0.8,
     })
-    this.kitty?.selectCell(0) // Use selectCell method instead of accessing kitty.x directly
+    // this.kitty?.selectCell(0) // Use selectCell method instead of accessing kitty.x directly
     this.updateAnimation()
   }
 

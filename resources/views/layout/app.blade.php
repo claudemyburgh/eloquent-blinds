@@ -17,19 +17,16 @@
                 f.parentNode.insertBefore(j, f);
             })(window, document, 'script', 'dataLayer', '{{ config('google.gtag.id') }}');</script>
         <!-- End Google Tag Manager -->
-
     @endproduction
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="theme-color" content="#0284c7"/>
     <link rel="canonical" href="{{ URL::current() }}"/>
-
     <title>@isset($title)
             {{ $title }} |
         @endisset {{ config('app.name', 'Eloquent Blinds') }} </title>
     <meta name="description" content="{{ $description }}"/>
-
     <meta property="fb:app_id" content="{{ config('social.facebook.app_id') }}"/>
     {{--  HTML Meta Tags--}}
     <meta property="og:url" content="{{  URL::current() }}"/>
@@ -38,7 +35,6 @@
     <meta name="twitter:card" content="summary_large_image"/>
     <meta property="twitter:domain" content="eloquentblinds.co.za"/>
     <meta property="twitter:url" content="{{ URL::current() }}"/>
-
     {{ $seo }}
 
     <!-- Fonts -->
