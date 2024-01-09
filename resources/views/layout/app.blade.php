@@ -73,17 +73,18 @@ not-sr-only:block sr-only focus:not-sr-only"
     <main id="main" class="relative z-10">
         {{ $slot }}
     </main>
-    <x-partials.section-products/>
-    <x-partials.marquee/>
-    @if(Route::currentRouteName() !== 'quote')
-        <div class="wrapper">
-            <div class="lg:-mr-4">
-                <x-contact.section/>
+    @if(!app()->isDownForMaintenance())
+        <x-partials.section-products/>
+        <x-partials.marquee/>
+        @if(Route::currentRouteName() !== 'quote')
+            <div class="wrapper">
+                <div class="lg:-mr-4">
+                    <x-contact.section/>
+                </div>
             </div>
-        </div>
+        @endif
+        <x-footer/>
     @endif
-    <x-footer/>
-
     <div class="fixed bottom-20 inset-x-0 z-[1001] pointer-events-none">
         <div class="wrapper relative">
             <button class="absolute right-4 pointer-events-auto md:-right-14 h-12 w-12 flex items-center justify-center rounded-lg border border-gray-700 bg-primary-500 text-white" is="headless-scrolltop">
