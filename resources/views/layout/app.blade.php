@@ -75,7 +75,7 @@ not-sr-only:block sr-only focus:not-sr-only"
     </main>
     @if(!app()->isDownForMaintenance())
         <x-partials.section-products/>
-        <x-partials.marquee/>
+        <x-partials.swiper-marquee/>
         @if(Route::currentRouteName() !== 'quote')
             <div class="wrapper">
                 <div class="lg:-mr-4">

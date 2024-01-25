@@ -11,7 +11,7 @@ module.exports = {
     "./resources/ts/**/*.{tsx,ts}",
   ],
   darkMode: "class",
-  safelist: ["swiper-wrapper", "heading-1", "heading-2", "heading-3", "image-mask-none"],
+  safelist: ["swiper-wrapper", "heading-1", "heading-2", "heading-3", "image-mask-none", "swiper-slide"],
   theme: {
     corePlugins: {
       aria: false,

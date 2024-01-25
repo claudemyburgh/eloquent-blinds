@@ -14,9 +14,10 @@
             </div>
 
             <div class="relative">
-         
+
                 <h1 class="mt-5 heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black relative">
-                    Blind supplier, installer and automation.
+                    Supplier and installer of Blinds and Shutters.
+                    {{--                    Blind and Shutter supplier, installer and automation.--}}
                 </h1>
                 <p class="mt-3 text-lg leading-8 text-gray-500 dark:text-gray-300  text-shadow">
                     We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space.
