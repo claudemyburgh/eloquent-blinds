@@ -64,8 +64,6 @@ module.exports = {
     require("@designbycode/tailwindcss-mask-image"),
     require("@designbycode/tailwindcss-conic-gradient"),
     require("tailwindcss-attributes"),
-    require("@designbycode/tailwindcss-text-shadow")({
-      experimental: true,
-    }),
+    require("@designbycode/tailwindcss-text-shadow"),
   ],
 }

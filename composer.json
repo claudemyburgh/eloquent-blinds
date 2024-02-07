@@ -1,7 +1,7 @@
 {
-  "name": "laravel/laravel",
+  "name": "designbycode/eloquent-blinds",
   "type": "project",
-  "description": "The Laravel Framework.",
+  "description": "Website for Eloquent Blinds",
   "keywords": [
     "framework",
     "laravel"
@@ -36,7 +36,7 @@
     "laravel/sail": "^1.18",
     "mockery/mockery": "^1.4.4",
     "nunomaduro/collision": "^7.0",
-    "nunomaduro/larastan": "^2.6",
+    "larastan/larastan": "@stable",
     "pestphp/pest": "^2.4",
     "pestphp/pest-plugin-laravel": "^2.0",
     "phpunit/phpunit": "^10.0",

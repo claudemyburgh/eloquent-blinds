@@ -6,6 +6,7 @@
     use App\Http\Controllers\Frontend\CategoryProductsController;
     use App\Http\Controllers\Frontend\FAQController;
     use App\Http\Controllers\Frontend\HomeController;
+    use App\Http\Controllers\Frontend\NavigationLinksController;
     use App\Http\Controllers\Frontend\PrivacyPolicyController;
     use App\Http\Controllers\Frontend\ProductController;
     use App\Http\Controllers\Frontend\QuoteController;
@@ -35,3 +36,5 @@
     Route::get('google-reviews', GoogleReviewController::class)->name('google-reviews');
 
     //    Route::get("search", SearchResults::class)->name('search');
+
+    Route::get('z', [NavigationLinksController::class, 'blinds']);

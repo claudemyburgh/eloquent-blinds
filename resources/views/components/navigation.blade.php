@@ -53,15 +53,15 @@
                                                          alt="Motion Blinds">
                                                 </a>
 
-                                                <x-ribbon {{ $attributes->merge([
-                                                    'class' => 'relative  flex rounded-global shadow-lg shadow-primary-500/20 ']) }}
-                                                          show="true" text="BEST SELLER">
-                                                    <a href="{{ route('product', ['roller-blinds', 'nairobi']) }}" class="overflow-hidden rounded-global group">
-                                                        <img class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100" loading="lazy" width="290" height="290"
-                                                             src="{{ Vite::asset('resources/img/nairobi-card.webp') }}"
-                                                             alt="Motion Blinds">
-                                                    </a>
-                                                </x-ribbon>
+                                                {{--                                                <x-ribbon {{ $attributes->merge([--}}
+                                                {{--                                                    'class' => 'relative  flex rounded-global shadow-lg shadow-primary-500/20 ']) }}--}}
+                                                {{--                                                          show="true" text="BEST SELLER">--}}
+                                                {{--                                                    <a href="{{ route('product', ['roller-blinds', 'nairobi']) }}" class="overflow-hidden rounded-global group">--}}
+                                                {{--                                                        <img class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100" loading="lazy" width="290" height="290"--}}
+                                                {{--                                                             src="{{ Vite::asset('resources/img/nairobi-card.webp') }}"--}}
+                                                {{--                                                             alt="Motion Blinds">--}}
+                                                {{--                                                    </a>--}}
+                                                {{--                                                </x-ribbon>--}}
 
                                                 @foreach($categories as $category)
                                                     <div>

@@ -7,9 +7,11 @@
     use App\Models\Category;
     use Designbycode\Datatables\DatatablesController;
     use Illuminate\Database\Eloquent\Builder;
+    use Illuminate\Http\RedirectResponse;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Cache;
     use Inertia\Inertia;
+    use Inertia\Response;
 
     class CategoriesController extends DatatablesController
     {
@@ -24,7 +26,7 @@
             return Category::query();
         }
 
-        public function index(Request $request)
+        public function index(Request $request): Response
         {
             return Inertia::render('Dashboard/Table/Index', $this->getResponse($request));
         }
@@ -32,21 +34,19 @@
         /**
          * Store a newly created resource in storage.
          */
-        public function store(StoreCategoryRequest $request)
+        public function store(StoreCategoryRequest $request): RedirectResponse
         {
             Cache::forget('categories-menu');
             $category = Category::create($request->validated());
-
             return to_route('dashboard.categories.edit', $category);
         }
 
         /**
          * Show the form for editing the specified resource.
          */
-        public function edit(string $id)
+        public function edit(string $id): Response
         {
             $category = Category::with('media')->find($id);
-
             return Inertia::render('Dashboard/Categories/Edit', compact('category'));
         }
 
@@ -64,13 +64,13 @@
         /**
          * Remove the specified resource from storage.
          */
-        public function destroy(string $ids)
+        public function destroy(string $ids): void
         {
             Cache::forget('categories-menu');
             $this->itemsDelete($ids);
         }
 
-        public function upload(Request $request)
+        public function upload(Request $request): void
         {
             $request->validate([
                 'image.*' => 'image|mimes:jpeg,jpg,png,gif,webp|max:10000',

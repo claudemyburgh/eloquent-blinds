@@ -2,6 +2,7 @@
 
     namespace App\View\Components;
 
+    use App\Http\Controllers\Frontend\NavigationLinksController;
     use Closure;
     use Illuminate\Contracts\View\View;
     use Illuminate\View\Component;
@@ -25,26 +26,31 @@
                 [
                     "name" => "Home",
                     "route" => "home",
+                    "data" => null,
                     "classes" => "hover:text-primary-500 dark:text-shadow "
                 ],
                 [
                     "name" => "Products",
                     "route" => "categories",
+                    "data" => NavigationLinksController::blinds(),
                     "classes" => "hover:text-primary-500 dark:text-shadow "
                 ],
                 [
                     "name" => "Reviews",
                     "route" => "reviews",
+                    "data" => "data",
                     "classes" => "hover:text-primary-500 dark:text-shadow "
                 ],
                 [
                     "name" => "Faq's",
                     "route" => "faq",
+                    "data" => "data",
                     "classes" => "hover:text-primary-500 dark:text-shadow "
                 ],
                 [
                     "name" => "Free Quote",
                     "route" => "quote",
+                    "data" => "data",
                     "classes" => "btn btn-gradient rounded-md text-white"
                 ],
             ];
