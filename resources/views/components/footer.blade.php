@@ -31,11 +31,11 @@
                             DesignByCode
                         </a>
                     </li>
-                    <li>
-                        <a target="_blank" href="https://crystalbars.co.za" class="hover-underline">
-                            Crystalbars
-                        </a>
-                    </li>
+                    {{--                    <li>--}}
+                    {{--                        <a target="_blank" href="https://crystalbars.co.za" class="hover-underline">--}}
+                    {{--                            Crystalbars--}}
+                    {{--                        </a>--}}
+                    {{--                    </li>--}}
                 </ul>
             </div>
 
@@ -57,7 +57,7 @@
 
 <div class="wrapper py-12 text-gray-900 dark:text-gray-200 lg:flex justify-between">
     <p>
-        &copy;{{ Carbon::now()->year }} Eloquent Blinds, Inc. All rights reserved.
+        &copy;{{ Carbon::now()->year }} {{ config('app.name') }}, Inc. All rights reserved.
     </p>
     <p>
         Design <abbr class="no-underline" title="and">&amp;</abbr> Developed by <a class="hover:text-primary-500 underline decoration-gray-300/10 hover-underline decoration-1" href="https://designbycode.co.za"

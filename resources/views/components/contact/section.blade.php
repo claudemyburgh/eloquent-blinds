@@ -23,7 +23,7 @@
         @endif
     </header>
 
-    @foreach(ContactPerson::all() as $contact)
+    @foreach((new ContactPerson)->all() as $contact)
         <x-contact.card :name="$contact['name']" :phone="$contact['phone']" :email="$contact['email']" :image="$contact['image']"/>
     @endforeach
 

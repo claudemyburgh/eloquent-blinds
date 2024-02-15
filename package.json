@@ -16,7 +16,7 @@
     "@types/google-map-react": "^2.1.10",
     "@types/lodash": "^4.14.202",
     "@types/masonry-layout": "^4.2.7",
-    "@types/node": "^18.19.14",
+    "@types/node": "^18.19.17",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@types/react-google-recaptcha": "^2.1.9",
@@ -66,7 +66,7 @@
     "swiper": "^11.0.6",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-attributes": "^1.2.3",
-    "usehooks-ts": "^2.13.0",
+    "usehooks-ts": "^2.14.0",
     "vanilla-headless": "^0.9.4",
     "vanilla-tilt": "^1.8.1",
     "ziggy-js": "^1.8.1"
