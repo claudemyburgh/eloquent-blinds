@@ -25,7 +25,7 @@ class StoreProductRequest extends FormRequest
         return [
             'title' => 'required',
             'slug' => 'required|unique:products,slug,'.$this->id,
-            'category_id' => 'required',
+            'category_id' => 'required'
         ];
     }
 }

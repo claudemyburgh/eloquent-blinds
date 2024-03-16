@@ -11,7 +11,7 @@
     </x-slot>
     <x-partials.hero/>
 
-
+    <x-shutters-comparison/>
     <x-partials.splide-marquee/>
     <div id="learn-more" class="wrapper  md:grid mt-24 md:mt-32 grid-cols-12 gap-8 text-gray-500 dark:text-gray-300">
         <div class="md:col-span-12 mb-6 lg:col-span-6 relative">
@@ -21,7 +21,6 @@
                         <div class="w-[80px] h-full rounded-full absolute top-1/2 -translate-y-1/2 -translate-x-1/2 blur-md bg-secondary-500/10"></div>
                     </div>
                     <h2 class="heading-3 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black mt-6">What we can do for you</h2>
-
                     <p class="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
                         Discover our expansive collection of premium blinds, meticulously crafted to offer exceptional quality at affordable prices. Whether you're sprucing up a living room, bedroom, or any other space in your home, our
                         blinds

@@ -5,6 +5,7 @@ namespace App\Http\Requests\User;
 use App\Models\User;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
+use LVR\Phone\Phone;
 
 /**
  * @property mixed $first_name
@@ -32,6 +33,7 @@ class UserDatatableRequest extends FormRequest
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,id,' . User::class,
+            'phone' => ['required', new Phone()],
             //            'password' => ['required', Password::defaults()],
         ];
     }

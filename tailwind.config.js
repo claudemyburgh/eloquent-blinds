@@ -65,5 +65,6 @@ module.exports = {
     require("@designbycode/tailwindcss-conic-gradient"),
     require("tailwindcss-attributes"),
     require("@designbycode/tailwindcss-text-shadow"),
+    require("@designbycode/tailwindcss-reflection"),
   ],
 }

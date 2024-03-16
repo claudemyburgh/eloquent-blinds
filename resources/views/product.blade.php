@@ -22,9 +22,9 @@
 
                 <div class="space-x-2 ">
                     <a href="{{ route('category', $category) }}" class="rounded-full bg-primary-500/10 hover:bg-primary-500/20 px-3 py-1 mt-2 inline-block text-xs font-semibold leading-6 text-primary-400 ring-1 ring-inset
-                    ring-primary-500/20">In
-                        category {{ Str::lower($category->title) }}</a>
+                    ring-primary-500/20">In category {{ Str::lower($category->title) }}</a>
                 </div>
+                {{ $product->json }}
                 <div class="prose prose-lg dark:prose-invert my-2 ">
                     @markdown($product->body)
                 </div>

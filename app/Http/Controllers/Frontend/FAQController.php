@@ -19,7 +19,7 @@ class FAQController extends Controller
             [
                 'id' => 1,
                 'question' => 'Where are your company based?',
-                'answer' => 'We are base in the beautifully area of the Western Cape in Bellville, Cape Town',
+                'answer' => 'We are base in the beautifully area of the Western Cape in Kuilsriver, Cape Town',
             ],
             [
                 'id' => 2,
@@ -28,18 +28,23 @@ class FAQController extends Controller
             ],
             [
                 'id' => 3,
-                'question' => 'Do you charge for installation?',
-                'answer' => 'No, Installation price is free if you are in Cape Town',
+                'question' => 'Do you do Shutter?',
+                'answer' => 'Yes we do a variety of shutters made from different materials and configurations.',
             ],
             [
                 'id' => 4,
+                'question' => 'Is the shutters a security fixture?',
+                'answer' => 'Yes, we have a security shutter called ShutterGuard®',
+            ],
+            [
+                'id' => 5,
                 'question' => 'Do you do blind repair?',
                 'answer' => 'Yes, we do repairs on variety of blind types.',
             ],
             [
-                'id' => 5,
+                'id' => 6,
                 'question' => 'Do you do blind blind automation?',
-                'answer' => 'Yes, do blind automation on most types of blinds.',
+                'answer' => 'Yes, we do blind automation on most types of blinds.',
             ],
         ];
 

@@ -30,6 +30,7 @@
             'live',
             'popular',
             'product_range',
+            'json'
         ];
 
         public function category(): BelongsTo

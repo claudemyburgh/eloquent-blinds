@@ -31,7 +31,8 @@
                 'body' => 'required',
                 'popular' => 'required',
                 'live' => 'required',
-                'tag' => 'nullable'
-            ];
+                'tag' => 'nullable',
+                'json' => 'nullable|json'
+                ];
         }
     }

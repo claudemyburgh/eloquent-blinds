@@ -16,6 +16,7 @@ interface UsersProps {
         first_name: string;
         last_name: string;
         email: string;
+        phone: string;
         password: string;
     };
 }
@@ -27,6 +28,7 @@ const EditUsersForm = () => {
         useForm({
             first_name: user.first_name || "",
             last_name: user.last_name || "",
+            phone: user.phone || "",
             email: user.email || "",
             password: user.password || "",
         });
@@ -94,6 +96,18 @@ const EditUsersForm = () => {
                 />
 
                 <InputError message={errors.last_name} className="mt-2" />
+            </div>
+            <div>
+                <InputLabel htmlFor="phone" value="Phone Number" />
+                <TextInput
+                    id="phone"
+                    value={data.phone}
+                    onChange={handleFormInput}
+                    type="text"
+                    className="mt-1 block w-full"
+                />
+
+                <InputError message={errors.phone} className="mt-2" />
             </div>
             <div>
                 <InputLabel htmlFor="email" value="Email" />

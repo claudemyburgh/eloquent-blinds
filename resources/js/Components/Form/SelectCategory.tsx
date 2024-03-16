@@ -20,6 +20,8 @@ const SelectCategory = ({ categories, ...resProps }: Props & any) => {
               ))}
           </optgroup>
         ))}
+
+
     </SelectInput>
   )
 }
