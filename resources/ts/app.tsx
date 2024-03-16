@@ -13,3 +13,30 @@ let form = document.getElementById("quote-form")
 if (form) {
   createRoot(form).render(<QuoteForm />)
 }
+
+
+import Splide from '@splidejs/splide';
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+
+import '@splidejs/splide/css/core';
+
+const elms = document.getElementsByClassName( 'splide' );
+
+for ( let i = 0; i < elms.length; i++ ) {
+  // @ts-ignore
+  new Splide( elms[ i ], {
+    type   : 'loop',
+    drag   : 'free',
+    focus  : 'center',
+    cloneStatus: true,
+    arrows: false,
+    gap: 30,
+    start: 10,
+    autoWidth: true,
+    preloadPages: 20,
+    // perPage: 3,
+    autoScroll: {
+      speed: 2,
+    },
+  } ).mount({AutoScroll});
+}

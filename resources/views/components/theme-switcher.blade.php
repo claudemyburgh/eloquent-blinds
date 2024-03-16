@@ -27,21 +27,7 @@
     >
 
         <div class="py-1" role="none">
-            <button class="text-gray-700 dark:text-gray-300 flex items-center justify-start px-4 py-2 text-sm hover:bg-primary-100 focus:bg-primary-100 dark:hover:bg-primary-500 dark:focus:bg-primary-500 dark:hover:text-gray-900
-            focus:outline-none
-            w-full"
-                    id="menu-item-0"
-                    role="menuitem"
-                    tabindex="-1"
-                    data-theme-value="dark">
-                                <span class="mr-4">
-                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                              <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
-                            </svg>
-                        </span>
-                Dark
-            </button>
+
             <button class="text-gray-700 dark:text-gray-300 flex items-center justify-start px-4 py-2 text-sm hover:bg-primary-100 focus:bg-primary-100 dark:hover:bg-primary-500 dark:focus:bg-primary-500 dark:hover:text-gray-900
             focus:outline-none
             w-full"
@@ -56,6 +42,21 @@
 </svg>
                                 </span>
                 Light
+            </button>
+            <button class="text-gray-700 dark:text-gray-300 flex items-center justify-start px-4 py-2 text-sm hover:bg-primary-100 focus:bg-primary-100 dark:hover:bg-primary-500 dark:focus:bg-primary-500 dark:hover:text-gray-900
+            focus:outline-none
+            w-full"
+                    id="menu-item-0"
+                    role="menuitem"
+                    tabindex="-1"
+                    data-theme-value="dark">
+                                <span class="mr-4">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                              <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+                            </svg>
+                        </span>
+                Dark
             </button>
             <button class="text-gray-700 dark:text-gray-300 flex items-center justify-start px-4 py-2 text-sm hover:bg-primary-100 focus:bg-primary-100 dark:hover:bg-primary-500 dark:focus:bg-primary-500 dark:hover:text-gray-900
             focus:outline-none
