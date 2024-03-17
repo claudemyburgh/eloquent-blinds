@@ -24,7 +24,7 @@
         public function handle(ContactSubmitted $event): void
         {
             Mail::to(config('mail.from.address'))
-                ->cc(new Address(config('dashboard.admin.hendry.email'), config('dashboard.admin.hendry.name')))
+                ->cc(new Address(config('dashboard.admin.xavier.email'), config('dashboard.admin.xavier.name')))
                 ->bcc(new Address(config('dashboard.admin.claude.email'), config('dashboard.admin.claude.name')))
                 ->queue(new Contact($event->data));
         }

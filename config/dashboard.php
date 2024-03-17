@@ -14,6 +14,12 @@
                 'password' => env('ADMIN_HENDRY_PASSWORD', 'password'),
                 'phone' => env('ADMIN_HENDRY_PHONE'),
             ],
+            'xavier' => [
+                'name' => "Xavier Myburgh",
+                'email' => env('ADMIN_XAVIER_EMAIL', 'xavier@eloquentblinds.co.za'),
+                'password' => env('ADMIN_XAVIER_PASSWORD', 'password'),
+                'phone' => env('ADMIN_XAVIER_PHONE'),
+            ],
         ],
 
     ];
