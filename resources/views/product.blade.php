@@ -32,7 +32,10 @@
             </div>
         </div>
 
-        <x-shutters-comparison class="py-12"/>
+            <x-shutters-comparison class="py-12"/>
+
+
+
         @if($category->products->count() > 1)
             <div class="my-12">
                 <h2 class="heading-1 text-balance text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black mt-5 md:w-2/3">

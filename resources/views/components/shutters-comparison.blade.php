@@ -1,6 +1,5 @@
+@if(collect(Request::segments())->contains('shutters'))
 <div {{ $attributes->merge(['class' => 'flex flex-col justify-center items-center']) }}>
-
-
     <h1 class="my-5 heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black relative">Shutters Comparison</h1>
     <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 ">
         @foreach($comparison as $comp)
@@ -36,8 +35,8 @@
                 </footer>
             </mouse-spotlight>
             </a>
-
         @endforeach
     </div>
-
 </div>
+
+@endif

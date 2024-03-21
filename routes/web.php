@@ -37,4 +37,4 @@
 
     //    Route::get("search", SearchResults::class)->name('search');
 
-    Route::get('z', [NavigationLinksController::class, 'blinds']);
+//    Route::get('z', [NavigationLinksController::class, 'blinds']);

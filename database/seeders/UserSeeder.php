@@ -21,11 +21,11 @@ class UserSeeder extends Seeder
                 'phone' => config('dashboard.admin.claude.phone'),
             ],
             [
-                'first_name' => 'Hendry',
-                'last_name' => 'Ollewagen',
-                'email' => config('dashboard.admin.hendry.email'),
-                'password' => bcrypt(config('dashboard.admin.hendry.password')),
-                'phone' => config('dashboard.admin.hendry.phone'),
+                'first_name' => 'Xavier',
+                'last_name' => 'Myburgh',
+                'email' => config('dashboard.admin.xavier.email'),
+                'password' => bcrypt(config('dashboard.admin.xavier.password')),
+                'phone' => config('dashboard.admin.xavier.phone'),
             ],
         ];
 
