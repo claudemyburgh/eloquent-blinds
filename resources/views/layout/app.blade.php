@@ -75,7 +75,17 @@ not-sr-only:block sr-only focus:not-sr-only"
     </main>
     @if(!app()->isDownForMaintenance())
         <x-partials.section-products/>
-        <x-partials.splide-marquee/>
+        <x-partials.splide-marquee>
+            @foreach($categories as $category)
+                <a class="hover-underline splide__slide inline-block py-4  shrink-0" href="{{ route('category', $category) }}">{{ $category->title }}</a>
+                @foreach($category->children as $child)
+                    <a class="hover-underline splide__slide inline-block py-4  shrink-0" href="{{ route('category', $child) }}">{{ $child->title }}</a>
+                    @foreach($child->products as $product)
+                        <a class="hover-underline splide__slide inline-block py-4  shrink-0" href="{{ route('product', [$child, $product]) }}">{{ $product->title }}</a>
+                    @endforeach
+                @endforeach
+            @endforeach
+        </x-partials.splide-marquee>
         @if(Route::currentRouteName() !== 'quote')
             <div class="wrapper">
                 <div class="lg:-mr-4">

@@ -7,4 +7,5 @@ export { default as InputLabel } from "./InputLabel";
 export { default as Textarea } from "./Textarea";
 export { default as SwitchButton } from "./SwitchButton";
 export { default as SelectCategory } from "./SelectCategory";
+export { default as SelectStepCategory } from "./SelectStepCategory";
 export { default as SaveSubmitButton } from "./SaveSubmitButton";

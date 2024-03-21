@@ -32,6 +32,8 @@
                 </div>
             </div>
 
+            <x-shutters-comparison class="py-12"/>
+
             @if($category->products->count())
                 <div class="grid grid-cols-12 gap-6 my-12">
                     <div class="col-span-12">

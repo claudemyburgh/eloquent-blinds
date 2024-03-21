@@ -1,4 +1,4 @@
-<div class="wrapper flex flex-col justify-center items-center my-24">
+<div {{ $attributes->merge(['class' => 'flex flex-col justify-center items-center']) }}>
 
 
     <h1 class="my-5 heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black relative">Shutters Comparison</h1>

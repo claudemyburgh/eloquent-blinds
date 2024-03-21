@@ -11,8 +11,17 @@
     </x-slot>
     <x-partials.hero/>
 
-    <x-partials.splide-marquee/>
-    <x-shutters-comparison/>
+    <x-partials.splide-marquee class="my-12">
+        @foreach($categories as $category)
+            <a class="hover-underline splide__slide inline-block py-4  shrink-0" href="{{ route('category', $category) }}">{{ $category->title }}</a>
+            @foreach($category->children as $child)
+                <a class="hover-underline splide__slide inline-block py-4  shrink-0" href="{{ route('category', $child) }}">{{ $child->title }}</a>
+                @foreach($child->products as $product)
+                    <a class="hover-underline splide__slide inline-block py-4  shrink-0" href="{{ route('product', [$child, $product]) }}">{{ $product->title }}</a>
+                @endforeach
+            @endforeach
+        @endforeach
+    </x-partials.splide-marquee>
     <div id="learn-more" class="wrapper  md:grid mt-24 md:mt-32 grid-cols-12 gap-8 text-gray-500 dark:text-gray-300">
         <div class="md:col-span-12 mb-6 lg:col-span-6 relative">
             <div class="max-w-full sticky top-32">
@@ -42,4 +51,6 @@
             </div>
         </div>
     </div>
+
+
 </x-app-layout>

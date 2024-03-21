@@ -11,10 +11,21 @@ const SelectStepCategory = ({ categories, ...resProps }: Props & any) => {
       <option value="">None</option>
       {categories &&
         (categories as unknown as any[]).map((cat) => (
-          <option key={cat.uuid} value={cat.id}>
-            {cat.title}
-          </option>
-
+          <>
+            {cat.children.length ? (
+              <optgroup key={cat.uuid} label={cat.title}>
+                {cat.children.map((child: any) => (
+                  <option key={child.uuid} value={child.id}>
+                    {child.title}
+                  </option>
+                ))}
+              </optgroup>
+            ) : (
+              <option key={cat.uuid} value={cat.id}>
+                {cat.title}
+              </option>
+            )}
+          </>
         ))}
     </SelectInput>
   )

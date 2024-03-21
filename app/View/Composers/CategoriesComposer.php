@@ -15,6 +15,7 @@ class CategoriesComposer
   public function compose(View $view): void
   {
       $categories = Cache::remember('categories-list', 3600, fn () => Category::live()->with('media', 'products')->tree()->get()->toTree());
+//      dd($categories);
       $view->with('categories', $categories);
   }
 

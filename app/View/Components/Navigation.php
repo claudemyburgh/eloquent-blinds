@@ -30,9 +30,15 @@
                     "classes" => "hover:text-primary-500 dark:text-shadow "
                 ],
                 [
-                    "name" => "Products",
+                    "name" => "Shutters",
                     "route" => "categories",
-                    "data" => NavigationLinksController::blinds(),
+                    "data" => null,
+                    "classes" => "hover:text-primary-500 dark:text-shadow "
+                ],
+                [
+                    "name" => "Blinds",
+                    "route" => "categories",
+                    "data" => null,
                     "classes" => "hover:text-primary-500 dark:text-shadow "
                 ],
                 [

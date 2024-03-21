@@ -16,11 +16,10 @@
             <div class="relative">
 
                 <h1 class="mt-5 heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black relative">
-                    Supplier and installer of Blinds and Shutters.
-                    {{--                    Blind and Shutter supplier, installer and automation.--}}
+                    Supplier and installer of Shutters and Blinds.
                 </h1>
                 <p class="mt-3 text-lg leading-8 text-gray-500 dark:text-gray-300  text-shadow">
-                    We offer a wide range of high-quality blinds at affordable prices. Our blinds are perfect for any room in the house and will add style and function to your space.
+                    We offer a wide range of high-quality shutters and  blinds at affordable prices. Our shutters and blinds are perfect for any room in the house and will add style and function to your space.
                 </p>
                 <div class="flex space-x-4">
                     <a href="{{ route('quote') }}" class="btn mt-4 btn-gradient px-3 py-2 md:px-6 md:py-4 text-white">Get a free quote</a>
@@ -34,8 +33,6 @@
                     </a>
                 </div>
             </div>
-
-
         </div>
         <div
             class="mx-auto opacity-40 md:opacity-100 flex max-w-full mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32 absolute lg:relative -top-20 lg:top-0 inset-x-0 shadow-2xl mask-image-b lg:mask-image-start-100

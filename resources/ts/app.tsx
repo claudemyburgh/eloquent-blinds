@@ -30,7 +30,7 @@ for ( let i = 0; i < elms.length; i++ ) {
     focus  : 'center',
     cloneStatus: true,
     arrows: false,
-    gap: 30,
+    gap: 50,
     start: 10,
     autoWidth: true,
     preloadPages: 20,

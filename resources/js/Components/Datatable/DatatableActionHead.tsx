@@ -3,7 +3,7 @@ import { PrimaryButton } from "@/Components/Buttons"
 import { useForm, usePage } from "@inertiajs/react"
 import { UsePageDatatableProps } from "@/types/datatable"
 import Modal from "@/Components/Modal"
-import { InputError, InputLabel, SelectCategory, TextInput } from "@/Components/Form"
+import { InputError, InputLabel, SelectStepCategory, TextInput } from "@/Components/Form"
 import { Panel } from "@/Components/Panel"
 import { slugIt, unSlug } from "@/lib/helpers"
 import slugify from "slugify"
@@ -76,7 +76,7 @@ const DatatableActionHead = ({ categories }: any) => {
                 <InputLabel htmlFor={column} value={unSlug(column)} className={`capitalize`} />
 
                 {column === "category_id" ? (
-                  <SelectCategory id="category_id" name={column} categories={categories} defaultValue={data.category_id} onChange={handleFormInput} />
+                  <SelectStepCategory id="category_id" name={column} categories={categories} defaultValue={data.category_id} onChange={handleFormInput} />
                 ) : (
                   <TextInput id={column} name={column} className="mt-1 block w-full" onChange={handleFormInput} value={data[column]} />
                 )}

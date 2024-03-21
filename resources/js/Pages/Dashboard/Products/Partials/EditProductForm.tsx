@@ -108,16 +108,10 @@ const EditProductForm = () => {
         <InputError message={errors.slug} className="mt-4"/>
       </div>
 
-      {/*Keywords tags*/}
-      {/*<div>*/}
-      {/*  <InputLabel htmlFor="tag" value="Keywords" />*/}
-      {/*  <TextInput id="tag" value={data.tag} onChange={handleProductFormInput} type="text" className="mt-1 block w-full" />*/}
-      {/*  <InputError message={errors.tag} className="mt-4" />*/}
-      {/*</div>*/}
 
       <div>
         <InputLabel htmlFor="category_id" value="Category"/>
-        <SelectCategory id="category_id" categories={categories_all} defaultValue={data.category_id}
+        <SelectStepCategory id="category_id" categories={categories_all} defaultValue={data.category_id}
                         onChange={handleProductFormInput}/>
         <InputError message={errors.category_id} className="mt-2"/>
       </div>
