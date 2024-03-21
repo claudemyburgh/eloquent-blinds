@@ -24,6 +24,7 @@ class ShuttersComparison extends Component
         $comparison = (object)[
             (object)[
                 'name' => 'ShutterGuard® Aluminium Security Shutters',
+                'link' => 'shutterguard-aluminium-security-shutters',
                 'details' => (object)[
                     'Internal Use' => true,
                     'External Use' => true,
@@ -37,6 +38,7 @@ class ShuttersComparison extends Component
             ],
             (object)[
                 'name' => 'ShutterStyle® Aluminium Barrier Security Shutters',
+                'link' => 'shutterstyle-aluminium-barrier-security-shutters',
                 'details' => (object)[
                     'Internal Use' => true,
                     'External Use' => true,
@@ -50,6 +52,7 @@ class ShuttersComparison extends Component
             ],
             (object)[
                 'name' => 'Hurricane Aluminium Shutters',
+                'link' => 'hurricane-aluminium-shutters',
                 'details' => (object)[
                     'Internal Use' => true,
                     'External Use' => true,
@@ -63,6 +66,7 @@ class ShuttersComparison extends Component
             ],
             (object)[
                 'name' => 'Timber Wood Shutters',
+                'link' => 'timber-wood-shutters',
                 'details' => (object)[
                     'Internal Use' => true,
                     'External Use' => true,
@@ -76,6 +80,7 @@ class ShuttersComparison extends Component
             ],
             (object)[
                 'name' => 'Thermowood® Shutters',
+                'link' => 'thermowood-shutters',
                 'details' => (object)[
                     'Internal Use' => true,
                     'External Use' => false,
