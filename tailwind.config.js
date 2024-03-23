@@ -22,6 +22,10 @@ module.exports = {
         secondary: colors.cyan,
         tri: colors.rose,
         gray: colors.slate,
+        tylor: {
+          primary: '#0093A4',
+          secondary: "#464749"
+        }
       },
       width: {
         "square-diagonal": Math.sqrt(2) * 100 + "%",

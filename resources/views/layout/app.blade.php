@@ -48,9 +48,9 @@
     @viteReactRefresh
     @vite(['resources/ts/lib/dark-mode.ts', 'resources/css/app.css', 'resources/ts/app.tsx'])
 </head>
-<body class="font-sans antialiased overflow-x-hidden">
+<body class="font-sans antialiased overflow-x-hidden bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300">
 
-<a class="bg-gray-200 text-gray-900 dark:text-gray-100 dark:bg-gray-950 border border-primary-500  focus:px-5 rounded-lg shadow-2xl text-sm font-semibold focus:outline-2 focus:outline-primary-500 focus:py-3 focus:fixed focus:z-[1000]
+<a class="bg-gray-200 text-gray-700 dark:text-gray-100 dark:bg-gray-950 border border-primary-500  focus:px-5 rounded-lg shadow-2xl text-sm font-semibold focus:outline-2 focus:outline-primary-500 focus:py-3 focus:fixed focus:z-[1000]
 top-5 left-5
 not-sr-only:block sr-only focus:not-sr-only"
    href="#main">
@@ -65,7 +65,7 @@ not-sr-only:block sr-only focus:not-sr-only"
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 @endproduction
-<div class="min-h-screen relative bg-white dark:bg-gray-900">
+<div class="min-h-screen relative ">
     <x-pattern.grid class="h-1/3 "/>
     <x-navigation/>
     <div id="portal"></div>
@@ -77,11 +77,14 @@ not-sr-only:block sr-only focus:not-sr-only"
         <x-partials.section-products/>
         <x-partials.splide-marquee>
             @foreach($categories as $category)
-                <a class="hover-underline splide__slide inline-block py-4  shrink-0" href="{{ route('category', $category) }}">{{ $category->title }}</a>
+                <a class="hover-underline splide__slide inline-block py-4 shrink-0"
+                   href="{{ route('category', $category) }}">{{ $category->title }}</a>
                 @foreach($category->children as $child)
-                    <a class="hover-underline splide__slide inline-block py-4  shrink-0" href="{{ route('category', $child) }}">{{ $child->title }}</a>
+                    <a class="hover-underline splide__slide inline-block py-4 shrink-0"
+                       href="{{ route('category', $child) }}">{{ $child->title }}</a>
                     @foreach($child->products as $product)
-                        <a class="hover-underline splide__slide inline-block py-4  shrink-0" href="{{ route('product', [$child, $product]) }}">{{ $product->title }}</a>
+                        <a class="hover-underline splide__slide inline-block py-4 shrink-0"
+                           href="{{ route('product', [$child, $product]) }}">{{ $product->title }}</a>
                     @endforeach
                 @endforeach
             @endforeach
@@ -97,9 +100,12 @@ not-sr-only:block sr-only focus:not-sr-only"
     @endif
     <div class="fixed bottom-20 inset-x-0 z-[1001] pointer-events-none">
         <div class="wrapper relative">
-            <button class="absolute right-4 pointer-events-auto md:-right-14 h-12 w-12 flex items-center justify-center rounded-lg border border-gray-700 bg-primary-500 text-white" is="headless-scrolltop">
+            <button
+                class="absolute right-4 pointer-events-auto md:-right-14 h-12 w-12 flex items-center justify-center rounded-lg border border-gray-700 bg-primary-500 text-white"
+                is="headless-scrolltop">
                 <span class="sr-only"> Scroll to top</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                     stroke="currentColor" class="w-6 h-6 pointer-events-none">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 9l6-6m0 0l6 6m-6-6v12a6 6 0 01-12 0v-3"/>
                 </svg>
             </button>

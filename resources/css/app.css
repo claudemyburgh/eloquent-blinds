@@ -45,6 +45,7 @@ for the scroll bar colours
     @apply bg-primary-100 text-primary-600;
   }
 
+
   .swiper-wrapper {
     @apply min-h-[300px] flex;
   }
@@ -150,11 +151,9 @@ for the scroll bar colours
   }
 
   /* purgecss ignore */
-  [data-theme-value="dark"] {
-    @apply text-primary-500 bg-red-400;
-  }
-
-
+  /*[data-theme-value="dark"] {*/
+  /*  @apply text-primary-500 bg-red-400;*/
+  /*}*/
   .pulse-loader {
     --loader-size: 130px;
     --loader-speed: 2s;
