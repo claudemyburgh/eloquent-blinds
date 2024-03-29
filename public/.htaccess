@@ -27,7 +27,11 @@
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # ensure www.
-    RewriteCond %{HTTP_HOST} !^www\. [NC]
+#    RewriteCond %{HTTP_HOST} !^www\. [NC]
+#    RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # ensure remove www
+    RewriteCond %{HTTP_HOST} ^www\. [NC]
     RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # ensure https
