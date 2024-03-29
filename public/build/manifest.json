@@ -1,6 +1,6 @@
 {
-  "_AuthenticatedLayout-d51aef2f.js": {
-    "file": "assets/AuthenticatedLayout-d51aef2f.js",
+  "_AuthenticatedLayout-f0a290a7.js": {
+    "file": "assets/AuthenticatedLayout-f0a290a7.js",
     "imports": [
       "_index.esm-26f22f77.js",
       "_theme-script-ccf7f2ee.js",
@@ -40,8 +40,8 @@
       "_index.esm-26f22f77.js"
     ]
   },
-  "_EmailClient-26e7ad1f.js": {
-    "file": "assets/EmailClient-26e7ad1f.js",
+  "_EmailClient-ba721c45.js": {
+    "file": "assets/EmailClient-ba721c45.js",
     "imports": [
       "_index.esm-26f22f77.js",
       "_Panel-706f1a19.js",
@@ -130,11 +130,11 @@
       "_Dropdown-fc5a5bb9.js"
     ]
   },
-  "_UploadCard-f704dc51.js": {
-    "file": "assets/UploadCard-f704dc51.js",
+  "_UploadCard-1695612b.js": {
+    "file": "assets/UploadCard-1695612b.js",
     "imports": [
       "_index.esm-26f22f77.js",
-      "_AuthenticatedLayout-d51aef2f.js",
+      "_AuthenticatedLayout-f0a290a7.js",
       "_prototypes-b1fda430.js",
       "_helpers-1b11cd0d.js"
     ]
@@ -182,7 +182,7 @@
     "src": "node_modules/.pnpm/countup.js@2.8.0/node_modules/countup.js/dist/countUp.min.js"
   },
   "resources/css/app.css": {
-    "file": "assets/app-6e1450b2.css",
+    "file": "assets/app-1bcfc43e.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -419,14 +419,14 @@
     "src": "resources/js/Pages/Auth/VerifyEmail.tsx"
   },
   "resources/js/Pages/Dashboard/Categories/Edit.tsx": {
-    "file": "assets/Edit-885f6e9d.js",
+    "file": "assets/Edit-ecbadb38.js",
     "imports": [
       "_index.esm-26f22f77.js",
-      "_AuthenticatedLayout-d51aef2f.js",
+      "_AuthenticatedLayout-f0a290a7.js",
       "_Panel-706f1a19.js",
       "resources/js/Pages/Dashboard/Categories/Partials/EditCategoryForm.tsx",
       "_LiveLabel-74a20d2e.js",
-      "_UploadCard-f704dc51.js",
+      "_UploadCard-1695612b.js",
       "_prototypes-b1fda430.js",
       "_slugify-1b4b5c30.js",
       "_theme-script-ccf7f2ee.js",
@@ -469,10 +469,10 @@
     "dynamicImports": [
       "node_modules/.pnpm/countup.js@2.8.0/node_modules/countup.js/dist/countUp.min.js"
     ],
-    "file": "assets/Dashboard-4eda6d47.js",
+    "file": "assets/Dashboard-1ae67db5.js",
     "imports": [
       "_index.esm-26f22f77.js",
-      "_AuthenticatedLayout-d51aef2f.js",
+      "_AuthenticatedLayout-f0a290a7.js",
       "resources/js/app.tsx",
       "_Panel-706f1a19.js",
       "_theme-script-ccf7f2ee.js",
@@ -484,10 +484,10 @@
     "src": "resources/js/Pages/Dashboard/Dashboard.tsx"
   },
   "resources/js/Pages/Dashboard/Messages/Index.tsx": {
-    "file": "assets/Index-ae837aad.js",
+    "file": "assets/Index-8d265e63.js",
     "imports": [
       "_index.esm-26f22f77.js",
-      "_AuthenticatedLayout-d51aef2f.js",
+      "_AuthenticatedLayout-f0a290a7.js",
       "_slugify-1b4b5c30.js",
       "_index-76c32116.js",
       "_Dropdown-fc5a5bb9.js",
@@ -502,13 +502,13 @@
     "src": "resources/js/Pages/Dashboard/Messages/Index.tsx"
   },
   "resources/js/Pages/Dashboard/Messages/Show.tsx": {
-    "file": "assets/Show-b45c0d4f.js",
+    "file": "assets/Show-575f0ff9.js",
     "imports": [
       "_index.esm-26f22f77.js",
-      "_AuthenticatedLayout-d51aef2f.js",
+      "_AuthenticatedLayout-f0a290a7.js",
       "_Panel-706f1a19.js",
       "_Modal-82b97ef7.js",
-      "_EmailClient-26e7ad1f.js",
+      "_EmailClient-ba721c45.js",
       "resources/js/app.tsx",
       "_theme-script-ccf7f2ee.js",
       "_Dropdown-fc5a5bb9.js",
@@ -524,13 +524,13 @@
     "src": "resources/js/Pages/Dashboard/Messages/Show.tsx"
   },
   "resources/js/Pages/Dashboard/Posts/Edit.tsx": {
-    "file": "assets/Edit-8e0836bc.js",
+    "file": "assets/Edit-782948f5.js",
     "imports": [
       "_index.esm-26f22f77.js",
-      "_AuthenticatedLayout-d51aef2f.js",
+      "_AuthenticatedLayout-f0a290a7.js",
       "_Panel-706f1a19.js",
       "resources/js/Pages/Dashboard/Posts/Partials/EditPostsForm.tsx",
-      "_UploadCard-f704dc51.js",
+      "_UploadCard-1695612b.js",
       "_prototypes-b1fda430.js",
       "_slugify-1b4b5c30.js",
       "_LiveLabel-74a20d2e.js",
@@ -571,13 +571,13 @@
     "src": "resources/js/Pages/Dashboard/Posts/Partials/EditPostsForm.tsx"
   },
   "resources/js/Pages/Dashboard/Products/Edit.tsx": {
-    "file": "assets/Edit-6ba874e4.js",
+    "file": "assets/Edit-07aff68f.js",
     "imports": [
       "_index.esm-26f22f77.js",
-      "_AuthenticatedLayout-d51aef2f.js",
+      "_AuthenticatedLayout-f0a290a7.js",
       "_Panel-706f1a19.js",
       "_LiveLabel-74a20d2e.js",
-      "_UploadCard-f704dc51.js",
+      "_UploadCard-1695612b.js",
       "_prototypes-b1fda430.js",
       "_slugify-1b4b5c30.js",
       "resources/js/Pages/Dashboard/Products/Partials/EditProductForm.tsx",
@@ -620,10 +620,10 @@
     "src": "resources/js/Pages/Dashboard/Products/Partials/EditProductForm.tsx"
   },
   "resources/js/Pages/Dashboard/Table/Index.tsx": {
-    "file": "assets/Index-859c6543.js",
+    "file": "assets/Index-a3ff3c1b.js",
     "imports": [
       "_index.esm-26f22f77.js",
-      "_AuthenticatedLayout-d51aef2f.js",
+      "_AuthenticatedLayout-f0a290a7.js",
       "_prototypes-b1fda430.js",
       "_DangerButton-6184e6c2.js",
       "_PrimaryButton-079c5970.js",
@@ -648,12 +648,12 @@
     "src": "resources/js/Pages/Dashboard/Table/Index.tsx"
   },
   "resources/js/Pages/Dashboard/Users/Edit.tsx": {
-    "file": "assets/Edit-32608b21.js",
+    "file": "assets/Edit-6de01737.js",
     "imports": [
       "_index.esm-26f22f77.js",
-      "_AuthenticatedLayout-d51aef2f.js",
+      "_AuthenticatedLayout-f0a290a7.js",
       "_Panel-706f1a19.js",
-      "_UploadCard-f704dc51.js",
+      "_UploadCard-1695612b.js",
       "_prototypes-b1fda430.js",
       "_slugify-1b4b5c30.js",
       "resources/js/Pages/Dashboard/Users/Partials/EditUsersForm.tsx",
@@ -692,10 +692,10 @@
     "src": "resources/js/Pages/Dashboard/Users/Partials/EditUsersForm.tsx"
   },
   "resources/js/Pages/Profile/Edit.tsx": {
-    "file": "assets/Edit-e2a15d21.js",
+    "file": "assets/Edit-c52b7d58.js",
     "imports": [
       "_index.esm-26f22f77.js",
-      "_AuthenticatedLayout-d51aef2f.js",
+      "_AuthenticatedLayout-f0a290a7.js",
       "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
@@ -768,13 +768,13 @@
     "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx"
   },
   "resources/js/app.css": {
-    "file": "assets/app-6e1450b2.css",
+    "file": "assets/app-1bcfc43e.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.tsx": {
     "css": [
-      "assets/app-6e1450b2.css"
+      "assets/app-1bcfc43e.css"
     ],
     "dynamicImports": [
       "resources/js/Pages/Auth/ConfirmPassword.tsx",
@@ -787,7 +787,7 @@
       "resources/js/Pages/Dashboard/Categories/Partials/EditCategoryForm.tsx",
       "resources/js/Pages/Dashboard/Dashboard.tsx",
       "resources/js/Pages/Dashboard/Messages/Index.tsx",
-      "_EmailClient-26e7ad1f.js",
+      "_EmailClient-ba721c45.js",
       "resources/js/Pages/Dashboard/Messages/Show.tsx",
       "resources/js/Pages/Dashboard/Posts/Edit.tsx",
       "resources/js/Pages/Dashboard/Posts/Partials/EditPostsForm.tsx",
@@ -801,7 +801,7 @@
       "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
       "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx"
     ],
-    "file": "assets/app-87b2151d.js",
+    "file": "assets/app-12970c10.js",
     "imports": [
       "_index.esm-26f22f77.js"
     ],

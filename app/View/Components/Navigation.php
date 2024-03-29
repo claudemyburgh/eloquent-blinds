@@ -21,51 +21,78 @@ class Navigation extends Component
      */
     public function render(): View|Closure|string
     {
+
+
         $links = [
-            [
+            (object)[
                 "name" => "Home",
+                "slug" => "home",
                 "route" => "home",
                 "data" => null,
-                "classes" => "hover:text-primary-500 dark:text-shadow "
+                "classes" => "hover:text-primary-500 dark:text-shadow ",
+                "show" => true
             ],
-            [
+            (object)[
                 "name" => "Shutters",
+                "slug" => "shutters",
                 "route" => "categories",
                 "data" => null,
-                "classes" => "hover:text-primary-500 dark:text-shadow "
+                "classes" => "hover:text-primary-500 dark:text-shadow ",
+                "show" => true
             ],
-            [
+            (object)[
                 "name" => "Blinds",
+                "slug" => "blinds",
                 "route" => "categories",
                 "data" => null,
-                "classes" => "hover:text-primary-500 dark:text-shadow "
+                "classes" => "hover:text-primary-500 dark:text-shadow ",
+                "show" => true
             ],
-//                [
-//                    "name" => "Reviews",
-//                    "route" => "reviews",
-//                    "data" => "data",
-//                    "classes" => "hover:text-primary-500 dark:text-shadow "
-//                ],
-//            [
-//                "name" => "About Us",
-//                "route" => "quote",
-//                "data" => "data",
-//                "classes" => "hover:text-primary-500 dark:text-shadow "
-//            ],
-            [
-                "name" => "Faq's",
-                "route" => "faq",
+            (object)[
+                "name" => "Reviews",
+                "slug" => "reviews",
+                "route" => "reviews",
                 "data" => "data",
-                "classes" => "hover:text-primary-500 dark:text-shadow "
+                "classes" => "hover:text-primary-500 dark:text-shadow ",
+                "show" => false
             ],
-            [
-                "name" => "Free Quote",
+            (object)[
+                "name" => "About Us",
+                "slug" => "quote",
                 "route" => "quote",
                 "data" => "data",
-                "classes" => "btn btn-gradient rounded-md text-white"
+                "classes" => "hover:text-primary-500 dark:text-shadow ",
+                "show" => false
+            ],
+            (object)[
+                "name" => "Faq's",
+                "slug" => "faq",
+                "route" => "faq",
+                "data" => "data",
+                "classes" => "hover:text-primary-500 dark:text-shadow ",
+                "show" => true
+            ],
+            (object)[
+                "name" => "Brochures",
+                "slug" => "brochures",
+                "route" => "brochures",
+                "data" => "data",
+                "classes" => "hover:text-primary-500 dark:text-shadow ",
+                "show" => false
+            ],
+            (object)[
+                "name" => "Free Quote",
+                "slug" => "quote",
+                "route" => "quote",
+                "data" => "data",
+                "classes" => "btn btn-gradient rounded-md text-white",
+                "show" => true
             ],
         ];
 
-        return view('components.navigation', compact('links'));
+
+        return view('components.navigation.navigation', [
+            'links' => collect($links)->where('show', true)
+        ]);
     }
 }

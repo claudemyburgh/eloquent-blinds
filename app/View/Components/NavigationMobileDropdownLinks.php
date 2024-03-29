@@ -6,12 +6,12 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class NavigationDropdownLink extends Component
+class NavigationMobileDropdownLinks extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public $link)
+    public function __construct(public $link, public $category = null)
     {
         //
     }
@@ -21,6 +21,6 @@ class NavigationDropdownLink extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.navigation.dropdown-links');
+        return view('components.navigation.mobile.dropdown-links');
     }
 }

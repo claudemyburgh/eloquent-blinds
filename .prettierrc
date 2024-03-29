@@ -7,16 +7,5 @@
   "useTabs": false,
   "singleLineLinkTags": false,
   "plugins": [
-    "prettier-plugin-blade"
-  ],
-  "overrides": [
-    {
-      "files": [
-        "*.blade.php"
-      ],
-      "options": {
-        "parser": "blade"
-      }
-    }
   ]
 }
