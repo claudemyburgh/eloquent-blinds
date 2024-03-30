@@ -47,5 +47,6 @@
                 </div>
             </div>
         @endif
+        <x-product.gallery :$product />
     </div>
 </x-app-layout>

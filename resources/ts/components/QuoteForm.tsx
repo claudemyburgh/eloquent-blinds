@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react"
-import { QuoteFromProps } from "../../js/types/form"
-import { ChildrenProps } from "../../js/types"
+import { QuoteFromProps } from "@/types/form"
+import { ChildrenProps } from "@/types"
 import { twMerge } from "tailwind-merge"
 import { Panel } from "../../js/Components/Panel"
 import { InputError, InputLabel, Textarea, TextInput } from "../../js/Components/Form"

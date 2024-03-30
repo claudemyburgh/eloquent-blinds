@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\BrochuresController;
 use App\Http\Controllers\Frontend\CategoriesController;
 use App\Http\Controllers\Frontend\CategoryController;
 use App\Http\Controllers\Frontend\FAQController;
+use App\Http\Controllers\Frontend\GalleriesIndexController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PrivacyPolicyController;
 use App\Http\Controllers\Frontend\ProductController;
@@ -30,4 +31,5 @@ Route::post('newsletter', [NewsletterController::class, 'store'])->name('newslet
 Route::get('newsletter', [NewsletterController::class, 'show'])->name('newsletter');
 Route::post('contact/form', ContactFormController::class)->name('contact.form');
 Route::get('google-reviews', GoogleReviewController::class)->name('google-reviews');
+Route::get('gallery', GalleriesIndexController::class)->name('gallery');
 

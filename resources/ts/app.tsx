@@ -5,7 +5,13 @@ import QuoteForm from "./components/QuoteForm"
 import "@/../ts/comps/MouseSpotlight"
 import "@/../ts/comps/MarqueeScroller"
 import "@/../ts/comps/ImageRotator"
-import "./lib/search" // import "./comps/search-dialog"
+import "./lib/search"
+import Splide from "@splidejs/splide"
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll"
+import "@splidejs/splide/css/core"
+
+import PhotoSwipeLightbox from "photoswipe/lightbox"
+import "photoswipe/style.css"
 
 import.meta.glob(["../img/**"])
 
@@ -14,20 +20,35 @@ if (form) {
   createRoot(form).render(<QuoteForm />)
 }
 
+const lightbox_gallery = document.querySelectorAll("[data-lightbox-gallery]")
+if (lightbox_gallery.length > 0) {
+  for (let i = 0; i < lightbox_gallery.length; i++) {
+    const lightbox = new PhotoSwipeLightbox({
+      //@ts-expect-error
+      gallery: lightbox_gallery[i],
+      children: "a",
+      initialZoomLevel: 0.5,
+      secondaryZoomLevel: "fill",
+      showHideAnimationType: "zoom",
+      showAnimationDuration: 300,
+      hideAnimationDuration: 300,
+      maxZoomLevel: 6,
+      bgOpacity: 0.85,
+      wheelToZoom: true,
+      pinchToClose: true,
+      pswpModule: () => import("photoswipe"),
+    })
+    lightbox.init()
+  }
+}
 
-import Splide from '@splidejs/splide';
-import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
-
-import '@splidejs/splide/css/core';
-
-const elms = document.getElementsByClassName( 'splide' );
-
-for ( let i = 0; i < elms.length; i++ ) {
+const elms = document.getElementsByClassName("splide")
+for (let i = 0; i < elms.length; i++) {
   // @ts-ignore
-  new Splide( elms[ i ], {
-    type   : 'loop',
-    drag   : 'free',
-    focus  : 'center',
+  new Splide(elms[i], {
+    type: "loop",
+    drag: "free",
+    focus: "center",
     cloneStatus: true,
     arrows: false,
     gap: 50,
@@ -38,5 +59,5 @@ for ( let i = 0; i < elms.length; i++ ) {
     autoScroll: {
       speed: 2,
     },
-  } ).mount({AutoScroll});
+  }).mount({ AutoScroll })
 }

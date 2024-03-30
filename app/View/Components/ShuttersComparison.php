@@ -13,7 +13,7 @@ class ShuttersComparison extends Component
      */
     public function __construct(public bool $show = true)
     {
-        //
+
     }
 
     /**

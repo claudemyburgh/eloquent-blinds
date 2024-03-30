@@ -73,6 +73,14 @@ class Navigation extends Component
                 "show" => true
             ],
             (object)[
+                "name" => "Gallery",
+                "slug" => "gallery",
+                "route" => "gallery",
+                "data" => null,
+                "classes" => "hover:text-primary-500 dark:text-shadow ",
+                "show" => true
+            ],
+            (object)[
                 "name" => "Brochures",
                 "slug" => "brochures",
                 "route" => "brochures",

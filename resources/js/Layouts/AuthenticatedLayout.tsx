@@ -10,7 +10,14 @@ import { Toaster } from "react-hot-toast"
 import "@/lib/theme-script"
 import { ThemeSelector } from "@/FrontEnd/Theme/ThemeSelector"
 
-export default function Authenticated({ user, header, children }: PropsWithChildren<{ user: User; header?: ReactNode }>) {
+export default function Authenticated({
+  user,
+  header,
+  children,
+}: PropsWithChildren<{
+  user: User
+  header?: ReactNode
+}>) {
   const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false)
 
   const { limit } = useDatatable()
@@ -50,6 +57,9 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                 </NavLink>
                 <NavLink href={route("dashboard.products.index")} active={route().current("dashboard.products.*")}>
                   Products
+                </NavLink>
+                <NavLink href={route("dashboard.galleries.index")} active={route().current("dashboard.galleries.*")}>
+                  Galleries
                 </NavLink>
               </div>
             </div>
@@ -122,6 +132,12 @@ export default function Authenticated({ user, header, children }: PropsWithChild
             </ResponsiveNavLink>
             <ResponsiveNavLink href={route("dashboard.categories.index")} active={route().current("dashboard.categories.*")}>
               Categories
+            </ResponsiveNavLink>
+            <ResponsiveNavLink href={route("dashboard.products.index")} active={route().current("dashboard.products.*")}>
+              Products
+            </ResponsiveNavLink>
+            <ResponsiveNavLink href={route("dashboard.galleries.index")} active={route().current("dashboard.galleries.*")}>
+              Galleries
             </ResponsiveNavLink>
           </div>
 
