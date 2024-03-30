@@ -27,13 +27,14 @@ class UpdateCategoryRequest extends FormRequest
             'title' => 'required|string',
             'slug' => 'required|unique:categories,id,' . $this->id,
             'parent_id' => 'nullable',
-            'excerpt' => 'required|max:500',
-            'description' => 'required|max:500',
-            'body' => 'required',
+            'excerpt' => 'nullable|max:500',
+            'description' => 'nullable|max:500',
+            'body' => 'nullable',
             'popular' => 'required',
             'live' => 'required',
             'video_url' => ['nullable', new YouTubeVideoUrl],
             'video_thumbnail' => 'nullable',
+            'gallery' => 'nullable',
         ];
     }
 }

@@ -9,6 +9,7 @@ import { ToastItem } from "@/Components/Notifications"
 
 interface CategoryProps {
   category: {
+    galleries?: any
     title: string
     slug: string
     parent_id: string
@@ -19,6 +20,7 @@ interface CategoryProps {
     popular: string
     video_url?: string
     video_thumbnail?: string
+    gallery?: string
   }
 }
 
@@ -30,7 +32,7 @@ interface CountProps {
 }
 
 const EditCategoryForm = () => {
-  const { category, categories_all } = usePage<CategoryProps & PageProps>().props
+  const { category, categories_all, galleries } = usePage<CategoryProps & PageProps>().props
 
   const [count, setCount] = useState<CountProps>({
     description: category.description?.length,
@@ -49,6 +51,7 @@ const EditCategoryForm = () => {
     live: category.live,
     popular: category.popular,
     video_url: category.video_url || "",
+    gallery: category["galleries"][0]?.id || "",
   })
 
   const handleFormSubmit = (e: any) => {
@@ -82,7 +85,6 @@ const EditCategoryForm = () => {
       <div>
         <InputLabel htmlFor="title" value="Title" />
         <TextInput id="title" value={data.title} onChange={handleFormInput} type="text" className="mt-1 block w-full" />
-
         <InputError message={errors.title} className="mt-2" />
       </div>
       <div>
@@ -102,7 +104,6 @@ const EditCategoryForm = () => {
               </option>
             ))}
         </SelectInput>
-
         <InputError message={errors.parent_id} className="mt-2" />
       </div>
 
@@ -144,15 +145,28 @@ const EditCategoryForm = () => {
       </div>
 
       <div>
+        <InputLabel htmlFor="gallery" value="Gallery" />
+        <SelectInput showValue={true} id={`gallery`} name={`gallery`} className={`w-full mt-1`} value={data.gallery} onChange={handleFormInput}>
+          <option value="">Select a gallery</option>
+          {(galleries as unknown as any).map((gal: any) => (
+            <option key={gal.id} value={gal.id}>
+              {gal.title}
+            </option>
+          ))}
+        </SelectInput>
+        <InputError message={errors.gallery} className="mt-2" />
+      </div>
+
+      <div>
         <InputLabel htmlFor="video_url" value="Video Url" />
         <TextInput id="video_url" value={data.video_url} onChange={handleFormInput} type="text" className="mt-1 block w-full" />
-
         <InputError message={errors.video_url} className="mt-2" />
       </div>
 
       <div className={`flex items-center justify-between`}>
         <SaveSubmitButton processing={processing} recentlySuccessful={recentlySuccessful} />
       </div>
+      {/*<pre>{JSON.stringify(category["galleries"][0]["id"], null, 4)}</pre>*/}
     </form>
   )
 }

@@ -21,16 +21,23 @@
                         Gallery
                     </h1>
                     <p class="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum eius facilis maxime mollitia,
-                        nostrum sequi unde? Corporis deleniti doloribus rem sunt totam vel, voluptates? Consequatur
-                        error labore laborum odit porro.
+                        Take a little break and have a look around our gallery of shutters, blinds and everything
+                        related.
                     </p>
-
+                    <p class="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-300">
+                        See how our products can enhance your home or business with our wide range of superior shutter
+                        and blinds.
+                    </p>
                 </header>
             </div>
             <section class={`md:pl-6`}>
-    
+
             </section>
+        </div>
+        <div class="flex flex-wrap">
+            @foreach($galleries as $gallery)
+                <x-gallery-media :$gallery />
+            @endforeach
         </div>
     </div>
 </x-app-layout>

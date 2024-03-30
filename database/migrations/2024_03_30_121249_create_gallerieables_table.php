@@ -11,9 +11,8 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('gallerieables', function (Blueprint $table) {
-            $table->unsignedInteger('gallery_id');
-            $table->unsignedInteger('gallerieable_id');
-            $table->string('gallerieable_type');
+            $table->foreignId('gallery_id')->constrained();
+            $table->morphs('gallerieable');
         });
     }
 

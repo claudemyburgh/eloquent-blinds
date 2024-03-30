@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard\Datatables;
 
 use App\Http\Requests\Product\StoreProductRequest;
 use App\Http\Requests\Product\UpdateProductRequest;
+use App\Models\Gallery;
 use App\Models\Product;
 use Designbycode\Datatables\DatatablesController;
 use Illuminate\Database\Eloquent\Builder;
@@ -45,8 +46,11 @@ class ProductsController extends DatatablesController
      */
     public function edit(string $id): Response
     {
-        $product = Product::with('media')->find($id);
-        return Inertia::render('Dashboard/Products/Edit', compact('product'));
+        return Inertia::render('Dashboard/Products/Edit', [
+                'product' => Product::with('media', 'galleries')->find($id),
+                'galleries' => Gallery::get()
+            ]
+        );
     }
 
     /**
@@ -54,8 +58,14 @@ class ProductsController extends DatatablesController
      */
     public function update(UpdateProductRequest $request, string $id): void
     {
-        Product::findOrFail($id)
-            ->update($request->validated());
+        $product = Product::findOrFail($id);
+        $product->update($request->except(['gallery']));
+
+        if ($request['gallery']) {
+            $product->galleries()->sync($request->only(['gallery']));
+        } else {
+            $product->galleries()->detach();
+        }
     }
 
     /**

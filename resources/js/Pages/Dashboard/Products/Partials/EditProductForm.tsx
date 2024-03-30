@@ -1,15 +1,17 @@
 import React, { useState } from "react"
 import { useForm, usePage } from "@inertiajs/react"
-import { InputError, InputLabel, SaveSubmitButton, SelectCategory, SelectInput, Textarea, TextInput } from "@/Components/Form"
+import { InputError, InputLabel, SaveSubmitButton, SelectInput, Textarea, TextInput } from "@/Components/Form"
 import { PageProps } from "@/types"
 import { slugIt } from "@/lib/helpers"
 import CharCounter from "@/Components/Form/CharCounter"
 import toast from "react-hot-toast"
 import { ToastItem } from "@/Components/Notifications"
-import SelectStepCategory from "@/Components/Form/SelectStepCategory";
+import SelectStepCategory from "@/Components/Form/SelectStepCategory"
 
 interface ProductProps {
   product: {
+    galleries?: any
+    gallery?: string
     title: string
     slug: string
     category_id: string
@@ -32,7 +34,7 @@ interface Prod {
   body: string
   live: string
   popular: string
-  tag: string[],
+  tag: string[]
   json: string
 }
 
@@ -44,7 +46,7 @@ interface CountProps {
 }
 
 const EditProductForm = () => {
-  const { product, categories_all, tags } = usePage<ProductProps & PageProps>().props
+  const { product, categories_all, tags, galleries } = usePage<ProductProps & PageProps>().props
 
   const [count, setCount] = useState<CountProps>({
     description: product.description?.length,
@@ -64,6 +66,7 @@ const EditProductForm = () => {
     live: product.live,
     popular: product.popular,
     tag: tags || "",
+    gallery: product["galleries"][0]?.id || "",
   })
 
   const handleFormSubmit = (e: any) => {
@@ -95,78 +98,80 @@ const EditProductForm = () => {
   return (
     <form className={`mt-6 space-y-6`} onSubmit={handleFormSubmit}>
       <div>
-        <InputLabel htmlFor="title" value="Title"/>
-        <TextInput id="title" value={data.title} onChange={handleProductFormInput} type="text"
-                   className="mt-1 block w-full"/>
-        <InputError message={errors.title} className="mt-2"/>
+        <InputLabel htmlFor="title" value="Title" />
+        <TextInput id="title" value={data.title} onChange={handleProductFormInput} type="text" className="mt-1 block w-full" />
+        <InputError message={errors.title} className="mt-2" />
       </div>
       <div>
-        <InputLabel htmlFor="slug" value="Slug"/>
-        <TextInput id="slug" value={slugIt(data.slug)} onChange={handleProductFormInput} type="text"
-                   className="mt-1 block w-full"/>
-        <CharCounter count={count.slug} max={100}/>
-        <InputError message={errors.slug} className="mt-4"/>
-      </div>
-
-
-      <div>
-        <InputLabel htmlFor="category_id" value="Category"/>
-        <SelectStepCategory id="category_id" categories={categories_all} defaultValue={data.category_id}
-                        onChange={handleProductFormInput}/>
-        <InputError message={errors.category_id} className="mt-2"/>
+        <InputLabel htmlFor="slug" value="Slug" />
+        <TextInput id="slug" value={slugIt(data.slug)} onChange={handleProductFormInput} type="text" className="mt-1 block w-full" />
+        <CharCounter count={count.slug} max={100} />
+        <InputError message={errors.slug} className="mt-4" />
       </div>
 
       <div>
-        <InputLabel htmlFor="description" value="Description"/>
-        <Textarea id="description" value={data.description} onChange={handleProductFormInput}
-                  className="mt-1 block w-full min-h-[100px]"/>
-        <CharCounter count={count.description || 0} max={500}/>
-        <InputError message={errors.description} className="mt-4"/>
+        <InputLabel htmlFor="category_id" value="Category" />
+        <SelectStepCategory id="category_id" categories={categories_all} defaultValue={data.category_id} onChange={handleProductFormInput} />
+        <InputError message={errors.category_id} className="mt-2" />
+      </div>
+
+      <div>
+        <InputLabel htmlFor="description" value="Description" />
+        <Textarea id="description" value={data.description} onChange={handleProductFormInput} className="mt-1 block w-full min-h-[100px]" />
+        <CharCounter count={count.description || 0} max={500} />
+        <InputError message={errors.description} className="mt-4" />
       </div>
       <div>
-        <InputLabel htmlFor="excerpt" value="Excerpt"/>
-        <Textarea id="excerpt" value={data.excerpt} onChange={handleProductFormInput}
-                  className="mt-1 block w-full min-h-[100px]"/>
-        <CharCounter count={count.excerpt || 0} max={500}/>
-        <InputError message={errors.excerpt} className="mt-4"/>
+        <InputLabel htmlFor="excerpt" value="Excerpt" />
+        <Textarea id="excerpt" value={data.excerpt} onChange={handleProductFormInput} className="mt-1 block w-full min-h-[100px]" />
+        <CharCounter count={count.excerpt || 0} max={500} />
+        <InputError message={errors.excerpt} className="mt-4" />
       </div>
       <div>
-        <InputLabel htmlFor="body" value="Body"/>
-        <Textarea id="body" value={data.body} onChange={handleProductFormInput}
-                  className="mt-1 block w-full min-h-[200px]"/>
-        <CharCounter count={count.body || 0} max={2500}/>
-        <InputError message={errors.body} className="mt-4"/>
+        <InputLabel htmlFor="body" value="Body" />
+        <Textarea id="body" value={data.body} onChange={handleProductFormInput} className="mt-1 block w-full min-h-[200px]" />
+        <CharCounter count={count.body || 0} max={2500} />
+        <InputError message={errors.body} className="mt-4" />
       </div>
       <div className="grid grid-cols-2 gap-6">
         <div>
-          <InputLabel htmlFor="live" value="Live"/>
-          <SelectInput id={`live`} name={`live`} className={`w-full mt-1`} value={data.live}
-                       onChange={handleProductFormInput}>
+          <InputLabel htmlFor="live" value="Live" />
+          <SelectInput id={`live`} name={`live`} className={`w-full mt-1`} value={data.live} onChange={handleProductFormInput}>
             <option value="1">Live</option>
             <option value="0">Not Live</option>
           </SelectInput>
-          <InputError message={errors.live} className="mt-2"/>
+          <InputError message={errors.live} className="mt-2" />
         </div>
         <div>
-          <InputLabel htmlFor="popular" value="Popular"/>
-          <SelectInput id={`popular`} name={`popular`} className={`w-full mt-1`} value={data.popular}
-                       onChange={handleProductFormInput}>
+          <InputLabel htmlFor="popular" value="Popular" />
+          <SelectInput id={`popular`} name={`popular`} className={`w-full mt-1`} value={data.popular} onChange={handleProductFormInput}>
             <option value="1">Popular</option>
             <option value="0">Not Popular</option>
           </SelectInput>
-          <InputError message={errors.popular} className="mt-2"/>
+          <InputError message={errors.popular} className="mt-2" />
         </div>
+      </div>
+      <div>
+        <InputLabel htmlFor="gallery" value="Gallery" />
+        <SelectInput showValue={true} id={`gallery`} name={`gallery`} className={`w-full mt-1`} value={data.gallery} onChange={handleProductFormInput}>
+          <option value="">Select a gallery</option>
+          {(galleries as unknown as any).map((gal: any) => (
+            <option key={gal.id} value={gal.id}>
+              {gal.title}
+            </option>
+          ))}
+        </SelectInput>
+        <InputError message={errors.gallery} className="mt-2" />
       </div>
 
       <div>
-        <InputLabel htmlFor="json" value="Json data"/>
-        <Textarea id="json" value={data.json} onChange={handleProductFormInput}
-                  className="mt-1 block w-full min-h-[100px]"/>
-        <InputError message={errors.json} className="mt-4"/>
+        <InputLabel htmlFor="json" value="Json data" />
+        <Textarea id="json" value={data.json} onChange={handleProductFormInput} className="mt-1 block w-full min-h-[100px]" />
+        <InputError message={errors.json} className="mt-4" />
       </div>
 
       <div className={`flex items-center justify-between`}>
-        <SaveSubmitButton processing={processing} recentlySuccessful={recentlySuccessful}/>
+        <SaveSubmitButton processing={processing} recentlySuccessful={recentlySuccessful} />
       </div>
     </form>
   )

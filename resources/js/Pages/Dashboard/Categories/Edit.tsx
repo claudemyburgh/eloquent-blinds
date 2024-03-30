@@ -6,7 +6,7 @@ import EditCategoryForm from "@/Pages/Dashboard/Categories/Partials/EditCategory
 import LiveLabel from "@/Components/LiveLabel"
 import { ImageUpload } from "@/Components/Upload"
 
-const Edit = ({ auth, category }: any) => {
+const Edit = ({ auth, category, galleries }: any) => {
   return (
     <AuthenticatedLayout
       header={

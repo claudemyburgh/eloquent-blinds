@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard\Datatables;
 use App\Http\Requests\Category\StoreCategoryRequest;
 use App\Http\Requests\Category\UpdateCategoryRequest;
 use App\Models\Category;
+use App\Models\Gallery;
 use Designbycode\Datatables\DatatablesController;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
@@ -46,8 +47,11 @@ class CategoriesController extends DatatablesController
      */
     public function edit(string $id): Response
     {
-        $category = Category::with('media')->find($id);
-        return Inertia::render('Dashboard/Categories/Edit', compact('category'));
+
+        return Inertia::render('Dashboard/Categories/Edit', [
+            'category' => Category::with('media', 'galleries')->find($id),
+            'galleries' => Gallery::get()
+        ]);
     }
 
     /**
@@ -57,8 +61,13 @@ class CategoriesController extends DatatablesController
     {
         Cache::forget('categories-menu');
         Cache::forget('categories-list');
-        Category::findOrFail($id)
-            ->update($request->validated());
+        $category = Category::findOrFail($id);
+        $category->update($request->except(['gallery']));
+        if ($request['gallery']) {
+            $category->galleries()->sync($request->only(['gallery']));
+        } else {
+            $category->galleries()->detach();
+        }
     }
 
     /**

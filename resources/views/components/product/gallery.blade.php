@@ -17,9 +17,7 @@
                          src="{{ $media->getFullUrl('small') }}"
                          alt="{{ $product->title }}">
                 </a>
-
             @endforeach
         </div>
     </div>
-
 @endforeach

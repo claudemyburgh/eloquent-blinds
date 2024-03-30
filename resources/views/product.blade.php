@@ -23,9 +23,11 @@
                     ring-primary-500/20">In category {{ Str::lower($category->title) }}</a>
                 </div>
                 {{ $product->json }}
-                <div class="prose prose-lg dark:prose-invert my-2 ">
-                    @markdown($product->body)
-                </div>
+                @if($product->body)
+                    <div class="prose prose-lg dark:prose-invert my-2 ">
+                        @markdown($product->body)
+                    </div>
+                @endif
                 <div class="relative">
                     <div id="quote-form" data-product="{{ $product->title }}"></div>
                 </div>

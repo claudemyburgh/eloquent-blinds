@@ -3,7 +3,7 @@ import ApplicationLogo from "@/Components/ApplicationLogo"
 import Dropdown from "@/Components/Form/Dropdown"
 import NavLink from "@/Components/NavLink"
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink"
-import { usePage } from "@inertiajs/react"
+import { Link, usePage } from "@inertiajs/react"
 import { PageProps, User } from "@/types"
 import useDatatable from "@/Components/Datatable/DatatableContext"
 import { Toaster } from "react-hot-toast"
@@ -165,6 +165,25 @@ export default function Authenticated({
       </nav>
 
       <main>{children}</main>
+      <div className="wrapper">
+        <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6 space-x-4">
+          <Link className={`btn btn-secondary`} href={route("dashboard.sitemap")} method="post" as={`button`} type={`button`}>
+            Sitemap
+          </Link>
+          <Link className={`btn btn-secondary`} href={route("dashboard.cache")} method="post" as={`button`} type={`button`}>
+            Clear Cache
+          </Link>
+          <Link
+            className={`btn btn-secondary`}
+            href={`https://www.google.com/ping?sitemap=https://www.eloquentblinds.co.za/sitemap.xml`}
+            method="post"
+            as={`button`}
+            type={`button`}
+          >
+            Ping Google Sitemap
+          </Link>
+        </div>
+      </div>
       <Toaster
         position={`top-right`}
         toastOptions={{

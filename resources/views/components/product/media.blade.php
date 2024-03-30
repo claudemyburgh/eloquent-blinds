@@ -1,6 +1,6 @@
 <div data-lightbox-gallery {{ $attributes->merge(['class' => 'carousel main-carouse']) }}>
     @if($product->getMedia()->count() > 1)
-        <div class="carousel main-carousel">
+        <div class="carousel main-carousel overflow-clip">
             @foreach($product->getMedia() as $media)
                 <img height="480" width="600"
                      class="carousel-cell bg-gray-200 rounded-global w-full aspect-4/3 object-cover"

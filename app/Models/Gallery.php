@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Traits\GalleryTrait;
 use App\Traits\Live;
 use App\Traits\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,7 +14,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Gallery extends Model implements HasMedia
 {
-    use HasFactory, Sluggable, InteractsWithMedia, Live, SoftDeletes, GalleryTrait;
+    use HasFactory, Sluggable, InteractsWithMedia, Live, SoftDeletes;
 
     protected $fillable = [
         'uuid',

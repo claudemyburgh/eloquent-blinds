@@ -107,25 +107,6 @@ export default function Dashboard({ auth, users, emails, messages }: PageProps &
         <div className="wrapper grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 my-8">
           <ChartLine className={`col-span-2`} type={`bar`} data={data} />
         </div>
-        <div className="wrapper">
-          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-6 space-x-4">
-            <Link className={`btn btn-secondary`} href={route("dashboard.sitemap")} method="post" as={`button`} type={`button`}>
-              Sitemap
-            </Link>
-            <Link className={`btn btn-secondary`} href={route("dashboard.cache")} method="post" as={`button`} type={`button`}>
-              Clear Cache
-            </Link>
-            <Link
-              className={`btn btn-secondary`}
-              href={`https://www.google.com/ping?sitemap=https://www.eloquentblinds.co.za/sitemap.xml`}
-              method="post"
-              as={`button`}
-              type={`button`}
-            >
-              Ping Google Sitemap
-            </Link>
-          </div>
-        </div>
       </div>
     </AuthenticatedLayout>
   )
