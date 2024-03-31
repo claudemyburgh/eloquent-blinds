@@ -873,7 +873,7 @@
     "dynamicImports": [
       "node_modules/.pnpm/photoswipe@5.4.3/node_modules/photoswipe/dist/photoswipe.esm.js"
     ],
-    "file": "assets/app-4f1f5490.js",
+    "file": "assets/app-40c7a63a.js",
     "imports": [
       "_index.esm-b13dcf95.js",
       "_Panel-e9a8434b.js",

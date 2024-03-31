@@ -23,6 +23,7 @@ class Product extends Model implements HasMedia
 {
     use HasFactory, Live, InteractsWithMedia, Sluggable, SoftDeletes, GalleryTrait;
 
+    
     protected $fillable = [
         'category_id',
         'title',

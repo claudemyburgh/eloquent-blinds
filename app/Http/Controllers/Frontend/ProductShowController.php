@@ -10,13 +10,16 @@ use Illuminate\View\View;
 
 class ProductShowController extends Controller
 {
+
     /**
-     * Handle the incoming request.
+     * @param Category $category
+     * @param Product $product
+     * @return View
      */
     public function __invoke(Category $category, Product $product): View
     {
         return view('products.show', [
-            'product' => Cache::remember('product-id-' . $product->id, 86400, fn() => $product->load('media', 'galleries.media')),
+            'product' => Cache::remember('product-id-' . $product->id, 86400, fn() => $product->load(['media', 'galleries.media'])),
             'category' => Cache::remember('product-category-id-' . $category->id, 86400, fn() => $category->load('products.media')),
         ]);
     }

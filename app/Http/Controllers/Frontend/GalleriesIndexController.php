@@ -15,7 +15,7 @@ class GalleriesIndexController extends Controller
     public function __invoke(Request $request): View
     {
         return view('galleries.index', [
-            'galleries' => Gallery::with('media')->get()
+            'galleries' => Gallery::live()->with('media')->get()
         ]);
     }
 }
