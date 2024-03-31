@@ -84,7 +84,7 @@ not-sr-only:block sr-only focus:not-sr-only"
                        href="{{ route('categories.show', $child) }}">{{ $child->title }}</a>
                     @foreach($child->products as $product)
                         <a class="hover-underline splide__slide inline-block py-4 shrink-0"
-                           href="{{ route('product', [$child, $product]) }}">{{ $product->title }}</a>
+                           href="{{ route('products.show', [$child, $product]) }}">{{ $product->title }}</a>
                     @endforeach
                 @endforeach
             @endforeach
