@@ -49,7 +49,7 @@
                     </div>
                     @foreach($category->products as $product)
                         <x-product-card class="col-span-6 md:col-span-4 lg:col-span-3" :$product
-                                        route="{{ route('product', [$category, $product]) }}" />
+                                        route="{{ route('products.show', [$category, $product]) }}" />
                     @endforeach
                 </div>
             @endif
