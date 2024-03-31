@@ -60,7 +60,7 @@
             <div class="grid grid-cols-2 gap-6">
                 @foreach($products as $product)
                     <x-product-card class="col-span-1" :product="$product"
-                                    route="{{ route('product', [$product->category,$product]) }}" />
+                                    route="{{ route('products.show', [$product->category,$product]) }}" />
                 @endforeach
             </div>
         </div>
