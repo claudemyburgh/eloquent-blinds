@@ -6,7 +6,6 @@
         @class([
           $link->classes,
           'flex items-center group -mr-4',
-          'text-primary-500 ' => Route::currentRouteName() === $link->route
           ])>
         <span>{{ $link->name }}</span>
         <svg aria-hidden="true" class="text-gray-400 ml-[2px] h-5 w-5 group-hover:text-primary-500" fill="currentColor"
@@ -77,12 +76,11 @@
                             </a>
                             <div class="mt-2 space-y-3 pl-4 border-l border-gray-300 dark:border-gray-800 col-span-2">
                                 @foreach($category->products as $product)
-                                    <a tabindex="0" href="{{ route('products.show', [$category,  $product]) }}" class="flex items-center justify-between group relative text-gray-700 dark:text-gray-300 hover:text-primary-500 hover:dark:text-primary-500
-                                                            focus:text-primary-500 focus:dark:text-primary-500">
+                                    <a tabindex="0" href="{{ route('products.show', [$category,  $product]) }}"
+                                       class="flex items-center justify-between group relative text-gray-700 dark:text-gray-300 hover:text-primary-500 hover:dark:text-primary-500 focus:text-primary-500 focus:dark:text-primary-500">
                                         {{ $product->title }}
-                                        <span class="absolute top-1.5 bg-gray-200 dark:bg-gray-900 -left-[22px] border-2 group-hover:border-amber-500 border-gray-300 dark:border-gray-800 w-3 h-3 rounded-full
-                                                                group-focus:ring-0
-                                                                block"></span>
+                                        <span
+                                            class="absolute top-1.5 bg-gray-200 dark:bg-gray-900 -left-[22px] border-2 group-hover:border-amber-500 border-gray-300 dark:border-gray-800 w-3 h-3 rounded-full group-focus:ring-0 block"></span>
                                     </a>
                                 @endforeach
                             </div>

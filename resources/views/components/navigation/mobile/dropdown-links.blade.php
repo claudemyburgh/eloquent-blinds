@@ -5,8 +5,7 @@
         id="navigation_link_mobile_{{ $link->slug }}"
         @class([
           $link->classes,
-          'flex items-center group -mr-4  w-full justify-between',
-//          'text-primary-500 ' => Route::currentRouteName() === $link->route
+          'flex items-center group -mr-4  w-full justify-between'
           ])>
         <span>{{ $link->name }}</span>
         <svg aria-hidden="true" class="text-gray-400 ml-[2px] h-5 w-5 group-hover:text-primary-500" fill="currentColor"
@@ -31,7 +30,7 @@
                     <a class="flex items-center justify-between group relative text-gray-700 dark:text-gray-300 hover:text-primary-500 hover:dark:text-primary-500 focus:text-primary-500 focus:dark:text-primary-500"
                        href="{{ route('categories.index', $category) }}" role="menuitem"> {{$category->title}}
                         <span
-                            class="absolute top-1.5 bg-gray-200 dark:bg-gray-900 -left-[22px] border-2 group-hover:border-amber-500 border-gray-300 dark:border-gray-800 w-3                                              h-3 rounded-full group-focus:ring-0 block"></span>
+                            class="absolute top-1.5 bg-gray-200 dark:bg-gray-900 -left-[22px] border-2 group-hover:border-amber-500 border-gray-300 dark:border-gray-800 w-3 h-3 rounded-full group-focus:ring-0 block"></span>
                     </a>
                 @endforeach
 
@@ -42,7 +41,7 @@
                            href="{{ route('products.show', [$category, $product]) }}"
                            role="menuitem"> {{$product->title}}
                             <span
-                                class="absolute top-1.5 bg-gray-200 dark:bg-gray-900 -left-[22px] border-2 group-hover:border-amber-500 border-gray-300 dark:border-gray-800 w-3                                              h-3 rounded-full group-focus:ring-0 block"></span>
+                                class="absolute top-1.5 bg-gray-200 dark:bg-gray-900 -left-[22px] border-2 group-hover:border-amber-500 border-gray-300 dark:border-gray-800 w-3 h-3 rounded-full group-focus:ring-0 block"></span>
                         </a>
                     @endforeach
                 @endforeach

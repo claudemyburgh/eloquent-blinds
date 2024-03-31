@@ -13,7 +13,7 @@
                     <div class="lg:flex hidden space-x-8 font-bold items-center">
                         @foreach($links as $link)
                             @if($link->route !== 'categories.index')
-                                <a @class([$link->classes, 'text-primary-500 ' => Route::currentRouteName() === $link->route])
+                                <a @class([$link->classes])
                                    href="{{ route($link->route) }}">{{ $link->name }}
                                 </a>
                             @else
@@ -41,10 +41,7 @@
                     @foreach($links as $link)
                         @if($link->route !== 'categories.index')
                             <a
-                                @class([$link->classes, 'flex',
-//                                'text-primary-500' => Route::currentRouteName() === $link->route
-                                ]) href="{{
-                            route($link->route) }}">{{ $link->name }}
+                                @class([$link->classes, 'flex' ]) href="{{ route($link->route) }}">{{ $link->name }}
                             </a>
                         @else
                             <x-navigation-mobile-dropdown-links :$link />
@@ -55,3 +52,4 @@
         </headless-navigation>
     </nav>
 @endif
+
