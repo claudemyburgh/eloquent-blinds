@@ -44,7 +44,7 @@
                         @unless($prod->id === $product->id)
                             <x-product-card class="col-span-6 md:col-span-4 lg:col-span-3"
                                             :product="$prod"
-                                            route="{{ route('product', [$category, $prod]) }}" />
+                                            route="{{ route('products.show', [$category, $prod]) }}" />
                         @endunless
                     @endforeach
                 </div>
