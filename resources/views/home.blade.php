@@ -17,10 +17,10 @@
     <x-partials.splide-marquee class="my-12">
         @foreach($categories as $category)
             <a class="hover-underline splide__slide inline-block py-4  shrink-0"
-               href="{{ route('category', $category) }}">{{ $category->title }}</a>
+               href="{{ route('categories.show', $category) }}">{{ $category->title }}</a>
             @foreach($category->children as $child)
                 <a class="hover-underline splide__slide inline-block py-4  shrink-0"
-                   href="{{ route('category', $child) }}">{{ $child->title }}</a>
+                   href="{{ route('categories.show', $child) }}">{{ $child->title }}</a>
                 @foreach($child->products as $product)
                     <a class="hover-underline splide__slide inline-block py-4  shrink-0"
                        href="{{ route('product', [$child, $product]) }}">{{ $product->title }}</a>
@@ -65,7 +65,7 @@
             </div>
         </div>
     </div>
-    
+
 
     {{--    <div class="wrapper">--}}
     {{--        <img class="w-full max-w-full" src="{{ Vite::asset('resources/img/measure/measure-face-fix.png') }}"--}}

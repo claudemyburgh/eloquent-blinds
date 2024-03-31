@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard\Datatables;
 
 use App\Http\Requests\Post\StorePostRequest;
 use App\Http\Requests\Post\UpdatePostRequest;
+use App\Models\Gallery;
 use App\Models\Post;
 use Designbycode\Datatables\DatatablesController;
 use Illuminate;
@@ -35,9 +36,10 @@ class PostsController extends DatatablesController
 
     public function edit(string $id): Response
     {
-        $post = Post::with('media')->findOrFail($id);
-
-        return Inertia::render('Dashboard/Posts/Edit', ['post' => $post]);
+        return Inertia::render('Dashboard/Posts/Edit', [
+            'post' => Post::with('media', 'galleries')->findOrFail($id),
+            'galleries' => Gallery::get()
+        ]);
     }
 
     /**
@@ -46,26 +48,29 @@ class PostsController extends DatatablesController
      */
     public function update(UpdatePostRequest $request, string $id): void
     {
-        Post::with('media')->findOrFail($id)
-            ->update($request->validated());
+        $post = Post::with('media')->findOrFail($id);
+        $post->update($request->except(['gallery']));
+        if ($request['gallery']) {
+            $post->galleries()->sync($request->only(['gallery']));
+        } else {
+            $post->galleries()->detach();
+        }
     }
 
-    public function store(StorePostRequest $request)
+    public function store(StorePostRequest $request): Illuminate\Http\RedirectResponse
     {
-
         $post = Post::create(array_merge($request->validated(), [
             'user_id' => auth()->user()->id,
         ]));
-
         return to_route('dashboard.posts.edit', $post->id);
     }
 
-    public function destroy(string $ids)
+    public function destroy(string $ids): void
     {
         $this->itemsDelete($ids);
     }
 
-    public function upload(Request $request)
+    public function upload(Request $request): void
     {
         $request->validate([
             'image.*' => 'image|mimes:jpeg,jpg,png,gif,webp|max:10000',

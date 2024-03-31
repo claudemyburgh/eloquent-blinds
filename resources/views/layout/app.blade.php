@@ -3,43 +3,43 @@
 <head>
     @production
         <!-- Google Tag Manager -->
-        <script>(function (w, d, s, l, i) {
-                w[l] = w[l] || [];
+        <script>(function(w, d, s, l, i) {
+                w[l] = w[l] || []
                 w[l].push({
-                    'gtm.start':
-                        new Date().getTime(), event: 'gtm.js'
-                });
+                    "gtm.start":
+                        new Date().getTime(), event: "gtm.js",
+                })
                 var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
+                    j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : ""
+                j.async = true
                 j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', '{{ config('google.gtag.id') }}');</script>
+                    "https://www.googletagmanager.com/gtm.js?id=" + i + dl
+                f.parentNode.insertBefore(j, f)
+            })(window, document, "script", "dataLayer", '{{ config('google.gtag.id') }}')</script>
         <!-- End Google Tag Manager -->
     @endproduction
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="theme-color" content="#0284c7"/>
-    <link rel="canonical" href="{{ URL::current() }}"/>
+    <meta name="theme-color" content="#0284c7" />
+    <link rel="canonical" href="{{ URL::current() }}" />
     <title>@isset($title)
             {{ $title }} |
         @endisset {{ config('app.name', 'Eloquent Blinds') }} </title>
-    <meta name="description" content="{{ $description }}"/>
-    <meta property="fb:app_id" content="{{ config('social.facebook.app_id') }}"/>
+    <meta name="description" content="{{ $description }}" />
+    <meta property="fb:app_id" content="{{ config('social.facebook.app_id') }}" />
     {{--  HTML Meta Tags--}}
-    <meta property="og:url" content="{{  URL::current() }}"/>
-    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{  URL::current() }}" />
+    <meta property="og:type" content="website" />
     {{--  Twitter Meta Tags --}}
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta property="twitter:domain" content="eloquentblinds.co.za"/>
-    <meta property="twitter:url" content="{{ URL::current() }}"/>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="eloquentblinds.co.za" />
+    <meta property="twitter:url" content="{{ URL::current() }}" />
     {{ $seo }}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800,900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800,900&display=swap" rel="stylesheet" />
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -66,22 +66,22 @@ not-sr-only:block sr-only focus:not-sr-only"
     <!-- End Google Tag Manager (noscript) -->
 @endproduction
 <div class="min-h-screen relative ">
-    <x-pattern.grid class="h-1/3 "/>
-    <x-navigation/>
+    <x-pattern.grid class="h-1/3 " />
+    <x-navigation />
     <div id="portal"></div>
     <!-- Page Content -->
     <main id="main" class="relative z-10">
         {{ $slot }}
     </main>
     @if(!app()->isDownForMaintenance())
-        <x-partials.section-products/>
+        <x-partials.section-products />
         <x-partials.splide-marquee>
             @foreach($categories as $category)
                 <a class="hover-underline splide__slide inline-block py-4 shrink-0"
-                   href="{{ route('category', $category) }}">{{ $category->title }}</a>
+                   href="{{ route('categories.show', $category) }}">{{ $category->title }}</a>
                 @foreach($category->children as $child)
                     <a class="hover-underline splide__slide inline-block py-4 shrink-0"
-                       href="{{ route('category', $child) }}">{{ $child->title }}</a>
+                       href="{{ route('categories.show', $child) }}">{{ $child->title }}</a>
                     @foreach($child->products as $product)
                         <a class="hover-underline splide__slide inline-block py-4 shrink-0"
                            href="{{ route('product', [$child, $product]) }}">{{ $product->title }}</a>
@@ -92,11 +92,11 @@ not-sr-only:block sr-only focus:not-sr-only"
         @if(Route::currentRouteName() !== 'quote')
             <div class="wrapper">
                 <div class="lg:-mr-4">
-                    <x-contact.section/>
+                    <x-contact.section />
                 </div>
             </div>
         @endif
-        <x-footer/>
+        <x-footer />
     @endif
     <div class="fixed bottom-20 inset-x-0 z-[1001] pointer-events-none">
         <div class="wrapper relative">
@@ -106,12 +106,13 @@ not-sr-only:block sr-only focus:not-sr-only"
                 <span class="sr-only"> Scroll to top</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                      stroke="currentColor" class="w-6 h-6 pointer-events-none">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 9l6-6m0 0l6 6m-6-6v12a6 6 0 01-12 0v-3"/>
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M9 9l6-6m0 0l6 6m-6-6v12a6 6 0 01-12 0v-3" />
                 </svg>
             </button>
         </div>
     </div>
 </div>
-<x-search/>
+<x-search />
 </body>
 </html>

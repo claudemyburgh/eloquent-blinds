@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\GalleryTrait;
 use App\Traits\Live;
 use App\Traits\Observable;
 use App\Traits\Sluggable;
@@ -15,7 +16,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Post extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, Sluggable, Live, Observable;
+    use HasFactory, InteractsWithMedia, Sluggable, Live, Observable, GalleryTrait;
 
     protected $fillable = [
         'uuid',
@@ -25,6 +26,7 @@ class Post extends Model implements HasMedia
         'description',
         'body',
         'live',
+        'gallery'
     ];
 
     protected $appends = [

@@ -35,7 +35,7 @@ class Navigation extends Component
             (object)[
                 "name" => "Shutters",
                 "slug" => "shutters",
-                "route" => "categories",
+                "route" => "categories.index",
                 "data" => null,
                 "classes" => "hover:text-primary-500 dark:text-shadow ",
                 "show" => true
@@ -43,7 +43,7 @@ class Navigation extends Component
             (object)[
                 "name" => "Blinds",
                 "slug" => "blinds",
-                "route" => "categories",
+                "route" => "categories.index",
                 "data" => null,
                 "classes" => "hover:text-primary-500 dark:text-shadow ",
                 "show" => true
@@ -51,7 +51,7 @@ class Navigation extends Component
             (object)[
                 "name" => "Reviews",
                 "slug" => "reviews",
-                "route" => "reviews",
+                "route" => "reviews.index",
                 "data" => "data",
                 "classes" => "hover:text-primary-500 dark:text-shadow ",
                 "show" => false
@@ -59,7 +59,7 @@ class Navigation extends Component
             (object)[
                 "name" => "About Us",
                 "slug" => "quote",
-                "route" => "quote",
+                "route" => "quote.index",
                 "data" => "data",
                 "classes" => "hover:text-primary-500 dark:text-shadow ",
                 "show" => false
@@ -67,7 +67,7 @@ class Navigation extends Component
             (object)[
                 "name" => "Faq's",
                 "slug" => "faq",
-                "route" => "faq",
+                "route" => "faq.index",
                 "data" => "data",
                 "classes" => "hover:text-primary-500 dark:text-shadow ",
                 "show" => true
@@ -83,7 +83,7 @@ class Navigation extends Component
             (object)[
                 "name" => "Brochures",
                 "slug" => "brochures",
-                "route" => "brochures",
+                "route" => "brochures.index",
                 "data" => "data",
                 "classes" => "hover:text-primary-500 dark:text-shadow ",
                 "show" => false
@@ -91,7 +91,7 @@ class Navigation extends Component
             (object)[
                 "name" => "Free Quote",
                 "slug" => "quote",
-                "route" => "quote",
+                "route" => "quote.index",
                 "data" => "data",
                 "classes" => "btn btn-gradient rounded-md text-white",
                 "show" => true

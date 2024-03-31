@@ -17,6 +17,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
  * @method static withAnyTags(string[] $array, string $type)
+ * @method static create(mixed $validated)
  */
 class Product extends Model implements HasMedia
 {
@@ -32,7 +33,8 @@ class Product extends Model implements HasMedia
         'live',
         'popular',
         'product_range',
-        'json'
+        'json',
+        'gallery'
     ];
 
     public function category(): BelongsTo

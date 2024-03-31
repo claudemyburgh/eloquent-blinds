@@ -14,10 +14,8 @@ class GalleriesIndexController extends Controller
      */
     public function __invoke(Request $request): View
     {
-
-        $galleries = Gallery::with('media')->get();
-
-
-        return view('galleries', compact('galleries'));
+        return view('galleries.index', [
+            'galleries' => Gallery::with('media')->get()
+        ]);
     }
 }

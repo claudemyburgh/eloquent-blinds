@@ -11,7 +11,25 @@ for the scroll bar colours
   :root {
     /* Default is Dark */
     --primary: theme('colors.gray.800');
-    --secondary: theme('colors.primary.400');
+    --secondary: theme('colors.primary.500');
+    --pswp-bg: var(--secondary);
+    --pswp-placeholder-bg: #222;
+
+
+    --pswp-root-z-index: 100000;
+
+    --pswp-preloader-color: rgba(79, 79, 79, 0.4);
+    --pswp-preloader-color-secondary: rgba(255, 255, 255, 0.9);
+
+    /* defined via js:
+    --pswp-transition-duration: 333ms; */
+
+    --pswp-icon-color: #fff;
+    --pswp-icon-color-secondary: #4f4f4f;
+    --pswp-icon-stroke-color: #4f4f4f;
+    --pswp-icon-stroke-width: 2px;
+
+    --pswp-error-text-color: var(--pswp-icon-color);
   }
 
   *::selection {
@@ -66,6 +84,7 @@ for the scroll bar colours
   .hover-underline {
     @apply hover:underline underline-offset-8 decoration-wavy decoration-gray-300/10 hover:decoration-primary-500 decoration-1;
   }
+
 
 }
 
@@ -160,27 +179,7 @@ for the scroll bar colours
     position: relative;
   }
 
-  /* purgecss ignore */
-  .img-zoom-lens {
-    position: absolute;
-    border: 5px solid #d4d4d4;
-    /*set the size of the lens:*/
-    width: 40px;
-    height: 40px;
-  }
 
-  /* purgecss ignore */
-  .img-zoom-result {
-    border: 1px solid #d4d4d4;
-    /*set the size of the result div:*/
-    width: 300px;
-    height: 300px;
-  }
-
-  /* purgecss ignore */
-  /*[data-theme-value="dark"] {*/
-  /*  @apply text-primary-500 bg-red-400;*/
-  /*}*/
   .pulse-loader {
     --loader-size: 130px;
     --loader-speed: 2s;
@@ -239,9 +238,7 @@ for the scroll bar colours
     position: relative;
   }
 
-  .swiper-slide {
 
-  }
 }
 
 

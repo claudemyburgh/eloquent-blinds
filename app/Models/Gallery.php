@@ -12,6 +12,9 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
+/**
+ * @method static get()
+ */
 class Gallery extends Model implements HasMedia
 {
     use HasFactory, Sluggable, InteractsWithMedia, Live, SoftDeletes;

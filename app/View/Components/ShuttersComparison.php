@@ -93,8 +93,6 @@ class ShuttersComparison extends Component
                 'turn_around_time' => '2-3 Weeks Turnaround Time'
             ],
         ];
-
-
         return view('components.shutters-comparison', compact('comparison'));
     }
 }

@@ -12,9 +12,9 @@
                 <div class="flex items-center">
                     <div class="lg:flex hidden space-x-8 font-bold items-center">
                         @foreach($links as $link)
-                            @if($link->route !== 'categories')
-                                <a @class([$link->classes, 'text-primary-500 ' => Route::currentRouteName() === $link->route]) href="{{
-                            route($link->route) }}">{{ $link->name }}
+                            @if($link->route !== 'categories.index')
+                                <a @class([$link->classes, 'text-primary-500 ' => Route::currentRouteName() === $link->route])
+                                   href="{{ route($link->route) }}">{{ $link->name }}
                                 </a>
                             @else
                                 <x-navigation.dropdown-links :$link />
@@ -35,13 +35,15 @@
                     </button>
                     <x-theme-switcher />
                     <x-navigation.mobile.toggle />
-
                 </div>
 
                 <div id="mobile_close" class="w-full mt-4 lg:hidden space-y-4 font-bold items-center">
                     @foreach($links as $link)
-                        @if($link->route !== 'categories')
-                            <a @class([$link->classes, 'flex', 'text-primary-500' => Route::currentRouteName() === $link->route]) href="{{
+                        @if($link->route !== 'categories.index')
+                            <a
+                                @class([$link->classes, 'flex',
+//                                'text-primary-500' => Route::currentRouteName() === $link->route
+                                ]) href="{{
                             route($link->route) }}">{{ $link->name }}
                             </a>
                         @else

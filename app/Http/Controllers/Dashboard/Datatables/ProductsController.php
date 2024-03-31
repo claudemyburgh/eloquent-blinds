@@ -8,6 +8,7 @@ use App\Models\Gallery;
 use App\Models\Product;
 use Designbycode\Datatables\DatatablesController;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -25,7 +26,7 @@ class ProductsController extends DatatablesController
         return Product::query();
     }
 
-    public function index(Request $request)
+    public function index(Request $request): Response
     {
         return Inertia::render('Dashboard/Table/Index', $this->getResponse($request));
     }
@@ -33,11 +34,9 @@ class ProductsController extends DatatablesController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProductRequest $request)
+    public function store(StoreProductRequest $request): RedirectResponse
     {
-
         $post = Product::create($request->validated());
-
         return to_route('dashboard.products.edit', $post);
     }
 
