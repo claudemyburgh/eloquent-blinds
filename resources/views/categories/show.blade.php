@@ -64,7 +64,7 @@
                     @foreach($descendants->descendants as $descendant)
                         @foreach($descendant->products as $product)
                             <x-product-card class="col-span-6 md:col-span-4 lg:col-span-3" :$product
-                                            route="{{ route('product', [$descendant, $product]) }}" />
+                                            route="{{ route('products.show', [$descendant, $product]) }}" />
                         @endforeach
                     @endforeach
                 </div>
