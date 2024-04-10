@@ -14,7 +14,7 @@ const Edit = ({ auth, category, galleries }: any) => {
           <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Category Edit</h2>
 
           <div className="space-x-4 flex">
-            <a className={`text-white rounded-full px-3 py-0.5 bg-white/10 hover:bg-primary-500`} href={route("category", category.slug)} target="_blank">
+            <a className={`text-white rounded-full px-3 py-0.5 bg-white/10 hover:bg-primary-500`} href={route("categories", category.slug)} target="_blank">
               View
             </a>
             <LiveLabel live={category.live} size={"md"} />
