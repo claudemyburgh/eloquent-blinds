@@ -59,7 +59,7 @@
 
 <div class="wrapper py-12 text-gray-900 dark:text-gray-200 lg:flex justify-between">
     <p>
-        &copy;{{ Carbon::now()->year }} {{ config('app.name') }}, Inc. All rights reserved.
+        &copy;{{ Carbon::now()->year }} {{ config('app.name') }}, (PTY) Ltd. All rights reserved.
     </p>
     <p>
         Design <abbr class="no-underline" title="and">&amp;</abbr> Developed by <a
