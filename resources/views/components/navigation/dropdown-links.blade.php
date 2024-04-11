@@ -28,19 +28,19 @@
             <div
                 class="relative bg-gray-200 dark:bg-gray-900 p-6 grid grid-cols-4 gap-6 border border-primary-500 rounded-global">
                 @if($link->slug === 'blinds')
-                    <a href="{{ route('categories.show', 'motion-blinds') }}"
-                       class="border border-gray-300 dark:border-gray-800 rounded-global overflow-hidden relative isolate group shadow-lg shadow-primary-500/20">
-                        <div aria-hidden="true"
-                             class="pulse-loader absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"></div>
-                        <div aria-hidden="true"
-                             class="pulse-loader scale-50 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"></div>
-                        <x-svg.motion class="absolute inset-3 z-10 drop-shadow-hard" />
-                        <img
-                            class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100"
-                            loading="lazy" width="290" height="290"
-                            src="{{ Vite::asset('resources/img/motion.webp') }}"
-                            alt="Motion Blinds">
-                    </a>
+{{--                    <a href="{{ route('categories.show', 'motion-blinds') }}"--}}
+{{--                       class="border border-gray-300 dark:border-gray-800 rounded-global overflow-hidden relative isolate group shadow-lg shadow-primary-500/20">--}}
+{{--                        <div aria-hidden="true"--}}
+{{--                             class="pulse-loader absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"></div>--}}
+{{--                        <div aria-hidden="true"--}}
+{{--                             class="pulse-loader scale-50 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"></div>--}}
+{{--                        <x-svg.motion class="absolute inset-3 z-10 drop-shadow-hard" />--}}
+{{--                        <img--}}
+{{--                            class="rounded-global mask-image-b mask-image-start-60 transition-all object-center scale-110 group-hover:scale-100"--}}
+{{--                            loading="lazy" width="290" height="290"--}}
+{{--                            src="{{ Vite::asset('resources/img/motion.webp') }}"--}}
+{{--                            alt="Motion Blinds">--}}
+{{--                    </a>--}}
                     @foreach($categories->where('slug', '!==', 'shutters') as $category)
                         <div>
                             <a class="font-black text-gray-900 dark:text-gray-100 hover:text-primary-500 text-lg hover:dark:text-primary-500"
