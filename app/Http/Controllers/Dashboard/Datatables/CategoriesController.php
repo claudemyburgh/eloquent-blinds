@@ -47,7 +47,6 @@ class CategoriesController extends DatatablesController
      */
     public function edit(string $id): Response
     {
-
         return Inertia::render('Dashboard/Categories/Edit', [
             'category' => Category::with('media', 'galleries')->find($id),
             'galleries' => Gallery::get()

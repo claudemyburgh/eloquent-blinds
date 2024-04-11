@@ -31,7 +31,7 @@ interface CountProps {
   excerpt: number
 }
 
-const EditCategoryForm = () => {
+const EditCategoriesForm = () => {
   const { category, categories_all, galleries } = usePage<CategoryProps & PageProps>().props
 
   const [count, setCount] = useState<CountProps>({
@@ -171,4 +171,4 @@ const EditCategoryForm = () => {
   )
 }
 
-export default EditCategoryForm
+export default EditCategoriesForm
