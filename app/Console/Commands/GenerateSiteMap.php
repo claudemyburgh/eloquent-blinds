@@ -34,18 +34,18 @@ class GenerateSiteMap extends Command
         $sitemap
             ->getSitemap()
             ->add(Url::create('/')->setPriority(1))
-            ->add(Url::create('/categories')->setPriority(0.8))
+            ->add(Url::create('/categories.index')->setPriority(0.8))
             ->add(Url::create('/faq')->setPriority(0.8))
             ->add(Url::create('/reviews')->setPriority(0.8))
             ->add(Url::create('/free-quote')->setPriority(0.8))
             ->add(Url::create('/privacy-policy')->setPriority(0.5));
 
         foreach (Category::all() as $category) {
-            $sitemap->getSitemap()->add(Url::create(route('category', $category->slug)));
+            $sitemap->getSitemap()->add(Url::create(route('categories.show', $category->slug)));
         }
 
         foreach (Product::all() as $product) {
-            $sitemap->getSitemap()->add(Url::create(route('product', [$product->category, $product])));
+            $sitemap->getSitemap()->add(Url::create(route('products.show', [$product->category, $product])));
         }
 
         $sitemap->writeToFile(public_path('sitemap.xml'));
