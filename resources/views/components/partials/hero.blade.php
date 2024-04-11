@@ -1,22 +1,22 @@
 <div class="relative overflow-hidden isolate">
     <div class="wrapper pt-10 pb-4 sm:pb-20 lg:flex z-20 lg:pt-22 2xl:pt-32">
         <div class="mx-auto relative z-20 max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
-            <div class="mt-24 sm:mt-32 lg:mt-16">
-                <a href="https://view.publitas.com/e-books/quantum-signature/page/1" target="_blank"
-                   class="inline-flex space-x-4">
-                    <span
-                        class="rounded-full bg-primary-500/10 px-3 py-1 text-sm font-semibold leading-6 text-primary-400 ring-1 ring-inset ring-primary-500/20">What's new</span>
-                    <span
-                        class="inline-flex group  items-center space-x-2 text-sm font-semibold leading-6 text-gray-500 dark:text-gray-300 ">
-                <span>E-Catalogue</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor"
-                     class="h-5 w-5 text-gray-500 transition-transform group-hover:translate-x-[5px]">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-              </span>
-                </a>
-            </div>
+{{--            <div class="mt-24 sm:mt-32 lg:mt-16">--}}
+{{--                <a href="https://view.publitas.com/e-books/quantum-signature/page/1" target="_blank"--}}
+{{--                   class="inline-flex space-x-4">--}}
+{{--                    <span--}}
+{{--                        class="rounded-full bg-primary-500/10 px-3 py-1 text-sm font-semibold leading-6 text-primary-400 ring-1 ring-inset ring-primary-500/20">What's new</span>--}}
+{{--                    <span--}}
+{{--                        class="inline-flex group  items-center space-x-2 text-sm font-semibold leading-6 text-gray-500 dark:text-gray-300 ">--}}
+{{--                <span>E-Catalogue</span>--}}
+{{--                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"--}}
+{{--                     stroke="currentColor"--}}
+{{--                     class="h-5 w-5 text-gray-500 transition-transform group-hover:translate-x-[5px]">--}}
+{{--                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />--}}
+{{--                </svg>--}}
+{{--              </span>--}}
+{{--                </a>--}}
+{{--            </div>--}}
 
             <div class="relative">
                 <h1 class="mt-5 heading-1 text-shadow-long-[5] text-shadow-primary-500/10 dark:text-shadow-black relative">
